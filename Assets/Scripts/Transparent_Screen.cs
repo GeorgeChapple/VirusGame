@@ -57,18 +57,18 @@ public class TransparentScreen : MonoBehaviour
         Application.runInBackground = true;
     }
 
-    private void Update()
-    {
-        //Vector3 posToAdd = new Vector3(0, 0, 0.01f);
-        //transform.position += posToAdd;
+    //private void Update()
+    //{
+    //    Vector3 posToAdd = new Vector3(0, 0, 0.01f);
+    //    transform.position += posToAdd;
 
-        Ray ray = new Ray(Camera.main.transform.position, Input.mousePosition);
-        if (Physics.Raycast(ray, Mathf.Infinity))
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                transform.position = Input.mousePosition;
-            }
-        }
-    }
+    //    Ray ray = new Ray(Camera.main.transform.position, Input.mousePosition);
+    //    if (Physics.Raycast(ray, Mathf.Infinity))
+    //    {
+    //        if (Input.GetMouseButtonDown(0))
+    //        {
+    //            transform.position = Input.mousePosition;
+    //        }
+    //    }
+    //}
 }
