@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WindowScript : MonoBehaviour
@@ -23,5 +24,9 @@ public class WindowScript : MonoBehaviour
 
     public void ResetCollider() {
         windowCollider.size = new Vector3(1, 1, 0);
+    }
+
+    public void DestroySelf() {
+        Destroy(gameObject);
     }
 }
