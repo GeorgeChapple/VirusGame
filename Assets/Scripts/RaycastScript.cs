@@ -9,7 +9,6 @@ public class RaycastScript : MonoBehaviour
     public RaycastHit lastHit;
     private bool leftHolding;
 
-
     private void Awake() {
     }
 
@@ -63,6 +62,7 @@ public class RaycastScript : MonoBehaviour
                 }
             } else {
                 if (lastHitObject.CompareTag("Window")) {
+                    lastHitObject.GetComponent<WindowScript>().ResetCollider();
                     lastHitObject.transform.position = new Vector3(lastHitObject.transform.position.x, lastHitObject.transform.position.y, 0.1f);
                 }
             }
