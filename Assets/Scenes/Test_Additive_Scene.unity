@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numToMoveBy: -0.01
-  useX: 0
+  useX: 1
   useY: 0
   useZ: 1
 --- !u!1660057539 &9223372036854775807
