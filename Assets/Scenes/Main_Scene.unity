@@ -307,9 +307,8 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0.42175674, a: 1}
   - {r: 1, g: 0, b: 0.20997238, a: 1}
   - {r: 1, g: 0, b: 0.08507776, a: 1}
-  scene: {fileID: 0}
-  content: {fileID: 0}
-  cameraMaterial: {fileID: 0}
+  sceneIndex: -1
+  cameraMaterial: []
 --- !u!1 &1783184704
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,9 +363,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 2104184117}
   manager: {fileID: 1046558990}
-  scene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  content: {fileID: 2532226742617450910, guid: 22dc5b45d6fa370498bcd2ba95d29f7d, type: 3}
-  cameraMaterial: {fileID: 2100000, guid: 1eaa2aa41b042a746a56397a31a35f20, type: 2}
+  sceneIndex: 2
+  cameraMaterial:
+  - {fileID: 2100000, guid: d9d3dda5b11603a43b7ab05ff8f3d2a4, type: 2}
 --- !u!114 &1783184707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,7 +982,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 559298754}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

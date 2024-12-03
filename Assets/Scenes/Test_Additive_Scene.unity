@@ -208,10 +208,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 135075988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ae6bfdf8f7d7946a374b3d590b79b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fb76dc2655ad2b42b4cdab27f32523f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 1549430044}
+  hitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1009109137
 GameObject:
   m_ObjectHideFlags: 0
