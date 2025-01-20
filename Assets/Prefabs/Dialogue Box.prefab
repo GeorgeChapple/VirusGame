@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6327974418576312412}
   - component: {fileID: 2822829946006992874}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Dialogue Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79533bbb5da5fc4695a4917aefcf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: {fileID: 4900000, guid: ac155c6f134019a4fbe126106653be26, type: 3}
+  file: {fileID: 4900000, guid: d590aac013594bb4494d5986d251f081, type: 3}
+  textSpeed: 0.001
+  autoLineBreak: 1
   forceSkip: 0
 --- !u!1 &5784567587379830531
 GameObject:
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -183,8 +185,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -219,7 +221,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -423.68542, y: -216.62949, z: -422.52344, w: -205.45789}
+  m_margin: {x: -444.674, y: -230.3819, z: -445.21777, w: -227.37769}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
