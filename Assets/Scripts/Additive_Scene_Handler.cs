@@ -11,7 +11,7 @@ public class Additive_Scene_Handler : MonoBehaviour
     [SerializeField] private WindowSpawner manager;
     [Tooltip("Make sure the scene is available in the scene manager in build settings")]
     [SerializeField] private int sceneIndex;
-    [SerializeField] private Material[] cameraMaterial;
+    [SerializeField] private Material cameraMaterial;
 
     public void buttonPress()
     {

@@ -8,6 +8,7 @@ public class RaycastScript : MonoBehaviour
     public GameObject lastHitObject;
     public RaycastHit lastHit;
     private bool leftHolding;
+    [SerializeField] private Canvas canvas;
 
     private void Awake() {
     }
@@ -58,12 +59,13 @@ public class RaycastScript : MonoBehaviour
             if (leftHolding) {
                 if (lastHitObject.CompareTag("Window")) {
                     Vector3 distance = lastHitObject.GetComponent<WindowScript>().mouseDistance;
-                    lastHitObject.transform.position = new Vector3(lastHit.point.x - distance.x, lastHit.point.y - distance.y, -0.1f);
+                    //lastHitObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x - (canvas.pixelRect.width / 2), Input.mousePosition.y - (canvas.pixelRect.height / 2), -0.1f) - distance;
+                    lastHitObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -0.1f) - distance;
                 }
             } else {
                 if (lastHitObject.CompareTag("Window")) {
                     lastHitObject.GetComponent<WindowScript>().ResetCollider();
-                    lastHitObject.transform.position = new Vector3(lastHitObject.transform.position.x, lastHitObject.transform.position.y, 0.1f);
+                    lastHitObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(lastHitObject.GetComponent<WindowScript>().GetRectTransform().anchoredPosition.x, lastHitObject.GetComponent<WindowScript>().GetRectTransform().anchoredPosition.y, 0.1f);
                 }
             }
         }

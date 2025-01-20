@@ -4,13 +4,14 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WindowContent : MonoBehaviour
 {
     [SerializeField] private WindowSpawner manager;
     [SerializeField] private int sceneIndex;
-    [SerializeField] private MeshRenderer content;
-    [SerializeField] private Material[] cameraMaterial;
+    [SerializeField] private Image content;
+    [SerializeField] private Material cameraMaterial;
 
     public void OnceSpawned()
     {
@@ -19,7 +20,7 @@ public class WindowContent : MonoBehaviour
         {
             sceneIndex = manager.sceneIndex;
             cameraMaterial = manager.cameraMaterial;
-            content.materials = cameraMaterial;
+            content.material = cameraMaterial;
         }
 
         //bool shouldSwap = false;

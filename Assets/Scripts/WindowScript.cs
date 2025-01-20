@@ -7,26 +7,34 @@ public class WindowScript : MonoBehaviour
 {
     public Vector2 mouseDistance;
     private BoxCollider windowCollider;
+    private RectTransform rectTransform;
 
     private void Awake() {
         windowCollider = GetComponent<BoxCollider>();
+        rectTransform = GetComponent<RectTransform>();
+        windowCollider.size = rectTransform.rect.size;
     }
 
     public void GetMouseDistance() {
         Object[] objects = FindObjectsOfType<RaycastScript>();
         RaycastScript script = (RaycastScript)objects[0];
-        mouseDistance = script.lastHit.point - transform.position;
+
+        mouseDistance = Input.mousePosition - (Vector3)rectTransform.anchoredPosition;
     }
 
     public void EnlargeCollider() {
-        windowCollider.size *= 5000f;
+        windowCollider.size *= 500f;
     }
 
     public void ResetCollider() {
-        windowCollider.size = new Vector3(1, 1, 0);
+        windowCollider.size = rectTransform.rect.size;
     }
 
     public void DestroySelf() {
         Destroy(gameObject);
+    }
+    public RectTransform GetRectTransform()
+    {
+        return rectTransform;
     }
 }
