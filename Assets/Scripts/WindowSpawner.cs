@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class WindowSpawner : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
-    [SerializeField] private GameObject windowPrefab;
+    [SerializeField] private UnityEngine.GameObject windowPrefab;
     [SerializeField] private Color[] colours;
 
     [Header("Spawning Variables")]
@@ -16,7 +16,7 @@ public class WindowSpawner : MonoBehaviour
     public Material cameraMaterial;
 
     public void SpawnWindow() {
-        GameObject obj = Instantiate(windowPrefab, new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0), transform.rotation, canvas.transform);
+        UnityEngine.GameObject obj = Instantiate(windowPrefab, new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0), transform.rotation, canvas.transform);
         obj.GetComponent<Image>().material.color = colours[Random.Range(0, colours.Length)];
         if (sceneIndex >= 0 && cameraMaterial != null)
         {

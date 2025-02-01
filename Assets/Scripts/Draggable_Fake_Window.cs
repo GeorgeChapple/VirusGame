@@ -7,11 +7,11 @@ public class Draggable_Fake_Window : MonoBehaviour, IDragHandler
 {
     public Canvas canvas;
 
-    private RectTransform rectTransform;
+    private UnityEngine.RectTransform rectTransform;
 
     void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
+        rectTransform = GetComponent<UnityEngine.RectTransform>();
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)

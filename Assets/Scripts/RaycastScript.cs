@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class RaycastScript : MonoBehaviour
 {
-    public GameObject lastHitObject;
+    public UnityEngine.GameObject lastHitObject;
     public RaycastHit lastHit;
     private bool leftHolding;
     [SerializeField] private Canvas canvas;
@@ -60,12 +60,12 @@ public class RaycastScript : MonoBehaviour
                 if (lastHitObject.CompareTag("Window")) {
                     Vector3 distance = lastHitObject.GetComponent<WindowScript>().mouseDistance;
                     //lastHitObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x - (canvas.pixelRect.width / 2), Input.mousePosition.y - (canvas.pixelRect.height / 2), -0.1f) - distance;
-                    lastHitObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -0.1f) - distance;
+                    lastHitObject.GetComponent<UnityEngine.RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -0.1f) - distance;
                 }
             } else {
                 if (lastHitObject.CompareTag("Window")) {
                     lastHitObject.GetComponent<WindowScript>().ResetCollider();
-                    lastHitObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(lastHitObject.GetComponent<WindowScript>().GetRectTransform().anchoredPosition.x, lastHitObject.GetComponent<WindowScript>().GetRectTransform().anchoredPosition.y, 0.1f);
+                    lastHitObject.GetComponent<UnityEngine.RectTransform>().anchoredPosition = new Vector3(lastHitObject.GetComponent<WindowScript>().GetRectTransform().anchoredPosition.x, lastHitObject.GetComponent<WindowScript>().GetRectTransform().anchoredPosition.y, 0.1f);
                 }
             }
         }

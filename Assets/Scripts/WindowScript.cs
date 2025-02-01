@@ -7,11 +7,11 @@ public class WindowScript : MonoBehaviour
 {
     public Vector2 mouseDistance;
     private BoxCollider windowCollider;
-    private RectTransform rectTransform;
+    private UnityEngine.RectTransform rectTransform;
 
     private void Awake() {
         windowCollider = GetComponent<BoxCollider>();
-        rectTransform = GetComponent<RectTransform>();
+        rectTransform = GetComponent<UnityEngine.RectTransform>();
         windowCollider.size = rectTransform.rect.size;
     }
 
@@ -33,7 +33,7 @@ public class WindowScript : MonoBehaviour
     public void DestroySelf() {
         Destroy(gameObject);
     }
-    public RectTransform GetRectTransform()
+    public UnityEngine.RectTransform GetRectTransform()
     {
         return rectTransform;
     }
