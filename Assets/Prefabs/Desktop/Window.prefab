@@ -137,6 +137,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  doubleHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  timeToDoubleHit: 0.5
+  doubleAvailable: 0
 --- !u!1 &3991302335102464780
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +262,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  doubleHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  timeToDoubleHit: 0.5
+  doubleAvailable: 0
 --- !u!114 &3811321920681255914
 MonoBehaviour:
   m_ObjectHideFlags: 0

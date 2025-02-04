@@ -57,13 +57,13 @@ public class RaycastScript : MonoBehaviour
     private void HitUpdate() {
         if (lastHitObject != null) {
             if (leftHolding) {
-                if (lastHitObject.CompareTag("Window")) {
+                if (lastHitObject.CompareTag("Draggable")) {
                     Vector3 distance = lastHitObject.GetComponent<WindowScript>().mouseDistance;
                     //lastHitObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x - (canvas.pixelRect.width / 2), Input.mousePosition.y - (canvas.pixelRect.height / 2), -0.1f) - distance;
                     lastHitObject.GetComponent<UnityEngine.RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -0.1f) - distance;
                 }
             } else {
-                if (lastHitObject.CompareTag("Window")) {
+                if (lastHitObject.CompareTag("Draggable")) {
                     lastHitObject.GetComponent<WindowScript>().ResetCollider();
                     lastHitObject.GetComponent<UnityEngine.RectTransform>().anchoredPosition = new Vector3(lastHitObject.GetComponent<WindowScript>().GetRectTransform().anchoredPosition.x, lastHitObject.GetComponent<WindowScript>().GetRectTransform().anchoredPosition.y, 0.1f);
                 }

@@ -1151,10 +1151,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1641267665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -417}
-  m_SizeDelta: {x: 0, y: 834}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004732455
 MonoBehaviour:
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1641267664}
-  emptySpacePrefab: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
+  emptySpacePrefab: {fileID: 187061468812343547, guid: bb3ac5ec93e65d441bc3c842bc957e03, type: 3}
   grid: {fileID: 2004732455}
 --- !u!1 &2042681520
 GameObject:
