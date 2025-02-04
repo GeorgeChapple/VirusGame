@@ -5,22 +5,20 @@ using UnityEngine.UI;
 
 public class ChatBoxManager : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> speechPrefabs = new List<GameObject>();
-    [SerializeField] public TextAsset file;
-    private SpeechManager speechManager;
-    private UnityEngine.RectTransform contentRect;
+    private SpeechManager speechManager; // Stores the speech manager script attatched to the chatbox
+    private UnityEngine.RectTransform contentRect; // Stores the content UI, this is where the speech bubbles get placed on to be scrolled through
 
     private void Awake() {
         contentRect = transform.Find("Viewport/Content").GetComponent<UnityEngine.RectTransform>();
         speechManager = GetComponent<SpeechManager>();
-        speechManager.speechPrefabs = speechPrefabs;
         speechManager.newBubbleCreated.AddListener(AddSpeechBubble);
     }
 
     private void Start() {
-        speechManager.StartTextLoop(file);
+        speechManager.StartTextLoop(speechManager.file);
     }
 
+    // Listens for when speech manager spawns a new speech bubble, sets the default values and parent of the new bubble
     private void AddSpeechBubble() {
         GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
         GameObject bubble = speechManager.speechBubbles[speechManager.speechBubbles.Count - 1];

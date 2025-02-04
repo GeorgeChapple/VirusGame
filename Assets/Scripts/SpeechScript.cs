@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class SpeechScript : MonoBehaviour
 {
-    public SpeechManager manager;
     public float textSpeed = 0.05f;
     public bool autoLineBreak = true;
     public string text;
@@ -21,15 +20,14 @@ public class SpeechScript : MonoBehaviour
         StartCoroutine(WriteText());
     }
 
+    // Displays currently stored string character by character
     private IEnumerator WriteText() {
-        manager.finishedWriting = false;
-        for (int i = 0; i < text.Length; i++) {
+        for (int i = 0; i < text.Length; i++) { // For each character in string, display character at index and wait for text speed time
             textBox.text += text[i];
             yield return new WaitForSeconds(textSpeed);
         }
-        if (autoLineBreak) {
+        if (autoLineBreak) { // Checks to see if auto line break is enabled, add a line break if yes
             textBox.text += "<br>";
         }
-        manager.finishedWriting = true;
     }
 }
