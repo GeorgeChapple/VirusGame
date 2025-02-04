@@ -22,8 +22,8 @@ public class ChatBoxManager : MonoBehaviour
     private void AddSpeechBubble() {
         GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
         GameObject bubble = speechManager.speechBubbles[speechManager.speechBubbles.Count - 1];
-        contentRect.sizeDelta += new Vector2(0, bubble.GetComponent<Image>().rectTransform.sizeDelta.y + 10);
+        contentRect.sizeDelta += new Vector2(0, bubble.GetComponent<Image>().rectTransform.sizeDelta.y + 5);
         bubble.transform.parent = contentRect;
-        bubble.transform.position = new Vector3(contentRect.anchorMax.x + 400, contentRect.anchorMax.y + 250, 0);
+        //bubble.transform.position = new Vector3(contentRect.anchorMax.x + 400, contentRect.anchorMax.y + 250, 0);
     }
 }
