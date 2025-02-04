@@ -123,10 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf8fb9343bbadb4bb0e99b446e6a2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speechPrefabs:
-  - {fileID: 2097760535024557085, guid: b0c18777a417ca64c9d350476acd8444, type: 3}
-  - {fileID: 2097760535024557085, guid: 6b45d475d581a22439289d7083a4aaa6, type: 3}
-  file: {fileID: 0}
 --- !u!114 &186139215866373917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,13 +135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b92218c0c3894b42b7c13b7a6c75930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speechPrefabs: []
-  file: {fileID: 0}
+  speechPrefabs:
+  - {fileID: 2097760535024557085, guid: b0c18777a417ca64c9d350476acd8444, type: 3}
+  - {fileID: 2097760535024557085, guid: 6b45d475d581a22439289d7083a4aaa6, type: 3}
   speechBubbles: []
-  next: 0
+  file: {fileID: 4900000, guid: d590aac013594bb4494d5986d251f081, type: 3}
   newBubbleCreated:
     m_PersistentCalls:
       m_Calls: []
+  next: 0
   speechPrafabsIndex: 0
 --- !u!1 &2346380476118513267
 GameObject:

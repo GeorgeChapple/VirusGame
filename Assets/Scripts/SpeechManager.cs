@@ -33,7 +33,7 @@ public class SpeechManager : MonoBehaviour {
     // Called when a command line is read that needs to return a number of some kind, returns the string version of just the number in the command
     private string GetNewValFromCommandString(string line) {
         string newVal = "";
-        for (int i = newVal.IndexOf(':') + 1; i < line.Length; i++) {
+        for (int i = line.IndexOf(':') + 1; i < line.Length; i++) {
             if (line[i] != '>') {
                 newVal += line[i];
             }
@@ -51,7 +51,7 @@ public class SpeechManager : MonoBehaviour {
             string line;
             string nextLine = "";
             while ((line = sr.ReadLine()) != null) { // Reads the file line by line until there are no more lines
-                yield return new WaitForSeconds(nextLine.Length * textSpeed + 0.01f); // Waits until previous line has finished being displayed, prevents text being overwritten
+                yield return new WaitForSeconds(nextLine.Length * textSpeed + 0.1f); // Waits until previous line has finished being displayed, prevents text being overwritten
                 continueRead = true; // If continue read is set to false in if statements, reading will pause
                 newBubble = false; // If set to true by if statements, a new speech bubble will be spawned, which will be used by the next line of text
                 nextLine = "";
@@ -82,7 +82,7 @@ public class SpeechManager : MonoBehaviour {
                     string newPrefabIndexString = GetNewValFromCommandString(line);
                     int newPrefabIndex = 0;
                     try { // Try to convert value into index
-                        newPrefabIndex = Convert.ToInt32(newPrefabIndex);
+                        newPrefabIndex = Convert.ToInt32(newPrefabIndexString);
                         if (newPrefabIndex >= speechPrefabs.Count) { // Check if new index is outside bounds of prefab list, if yes, display error message
                             nextLine += errorMessage;
                             nextLine += "~~~PREFAB INDEX OUT OF BOUNDS~~~ <br>";
