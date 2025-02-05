@@ -8,6 +8,7 @@ public class Desktop : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject emptySpacePrefab;
     [SerializeField] private GridLayoutGroup grid;
+    public List<GameObject> spaces = new List<GameObject>();
 
     private void Awake()
     {
@@ -39,7 +40,9 @@ public class Desktop : MonoBehaviour
 
         for (int i = 0; i < amountToSpawn; i++)
         {
-            Instantiate(emptySpacePrefab, gameObject.transform);
+            GameObject space = Instantiate(emptySpacePrefab, gameObject.transform);
+            space.name = "EmptySpace " + i;
+            spaces.Add(space);
         }
     }
 }

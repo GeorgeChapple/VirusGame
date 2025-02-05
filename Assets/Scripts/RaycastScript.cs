@@ -51,6 +51,10 @@ public class RaycastScript : MonoBehaviour
     }
 
     private void LeftClickUp() {
+        if (lastHitObject != null && lastHitObject.GetComponent<HitEventScript>() != null && leftHolding)
+        {
+            lastHitObject.GetComponent<HitEventScript>().letGoEvent.Invoke();
+        }
         leftHolding = false;
     }
 

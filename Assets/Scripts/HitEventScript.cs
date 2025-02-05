@@ -6,6 +6,7 @@ public class HitEventScript : MonoBehaviour
 {
     public UnityEvent hitEvent;
     public UnityEvent doubleHitEvent;
+    public UnityEvent letGoEvent;
 
     public float timeToDoubleHit = 0.5f;
 

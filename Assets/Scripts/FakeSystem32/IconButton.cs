@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,15 +5,42 @@ public class IconButton : MonoBehaviour
 {
     public Canvas canvas;
     public GridLayoutGroup layoutGroup;
+    public Desktop desktop;
     private void Awake()
     {
-        if(canvas == null)
+        if (canvas == null)
         {
             canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();
             layoutGroup = GameObject.Find("Desktop").GetComponent<GridLayoutGroup>();
+            desktop = GameObject.Find("Desktop").GetComponent<Desktop>();
             GetComponent<RectTransform>().sizeDelta = layoutGroup.cellSize;
             GetComponent<BoxCollider>().size = layoutGroup.cellSize;
         }
+    }
+    public void DropOntoGrid()
+    {
+        //find which empty space the icon is above then make it the child of it
+        //Dictionary<GameObject, float> distances = new Dictionary<GameObject, float>();
+        GameObject smallestDistanceObj = null;
+        float smallestDistance = 10000000;
+        foreach (GameObject space in desktop.spaces)
+        {
+            //get distances to all
+            float distance = Vector3.Distance(gameObject.transform.position, space.transform.position);
+            //check if there is something in that space already
+            if (space.transform.childCount <= 0)
+            {
+                if (distance < smallestDistance)
+                {
+                    smallestDistance = distance;
+                    smallestDistanceObj = space;
+                }
+            }
+        }
+        //Debug.Log("smallest distance was " +  smallestDistance);
+
+        gameObject.transform.SetParent(smallestDistanceObj.transform);
+        gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
     }
     public void MoveToTopOfHierarchy()
     {
