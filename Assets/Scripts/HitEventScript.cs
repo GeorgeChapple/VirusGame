@@ -17,6 +17,7 @@ public class HitEventScript : MonoBehaviour
         {
             //fire the double hit
             doubleHitEvent.Invoke();
+            doubleAvailable = false; //so someone cant spam a triple click
         }
     }
     public void StartDoubleTimer()
