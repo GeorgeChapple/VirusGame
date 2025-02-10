@@ -140,6 +140,9 @@ MonoBehaviour:
   doubleHitEvent:
     m_PersistentCalls:
       m_Calls: []
+  letGoEvent:
+    m_PersistentCalls:
+      m_Calls: []
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!1 &3991302335102464780
@@ -159,7 +162,7 @@ GameObject:
   - component: {fileID: 8547904969443470730}
   m_Layer: 5
   m_Name: Window
-  m_TagString: Window
+  m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,6 +266,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   doubleHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  letGoEvent:
     m_PersistentCalls:
       m_Calls: []
   timeToDoubleHit: 0.5

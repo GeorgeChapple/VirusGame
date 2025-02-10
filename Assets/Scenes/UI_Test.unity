@@ -1233,6 +1233,7 @@ MonoBehaviour:
   canvas: {fileID: 1641267664}
   emptySpacePrefab: {fileID: 187061468812343547, guid: bb3ac5ec93e65d441bc3c842bc957e03, type: 3}
   grid: {fileID: 2004732455}
+  spaces: []
 --- !u!1 &2042681520
 GameObject:
   m_ObjectHideFlags: 0
