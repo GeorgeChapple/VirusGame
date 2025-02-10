@@ -1,13 +1,183 @@
-<sp:0.1>
-egg lee bacon dishwasher
-dishwasher
-<n>
-washing machines
-aaaaaaaaaaaaaaaaaaaaaaaaa
+<sp:0.035>
+Hey man!
+How's everything going?
 <pfb:1>
 <n>
-eggs eggs eggs eggs
-wallace
+Oh hey, good thanks.
+Just trying to find stuff to report on.
+How are you?
 <pfb:0>
 <n>
-cup
+Good thanks. You still trying to work on that police report?
+<pfb:1>
+<n>
+You know I can’t talk much about it, but yeah.
+<pfb:1>
+<n>
+My NDA doesn’t let me speak to anyone about what they’re working on
+<pfb:1>
+<n>
+but if I can find just one small piece of evidence exposing them, I can tell the story through that.
+<pfb:0>
+<n>
+…How long has it been since you were a detective?
+<pfb:1>
+<n>
+About a year since I was made redundant.
+<pfb:0>
+<n>
+How do you feel about that?
+<pfb:1>
+<n>
+I guess it was meant to be... 
+<pfb:1>
+<n>
+but I'm still fuming haha!
+<pfb:0>
+<n>
+I see, best way to look at it I suppose. 
+<pfb:0>
+<n>
+And yeah it was unfair they laid you off so quickly.
+<pfb:1>
+<n>
+Not much I can do about it besides what I’m doing now. Just got to try and find something.
+<pfb:0>
+<n>
+Well, I did stumble across something that might help you, would you like to see it?
+<pfb:1>
+<n>
+Sure.
+<pfb:0>
+<n>
+Alright, give me a sec.
+<sp:0.2>
+...
+<sp:0.035>
+Alright, it’s sent! (Link) And if you still don’t trust me, here are some screenshots:
+<pfb:0>
+<n>
+SCREENSHOT 1
+<pfb:0>
+<n>
+SCREENSHOT 2
+<pfb:0>
+<n>
+SCREENSHOT 3
+<pfb:0>
+<n>
+Do you recognise this name?
+<pfb:1>
+<n>
+I don't think I can say...
+<pfb:0>
+<n>
+Ah, I see... 
+Either way, just click on the link! Have a look.
+<pfb:0>
+<n>
+You might find something you can write on.
+<pfb:1>
+<n>
+I'm still using my virtual machine for this... Looks dodgy.
+<pfb:0>
+<n>
+Alright you do you.
+But I promise it's safe!
+<pfb:0>
+<n>
+OPENS AND READS WEBPAGE.
+<pfb:0>
+<n>
+Have you read the bit about the AI causing the detective to lose his job? 
+<pfb:0>
+<n>
+Is that what happened to you?!
+<pfb:1>
+<n>
+You know I can't talk about this Barry...
+<pfb:1>
+<n>
+Are you trying to get me sued?? I don't have much money as it is.
+<pfb:0>
+<n>
+Look, I know you can't tell me, but just hear me out...
+<pfb:0>
+<n>
+In my mind, this could be something related to what you went through, if not exactly what happened to you.
+<pfb:0>
+<n> 
+Regardless of whether or not you can tell me directly, what if we stole elements from this website, and combined them with some experiences you had? 
+<pfb:0>
+<n>
+That way, you won’t be breaking any contract you signed, and we have a new and interesting story!
+<pfb:1>
+<n>
+How do you know any of this is factual?!
+<pfb:0>
+<n>
+Oh come on who cares about that!? 
+<pfb:0>
+<n>
+It’s a story! We're reporters, which means we need stories to tell.
+<pfb:0>
+<n>
+I know you're used to detective work where everything has to be factual, but....
+<pfb:0>
+<n>
+This could be a hit for us regardless!
+<pfb:0>
+<n>
+A rogue crime framing AI that is developed by the police!?
+<pfb:0>
+<n>
+This could be groundbreaking for us! Think of the money!
+<pfb:0>
+<n>
+Even if it is just a hoax, there’s at least a typical ‘the police are improving’ story here. 
+<pfb:0>
+<n>
+It’s easy work!
+<pfb:1>
+<n>
+I'm still unsure, but rent is due I guess. Alright, I'm with you. 
+Let's make a story.
+<pfb:0>
+<n>
+Knew you would buddy!!
+<pfb:0>
+<n>
+SELDEN'S COMPUTER GLITCHES. A BLINKING LIGHT BY THE INTERNET CAN BE SEEN.
+<pfb:1>
+<n>
+Hang on, something weird is going on..
+<pfb:0>
+<n>
+What!?
+<pfb:1>
+<n>
+I'm clicking off this.
+<pfb:0>
+<n>
+SELDEN CLOSES THE WEBSITE. 
+<pfb:0>
+<n>
+A LARGE DOWNLOAD CAN BE SEEN IN THE CENTRE OF HIS SCREEN. 
+<pfb:0>
+<n>
+DOWNLOAD COMPLETE IS DISPLAYED.
+<pfb:0>
+<n>
+What happened!? Are you okay!?
+<pfb:0>
+sgslfjSHriow4ut90rjkl
+<pfb:0>
+KP”0-e5hb asdxf
+<pfb:1>
+{} O{£O%
+<pfb:1>
+{} O{£O%
+<pfb:1>
+{} O{£O%
+<pfb:0>
+COMPUTER CLOSES. DAISY INTRO SEQUENCE.
