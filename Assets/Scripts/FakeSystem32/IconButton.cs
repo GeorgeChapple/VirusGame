@@ -23,7 +23,7 @@ public class IconButton : MonoBehaviour
         //Dictionary<GameObject, float> distances = new Dictionary<GameObject, float>();
         GameObject smallestDistanceObj = null;
         float smallestDistance = 10000000;
-        foreach (GameObject space in desktop.spaces)
+        foreach (GameObject space in desktop.desktopSpaces)
         {
             //get distances to all
             float distance = Vector3.Distance(gameObject.transform.position, space.transform.position);

@@ -6,25 +6,20 @@ using UnityEngine;
 public class Taskbar : MonoBehaviour
 {
     private FakeWindows32 windows32;
-    [SerializeField] private Transform gridStart;
-    [SerializeField] private GameObject iconPrefab;
 
-    public List<Vector3> taskBarSpaces;
+    public List<GameObject> taskBarSpaces = new List<GameObject>();
+
     private void Awake()
     {
-        windows32 = FindAnyObjectByType<FakeWindows32>();
-        taskBarSpaces = windows32.CreateGridUI(gridStart, 10, 1, 30);
-        AssignIconsToGrid();
+        //add icons to taskbarSpaces here
     }
 
-
-    private void AssignIconsToGrid()
+    public void SetUpTaskBarSpaces()
     {
-        foreach (var space in taskBarSpaces)
+        foreach (GameObject space in taskBarSpaces)
         {
-            //GameObject icon = Instantiate(iconPrefab, space, Quaternion.identity, gameObject.transform);
-            GameObject icon = Instantiate(iconPrefab, gameObject.transform);
-            icon.GetComponent<RectTransform>().anchoredPosition = space;
+            GameObject icon = Instantiate(space, gameObject.transform);
+            icon.name = space.name + " Icon";
         }
     }
 }

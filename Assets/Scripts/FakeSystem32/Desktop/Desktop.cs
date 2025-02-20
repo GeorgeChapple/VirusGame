@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,10 +8,13 @@ public class Desktop : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject emptySpacePrefab;
     [SerializeField] private GridLayoutGroup grid;
-    public List<GameObject> spaces = new List<GameObject>();
-
-    private void Awake()
+    public List<GameObject> desktopSpaces = new List<GameObject>();
+    public List<GameObject> desktopIcons = new List<GameObject>();
+    public void SetUpDesktopGrid()
     {
+        //logic here for if there are any objects in grid space already
+
+
         int amountToSpawn = 0;
 
         float oneSpaceX = grid.cellSize.x + grid.spacing.x; //one space filled by icon and spacing of grid
@@ -24,7 +27,7 @@ public class Desktop : MonoBehaviour
             xVal += oneSpaceX;
             numX++;
         } //here i'm seeing how many icons fit width wise
-        
+
         int numY = 0;
         float yVal = grid.spacing.x;
         while (yVal < canvas.pixelRect.height)
@@ -42,7 +45,17 @@ public class Desktop : MonoBehaviour
         {
             GameObject space = Instantiate(emptySpacePrefab, gameObject.transform);
             space.name = "EmptySpace " + i;
-            spaces.Add(space);
+            desktopSpaces.Add(space);
+        }
+    }
+    public void SetUpDesktopSavedLayout()
+    {
+        foreach (var (space, i) in desktopIcons.Select((value, i) => (value, i)))
+        {
+            if (space != null)
+            {
+                GameObject.Instantiate(space, desktopSpaces[i].transform);
+            }
         }
     }
 }
