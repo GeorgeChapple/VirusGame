@@ -18,10 +18,12 @@ public class HitEventScript : MonoBehaviour
             //fire the double hit
             doubleHitEvent.Invoke();
             doubleAvailable = false; //so someone cant spam a triple click
+            StopAllCoroutines();
         }
     }
     public void StartDoubleTimer()
     {
+        if (doubleAvailable){ return; }
         StartCoroutine(Timer());
     }
     private IEnumerator Timer()
@@ -29,7 +31,7 @@ public class HitEventScript : MonoBehaviour
         doubleAvailable = true;
         yield return new WaitForSeconds(timeToDoubleHit);
         Debug.Log("timer done");
-        doubleAvailable = false;        
+        doubleAvailable = false;
         yield return null;
     }
 }

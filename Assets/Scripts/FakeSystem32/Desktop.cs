@@ -49,7 +49,7 @@ public class Desktop : MonoBehaviour
         }
     }
     public void SetUpDesktopSavedLayout()
-    {
+    { //this will be player saved, dont forget to make a recycling bin after make file explorer
         foreach (var (space, i) in desktopIcons.Select((value, i) => (value, i)))
         {
             if (space != null)

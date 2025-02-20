@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class Taskbar : MonoBehaviour
 {
-    private FakeWindows32 windows32;
-
     public List<GameObject> taskBarSpaces = new List<GameObject>();
 
     private void Awake()
     {
         //add icons to taskbarSpaces here
+        //this will be player saved
     }
 
     public void SetUpTaskBarSpaces()
