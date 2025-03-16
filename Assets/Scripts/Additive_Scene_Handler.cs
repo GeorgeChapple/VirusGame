@@ -7,8 +7,8 @@ using UnityEditor;
 
 public class Additive_Scene_Handler : MonoBehaviour
 {
-    [SerializeField] private Canvas canvas;
-    [SerializeField] private WindowSpawner manager;
+    public Canvas canvas;
+    public WindowSpawner manager;
     [Tooltip("Make sure the scene is available in the scene manager in build settings")]
     [SerializeField] private int sceneIndex;
     [SerializeField] private Material cameraMaterial;
