@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class WindowSpawner : MonoBehaviour
 {
@@ -17,9 +12,7 @@ public class WindowSpawner : MonoBehaviour
 
     public void SpawnWindow() {
         UnityEngine.GameObject obj = Instantiate(windowPrefab, new Vector3(0, 0, 0), transform.rotation, canvas.transform);
-        obj.GetComponent<Image>().color = colours[Random.Range(0, colours.Length)];
-        if (sceneIndex >= 0 && cameraMaterial != null)
-        {
+        if (sceneIndex >= 0 && cameraMaterial != null) {
             obj.GetComponent<WindowContent>().SetManager(this);
             obj.GetComponent<WindowContent>().OnceSpawned();
         }

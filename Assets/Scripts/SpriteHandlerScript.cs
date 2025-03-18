@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /*
@@ -28,5 +27,10 @@ public class SpriteHandlerScript : MonoBehaviour {
             Debug.Log("Sprite Index out of bounds, reset to " + (spriteSheet.Length - 1));
         }
         image.sprite = spriteSheet[spriteIndex];
+    }
+
+    public void SetSpriteIndex(int newIndex) {
+        spriteIndex = newIndex;
+        RefreshSprite();
     }
 }
