@@ -6,6 +6,11 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
+
 public class SpeechManager : MonoBehaviour {
     public List<GameObject> speechPrefabs = new List<GameObject>(); // Stores the prefab speech bubbles
     public List<GameObject> speechBubbles = new List<GameObject>(); // Stores all currently spawned speechBubbles

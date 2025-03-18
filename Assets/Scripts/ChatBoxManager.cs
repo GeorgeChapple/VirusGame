@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
+
 public class ChatBoxManager : MonoBehaviour
 {
     private SpeechManager speechManager; // Stores the speech manager script attatched to the chatbox

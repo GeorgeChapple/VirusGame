@@ -2,6 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
+
 public class HitEventScript : MonoBehaviour
 {
     public UnityEvent hitEvent;

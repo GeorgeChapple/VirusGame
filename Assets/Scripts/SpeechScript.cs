@@ -5,6 +5,11 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
+
 public class SpeechScript : MonoBehaviour
 {
     public float textSpeed = 0.05f;

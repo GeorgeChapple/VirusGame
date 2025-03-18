@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
+
 public class RaycastScript : MonoBehaviour
 {
     public UnityEngine.GameObject lastHitObject;
