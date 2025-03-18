@@ -24,7 +24,8 @@ public class Desktop : MonoBehaviour
         float xVal = grid.spacing.x;
         while (xVal < canvas.pixelRect.width)
         {
-            xVal += oneSpaceX;
+            xVal += oneSpaceX; //add space to val then check if its too far
+            if (xVal >= canvas.pixelRect.width) { break; }
             numX++;
         } //here i'm seeing how many icons fit width wise
 
@@ -33,13 +34,11 @@ public class Desktop : MonoBehaviour
         while (yVal < canvas.pixelRect.height)
         {
             yVal += oneSpaceY;
+            if (yVal >= canvas.pixelRect.height) { break; }
             numY++;
         } //same but height wise
 
-        numX -= 1; //need this for now but i should if i tweak the numbers a little (i gotta go rn)
-        numY -= 1;
-
-        amountToSpawn = numX * numY; //spawn this many \/ for loop for it
+        amountToSpawn = numX * numY; //spawn this many use for loop for it
 
         for (int i = 0; i < amountToSpawn; i++)
         {
