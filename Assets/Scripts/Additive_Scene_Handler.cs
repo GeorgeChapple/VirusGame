@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class Additive_Scene_Handler : MonoBehaviour
 {
     public Canvas canvas;

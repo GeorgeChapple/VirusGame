@@ -32,7 +32,8 @@ public class SpeechManager : MonoBehaviour {
     // Finds the file path of the given .txt file
     private void GetNewTextFile(TextAsset inputFile) {
         file = inputFile;
-        filePath = AssetDatabase.GetAssetPath(file);
+        //filePath = AssetDatabase.GetAssetPath(file); this only works in editor
+        //filePath = Application.streamingAssetsPath + "/Text/" + file.name + ".txt"; //this dont work either
     }
 
     // Called when a command line is read that needs to return a number of some kind, returns the string version of just the number in the command

@@ -5,7 +5,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class WindowContent : MonoBehaviour
 {
     [SerializeField] private WindowSpawner manager;

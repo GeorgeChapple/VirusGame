@@ -2,6 +2,11 @@ using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
+
 public class TransparentScreen : MonoBehaviour
 {
     [DllImport("user32.dll")]

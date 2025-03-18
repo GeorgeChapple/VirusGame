@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class FakeWindows32 : MonoBehaviour
 {
     [Header("Serialisations")]

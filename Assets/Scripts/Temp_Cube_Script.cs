@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class Temp_Cube_Script : MonoBehaviour
 {
     [SerializeField] private float numToMoveBy;

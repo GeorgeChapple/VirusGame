@@ -176,7 +176,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 825, y: 450, z: 1}
+  m_Size: {x: 1320, y: 750, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4801027907596561984
 GameObject:
@@ -214,8 +214,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -10}
-  m_SizeDelta: {x: 10, y: 10}
+  m_AnchoredPosition: {x: -20, y: -20}
+  m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4818444928323112343
 CanvasRenderer:
@@ -274,7 +274,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 10, z: 1}
+  m_Size: {x: 35, y: 35, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4353493921571126156
 MonoBehaviour:

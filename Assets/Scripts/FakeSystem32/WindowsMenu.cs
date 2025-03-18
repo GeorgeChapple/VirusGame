@@ -1,5 +1,8 @@
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class WindowsMenu : MonoBehaviour
 {
     //this is going to handle the windows menu/start menu

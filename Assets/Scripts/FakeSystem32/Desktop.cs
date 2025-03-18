@@ -2,7 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class Desktop : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;

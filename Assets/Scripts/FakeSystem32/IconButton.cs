@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class IconButton : MonoBehaviour
 {
     public Canvas canvas;

@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class Taskbar : MonoBehaviour
 {
     public List<GameObject> taskBarSpaces = new List<GameObject>();

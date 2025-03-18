@@ -860,9 +860,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskBarSpaces:
-  - {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
-  - {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
-  - {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
+  - {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
+  - {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
+  - {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
 --- !u!1 &1641267661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,14 +1150,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 5737e32955332034aac034ee42a71dd0, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 861856c14d9da8745b07de83d52b7ec3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

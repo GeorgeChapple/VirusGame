@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
 public class WindowScript : MonoBehaviour
 {
     public Vector2 mouseDistance;
