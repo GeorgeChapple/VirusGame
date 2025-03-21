@@ -38,4 +38,9 @@ public class WindowsMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }

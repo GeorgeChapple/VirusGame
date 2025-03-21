@@ -28,7 +28,7 @@ public class HitEventScript : MonoBehaviour
     }
     public void StartDoubleTimer()
     {
-        if (doubleAvailable){ return; }
+        if (doubleAvailable) { return; }
         StartCoroutine(Timer());
     }
     private IEnumerator Timer()

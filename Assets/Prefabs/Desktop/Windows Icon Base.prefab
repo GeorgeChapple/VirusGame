@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1841613337661778305}
   - component: {fileID: 4866702108266484479}
   m_Layer: 5
-  m_Name: Windows Icon
+  m_Name: Windows Icon Base
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

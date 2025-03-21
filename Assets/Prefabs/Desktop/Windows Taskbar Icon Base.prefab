@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 3439425488055032545}
   - component: {fileID: 5164468492803266100}
   - component: {fileID: 4495987859215652933}
-  - component: {fileID: 79250788366257752}
   - component: {fileID: 1841613337661778305}
   - component: {fileID: 4866702108266484479}
   m_Layer: 5
-  m_Name: Windows Taskbar Icon
+  m_Name: Windows Taskbar Icon Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,19 +137,6 @@ MonoBehaviour:
       m_Calls: []
   timeToDoubleHit: 0.5
   doubleAvailable: 0
---- !u!114 &79250788366257752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595356956824147739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d8c436b84f2f9843982836f990a6004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseDistance: {x: 0, y: 0}
 --- !u!114 &1841613337661778305
 MonoBehaviour:
   m_ObjectHideFlags: 0

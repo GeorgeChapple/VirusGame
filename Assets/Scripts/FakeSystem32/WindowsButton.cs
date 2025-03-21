@@ -4,22 +4,32 @@ using UnityEngine.UI;
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
 */
-public class IconButton : MonoBehaviour
+public class WindowsButton : MonoBehaviour
 {
     public Canvas canvas;
+    [Tooltip("If this WindowsButton is on a prefab it needs to be set in code if not then set it here and it won't size it wrong")]
     public GridLayoutGroup layoutGroup;
     public Desktop desktop;
     public Additive_Scene_Handler additiveSceneHandler;
+    [Tooltip("We'll use this to spawn the application we wanna open, everything else will be done by the application we open (like putting icons in the taskbar)")]
+    public GameObject applicationToOpen;
+
+    //public bool isPrefab = true;
 
     private void Awake()
     {
-        if (canvas == null) {
+        if (canvas == null)
+        {
             canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();
-            layoutGroup = GameObject.Find("Desktop").GetComponent<GridLayoutGroup>();
+            if (layoutGroup == null)
+            {
+                layoutGroup = GameObject.Find("Desktop").GetComponent<GridLayoutGroup>();
+            }
             desktop = GameObject.Find("Desktop").GetComponent<Desktop>();
             GetComponent<RectTransform>().sizeDelta = layoutGroup.cellSize;
             GetComponent<BoxCollider>().size = layoutGroup.cellSize;
-            if (TryGetComponent<Additive_Scene_Handler>(out Additive_Scene_Handler sceneHandler)) {
+            if (TryGetComponent<Additive_Scene_Handler>(out Additive_Scene_Handler sceneHandler))
+            {
                 additiveSceneHandler = sceneHandler;
                 additiveSceneHandler.canvas = canvas;
                 additiveSceneHandler.manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();
@@ -61,8 +71,13 @@ public class IconButton : MonoBehaviour
     {
         print("Double Click!!");
     }
+    public void OpenApplication()
+    {
+        Instantiate(applicationToOpen, canvas.gameObject.transform);
+    }
 
-    public void ManagerSpawnWindow() {
+    public void ManagerSpawnWindow()
+    {
         additiveSceneHandler.manager.SpawnWindow();
     }
 }
