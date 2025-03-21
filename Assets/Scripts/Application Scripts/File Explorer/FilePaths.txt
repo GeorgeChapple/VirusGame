@@ -1,7 +1,7 @@
-c:昱oot
- User1政older
-  Desktop政older
-   Recycling Bin括pplication
-  Documents政older
-   TestFolder政older
-  Downloads政older
+1-c:-Root
+2- User1-Folder
+3-  Desktop-Folder
+4-   Recycling Bin-Application
+3-  Documents-Folder
+4-   TestFolder-Folder
+3-  Downloads-Folder

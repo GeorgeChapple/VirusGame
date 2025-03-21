@@ -10,7 +10,16 @@ public class FileType
     public bool root;
     public Sprite icon;
     public string name;
-    public string fileType;
+    public string dataType;
+    public int filePointer;
     public List<FileType> children;
     public FileType parent;
+
+    private void SetUp()
+    {
+        if (name == "Root")
+        {
+            root = true;
+        }
+    }
 }
