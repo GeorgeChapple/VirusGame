@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 /*
@@ -23,7 +24,14 @@ public class FileExplorer : MonoBehaviour
     [SerializeField] private TextAsset file;
     private string filePath;
     private string errorMessage = "***Syntax Error***";
+
     public List<FileType> files = new List<FileType>();
+
+    public FileType rootFile;
+    public FileType currentParent;
+    private FileType currentFile;
+
+    public GameObject prefab;
 
     void Awake()
     {
@@ -55,19 +63,83 @@ public class FileExplorer : MonoBehaviour
             {
                 nextLine = "";
 
-                FileType fileType = new FileType(); //create new filetype object
+                //test
+                GameObject obj = Instantiate(prefab, transform);
+                obj.name = "p" + UnityEngine.Random.Range(0, 100);
+                //FileType fileType = obj.AddComponent<FileType>();
+                //FileType fileType = new FileType(); //create new filetype object
+                currentFile = null;
+                currentFile = obj.AddComponent<FileType>();
 
-                string[] splitLine = line.Split(new char[] { '-' }); //split lines into there respective types
+                if (currentParent == null)
+                {
+                    currentParent = currentFile;
+                }
+
+                string[] splitLine = line.Split(new char[] { '-' }); //split lines into their respective types
+
+                //this is where we would check if we add this to become a child of another folder
+                //maybe think about allocating some memory to making new variables in code(make new lists n stuff idk)
+                //i have an idea for this but we'd have to see
+
+                //check what the file pointer is then try to add it to the children of the previous one
+                Int32.TryParse(splitLine[0].Trim(), out int fPointer);
+
+                if (fPointer == 0)
+                {
+                    //its the root
+                    rootFile = currentFile;
+                    rootFile.SetUp();
+                    currentParent = rootFile;
+                }
+                else if (fPointer == currentParent.filePointer + 1)
+                {
+                    //its the parents child
+                    //Debug.Log("blah");
+                    //currentParent.children.Append<FileType>(currentFile);
+
+                    //add children
+                    currentParent.AddToChildren(currentFile);
+
+                }
+                else if (fPointer < currentParent.filePointer)
+                {
+                    //next folder
+                    //this could go from p5
+                    //to p3
+                    //so this needs to be modular
+
+                    //use current file pointer to find the last folder of that pointer
+                    //find current line index
+                    //roll back until found current file pointer
+                    //change current parent
+                    //add to children of current parent
+
+                    int temp = currentParent.filePointer;
+                    while (files[temp].filePointer != fPointer)
+                    {
+                        temp--;
+                    }
+                    currentParent = files[temp].parent;
+                    Debug.Log("aa");
+                }
+                else
+                {
+                    Debug.LogError("InvalidFilePointer: Next line's file pointer int needs to be + or - 1 of the previous's file pointer");
+                    yield return null;
+                }
 
                 string filePointer = splitLine[0].Trim(); //set new strings for these types
-                string name = splitLine[1].Trim(new char[] { ' ', '1', '2' });
-                string dataType = splitLine[2].Trim(); 
+                string name = splitLine[1].Trim(new char[] { ' ' });
+                string dataType = splitLine[2].Trim();
 
-                fileType.filePointer = Int32.Parse(filePointer); //put this data into new fileType object
-                fileType.name = name;
-                fileType.dataType = dataType;
+                currentFile.filePointer = fPointer; //put this data into new fileType object
+                currentFile.fileName = name;
+                currentFile.dataType = dataType;
+                currentFile.parent = currentParent;
+                currentParent = currentFile;
 
-                files.Add(fileType);//add to list of root
+                files.Add(currentFile);//add to list of root
 
                 nextLine += line;
                 yield return null;
@@ -76,4 +148,3 @@ public class FileExplorer : MonoBehaviour
         yield return null;
     }
 }
-

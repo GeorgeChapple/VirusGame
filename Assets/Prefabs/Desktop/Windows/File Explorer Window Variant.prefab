@@ -600,6 +600,8 @@ MonoBehaviour:
   sideBar: {fileID: 4811393354095482143}
   pathBar: {fileID: 8415371194306074029}
   file: {fileID: 4900000, guid: 7fbdafb2034dae44589335cec4472b16, type: 3}
+  files: []
+  prefab: {fileID: 3622660887410848923, guid: 0e50991742fb3374c921a19d69ed91e6, type: 3}
 --- !u!114 &7548594747877334150 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4967184165919857109, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
