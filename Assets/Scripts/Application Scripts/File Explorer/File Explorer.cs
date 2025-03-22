@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
@@ -20,10 +21,14 @@ public class FileExplorer : MonoBehaviour
 
     [SerializeField] private GameObject sideBar;
     [SerializeField] private GameObject pathBar;
+    [SerializeField] private GameObject contentArea;
+    [SerializeField] private GameObject buttonPrefab;
+
+    [SerializeField] private FileType currentFolder;
+    [SerializeField] private GameObject currentFolderObject;
 
     [SerializeField] private TextAsset file;
     private string filePath;
-    private string errorMessage = "***Syntax Error***";
 
     public List<FileType> files = new List<FileType>();
 
@@ -31,7 +36,6 @@ public class FileExplorer : MonoBehaviour
     public FileType currentParent;
     private FileType currentFile;
 
-    public GameObject prefab;
 
     void Awake()
     {
@@ -40,36 +44,20 @@ public class FileExplorer : MonoBehaviour
     }
     public void StartRead()
     {
-        StartCoroutine(ReadPathsAndSetUp());
+        StartCoroutine(ReadPaths());
         //ReadPathsAndSetUp();
     }
-    private IEnumerator ReadPathsAndSetUp()
+    private IEnumerator ReadPaths()
     {
         using (StreamReader sr = new StreamReader(filePath))
         {
-            //for loop here
-            //this needs to be instant
-
-            //for loop each line
-            //read from left to right
-            //check for number at start(this will tell it if it has a parent)
-            //anything after would be name
-            //after look for ¬
-            //after this is data type
-
             string line;
             string nextLine = "";
             while ((line = sr.ReadLine()) != null)
             {
                 nextLine = "";
-
-                //test
-                GameObject obj = Instantiate(prefab, transform);
-                obj.name = "p" + UnityEngine.Random.Range(0, 100);
-                //FileType fileType = obj.AddComponent<FileType>();
-                //FileType fileType = new FileType(); //create new filetype object
                 currentFile = null;
-                currentFile = obj.AddComponent<FileType>();
+                currentFile = new FileType();
 
                 if (currentParent == null)
                 {
@@ -78,26 +66,25 @@ public class FileExplorer : MonoBehaviour
 
                 string[] splitLine = line.Split(new char[] { '-' }); //split lines into their respective types
 
-                //this is where we would check if we add this to become a child of another folder
-                //maybe think about allocating some memory to making new variables in code(make new lists n stuff idk)
-                //i have an idea for this but we'd have to see
+                Int32.TryParse(splitLine[0].Trim(), out int fPointer); //get current file pointer
+                string name = splitLine[1].Trim(new char[] { ' ' });//set new strings for these types
+                string dataType = splitLine[2].Trim();
 
-                //check what the file pointer is then try to add it to the children of the previous one
-                Int32.TryParse(splitLine[0].Trim(), out int fPointer);
+                currentFile.filePointer = fPointer; //put this data into new fileType object
+                currentFile.fileName = name;
+                currentFile.dataType = dataType;
+                currentFile.fileExplorer = this;
 
                 if (fPointer == 0)
                 {
                     //its the root
                     rootFile = currentFile;
-                    rootFile.SetUp();
+                    rootFile.root = true;
                     currentParent = rootFile;
                 }
                 else if (fPointer == currentParent.filePointer + 1)
                 {
                     //its the parents child
-                    //Debug.Log("blah");
-                    //currentParent.children.Append<FileType>(currentFile);
-
                     //add children
                     currentParent.AddToChildren(currentFile);
 
@@ -105,15 +92,6 @@ public class FileExplorer : MonoBehaviour
                 else if (fPointer < currentParent.filePointer)
                 {
                     //next folder
-                    //this could go from p5
-                    //to p3
-                    //so this needs to be modular
-
-                    //use current file pointer to find the last folder of that pointer
-                    //find current line index
-                    //roll back until found current file pointer
-                    //change current parent
-                    //add to children of current parent
 
                     int temp = currentParent.filePointer;
                     while (files[temp].filePointer != fPointer)
@@ -129,22 +107,70 @@ public class FileExplorer : MonoBehaviour
                     yield return null;
                 }
 
-                string filePointer = splitLine[0].Trim(); //set new strings for these types
-                string name = splitLine[1].Trim(new char[] { ' ' });
-                string dataType = splitLine[2].Trim();
 
-                currentFile.filePointer = fPointer; //put this data into new fileType object
-                currentFile.fileName = name;
-                currentFile.dataType = dataType;
                 currentFile.parent = currentParent;
                 currentParent = currentFile;
 
                 files.Add(currentFile);//add to list of root
 
-                nextLine += line;
+                nextLine += line; //go to next line
                 yield return null;
             }
         }
+        currentFolder = rootFile.children[0];
+        SetUpUI();
         yield return null;
+    }
+
+    //start doing ui stuff
+    private void SetUpUI()
+    {
+        //clear main content area
+
+        for (int i = 0; i < contentArea.transform.childCount; i++)
+        {
+            Destroy(contentArea.transform.GetChild(i).gameObject);
+        }
+        contentArea.GetComponent<RectTransform>().sizeDelta = new Vector2(contentArea.GetComponent<RectTransform>().sizeDelta.x, 80);
+
+
+
+        //set up functionality and folders in ui 
+        foreach (var file in currentFolder.children)
+        {
+            GameObject button = Instantiate(buttonPrefab, contentArea.transform);
+            currentFolderObject = button;
+            button.GetComponent<WindowsButton>().layoutGroup = contentArea.GetComponent<GridLayoutGroup>();             //add space for new folders
+            contentArea.GetComponent<RectTransform>().sizeDelta = new Vector2(contentArea.GetComponent<RectTransform>().sizeDelta.x , contentArea.GetComponent<RectTransform>().sizeDelta.y + 80);
+            button.GetComponentInChildren<TextMeshProUGUI>().text = file.fileName;
+            //button.GetComponentInChildren<Image>().sprite = file.icon;
+
+            FileTypeObject fto = button.AddComponent<FileTypeObject>();
+            fto.root = file.root;
+            fto.icon = file.icon;
+            fto.fileName = file.fileName;
+            fto.dataType = file.dataType;
+            fto.filePointer = file.filePointer;
+            fto.children = file.children;
+            fto.parent = file.parent;
+            fto.fileExplorer = this;
+
+
+            if (file.dataType == "Folder")
+            {
+                button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(button.GetComponent<FileTypeObject>().ReceiveFolder);
+                button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(SetUpUI);
+            }
+            if (file.dataType == "Application")
+            {
+                //button.GetComponent<WindowsButton>().applicationToOpen =
+                //button.GetComponent<HitEventScript>().doubleHitEvent.AddListener();
+            }
+
+        }
+    }
+    public void Retreive(FileTypeObject current)
+    {
+        currentFolder = currentFolder.Convert(current);
     }
 }
