@@ -35,7 +35,7 @@ public class FileExplorer : MonoBehaviour
     public FileType rootFile;
     public FileType currentParent;
     private FileType currentFile;
-
+    public string currentPath;
 
     void Awake()
     {
@@ -92,18 +92,22 @@ public class FileExplorer : MonoBehaviour
                 else if (fPointer < currentParent.filePointer)
                 {
                     //next folder
-
                     int temp = currentParent.filePointer;
                     while (files[temp].filePointer != fPointer)
                     {
                         temp--;
                     }
                     currentParent = files[temp].parent;
-                    Debug.Log("aa");
+                    currentParent.AddToChildren(currentFile);
+                }
+                else if (fPointer == currentParent.filePointer)
+                {
+                    currentParent = currentParent.parent;
+                    currentParent.AddToChildren(currentFile);
                 }
                 else
                 {
-                    Debug.LogError("InvalidFilePointer: Next line's file pointer int needs to be + or - 1 of the previous's file pointer");
+                    Debug.LogError("InvalidFilePointer: Next line's file pointer int needs to be + or less than the previous's file pointer");
                     yield return null;
                 }
 
@@ -133,14 +137,13 @@ public class FileExplorer : MonoBehaviour
         }
         contentArea.GetComponent<RectTransform>().sizeDelta = new Vector2(contentArea.GetComponent<RectTransform>().sizeDelta.x, 80);
 
-
-
         //set up functionality and folders in ui 
         foreach (var file in currentFolder.children)
         {
             GameObject button = Instantiate(buttonPrefab, contentArea.transform);
             currentFolderObject = button;
-            button.GetComponent<WindowsButton>().layoutGroup = contentArea.GetComponent<GridLayoutGroup>();             //add space for new folders
+            button.GetComponent<WindowsButton>().layoutGroup = contentArea.GetComponent<GridLayoutGroup>();
+            button.GetComponent<BoxCollider>().size = button.GetComponent<WindowsButton>().layoutGroup.cellSize;             //add space for new folders
             contentArea.GetComponent<RectTransform>().sizeDelta = new Vector2(contentArea.GetComponent<RectTransform>().sizeDelta.x , contentArea.GetComponent<RectTransform>().sizeDelta.y + 80);
             button.GetComponentInChildren<TextMeshProUGUI>().text = file.fileName;
             //button.GetComponentInChildren<Image>().sprite = file.icon;
@@ -163,11 +166,46 @@ public class FileExplorer : MonoBehaviour
             }
             if (file.dataType == "Application")
             {
+                button.GetComponentInChildren<TextMeshProUGUI>().text = file.fileName + ".exe";
                 //button.GetComponent<WindowsButton>().applicationToOpen =
                 //button.GetComponent<HitEventScript>().doubleHitEvent.AddListener();
             }
 
         }
+
+        currentPath = "";
+        FileType fileName = currentFolder;
+        while (!fileName.root)
+        {
+            currentPath += "/" + Reverse(fileName.fileName);
+            fileName = fileName.parent;
+        }
+        currentPath += Reverse(fileName.fileName);
+        currentPath = Reverse(currentPath);
+        pathBar.GetComponentInChildren<TextMeshProUGUI>().text = currentPath;
+    }
+    public static string Reverse(string s)
+    {
+        char[] charArray = s.ToCharArray();
+        Array.Reverse(charArray);
+        return new string(charArray);
+    }
+    public void GoBack()
+    {
+        currentFolder = currentFolder.parent;
+        SetUpUI();
+    }
+    public void NewFolder()
+    {
+
+    }
+    public void DeleteFolder()
+    {
+
+    }
+    private void RewritePathFile()
+    {
+
     }
     public void Retreive(FileTypeObject current)
     {
