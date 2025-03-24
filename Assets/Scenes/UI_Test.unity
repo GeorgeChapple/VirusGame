@@ -2144,6 +2144,7 @@ GameObject:
   - component: {fileID: 1991018470}
   - component: {fileID: 1991018469}
   - component: {fileID: 1991018472}
+  - component: {fileID: 1991018473}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2237,8 +2238,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8106654211e87664d97204dbe02df369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastHitObject: {fileID: 0}
   canvas: {fileID: 1641267664}
+  lastHitObject: {fileID: 0}
+--- !u!114 &1991018473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991018468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c967c365a4072a943a365e9440c72a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 9923a415faf0e0a4ebca45e96f724eb1, type: 3}
+  - {fileID: 8300000, guid: 828f2abff927e1d409ab8ce6c90b2101, type: 3}
+  - {fileID: 8300000, guid: ed17436385ec75e45958e44307f152c6, type: 3}
+  - {fileID: 8300000, guid: ba726097c76b82341bebf8d63e19e420, type: 3}
+  - {fileID: 8300000, guid: e1329a2cf8550114b90d0eddf5f6d6f2, type: 3}
+  - {fileID: 8300000, guid: 832df4660c59a664b9294ca81b1c5093, type: 3}
+  - {fileID: 8300000, guid: 86d9743e41a5f6341b4b98869cdc46e6, type: 3}
+  - {fileID: 8300000, guid: 8ceb3c5b9d13567478466f4e47f93113, type: 3}
+  - {fileID: 8300000, guid: ded6a03cf7e3c2e4eacbcde8cc60586d, type: 3}
+  - {fileID: 8300000, guid: 23466df7d43ef2944bd18e1f6ba63a7f, type: 3}
 --- !u!1 &2004732453
 GameObject:
   m_ObjectHideFlags: 0

@@ -305,6 +305,7 @@ MonoBehaviour:
   layoutGroup: {fileID: 0}
   desktop: {fileID: 0}
   additiveSceneHandler: {fileID: 0}
+  applicationToOpen: {fileID: 0}
 --- !u!65 &4866702108266484479
 BoxCollider:
   m_ObjectHideFlags: 0

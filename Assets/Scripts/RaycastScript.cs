@@ -8,14 +8,16 @@ using UnityEngine.Events;
     Edited by         : George Chapple
 */
 
-public class RaycastScript : MonoBehaviour
-{
+public class RaycastScript : MonoBehaviour {
+    [SerializeField] private Canvas canvas;
     public UnityEngine.GameObject lastHitObject;
     public RaycastHit lastHit;
+    private SoundScript soundScript;
     private bool leftHolding;
-    [SerializeField] private Canvas canvas;
+    private int soundIndex;
 
     private void Awake() {
+        soundScript = GetComponent<SoundScript>();
     }
 
     private void Update() {
@@ -49,6 +51,11 @@ public class RaycastScript : MonoBehaviour
     }
 
     private void LeftClickDown() {
+        if (soundIndex > soundScript.sounds.Length - 1) {
+            soundIndex = 0;
+        }
+        soundScript.PlaySound(soundIndex, 1, 1);
+        soundIndex++;
         if (lastHitObject != null && lastHitObject.GetComponent<HitEventScript>() != null && !leftHolding) {
             lastHitObject.GetComponent<HitEventScript>().hitEvent.Invoke();
         }
