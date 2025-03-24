@@ -2104,7 +2104,7 @@ MonoBehaviour:
   pathBar: {fileID: 8415371194306074029}
   contentArea: {fileID: 2857029048806375970}
   buttonPrefab: {fileID: 5950363918374949844, guid: 9c0c65ef030680d439cfacd84a0b6541, type: 3}
-  currentFolder: {fileID: 0}
+  currentFolder: {fileID: 11400000, guid: e7bf2f9d1da9889408b2023c514ca7ce, type: 2}
 --- !u!114 &7548594747877334150 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4967184165919857109, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
