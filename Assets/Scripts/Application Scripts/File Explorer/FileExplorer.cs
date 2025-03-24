@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ public class FileExplorer : MonoBehaviour
     [SerializeField] private GameObject buttonPrefab;
 
     [SerializeField] private FileData currentFolder;
+    public string currentPath;
 
     private void Awake()
     {
@@ -76,6 +78,22 @@ public class FileExplorer : MonoBehaviour
             }
 
         }
+        currentPath = "";
+        FileData fileName = currentFolder;
+        while (!fileName.root)
+        {
+            currentPath += "/" + Reverse(fileName.name);
+            fileName = fileName.parent;
+        }
+        currentPath += Reverse(fileName.name);
+        currentPath = Reverse(currentPath);
+        pathBar.GetComponentInChildren<TextMeshProUGUI>().text = currentPath;
+    }
+    public static string Reverse(string s)
+    {
+        char[] charArray = s.ToCharArray();
+        Array.Reverse(charArray);
+        return new string(charArray);
     }
     public void GoBack()
     {
