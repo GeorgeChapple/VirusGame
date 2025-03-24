@@ -19,10 +19,10 @@ public class WindowsButton : MonoBehaviour
         if (canvas == null)
         {
             canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();            
-            desktop = GameObject.Find("Desktop").GetComponent<Desktop>();
+            desktop = GameObject.Find("DesktopUI").GetComponent<Desktop>();
             if (layoutGroup == null)
             {
-                layoutGroup = GameObject.Find("Desktop").GetComponent<GridLayoutGroup>();
+                layoutGroup = GameObject.Find("DesktopUI").GetComponent<GridLayoutGroup>();
             }
             GetComponent<RectTransform>().sizeDelta = layoutGroup.cellSize;
             GetComponent<BoxCollider>().size = layoutGroup.cellSize;

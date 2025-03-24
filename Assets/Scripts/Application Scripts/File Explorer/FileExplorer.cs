@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.WSA;
 
 public class FileExplorer : MonoBehaviour
 {
@@ -60,6 +59,7 @@ public class FileExplorer : MonoBehaviour
             button.GetComponent<BoxCollider>().size = button.GetComponent<WindowsButton>().layoutGroup.cellSize;             //add space for new folders
             contentArea.GetComponent<RectTransform>().sizeDelta = new Vector2(contentArea.GetComponent<RectTransform>().sizeDelta.x, contentArea.GetComponent<RectTransform>().sizeDelta.y + 80);
             button.GetComponentInChildren<TextMeshProUGUI>().text = file.fileName;
+            button.GetComponentInChildren<Image>().sprite = file.icon;
 
             
 
@@ -71,7 +71,7 @@ public class FileExplorer : MonoBehaviour
             if (file.dataType == "Application")
             {
                 button.GetComponentInChildren<TextMeshProUGUI>().text = file.fileName + ".exe";
-                //button.GetComponent<WindowsButton>().applicationToOpen =
+                button.GetComponent<WindowsButton>().applicationToOpen = file.application;
                 //button.GetComponent<HitEventScript>().doubleHitEvent.AddListener();
             }
 
