@@ -16,7 +16,7 @@ public class FileType
     public int filePointer = 0;
     public List<FileType> children = new List<FileType>();
     public FileType parent;
-    public FileExplorer fileExplorer;
+    public FileExplorerOld fileExplorer;
 
     public void AddToChildren(FileType file)
     {
@@ -48,7 +48,7 @@ public class FileTypeObject : MonoBehaviour
     public int filePointer = 0;
     public List<FileType> children = new List<FileType>();
     public FileType parent;
-    public FileExplorer fileExplorer;
+    public FileExplorerOld fileExplorer;
     public void ReceiveFolder()
     {
         fileExplorer.Retreive(this);

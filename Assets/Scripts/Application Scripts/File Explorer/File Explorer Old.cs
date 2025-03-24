@@ -10,7 +10,7 @@ using UnityEngine.UI;
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
 */
-public class FileExplorer : MonoBehaviour
+public class FileExplorerOld : MonoBehaviour
 {
     //so this will quite literally be a file explorer
     //now I would like to make it as proper as possible like having the desktop folder show what is in there
@@ -129,7 +129,7 @@ public class FileExplorer : MonoBehaviour
     //start doing ui stuff
     private void SetUpUI()
     {
-        //clear main content area
+        //clear content area
 
         for (int i = 0; i < contentArea.transform.childCount; i++)
         {

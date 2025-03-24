@@ -121,7 +121,7 @@ MonoBehaviour:
   doubleHitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 679451273491958472}
+      - m_Target: {fileID: 1665145321454527724}
         m_TargetAssemblyTypeName: FileExplorer, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  layoutGroup: {fileID: 9035686077501728944}
+  layoutGroup: {fileID: 0}
   desktop: {fileID: 0}
   additiveSceneHandler: {fileID: 0}
   applicationToOpen: {fileID: 0}
@@ -408,7 +408,7 @@ MonoBehaviour:
   doubleHitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 679451273491958472}
+      - m_Target: {fileID: 1665145321454527724}
         m_TargetAssemblyTypeName: FileExplorer, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  layoutGroup: {fileID: 9035686077501728944}
+  layoutGroup: {fileID: 0}
   desktop: {fileID: 0}
   additiveSceneHandler: {fileID: 0}
   applicationToOpen: {fileID: 0}
@@ -1025,7 +1025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000215627}
+  m_AnchoredPosition: {x: 0, y: 0.00009737918}
   m_SizeDelta: {x: 0, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1980394221784942034
@@ -2076,7 +2076,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 679451273491958472}
+      addedObject: {fileID: 1665145321454527724}
   m_SourcePrefab: {fileID: 100100000, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
 --- !u!224 &1593820773060664182 stripped
 RectTransform:
@@ -2088,7 +2088,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
   m_PrefabInstance: {fileID: 3183769249764246867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &679451273491958472
+--- !u!114 &1665145321454527724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2097,14 +2097,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1967212188711695967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ee2724dced4814da5500c6f5914878, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cf84fd0ea3492f4196a7d72cd1af564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sideBar: {fileID: 4811393354095482143}
   pathBar: {fileID: 8415371194306074029}
   contentArea: {fileID: 2857029048806375970}
   buttonPrefab: {fileID: 5950363918374949844, guid: 9c0c65ef030680d439cfacd84a0b6541, type: 3}
-  currentFolder: {fileID: 0}
+  currentFolder:
+    root: 0
+    icon: {fileID: 0}
+    fileName: 
+    dataType: 
+    filePointer: 0
+    children: []
+    fileExplorer: {fileID: 0}
+  currentFolderObject: {fileID: 0}
+  file: {fileID: 4900000, guid: 7fbdafb2034dae44589335cec4472b16, type: 3}
+  files: []
+  rootFile:
+    root: 0
+    icon: {fileID: 0}
+    fileName: 
+    dataType: 
+    filePointer: 0
+    children: []
+    fileExplorer: {fileID: 0}
+  currentParent:
+    root: 0
+    icon: {fileID: 0}
+    fileName: 
+    dataType: 
+    filePointer: 0
+    children: []
+    fileExplorer: {fileID: 0}
+  currentPath: 
 --- !u!114 &7548594747877334150 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4967184165919857109, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}

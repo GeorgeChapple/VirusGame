@@ -14,18 +14,16 @@ public class WindowsButton : MonoBehaviour
     [Tooltip("We'll use this to spawn the application we wanna open, everything else will be done by the application we open (like putting icons in the taskbar)")]
     public GameObject applicationToOpen;
 
-    //public bool isPrefab = true;
-
     private void Awake()
     {
         if (canvas == null)
         {
-            canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();
+            canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();            
+            desktop = GameObject.Find("Desktop").GetComponent<Desktop>();
             if (layoutGroup == null)
             {
                 layoutGroup = GameObject.Find("Desktop").GetComponent<GridLayoutGroup>();
             }
-            desktop = GameObject.Find("Desktop").GetComponent<Desktop>();
             GetComponent<RectTransform>().sizeDelta = layoutGroup.cellSize;
             GetComponent<BoxCollider>().size = layoutGroup.cellSize;
             if (TryGetComponent<Additive_Scene_Handler>(out Additive_Scene_Handler sceneHandler))
@@ -40,7 +38,6 @@ public class WindowsButton : MonoBehaviour
     public void DropOntoGrid()
     {
         //find which empty space the icon is above then make it the child of it
-        //Dictionary<GameObject, float> distances = new Dictionary<GameObject, float>();
         GameObject smallestDistanceObj = null;
         float smallestDistance = 10000000;
         foreach (GameObject space in desktop.desktopSpaces)
@@ -57,7 +54,6 @@ public class WindowsButton : MonoBehaviour
                 }
             }
         }
-        //Debug.Log("smallest distance was " +  smallestDistance);
 
         gameObject.transform.SetParent(smallestDistanceObj.transform);
         gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
