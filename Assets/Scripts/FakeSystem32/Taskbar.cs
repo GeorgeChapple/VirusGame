@@ -9,6 +9,7 @@ using UnityEngine;
 public class Taskbar : MonoBehaviour
 {
     public List<GameObject> taskBarSpaces = new List<GameObject>();
+    public GameObject taskBarIconPrefab;
 
     [Tooltip("This var needs to have the taskbar fileData file in it")]
     [SerializeField] private FileData taskBarFileDirectory;
@@ -18,7 +19,7 @@ public class Taskbar : MonoBehaviour
         taskBarSpaces.Clear();
         foreach (FileData file in taskBarFileDirectory.children)
         {
-            GameObject icon = Instantiate(file.self, gameObject.transform);
+            GameObject icon = Instantiate(taskBarIconPrefab, gameObject.transform);
             icon.name = file.name + " Icon";
         }
     }

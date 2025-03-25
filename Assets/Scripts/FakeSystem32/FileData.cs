@@ -23,11 +23,9 @@ public class FileData : ScriptableObject
     public FileData parent;
     public List<FileData> linkedFiles = new List<FileData>();
     public FileExplorer fileExplorer;
-    public GameObject selfBackUp;
-    public GameObject self;
 
     [Header("Application")]
-    [Tooltip("The Application must be either the Windows base Icon or Windows Taskbar base Icon")]
+    [Tooltip("The Application must be either the window prefab or an application prefab like file explorer")]
     public GameObject application;
     public UnityEvent OnSpawnAsDeskTopIcon;
     public UnityEvent OnSpawnAsTaskBarIcon;
@@ -37,7 +35,6 @@ public class FileData : ScriptableObject
     [Header("Additive Scene Handler")]
     public int sceneIndex;
     public Material cameraMaterial;
-
 
     public static FileDataObject Convert(FileData fd)
     {

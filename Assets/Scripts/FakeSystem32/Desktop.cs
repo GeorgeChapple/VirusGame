@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
@@ -10,6 +13,7 @@ public class Desktop : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject emptySpacePrefab;
+    [SerializeField] private GameObject windowsIconPrefab;
     [SerializeField] private GridLayoutGroup grid;
     public List<GameObject> desktopSpaces = new List<GameObject>();
     public List<GameObject> desktopIcons = new List<GameObject>();
@@ -55,55 +59,53 @@ public class Desktop : MonoBehaviour
         }
     }
     public void SetUpDesktopSavedLayout()
-    { //this will be player saved, dont forget to make a recycling bin after make file explorer
-        //desktopIcons.Clear();
-        //foreach (FileData file in deskTopFileDirectory.children)
-        //{
-        //    desktopIcons.Add(file.self);
-        //}
-        //foreach (var (space, i) in desktopIcons.Select((value, i) => (value, i)))
-        //{
-        //    if (space != null)
-        //    {
-        //        GameObject gO = GameObject.Instantiate(space, desktopSpaces[i].transform);
-        //        //gO.name = file.name;
-        //        //Debug.Log("1");
-        //        //file.self = gO;
-        //        //Debug.Log("2");
-        //        //gO.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.self.GetComponent<SpriteHandlerScript>());
-        //        //Debug.Log("3");
-        //    }
-        //}
+    {
         int i = 0;
         foreach (FileData file in deskTopFileDirectory.children)
         {
-            FileData fileInstance = ScriptableObject.CreateInstance<FileData>();
-            //duplicate the file 
-            GameObject obj = GameObject.Instantiate(fileInstance.self, desktopSpaces[i].transform);
-            obj.name = fileInstance.name;
-            fileInstance.self = obj;
-            obj.GetComponent<WindowsButton>().SetUpVariables(fileInstance, fileInstance.application, fileInstance.self.GetComponent<SpriteHandlerScript>());
+            //FileData fileInstance = ScriptableObject.CreateInstance<FileData>();
+            
+            GameObject obj = GameObject.Instantiate(windowsIconPrefab, desktopSpaces[i].transform);
+            obj.name = file.name;
+            //fileInstance.self = obj;
+            obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
 
+            //obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(delegate { file.OnDoubleClick.G})
+
+            //deconstruct persistent event
+            for (int j = 0; j < file.OnDoubleClick.GetPersistentEventCount(); j++)
+            {
+                
+                string target = file.OnDoubleClick.GetPersistentTarget(j).ToString();
+                string[] targetArray = target.Split('(', ')');
+                target = targetArray[1].Trim();
+
+                string methodName = file.OnDoubleClick.GetPersistentMethodName(j).ToString();
+
+                string function = "obj.GetComponent<" + target + ">()." + methodName + "(1);";
+                Debug.Log(function);
+
+                UnityAction newEvent = new UnityAction(delegate { obj.GetComponent<SpriteHandlerScript>().SetSpriteIndex(1); });
+                //UnityAction newEvent = new UnityAction(delegate { Invoke(methodName, 0f); });
+
+                obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(newEvent);
+            }
+
+            //if(file.OnDoubleClick.GetPersistentEventCount() > 0)
+            //{
+            //    Debug.Log(file.OnDoubleClick.GetPersistentTarget(0));
+            //    Debug.Log(file.OnDoubleClick.GetPersistentMethodName(0));
+            //}
+
+            //Debug.Log(file.OnDoubleClick.GetPersistentMethodName(0));
+            //MethodInfo targetInfo = UnityEvent.GetValidMethodInfo(this, nameof(TestCall), new Type[0]);
+            //UnityAction methodDelegate = Delegate.CreateDelegate(typeof(UnityAction), this, targetInfo) as UnityAction;
+            //UnityEventTools.AddPersistentListener(ue, methodDelegate);
+
+
+            //obj.GetComponent<HitEventScript>().doubleHitEvent = file.OnDoubleClick;
 
             i++;
         }
-        //int i = 0;
-        //foreach (KeyValuePair<GameObject, FileData> keyValuePair in dictionary)
-        //{
-        //    if (desktopSpaces[i] != null)
-        //    {
-        //        GameObject obj = GameObject.Instantiate(keyValuePair.Key, desktopSpaces[i].transform);
-        //        obj.name = keyValuePair.Value.name;
-        //        keyValuePair.Value.self = obj;
-        //        obj.GetComponent<WindowsButton>().SetUpVariables(keyValuePair.Value, keyValuePair.Value.application, keyValuePair.Value.self.GetComponent<SpriteHandlerScript>());
-        //    }
-        //    i++;
-        //}
-        //check for empty spaces
-        //
-        //foreach (FileData file in deskTopFileDirectory.children)
-        //{
-
-        //}
     }
 }

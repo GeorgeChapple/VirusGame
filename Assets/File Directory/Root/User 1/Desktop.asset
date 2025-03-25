@@ -13,15 +13,31 @@ MonoBehaviour:
   m_Name: Desktop
   m_EditorClassIdentifier: 
   root: 0
-  icon: {fileID: 0}
+  icon:
+  - {fileID: 0}
   name: Desktop
   dataType: Folder
   children:
   - {fileID: 11400000, guid: 1650522d692de8442b929cfbc5adb57e, type: 2}
-  - {fileID: 11400000, guid: fe1257ff4cb19e946b111451bce62955, type: 2}
   - {fileID: 11400000, guid: fea679d673ac6a74c89a1c9be1048b06, type: 2}
+  - {fileID: 11400000, guid: fe1257ff4cb19e946b111451bce62955, type: 2}
   - {fileID: 11400000, guid: e56860441a1a55e4793b59fac5f8ae5f, type: 2}
   - {fileID: 11400000, guid: 8127b9c124f445c4b9e84813fcafb1f4, type: 2}
   parent: {fileID: 11400000, guid: 8e7218a44493b664ca88b523f9f0d6ad, type: 2}
+  linkedFiles: []
   fileExplorer: {fileID: 0}
   application: {fileID: 0}
+  OnSpawnAsDeskTopIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsTaskBarIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsFileExplorerIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDoubleClick:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneIndex: 0
+  cameraMaterial: {fileID: 0}

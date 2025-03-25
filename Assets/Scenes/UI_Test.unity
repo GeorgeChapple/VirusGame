@@ -774,6 +774,7 @@ MonoBehaviour:
   layoutGroup: {fileID: 1190449428}
   desktop: {fileID: 2004732458}
   additiveSceneHandler: {fileID: 0}
+  spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 1967212188711695967, guid: 057dd7ab2d8d6184bb49d637e092526e, type: 3}
 --- !u!114 &831917438
 MonoBehaviour:
@@ -1147,6 +1148,7 @@ MonoBehaviour:
   layoutGroup: {fileID: 1795603469}
   desktop: {fileID: 2004732458}
   additiveSceneHandler: {fileID: 0}
+  spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
 --- !u!114 &1365013216
 MonoBehaviour:
@@ -1513,6 +1515,7 @@ MonoBehaviour:
   layoutGroup: {fileID: 1795603469}
   desktop: {fileID: 2004732458}
   additiveSceneHandler: {fileID: 0}
+  spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
 --- !u!114 &1551287702
 MonoBehaviour:
@@ -1747,6 +1750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskBarSpaces: []
+  taskBarIconPrefab: {fileID: 0}
   taskBarFileDirectory: {fileID: 11400000, guid: 1a9c9252a348bb44e833fec44cd6e97e, type: 2}
 --- !u!1 &1641267661
 GameObject:
@@ -1929,6 +1933,7 @@ MonoBehaviour:
   layoutGroup: {fileID: 1795603469}
   desktop: {fileID: 2004732458}
   additiveSceneHandler: {fileID: 0}
+  spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
 --- !u!114 &1702415390
 MonoBehaviour:
@@ -2376,6 +2381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1641267664}
   emptySpacePrefab: {fileID: 187061468812343547, guid: bb3ac5ec93e65d441bc3c842bc957e03, type: 3}
+  windowsIconPrefab: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
   grid: {fileID: 2004732455}
   desktopSpaces: []
   desktopIcons:
