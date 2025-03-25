@@ -82,11 +82,13 @@ public class Desktop : MonoBehaviour
 
                 string methodName = file.OnDoubleClick.GetPersistentMethodName(j).ToString();
 
-                string function = "obj.GetComponent<" + target + ">()." + methodName + "(1);";
+                //string function = "obj.GetComponent<" + target + ">()." + methodName + "(1);";
+                //string function = "gameObject.GetComponent<" + target + ">()." + methodName + "(1);";
+                string function = target + "." + methodName;
                 Debug.Log(function);
 
                 UnityAction newEvent = new UnityAction(delegate { obj.GetComponent<SpriteHandlerScript>().SetSpriteIndex(1); });
-                //UnityAction newEvent = new UnityAction(delegate { Invoke(methodName, 0f); });
+                //UnityAction newEvent = new UnityAction(delegate { obj.GetComponent<MonoBehaviour>().Invoke(function, 0f); });
 
                 obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(newEvent);
             }
