@@ -74,14 +74,22 @@ public class Desktop : MonoBehaviour
         //        //Debug.Log("3");
         //    }
         //}
-        //dictionary.Clear();
-        //foreach (FileData file in deskTopFileDirectory.children)
-        //{
-        //    dictionary.Add(file.self, file);
-        //}
+        int i = 0;
+        foreach (FileData file in deskTopFileDirectory.children)
+        {
+            FileData fileInstance = ScriptableObject.CreateInstance<FileData>();
+            //duplicate the file 
+            GameObject obj = GameObject.Instantiate(fileInstance.self, desktopSpaces[i].transform);
+            obj.name = fileInstance.name;
+            fileInstance.self = obj;
+            obj.GetComponent<WindowsButton>().SetUpVariables(fileInstance, fileInstance.application, fileInstance.self.GetComponent<SpriteHandlerScript>());
+
+
+            i++;
+        }
         //int i = 0;
         //foreach (KeyValuePair<GameObject, FileData> keyValuePair in dictionary)
-        //{            
+        //{
         //    if (desktopSpaces[i] != null)
         //    {
         //        GameObject obj = GameObject.Instantiate(keyValuePair.Key, desktopSpaces[i].transform);
@@ -93,9 +101,9 @@ public class Desktop : MonoBehaviour
         //}
         //check for empty spaces
         //
-        foreach (FileData file in deskTopFileDirectory.children)
-        {
+        //foreach (FileData file in deskTopFileDirectory.children)
+        //{
 
-        }
+        //}
     }
 }
