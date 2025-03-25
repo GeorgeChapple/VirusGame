@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 [CreateAssetMenu(fileName = "File", menuName = "Psuedo File Directory")]
 public class FileData : ScriptableObject
 {
@@ -12,6 +15,7 @@ public class FileData : ScriptableObject
     public string dataType = "";
     public List<FileData> children = new List<FileData>();
     public FileData parent;
+    public List<FileData> linkedFiles = new List<FileData>();
     public FileExplorer fileExplorer;
     public GameObject application;
     

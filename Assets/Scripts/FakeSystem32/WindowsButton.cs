@@ -34,7 +34,10 @@ public class WindowsButton : MonoBehaviour
             }
         }
     }
-
+    public void TransferApp(GameObject application)
+    {
+        applicationToOpen = application;
+    }
     public void DropOntoGrid()
     {
         //find which empty space the icon is above then make it the child of it

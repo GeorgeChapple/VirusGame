@@ -10,18 +10,16 @@ public class Taskbar : MonoBehaviour
 {
     public List<GameObject> taskBarSpaces = new List<GameObject>();
 
-    private void Awake()
-    {
-        //add icons to taskbarSpaces here
-        //this will be player saved
-    }
+    [Tooltip("This var needs to have the taskbar fileData file in it")]
+    [SerializeField] private FileData taskBarFileDirectory;
 
     public void SetUpTaskBarSpaces()
     {
-        foreach (GameObject space in taskBarSpaces)
+        taskBarSpaces.Clear();
+        foreach (FileData file in taskBarFileDirectory.children)
         {
-            GameObject icon = Instantiate(space, gameObject.transform);
-            icon.name = space.name + " Icon";
+            GameObject icon = Instantiate(file.application, gameObject.transform);
+            icon.name = file.name + " Icon";
         }
     }
 }

@@ -1746,10 +1746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60be9b3e5d8c22479974c61268ea02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskBarSpaces:
-  - {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
-  - {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
-  - {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
+  taskBarSpaces: []
+  taskBarFileDirectory: {fileID: 11400000, guid: 1a9c9252a348bb44e833fec44cd6e97e, type: 2}
 --- !u!1 &1641267661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,6 +2386,7 @@ MonoBehaviour:
   - {fileID: 1595356956824147739, guid: dcfa3489dae2a194d80ebe5b68ab8b5d, type: 3}
   - {fileID: 0}
   - {fileID: 0}
+  deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

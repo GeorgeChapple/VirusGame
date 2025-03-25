@@ -24,15 +24,10 @@ public class FakeWindows32 : MonoBehaviour
 
         //file stuff here
         
-
-
         desktop.SetUpDesktopGrid();
+
         taskBar.SetUpTaskBarSpaces();
+
         desktop.SetUpDesktopSavedLayout();
-    }
-
-    public void ReadFiles()
-    {
-
     }
 }

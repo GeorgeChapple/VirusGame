@@ -5,7 +5,10 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class FileExplorer : MonoBehaviour
 {
     //list all files and make the buttons for them
@@ -78,6 +81,7 @@ public class FileExplorer : MonoBehaviour
             }
 
         }
+        //write out the path to root backwards then reverse it and make it a string again
         currentPath = "";
         FileData fileName = currentFolder;
         while (!fileName.root)
