@@ -13,11 +13,40 @@ MonoBehaviour:
   m_Name: Email
   m_EditorClassIdentifier: 
   root: 0
-  icon: {fileID: -1501923610, guid: 1499fec9a92156a4094e8d6ac03a9141, type: 3}
+  icon:
+  - {fileID: 21300000, guid: bbaa7089933dede4d96a674800003952, type: 3}
+  - {fileID: 420219294, guid: 1499fec9a92156a4094e8d6ac03a9141, type: 3}
   name: Email
   dataType: Application
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
+  self: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
   application: {fileID: 1595356956824147739, guid: 3caf6e86fc5c7ec4e81f475eb5e20e12, type: 3}
+  OnSpawnAsDeskTopIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsTaskBarIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsFileExplorerIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDoubleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7443175887929115226, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
+        m_TargetAssemblyTypeName: SpriteHandlerScript, Assembly-CSharp
+        m_MethodName: SetSpriteIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  sceneIndex: 0
+  cameraMaterial: {fileID: 0}

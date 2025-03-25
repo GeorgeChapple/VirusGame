@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Email
   m_EditorClassIdentifier: 
   root: 0
-  icon: {fileID: -1501923610, guid: 1499fec9a92156a4094e8d6ac03a9141, type: 3}
+  icon:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   name: Email
   dataType: Application
   children: []
@@ -21,4 +24,19 @@ MonoBehaviour:
   linkedFiles:
   - {fileID: 11400000, guid: fea679d673ac6a74c89a1c9be1048b06, type: 2}
   fileExplorer: {fileID: 0}
+  self: {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
   application: {fileID: 1595356956824147739, guid: 3caf6e86fc5c7ec4e81f475eb5e20e12, type: 3}
+  OnSpawnAsDeskTopIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsTaskBarIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsFileExplorerIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDoubleClick:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneIndex: 0
+  cameraMaterial: {fileID: 0}

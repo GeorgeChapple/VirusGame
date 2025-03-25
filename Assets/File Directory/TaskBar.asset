@@ -24,3 +24,15 @@ MonoBehaviour:
   linkedFiles: []
   fileExplorer: {fileID: 0}
   application: {fileID: 0}
+  OnSpawnAsDeskTopIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsTaskBarIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsFileExplorerIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDoubleClick:
+    m_PersistentCalls:
+      m_Calls: []

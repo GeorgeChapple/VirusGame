@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
@@ -9,16 +11,32 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "File", menuName = "Psuedo File Directory")]
 public class FileData : ScriptableObject
 {
+    [Header("Variables")]
     public bool root = false;
-    public Sprite icon;
+    [Tooltip("These are the sprites that will go into the SpriteHandlerScript")]
+    public List<Sprite> icon;
     public new string name = "";
     public string dataType = "";
+
+    [Header("Hierarchy")]
     public List<FileData> children = new List<FileData>();
     public FileData parent;
     public List<FileData> linkedFiles = new List<FileData>();
     public FileExplorer fileExplorer;
+    public GameObject self;
+
+    [Header("Application")]
+    [Tooltip("The Application must be either the Windows base Icon or Windows Taskbar base Icon")]
     public GameObject application;
-    
+    public UnityEvent OnSpawnAsDeskTopIcon;
+    public UnityEvent OnSpawnAsTaskBarIcon;
+    public UnityEvent OnSpawnAsFileExplorerIcon;
+    public UnityEvent OnDoubleClick;
+
+    [Header("Additive Scene Handler")]
+    public int sceneIndex;
+    public Material cameraMaterial;
+
     public static FileDataObject Convert(FileData fd)
     {
         fd = CreateInstance<FileData>();
@@ -38,14 +56,25 @@ public class FileData : ScriptableObject
 
 public class FileDataObject : MonoBehaviour
 {
+    [Header("Variables")]
     public bool root = false;
-    public Sprite icon;
+    public List<Sprite> icon;
     public new string name = "";
     public string dataType = "";
+
+    [Header("Hierarchy")]
     public List<FileData> children = new List<FileData>();
     public FileData parent;
+    public List<FileData> linkedFiles = new List<FileData>();
     public FileExplorer fileExplorer;
+
+    [Header("Application")]
+    [Tooltip("The Application must be either the Windows base Icon or Windows Taskbar base Icon")]
     public GameObject application;
+    public UnityEvent OnSpawnAsDeskTopIcon;
+    public UnityEvent OnSpawnAsTaskBarIcon;
+    public UnityEvent OnSpawnAsFileExplorerIcon;
+    public UnityEvent OnDoubleClick;
     public static FileData Convert(FileDataObject fdo)
     {
         FileData fd = ScriptableObject.CreateInstance<FileData>();
@@ -58,9 +87,5 @@ public class FileDataObject : MonoBehaviour
         fd.fileExplorer = fdo.fileExplorer;
         fd.application = fdo.application;
         return fd;
-    }
-    public void PassThrough()
-    {
-        //fileExplorer.ChangeCurrentFolder(this);
     }
 }

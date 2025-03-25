@@ -64,7 +64,7 @@ public class FileExplorer : MonoBehaviour
             button.GetComponent<BoxCollider>().size = button.GetComponent<WindowsButton>().layoutGroup.cellSize;             //add space for new folders
             contentArea.GetComponent<RectTransform>().sizeDelta = new Vector2(contentArea.GetComponent<RectTransform>().sizeDelta.x, contentArea.GetComponent<RectTransform>().sizeDelta.y + 80);
             button.GetComponentInChildren<TextMeshProUGUI>().text = file.name;
-            button.GetComponentInChildren<Image>().sprite = file.icon;
+            button.GetComponentInChildren<Image>().sprite = file.icon[0];
 
             
 

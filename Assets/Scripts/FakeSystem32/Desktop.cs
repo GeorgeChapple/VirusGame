@@ -13,6 +13,7 @@ public class Desktop : MonoBehaviour
     [SerializeField] private GridLayoutGroup grid;
     public List<GameObject> desktopSpaces = new List<GameObject>();
     public List<GameObject> desktopIcons = new List<GameObject>();
+    public Dictionary<GameObject, FileData> dictionary = new Dictionary<GameObject, FileData>();
 
     [Tooltip("This var needs to have the desktop fileData file in it")]
     [SerializeField] private FileData deskTopFileDirectory;
@@ -58,14 +59,43 @@ public class Desktop : MonoBehaviour
         //desktopIcons.Clear();
         //foreach (FileData file in deskTopFileDirectory.children)
         //{
-        //    desktopIcons.Add(file.application);
+        //    desktopIcons.Add(file.self);
         //}
-        foreach (var (file, i) in deskTopFileDirectory.children.Select((value, i) => (value, i)))
+        //foreach (var (space, i) in desktopIcons.Select((value, i) => (value, i)))
+        //{
+        //    if (space != null)
+        //    {
+        //        GameObject gO = GameObject.Instantiate(space, desktopSpaces[i].transform);
+        //        //gO.name = file.name;
+        //        //Debug.Log("1");
+        //        //file.self = gO;
+        //        //Debug.Log("2");
+        //        //gO.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.self.GetComponent<SpriteHandlerScript>());
+        //        //Debug.Log("3");
+        //    }
+        //}
+        //dictionary.Clear();
+        //foreach (FileData file in deskTopFileDirectory.children)
+        //{
+        //    dictionary.Add(file.self, file);
+        //}
+        //int i = 0;
+        //foreach (KeyValuePair<GameObject, FileData> keyValuePair in dictionary)
+        //{            
+        //    if (desktopSpaces[i] != null)
+        //    {
+        //        GameObject obj = GameObject.Instantiate(keyValuePair.Key, desktopSpaces[i].transform);
+        //        obj.name = keyValuePair.Value.name;
+        //        keyValuePair.Value.self = obj;
+        //        obj.GetComponent<WindowsButton>().SetUpVariables(keyValuePair.Value, keyValuePair.Value.application, keyValuePair.Value.self.GetComponent<SpriteHandlerScript>());
+        //    }
+        //    i++;
+        //}
+        //check for empty spaces
+        //
+        foreach (FileData file in deskTopFileDirectory.children)
         {
-            if (file.application != null)
-            {
-                GameObject.Instantiate(file.application, desktopSpaces[i].transform);
-            }
+
         }
     }
 }

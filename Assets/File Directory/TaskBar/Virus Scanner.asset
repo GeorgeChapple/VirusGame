@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Virus Scanner
   m_EditorClassIdentifier: 
   root: 0
-  icon: {fileID: 21300000, guid: f25bb186a57dd94468da8684a18f132e, type: 3}
+  icon:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   name: Virus Scanner
   dataType: Application
   children: []
@@ -21,4 +24,19 @@ MonoBehaviour:
   linkedFiles:
   - {fileID: 11400000, guid: e56860441a1a55e4793b59fac5f8ae5f, type: 2}
   fileExplorer: {fileID: 0}
+  self: {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
   application: {fileID: 1595356956824147739, guid: dcfa3489dae2a194d80ebe5b68ab8b5d, type: 3}
+  OnSpawnAsDeskTopIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsTaskBarIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsFileExplorerIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDoubleClick:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneIndex: 0
+  cameraMaterial: {fileID: 0}

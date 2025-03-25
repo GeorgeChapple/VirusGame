@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Internet
   m_EditorClassIdentifier: 
   root: 0
-  icon: {fileID: 21300000, guid: 080e14d122f952440bd021dcf27c40e2, type: 3}
+  icon:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   name: Internet
   dataType: Application
   children: []
@@ -21,4 +24,19 @@ MonoBehaviour:
   linkedFiles:
   - {fileID: 11400000, guid: fe1257ff4cb19e946b111451bce62955, type: 2}
   fileExplorer: {fileID: 0}
+  self: {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
   application: {fileID: 1595356956824147739, guid: 525707240e41f5d4e81319ce4f7aa4fc, type: 3}
+  OnSpawnAsDeskTopIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsTaskBarIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsFileExplorerIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDoubleClick:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneIndex: 0
+  cameraMaterial: {fileID: 0}

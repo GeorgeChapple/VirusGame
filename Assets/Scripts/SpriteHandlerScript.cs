@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,14 +7,13 @@ using UnityEngine.UI;
     Script created by : George Chapple
     Edited by         : George Chapple
 */
-
 public class SpriteHandlerScript : MonoBehaviour {
     [SerializeField] private Sprite[] spriteSheet;
     public int spriteIndex;
     private Image image;
 
     // Get image component of object, set sprite to default index
-    private void Awake() {
+    public void SetUp() {
         image = GetComponent<Image>();
         RefreshSprite();
     }
@@ -27,6 +28,10 @@ public class SpriteHandlerScript : MonoBehaviour {
             Debug.Log("Sprite Index out of bounds, reset to " + (spriteSheet.Length - 1));
         }
         image.sprite = spriteSheet[spriteIndex];
+    }
+    public void ReceiveSprites(FileData fileData)
+    {
+        spriteSheet = fileData.icon.ToArray();
     }
 
     public void SetSpriteIndex(int newIndex) {

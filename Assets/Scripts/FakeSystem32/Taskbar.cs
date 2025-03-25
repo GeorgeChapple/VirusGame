@@ -18,7 +18,7 @@ public class Taskbar : MonoBehaviour
         taskBarSpaces.Clear();
         foreach (FileData file in taskBarFileDirectory.children)
         {
-            GameObject icon = Instantiate(file.application, gameObject.transform);
+            GameObject icon = Instantiate(file.self, gameObject.transform);
             icon.name = file.name + " Icon";
         }
     }

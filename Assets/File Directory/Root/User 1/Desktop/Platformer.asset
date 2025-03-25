@@ -13,11 +13,27 @@ MonoBehaviour:
   m_Name: Platformer
   m_EditorClassIdentifier: 
   root: 0
-  icon: {fileID: 21300000, guid: 18dad0301092fa6408ab1cd6c22aaf97, type: 3}
+  icon:
+  - {fileID: 21300000, guid: 18dad0301092fa6408ab1cd6c22aaf97, type: 3}
   name: Platformer
   dataType: Application
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
+  self: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
   application: {fileID: 1595356956824147739, guid: 6b84d686ca1c42247a0dac712ec0e71c, type: 3}
+  OnSpawnAsDeskTopIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsTaskBarIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnAsFileExplorerIcon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDoubleClick:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneIndex: 0
+  cameraMaterial: {fileID: 0}

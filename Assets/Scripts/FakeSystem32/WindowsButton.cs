@@ -11,6 +11,7 @@ public class WindowsButton : MonoBehaviour
     public GridLayoutGroup layoutGroup;
     public Desktop desktop;
     public Additive_Scene_Handler additiveSceneHandler;
+    public SpriteHandlerScript spriteHandlerScript;
     [Tooltip("We'll use this to spawn the application we wanna open, everything else will be done by the application we open (like putting icons in the taskbar)")]
     public GameObject applicationToOpen;
 
@@ -34,10 +35,18 @@ public class WindowsButton : MonoBehaviour
             }
         }
     }
-    public void TransferApp(GameObject application)
+    public void SetUpVariables(FileData caller, GameObject application)
     {
         applicationToOpen = application;
     }
+    public void SetUpVariables(FileData caller, GameObject application, SpriteHandlerScript spriteHandlerScriptPass)
+    {
+        applicationToOpen = application;
+        spriteHandlerScript = spriteHandlerScriptPass;
+        spriteHandlerScript.ReceiveSprites(caller);
+        spriteHandlerScript.SetUp();
+    }
+    
     public void DropOntoGrid()
     {
         //find which empty space the icon is above then make it the child of it
