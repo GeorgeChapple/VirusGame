@@ -1,7 +1,10 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -70,44 +73,22 @@ public class Desktop : MonoBehaviour
             //fileInstance.self = obj;
             obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
 
-            //obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(delegate { file.OnDoubleClick.G})
-
-            //deconstruct persistent event
-            for (int j = 0; j < file.OnDoubleClick.GetPersistentEventCount(); j++)
+            foreach (EventPass eventPass in file.OnDoubleClick)
             {
-                
-                string target = file.OnDoubleClick.GetPersistentTarget(j).ToString();
-                string[] targetArray = target.Split('(', ')');
-                target = targetArray[1].Trim();
+                string methodName = eventPass.methodName; //get event values out
+                int intVal = eventPass.intVal;
+                float floatVal = eventPass.floatVal;
 
-                string methodName = file.OnDoubleClick.GetPersistentMethodName(j).ToString();
-
-                //string function = "obj.GetComponent<" + target + ">()." + methodName + "(1);";
-                //string function = "gameObject.GetComponent<" + target + ">()." + methodName + "(1);";
-                string function = target + "." + methodName;
-                Debug.Log(function);
-
-                UnityAction newEvent = new UnityAction(delegate { obj.GetComponent<SpriteHandlerScript>().SetSpriteIndex(1); });
-                //UnityAction newEvent = new UnityAction(delegate { obj.GetComponent<MonoBehaviour>().Invoke(function, 0f); });
-
-                obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(newEvent);
+                UnityAction action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
+                obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
             }
-
-            //if(file.OnDoubleClick.GetPersistentEventCount() > 0)
-            //{
-            //    Debug.Log(file.OnDoubleClick.GetPersistentTarget(0));
-            //    Debug.Log(file.OnDoubleClick.GetPersistentMethodName(0));
-            //}
-
-            //Debug.Log(file.OnDoubleClick.GetPersistentMethodName(0));
-            //MethodInfo targetInfo = UnityEvent.GetValidMethodInfo(this, nameof(TestCall), new Type[0]);
-            //UnityAction methodDelegate = Delegate.CreateDelegate(typeof(UnityAction), this, targetInfo) as UnityAction;
-            //UnityEventTools.AddPersistentListener(ue, methodDelegate);
-
-
-            //obj.GetComponent<HitEventScript>().doubleHitEvent = file.OnDoubleClick;
-
+            
             i++;
         }
+        
+    }
+    public void TestCall()
+    {
+        Debug.Log("called");
     }
 }

@@ -23,29 +23,10 @@ MonoBehaviour:
   linkedFiles: []
   fileExplorer: {fileID: 0}
   application: {fileID: 1595356956824147739, guid: 3caf6e86fc5c7ec4e81f475eb5e20e12, type: 3}
-  OnSpawnAsDeskTopIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSpawnAsTaskBarIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSpawnAsFileExplorerIcon:
-    m_PersistentCalls:
-      m_Calls: []
+  OnSpawnAsDeskTopIcon: []
+  OnSpawnAsTaskBarIcon: []
+  OnSpawnAsFileExplorerIcon: []
   OnDoubleClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7443175887929115226, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
-        m_TargetAssemblyTypeName: SpriteHandlerScript, Assembly-CSharp
-        m_MethodName: SetSpriteIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  - {fileID: 11400000, guid: 8c208a792c223fe41b5dee29e2998a22, type: 2}
   sceneIndex: 0
   cameraMaterial: {fileID: 0}

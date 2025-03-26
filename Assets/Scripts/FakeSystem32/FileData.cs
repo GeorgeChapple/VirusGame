@@ -8,7 +8,7 @@ using UnityEngine.Events;
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
 */
-[CreateAssetMenu(fileName = "File", menuName = "Psuedo File Directory")]
+[CreateAssetMenu(fileName = "File")]
 public class FileData : ScriptableObject
 {
     [Header("Variables")]
@@ -27,14 +27,17 @@ public class FileData : ScriptableObject
     [Header("Application")]
     [Tooltip("The Application must be either the window prefab or an application prefab like file explorer")]
     public GameObject application;
-    public UnityEvent OnSpawnAsDeskTopIcon;
-    public UnityEvent OnSpawnAsTaskBarIcon;
-    public UnityEvent OnSpawnAsFileExplorerIcon;
-    public UnityEvent OnDoubleClick;
+    public List<EventPass> OnSpawnAsDeskTopIcon;
+    public List<EventPass> OnSpawnAsTaskBarIcon;
+    public List<EventPass> OnSpawnAsFileExplorerIcon;
+    public List<EventPass> OnDoubleClick;
 
     [Header("Additive Scene Handler")]
     public int sceneIndex;
     public Material cameraMaterial;
+
+    
+
 
     public static FileDataObject Convert(FileData fd)
     {

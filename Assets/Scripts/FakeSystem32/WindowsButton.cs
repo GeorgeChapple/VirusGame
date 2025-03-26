@@ -88,4 +88,9 @@ public class WindowsButton : MonoBehaviour
     {
         additiveSceneHandler.manager.SpawnWindow();
     }
+
+    public void TestCall()
+    {
+        Debug.Log("called");
+    }
 }
