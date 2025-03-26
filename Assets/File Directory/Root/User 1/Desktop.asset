@@ -28,16 +28,12 @@ MonoBehaviour:
   fileExplorer: {fileID: 0}
   application: {fileID: 0}
   OnSpawnAsDeskTopIcon:
-    m_PersistentCalls:
-      m_Calls: []
+  - {fileID: 0}
   OnSpawnAsTaskBarIcon:
-    m_PersistentCalls:
-      m_Calls: []
+  - {fileID: 0}
   OnSpawnAsFileExplorerIcon:
-    m_PersistentCalls:
-      m_Calls: []
+  - {fileID: 0}
   OnDoubleClick:
-    m_PersistentCalls:
-      m_Calls: []
+  - {fileID: 0}
   sceneIndex: 0
   cameraMaterial: {fileID: 0}

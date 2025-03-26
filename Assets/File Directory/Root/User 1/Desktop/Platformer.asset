@@ -21,10 +21,13 @@ MonoBehaviour:
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
-  application: {fileID: 1595356956824147739, guid: 6b84d686ca1c42247a0dac712ec0e71c, type: 3}
+  application: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
   OnSpawnAsDeskTopIcon: []
   OnSpawnAsTaskBarIcon: []
   OnSpawnAsFileExplorerIcon: []
-  OnDoubleClick: []
-  sceneIndex: 0
-  cameraMaterial: {fileID: 0}
+  OnDoubleClick:
+  - {fileID: 11400000, guid: 89ec68609d8515c4c8ea0c639effc226, type: 2}
+  - {fileID: 11400000, guid: 245b16d5cd0267d41819e161d1a42882, type: 2}
+  - {fileID: 11400000, guid: e07034bbb3e242a47bfdcd8502dc642a, type: 2}
+  sceneIndex: 2
+  cameraMaterial: {fileID: 2100000, guid: d9d3dda5b11603a43b7ab05ff8f3d2a4, type: 2}

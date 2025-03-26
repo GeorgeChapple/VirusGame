@@ -26,10 +26,15 @@ public class FileExplorer : MonoBehaviour
         //currentFolder = GameObject.Find("Directory").GetComponent<FileData>();
         SetUpUI();
     }
-
+    public void ChangeCurrentFolderDesktop(FileData file)
+    {
+        currentFolder = file;
+        SetUpUI();
+    }
     public void ChangeCurrentFolder(int num)
     {
         currentFolder = currentFolder.children[num];
+        SetUpUI();
     }
 
     public void SetUpUI()
@@ -47,7 +52,10 @@ public class FileExplorer : MonoBehaviour
         //spawn new buttons
         foreach (var (file, i) in currentFolder.children.Select((value, i) => (value, i)))
         {
-
+            if (file == null)
+            {
+                continue;
+            }
             GameObject button = Instantiate(buttonPrefab, contentArea.transform); //spawn button then set some variables
 
             FileDataObject fileData = button.AddComponent<FileDataObject>();
@@ -71,7 +79,6 @@ public class FileExplorer : MonoBehaviour
             if (file.dataType == "Folder")
             {
                 button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(delegate { ChangeCurrentFolder(i); });
-                button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(SetUpUI);
             }
             if (file.dataType == "Application")
             {
@@ -103,5 +110,9 @@ public class FileExplorer : MonoBehaviour
     {
         currentFolder = currentFolder.parent;
         SetUpUI();
+    }
+    public void ReceiveCaller(FileData file)
+    {
+        ChangeCurrentFolderDesktop(file);
     }
 }

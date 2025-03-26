@@ -14,6 +14,8 @@ public class WindowsButton : MonoBehaviour
     public SpriteHandlerScript spriteHandlerScript;
     [Tooltip("We'll use this to spawn the application we wanna open, everything else will be done by the application we open (like putting icons in the taskbar)")]
     public GameObject applicationToOpen;
+    [Tooltip("This doesn't get set in editor")]
+    public GameObject application;
 
     private void Awake()
     {
@@ -46,7 +48,11 @@ public class WindowsButton : MonoBehaviour
         spriteHandlerScript.ReceiveSprites(caller);
         spriteHandlerScript.SetUp();
     }
-    
+    public void SetUpVariables(FileData caller, GameObject application, int sceneIndex, Material cameraMaterial)
+    {
+        applicationToOpen = application;
+        additiveSceneHandler.SetVariablesFromFileData(caller);
+    }
     public void DropOntoGrid()
     {
         //find which empty space the icon is above then make it the child of it
@@ -81,16 +87,15 @@ public class WindowsButton : MonoBehaviour
     }
     public void OpenApplication()
     {
-        Instantiate(applicationToOpen, canvas.gameObject.transform);
+        application = Instantiate(applicationToOpen, canvas.gameObject.transform);
     }
-
+    public void OpenApplicationAndSendCaller(FileData caller)
+    {
+        application = Instantiate(applicationToOpen, canvas.gameObject.transform);
+        application.SendMessage("ReceiveCaller", caller);
+    }
     public void ManagerSpawnWindow()
     {
         additiveSceneHandler.manager.SpawnWindow();
-    }
-
-    public void TestCall()
-    {
-        Debug.Log("called");
     }
 }

@@ -1,10 +1,4 @@
-using JetBrains.Annotations;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -67,11 +61,18 @@ public class Desktop : MonoBehaviour
         foreach (FileData file in deskTopFileDirectory.children)
         {
             //FileData fileInstance = ScriptableObject.CreateInstance<FileData>();
-            
+
+            if (file == null)
+            {
+                i++;
+                continue;
+            }
             GameObject obj = GameObject.Instantiate(windowsIconPrefab, desktopSpaces[i].transform);
             obj.name = file.name;
             //fileInstance.self = obj;
             obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
+            obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
+
 
             foreach (EventPass eventPass in file.OnDoubleClick)
             {
@@ -79,9 +80,30 @@ public class Desktop : MonoBehaviour
                 string methodName = eventPass.methodName; //get event values out
                 int intVal = eventPass.intVal;
                 float floatVal = eventPass.floatVal;
+                string stringVal = eventPass.stringVal;
+                FileData selfVal = eventPass.self;
                 if (eventPass.passValThrough)
                 {
-                    action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
+                    if (eventPass.passIntVal)
+                    {
+                        action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
+                    }
+                    else if (eventPass.passFloatVal)
+                    {
+                        action = new UnityAction(delegate { obj.SendMessage(methodName, floatVal); });
+                    }
+                    else if (eventPass.passStringVal)
+                    {
+                        action = new UnityAction(delegate { obj.SendMessage(methodName, stringVal); });
+                    }
+                    else if (eventPass.passSelfVal)
+                    {
+                        action = new UnityAction(delegate { obj.SendMessage(methodName, selfVal); });
+                    }
+                    else
+                    {
+                        action = new UnityAction(delegate { obj.SendMessage(methodName); });
+                    }
                 }
                 else
                 {
@@ -89,14 +111,13 @@ public class Desktop : MonoBehaviour
                 }
                 if (action != null)
                 {
-                obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
+                    obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
                 }
-
             }
-            
+
             i++;
         }
-        
+
     }
     public void TestCall()
     {

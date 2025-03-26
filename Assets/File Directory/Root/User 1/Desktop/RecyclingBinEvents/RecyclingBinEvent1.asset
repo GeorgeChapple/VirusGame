@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 880e75b6085d43a4e8c12c2c28a36f64, type: 3}
-  m_Name: EmailEvent1
+  m_Name: RecyclingBinEvent1
   m_EditorClassIdentifier: 
   passValThrough: 1
-  methodName: SetSpriteIndex
-  passSelfVal: 0
-  self: {fileID: 0}
+  methodName: OpenApplicationAndSendCaller
+  passSelfVal: 1
+  self: {fileID: 11400000, guid: 1650522d692de8442b929cfbc5adb57e, type: 2}
   passStringVal: 0
   stringVal: 
-  passIntVal: 1
-  intVal: 1
+  passIntVal: 0
+  intVal: 0
   passFloatVal: 0
   floatVal: 0

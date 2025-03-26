@@ -16,7 +16,7 @@ public class Additive_Scene_Handler : MonoBehaviour
     [SerializeField] private int sceneIndex;
     [SerializeField] private Material cameraMaterial;
 
-    public void buttonPress()
+    public void ButtonPress()
     {
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Additive);
         //for (int i = 0; i < SceneManager.sceneCount; i++)
@@ -31,12 +31,17 @@ public class Additive_Scene_Handler : MonoBehaviour
         //    }
         //}
     }
-    public void setVariables()
+    public void SetVariables()
     {
         if (manager != null)
         {
             manager.sceneIndex = sceneIndex;
             manager.cameraMaterial = cameraMaterial;
         }
+    }
+    public void SetVariablesFromFileData(FileData fileData)
+    {
+        sceneIndex = fileData.sceneIndex;
+        cameraMaterial = fileData.cameraMaterial;
     }
 }
