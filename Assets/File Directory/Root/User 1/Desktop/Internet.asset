@@ -21,20 +21,10 @@ MonoBehaviour:
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
-  selfBackUp: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
-  self: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
   application: {fileID: 1595356956824147739, guid: 525707240e41f5d4e81319ce4f7aa4fc, type: 3}
-  OnSpawnAsDeskTopIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSpawnAsTaskBarIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSpawnAsFileExplorerIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDoubleClick:
-    m_PersistentCalls:
-      m_Calls: []
+  OnSpawnAsDeskTopIcon: []
+  OnSpawnAsTaskBarIcon: []
+  OnSpawnAsFileExplorerIcon: []
+  OnDoubleClick: []
   sceneIndex: 0
   cameraMaterial: {fileID: 0}

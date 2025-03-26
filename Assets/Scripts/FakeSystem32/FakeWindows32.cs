@@ -26,8 +26,8 @@ public class FakeWindows32 : MonoBehaviour
         
         desktop.SetUpDesktopGrid();
 
-        //taskBar.SetUpTaskBarSpaces();
-
         desktop.SetUpDesktopSavedLayout();
+
+        taskBar.SetUpTaskBarSpaces();
     }
 }

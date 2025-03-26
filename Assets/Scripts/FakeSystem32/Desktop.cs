@@ -75,12 +75,23 @@ public class Desktop : MonoBehaviour
 
             foreach (EventPass eventPass in file.OnDoubleClick)
             {
+                UnityAction action;
                 string methodName = eventPass.methodName; //get event values out
                 int intVal = eventPass.intVal;
                 float floatVal = eventPass.floatVal;
-
-                UnityAction action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
+                if (eventPass.passValThrough)
+                {
+                    action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
+                }
+                else
+                {
+                    action = new UnityAction(delegate { obj.SendMessage(methodName); });
+                }
+                if (action != null)
+                {
                 obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
+                }
+
             }
             
             i++;

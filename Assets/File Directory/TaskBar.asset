@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: TaskBar
   m_EditorClassIdentifier: 
   root: 0
-  icon: {fileID: 0}
+  icon:
+  - {fileID: 0}
   name: TaskBar
   dataType: Folder
   children:
@@ -24,15 +25,9 @@ MonoBehaviour:
   linkedFiles: []
   fileExplorer: {fileID: 0}
   application: {fileID: 0}
-  OnSpawnAsDeskTopIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSpawnAsTaskBarIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSpawnAsFileExplorerIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDoubleClick:
-    m_PersistentCalls:
-      m_Calls: []
+  OnSpawnAsDeskTopIcon: []
+  OnSpawnAsTaskBarIcon: []
+  OnSpawnAsFileExplorerIcon: []
+  OnDoubleClick: []
+  sceneIndex: 0
+  cameraMaterial: {fileID: 0}

@@ -14,27 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: 0
   icon:
-  - {fileID: 21300000, guid: f25bb186a57dd94468da8684a18f132e, type: 3}
+  - {fileID: -566345806, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
+  - {fileID: 177438484, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
+  - {fileID: -1156537565, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
+  - {fileID: 1000651471, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
+  - {fileID: 92543915, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
+  - {fileID: -736075354, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
   name: Virus Scanner
   dataType: Application
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
-  selfBackUp: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
-  self: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
   application: {fileID: 1595356956824147739, guid: dcfa3489dae2a194d80ebe5b68ab8b5d, type: 3}
-  OnSpawnAsDeskTopIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSpawnAsTaskBarIcon:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSpawnAsFileExplorerIcon:
-    m_PersistentCalls:
-      m_Calls: []
+  OnSpawnAsDeskTopIcon: []
+  OnSpawnAsTaskBarIcon: []
+  OnSpawnAsFileExplorerIcon: []
   OnDoubleClick:
-    m_PersistentCalls:
-      m_Calls: []
+  - {fileID: 11400000, guid: 7143e8a1ef6d37349a613ab3c5abc6ab, type: 2}
   sceneIndex: 0
   cameraMaterial: {fileID: 0}

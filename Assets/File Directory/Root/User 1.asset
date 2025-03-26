@@ -13,13 +13,22 @@ MonoBehaviour:
   m_Name: User 1
   m_EditorClassIdentifier: 
   root: 0
-  icon: {fileID: 0}
+  icon:
+  - {fileID: 0}
   name: User1
   dataType: Folder
   children:
   - {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   - {fileID: 11400000, guid: 5fce7a21b85c06a489b6c6b6702641b5, type: 2}
   - {fileID: 11400000, guid: 3a3761e4e6739834eb5a723c22235208, type: 2}
+  - {fileID: 11400000, guid: d0e5e1d670b549b4cb5fc3c144c5b65e, type: 2}
   parent: {fileID: 11400000, guid: e7bf2f9d1da9889408b2023c514ca7ce, type: 2}
+  linkedFiles: []
   fileExplorer: {fileID: 0}
   application: {fileID: 0}
+  OnSpawnAsDeskTopIcon: []
+  OnSpawnAsTaskBarIcon: []
+  OnSpawnAsFileExplorerIcon: []
+  OnDoubleClick: []
+  sceneIndex: 0
+  cameraMaterial: {fileID: 0}
