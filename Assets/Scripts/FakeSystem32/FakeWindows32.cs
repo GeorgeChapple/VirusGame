@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 /*
@@ -11,6 +12,8 @@ public class FakeWindows32 : MonoBehaviour
     [SerializeField] private Desktop desktop;
 
     [SerializeField] private FileData fileDirectories;
+
+    public GameObject windowHierarchy;
 
     //set up desktop and taskbar
     //load previously saved icon positions
@@ -29,5 +32,20 @@ public class FakeWindows32 : MonoBehaviour
         desktop.SetUpDesktopSavedLayout();
 
         taskBar.SetUpTaskBarSpaces();
+    }
+    public void OnHierarchyUpdated()
+    {
+        //foreach (var window in windowHierarchy)
+        //{
+        //    //move windows accordingly
+        //    int index = windowHierarchy.IndexOf(window);
+
+        //    window.transform.position = new(window.transform.position.x, window.transform.position.y, (float)index);
+        //}
+        for (int i = 0; i < windowHierarchy.transform.childCount; i++)
+        {
+            GameObject window = windowHierarchy.transform.GetChild(i).gameObject;
+            window.transform.position = new(window.transform.position.x, window.transform.position.y, (float)i);
+        }
     }
 }

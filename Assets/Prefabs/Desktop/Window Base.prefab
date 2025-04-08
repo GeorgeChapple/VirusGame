@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseDistance: {x: 0, y: 0}
+  manager: {fileID: 0}
 --- !u!114 &3005874537562586388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,12 +150,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4967184165919857109}
+        m_TargetAssemblyTypeName: WindowScript, Assembly-CSharp
+        m_MethodName: DetachFromHierarchy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   doubleHitEvent:
     m_PersistentCalls:
       m_Calls: []
   letGoEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4967184165919857109}
+        m_TargetAssemblyTypeName: WindowScript, Assembly-CSharp
+        m_MethodName: PutInFront
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!65 &6919148178413609924

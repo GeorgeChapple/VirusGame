@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class WindowsButton : MonoBehaviour
 {
     public Canvas canvas;
+    public GameObject hierarchy;
     [Tooltip("If this WindowsButton is on a prefab it needs to be set in code if not then set it here and it won't size it wrong")]
     public GridLayoutGroup layoutGroup;
     public Desktop desktop;
@@ -19,6 +20,7 @@ public class WindowsButton : MonoBehaviour
 
     private void Awake()
     {
+        hierarchy = GameObject.Find("WindowHierarchy");
         if (canvas == null)
         {
             canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();            
@@ -33,7 +35,7 @@ public class WindowsButton : MonoBehaviour
             {
                 additiveSceneHandler = sceneHandler;
                 additiveSceneHandler.canvas = canvas;
-                additiveSceneHandler.manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();
+                additiveSceneHandler.manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();                
             }
         }
     }
@@ -87,11 +89,12 @@ public class WindowsButton : MonoBehaviour
     }
     public void OpenApplication()
     {
-        application = Instantiate(applicationToOpen, canvas.gameObject.transform);
+        application = Instantiate(applicationToOpen, hierarchy.transform);
+        //application.GetComponent<WindowContent>().OnceSpawned();
     }
     public void OpenApplicationAndSendCaller(FileData caller)
     {
-        application = Instantiate(applicationToOpen, canvas.gameObject.transform);
+        application = Instantiate(applicationToOpen, hierarchy.transform);
         application.SendMessage("ReceiveCaller", caller);
     }
     public void ManagerSpawnWindow()

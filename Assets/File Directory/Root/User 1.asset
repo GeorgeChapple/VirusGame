@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: 0
   icon:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: a003e586a0639a74a873d3ad9fca8e9b, type: 3}
   name: User1
   dataType: Folder
   children:
