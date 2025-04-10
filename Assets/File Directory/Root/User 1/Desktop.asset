@@ -27,13 +27,9 @@ MonoBehaviour:
   linkedFiles: []
   fileExplorer: {fileID: 0}
   application: {fileID: 0}
-  OnSpawnAsDeskTopIcon:
-  - {fileID: 0}
-  OnSpawnAsTaskBarIcon:
-  - {fileID: 0}
-  OnSpawnAsFileExplorerIcon:
-  - {fileID: 0}
-  OnDoubleClick:
-  - {fileID: 0}
+  OnSpawnAsDeskTopIcon: []
+  OnSpawnAsTaskBarIcon: []
+  OnSpawnAsFileExplorerIcon: []
+  OnDoubleClick: []
   sceneIndex: 0
   cameraMaterial: {fileID: 0}

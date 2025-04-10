@@ -10,20 +10,21 @@ public class VirusScannerScript : MonoBehaviour {
     [SerializeField] private Vector3 scannerLineStartPos;
     [SerializeField] private Vector3 scannerLineEndPos;
     [SerializeField] private bool success;
-    private GameObject scannerLine;
+    [SerializeField] private GameObject scannerLine;
     private SpriteHandlerScript spriteHandler;
     private bool scanning;
 
     private void Awake() {
-        scannerLine = transform.Find("ScannerLine").gameObject;
         spriteHandler = GetComponent<SpriteHandlerScript>();
     }
 
     public void ScanEvent() {
-        if (!scanning) {
-            scanning = true;
-            StartCoroutine(ScanLoop());
-        }
+        if (scannerLine != null){
+            if (!scanning) {
+                scanning = true;
+                StartCoroutine(ScanLoop());
+            }
+        }        
     }
 
     private IEnumerator ScanLoop() {

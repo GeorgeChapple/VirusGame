@@ -21,7 +21,12 @@ public class WindowScript : MonoBehaviour
         windowCollider = GetComponent<BoxCollider>();
         rectTransform = GetComponent<UnityEngine.RectTransform>();
         windowCollider.size = rectTransform.rect.size;
+        if (gameObject.layer == 3) //if its a window
+        {
+            PutInFront();
+        }
     }
+
 
     public void GetMouseDistance() {
         Object[] objects = FindObjectsOfType<RaycastScript>();

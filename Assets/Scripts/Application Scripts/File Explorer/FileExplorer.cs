@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
@@ -74,19 +73,61 @@ public class FileExplorer : MonoBehaviour
             button.GetComponentInChildren<TextMeshProUGUI>().text = file.name;
             button.GetComponentInChildren<Image>().sprite = file.icon[0];
 
-            
+            button.GetComponent<WindowsButton>().SetUpVariables(file, file.application, button.GetComponent<SpriteHandlerScript>());
+            button.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
+
 
             if (file.dataType == "Folder")
             {
+                button.GetComponent<HitEventScript>().doubleHitEvent.RemoveAllListeners();
                 button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(delegate { ChangeCurrentFolder(i); });
+                continue;
             }
-            if (file.dataType == "Application")
+            else if (file.dataType == "Application")
             {
                 button.GetComponentInChildren<TextMeshProUGUI>().text = file.name + ".exe";
-                button.GetComponent<WindowsButton>().applicationToOpen = file.application;
-                //button.GetComponent<HitEventScript>().doubleHitEvent.AddListener();
+                button.GetComponent<WindowsButton>().applicationToOpen = file.application;                        
             }
-
+            foreach (EventPass eventPass in file.OnDoubleClick)
+            {
+                UnityAction action;
+                string methodName = eventPass.methodName; //get event values out
+                int intVal = eventPass.intVal;
+                float floatVal = eventPass.floatVal;
+                string stringVal = eventPass.stringVal;
+                FileData selfVal = eventPass.self;
+                if (eventPass.passValThrough)
+                {
+                    if (eventPass.passIntVal)
+                    {
+                        action = new UnityAction(delegate { button.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
+                    }
+                    else if (eventPass.passFloatVal)
+                    {
+                        action = new UnityAction(delegate { button.SendMessage(methodName, floatVal); });
+                    }
+                    else if (eventPass.passStringVal)
+                    {
+                        action = new UnityAction(delegate { button.SendMessage(methodName, stringVal); });
+                    }
+                    else if (eventPass.passSelfVal)
+                    {
+                        action = new UnityAction(delegate { button.SendMessage(methodName, selfVal); });
+                    }
+                    else
+                    {
+                        action = new UnityAction(delegate { button.SendMessage(methodName); });
+                    }
+                }
+                else
+                {
+                    action = new UnityAction(delegate { button.SendMessage(methodName); });
+                }
+                if (action != null)
+                {
+                    button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
+                }
+            }
         }
         //write out the path to root backwards then reverse it and make it a string again
         currentPath = "";

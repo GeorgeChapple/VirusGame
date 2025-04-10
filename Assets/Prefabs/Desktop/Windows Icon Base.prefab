@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -7443175887929115226}
   - component: {fileID: -888148962885325046}
   - component: {fileID: 4018647991422760785}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Windows Icon Base
   m_TagString: Draggable
   m_Icon: {fileID: 0}
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseDistance: {x: 0, y: 0}
+  manager: {fileID: 0}
 --- !u!114 &1841613337661778305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,11 +205,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  hierarchy: {fileID: 0}
   layoutGroup: {fileID: 0}
   desktop: {fileID: 0}
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
+  application: {fileID: 0}
 --- !u!65 &4866702108266484479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -244,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteSheet: []
   spriteIndex: 0
+  image: {fileID: 5164468492803266100}
 --- !u!114 &-888148962885325046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +279,7 @@ MonoBehaviour:
   scannerLineStartPos: {x: 0, y: 0, z: 0}
   scannerLineEndPos: {x: 0, y: -50, z: 0}
   success: 0
+  scannerLine: {fileID: 6515161216921300003}
 --- !u!1 &6515161216921300003
 GameObject:
   m_ObjectHideFlags: 0

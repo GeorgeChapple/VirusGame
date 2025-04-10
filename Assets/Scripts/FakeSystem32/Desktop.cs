@@ -21,7 +21,10 @@ public class Desktop : MonoBehaviour
     public void SetUpDesktopGrid()
     {
         //logic here for if there are any objects in grid space already
-
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
 
         int amountToSpawn = 0;
 
@@ -114,13 +117,7 @@ public class Desktop : MonoBehaviour
                     obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
                 }
             }
-
             i++;
-        }
-
-    }
-    public void TestCall()
-    {
-        Debug.Log("called");
+        }        
     }
 }

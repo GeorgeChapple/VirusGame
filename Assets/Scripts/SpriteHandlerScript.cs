@@ -10,11 +10,16 @@ using UnityEngine.UI;
 public class SpriteHandlerScript : MonoBehaviour {
     [SerializeField] private Sprite[] spriteSheet;
     public int spriteIndex;
-    private Image image;
+    [SerializeField] private Image image;
 
     // Get image component of object, set sprite to default index
     public void SetUp() {
-        image = GetComponent<Image>();
+        //image = GetComponent<Image>();
+        if (image == null)
+        {
+            TryGetComponent<Image>(out Image component);
+            image = component;
+        }
         RefreshSprite();
     }
 

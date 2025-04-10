@@ -82,11 +82,6 @@ public class WindowsButton : MonoBehaviour
     {
         gameObject.transform.SetParent(canvas.transform, true);
     }
-
-    public void TestDouble()
-    {
-        print("Double Click!!");
-    }
     public void OpenApplication()
     {
         application = Instantiate(applicationToOpen, hierarchy.transform);
