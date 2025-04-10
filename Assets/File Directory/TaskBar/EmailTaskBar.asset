@@ -15,6 +15,7 @@ MonoBehaviour:
   root: 0
   icon:
   - {fileID: 21300000, guid: bbaa7089933dede4d96a674800003952, type: 3}
+  - {fileID: 420219294, guid: 1499fec9a92156a4094e8d6ac03a9141, type: 3}
   name: Email
   dataType: Application
   children: []

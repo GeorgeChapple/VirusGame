@@ -14,9 +14,11 @@ public class WindowSpawner : MonoBehaviour
     public int sceneIndex;
     public Material cameraMaterial;
 
-    public void SpawnWindow() {
+    public void SpawnWindow()
+    {
         UnityEngine.GameObject obj = Instantiate(windowPrefab, new Vector3(0, 0, 0), transform.rotation, hierarchy.transform);
-        if (sceneIndex >= 0 && cameraMaterial != null) {
+        if (sceneIndex >= 0 && cameraMaterial != null)
+        {
             obj.GetComponent<WindowContent>().SetManager(this);
             obj.GetComponent<WindowContent>().OnceSpawned();
         }

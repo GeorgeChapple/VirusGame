@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 /*
     Script created by : Jason Lodge
@@ -12,6 +13,8 @@ public class FakeWindows32 : MonoBehaviour
     [SerializeField] private Desktop desktop;
 
     [SerializeField] private FileData fileDirectories;
+
+    [SerializeField] private TextMeshProUGUI timeNDate;
 
     public GameObject windowHierarchy;
 
@@ -32,6 +35,12 @@ public class FakeWindows32 : MonoBehaviour
         desktop.SetUpDesktopSavedLayout();
 
         taskBar.SetUpTaskBarSpaces();
+    }
+    private void Update()
+    {
+        string newTimeNDate = "";
+        newTimeNDate = new string(DateTime.Now.ToString());
+        timeNDate.text = newTimeNDate;
     }
     public void OnHierarchyUpdated()
     {
