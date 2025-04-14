@@ -20,7 +20,7 @@ public class Desktop : MonoBehaviour
     [SerializeField] private FileData deskTopFileDirectory;
     public void SetUpDesktopGrid()
     {
-        //logic here for if there are any objects in grid space already
+        //for if there are any objects in grid space already
         for (int i = 0; i < transform.childCount; i++)
         {
             Destroy(transform.GetChild(i).gameObject);
@@ -63,8 +63,6 @@ public class Desktop : MonoBehaviour
         int i = 0;
         foreach (FileData file in deskTopFileDirectory.children)
         {
-            //FileData fileInstance = ScriptableObject.CreateInstance<FileData>();
-
             if (file == null)
             {
                 i++;
@@ -72,7 +70,7 @@ public class Desktop : MonoBehaviour
             }
             GameObject obj = GameObject.Instantiate(windowsIconPrefab, desktopSpaces[i].transform);
             obj.name = file.name;
-            //fileInstance.self = obj;
+
             obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
             obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
 

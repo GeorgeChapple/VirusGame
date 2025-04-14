@@ -22,7 +22,6 @@ public class FileExplorer : MonoBehaviour
 
     private void Awake()
     {
-        //currentFolder = GameObject.Find("Directory").GetComponent<FileData>();
         SetUpUI();
     }
     public void ChangeCurrentFolderDesktop(FileData file)
@@ -38,10 +37,7 @@ public class FileExplorer : MonoBehaviour
 
     public void SetUpUI()
     {
-
-
-        //delete all buttons that exist right now
-
+        //delete all buttons that exist right now and reset button area
         for (int i = 0; i < contentArea.transform.childCount; i++)
         {
             Destroy(contentArea.transform.GetChild(i).gameObject);
@@ -56,16 +52,6 @@ public class FileExplorer : MonoBehaviour
                 continue;
             }
             GameObject button = Instantiate(buttonPrefab, contentArea.transform); //spawn button then set some variables
-
-            FileDataObject fileData = button.AddComponent<FileDataObject>();
-            fileData.root = file.root;
-            fileData.icon = file.icon;
-            fileData.name = file.name;
-            fileData.dataType = file.dataType;
-            fileData.children = file.children;
-            fileData.parent = file.parent;
-            fileData.fileExplorer = this;
-            fileData.application = file.application;
 
             button.GetComponent<WindowsButton>().layoutGroup = contentArea.GetComponent<GridLayoutGroup>();
             button.GetComponent<BoxCollider>().size = button.GetComponent<WindowsButton>().layoutGroup.cellSize;             //add space for new folders

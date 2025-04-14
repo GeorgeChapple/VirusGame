@@ -1,4 +1,8 @@
 using UnityEngine;
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 [CreateAssetMenu(fileName = "Event")]
 public class EventPass : ScriptableObject
 {

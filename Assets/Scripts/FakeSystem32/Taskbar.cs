@@ -23,7 +23,6 @@ public class Taskbar : MonoBehaviour
             GameObject icon = Instantiate(taskBarIconPrefab, gameObject.transform);
             icon.name = file.name + " Icon";
 
-            //icon.GetComponent<Image>().sprite = file.icon[0];
             icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, icon.GetComponent<SpriteHandlerScript>());
             icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
 

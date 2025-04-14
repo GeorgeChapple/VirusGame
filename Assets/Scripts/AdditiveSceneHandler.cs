@@ -8,7 +8,7 @@ using UnityEditor;
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
 */
-public class Additive_Scene_Handler : MonoBehaviour
+public class AdditiveSceneHandler : MonoBehaviour
 {
     public Canvas canvas;
     public WindowSpawner manager;
@@ -19,17 +19,6 @@ public class Additive_Scene_Handler : MonoBehaviour
     public void ButtonPress()
     {
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Additive);
-        //for (int i = 0; i < SceneManager.sceneCount; i++)
-        //{
-        //    if (SceneManager.GetSceneAt(i).name == scene.name)
-        //    {
-        //        continue;
-        //    }
-        //    else if (i == SceneManager.sceneCount && (SceneManager.GetSceneAt(i).name != scene.name))
-        //    {
-        //        SceneManager.LoadScene(scene.name, LoadSceneMode.Additive);
-        //    }
-        //}
     }
     public void SetVariables()
     {

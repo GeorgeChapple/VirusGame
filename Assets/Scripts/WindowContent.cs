@@ -15,7 +15,6 @@ public class WindowContent : MonoBehaviour
     private void Awake()
     {
         windows32 = GameObject.FindAnyObjectByType<FakeWindows32>();
-        //windows32.windowHierarchy.Insert(0, GetComponent<WindowScript>());
         windows32.OnHierarchyUpdated();
         gameObject.name = "Window " + Random.Range(0, 99);
     }

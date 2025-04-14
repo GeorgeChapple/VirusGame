@@ -11,7 +11,7 @@ public class WindowsButton : MonoBehaviour
     [Tooltip("If this WindowsButton is on a prefab it needs to be set in code if not then set it here and it won't size it wrong")]
     public GridLayoutGroup layoutGroup;
     public Desktop desktop;
-    public Additive_Scene_Handler additiveSceneHandler;
+    public AdditiveSceneHandler additiveSceneHandler;
     public SpriteHandlerScript spriteHandlerScript;
     [Tooltip("We'll use this to spawn the application we wanna open, everything else will be done by the application we open (like putting icons in the taskbar)")]
     public GameObject applicationToOpen;
@@ -31,7 +31,7 @@ public class WindowsButton : MonoBehaviour
             }
             GetComponent<RectTransform>().sizeDelta = layoutGroup.cellSize;
             GetComponent<BoxCollider>().size = layoutGroup.cellSize;
-            if (TryGetComponent<Additive_Scene_Handler>(out Additive_Scene_Handler sceneHandler))
+            if (TryGetComponent<AdditiveSceneHandler>(out AdditiveSceneHandler sceneHandler))
             {
                 additiveSceneHandler = sceneHandler;
                 additiveSceneHandler.canvas = canvas;
@@ -85,7 +85,6 @@ public class WindowsButton : MonoBehaviour
     public void OpenApplication()
     {
         application = Instantiate(applicationToOpen, hierarchy.transform);
-        //application.GetComponent<WindowContent>().OnceSpawned();
     }
     public void OpenApplicationAndSendCaller(FileData caller)
     {
