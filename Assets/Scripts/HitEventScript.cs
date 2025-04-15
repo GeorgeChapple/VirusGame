@@ -18,6 +18,10 @@ public class HitEventScript : MonoBehaviour
     public bool doubleAvailable;
     public void CheckIfDouble()
     {
+        if (!IfActive())
+        {
+            return;
+        }
         if (doubleAvailable)
         {
             //fire the double hit
@@ -29,6 +33,10 @@ public class HitEventScript : MonoBehaviour
     }
     public void StartDoubleTimer()
     {
+        if (!IfActive())
+        {
+            return;
+        }
         if (doubleAvailable) { return; }
         StartCoroutine(Timer());
     }
@@ -39,5 +47,13 @@ public class HitEventScript : MonoBehaviour
         Debug.Log("timer done");
         doubleAvailable = false;
         yield return null;
+    }
+    private bool IfActive()
+    {
+        if (!gameObject.activeInHierarchy)
+        {
+            return false;
+        }
+        return true;
     }
 }
