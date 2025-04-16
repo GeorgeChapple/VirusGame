@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 74.261
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c7ff783e9ac30479f8194587c700d7a6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4315378dd21fe0e4ba15b8858f357c64, type: 2}
     - target: {fileID: 919132149155446097, guid: c7ff783e9ac30479f8194587c700d7a6, type: 3}
       propertyPath: m_Name
       value: Food
@@ -5603,6 +5607,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 605027d3cb43a4d8cbeae2d85e300b89, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 211a23085c190154ea5190e5036fd39c, type: 2}
     - target: {fileID: 919132149155446097, guid: 605027d3cb43a4d8cbeae2d85e300b89, type: 3}
       propertyPath: m_Name
       value: Water
