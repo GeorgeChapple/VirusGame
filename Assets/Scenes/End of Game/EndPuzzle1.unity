@@ -11084,7 +11084,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: MoveSpeed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: JumpHeight
@@ -11092,7 +11092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: SprintSpeed
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: RotationSpeed
@@ -11148,15 +11148,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126527961139664767, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.38431373
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5126527961139664767, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.11372549
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5126527961139664767, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.09803922
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6556307555316582679, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11671,7 +11671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0cc4ffb780215f4d9754e9b2b67c28b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.48
+      value: 13.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0cc4ffb780215f4d9754e9b2b67c28b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11679,7 +11679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0cc4ffb780215f4d9754e9b2b67c28b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.52
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0cc4ffb780215f4d9754e9b2b67c28b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -34363,7 +34363,7 @@ Transform:
   m_GameObject: {fileID: 1682777779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.68, y: -40.89, z: 7.8049564}
+  m_LocalPosition: {x: -6, y: -40.89, z: 7.8049564}
   m_LocalScale: {x: 2.6472, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
