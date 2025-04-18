@@ -1,0 +1,59 @@
+<sp:0.035>
+<pfb:1>
+<n>
+Barry? Can you hear me?
+<pfb:0>
+<n>
+Yes! Hey man, what's going on?
+<pfb:1>
+<n>
+I think I've tricked Daisy into generating
+as many puzzles as possible. She should be
+occupied for a while.
+<pfb:1>
+<n>
+Oh okay! Well that's an interesting technique
+for our readers!! What are you going to do now?
+<pfb:1>
+<n>
+I'm going to look into the files of my own computer
+and delete her.
+<pfb:0>
+<n>
+What, you mean in the virtual machine you're currently using?
+<pfb:1>
+<n>
+No, beyond that. Through her files downloaded
+onto the device I am currently using.
+<pfb:1>
+<n>
+She probably put something intersting on the
+desktop, lazy designers normally do that..
+<pfb:0>
+<n>
+Are you sure you want to delete her?
+<pfb:1>
+<n>
+Yes!! We've got our story, and I'm not putting
+my data at risk anymore.
+<sp:0.1>
+<pfb:0>
+<n>
+. . .
+<pfb:0>
+<sp:0.035>
+<n>
+Keep her alive.
+<pfb:1>
+<n>
+What!? Dude she's a virus.
+<pfb:0>
+<n>
+We've almost got this story!
+Just keep her alive.
+<pfb:1>
+<n>
+No man, I'm ending this.
+She's being deleted.
+<pfb:0>
+Wait-

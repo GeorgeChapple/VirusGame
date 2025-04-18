@@ -62,3 +62,31 @@ Right now, she wants me to play these weird games..
 You know, this is good for our story.
 A new virus that tricks young users into... I don't know,
 downloading ransomware?
+<pfb:1>
+<n>
+Is this story worth MY data though!?
+<pfb:0>
+<n>
+Oh come on! You can't get rid of her right now anyway.
+Why don't you play along, and tell me what she's doing?
+We'll make a guide on how to stop her, and sell the story!
+<pfb:0>
+<n>
+If this virus ever becomes widespread, this story could
+make us rich!!!
+<pfb:1>
+<n>
+Well, it's not like I have a choice... Alright, I'll see
+what she's up to and let you know.
+<pfb:0>
+<n>
+I've got your back buddy! Well, in spirit.
+<n>
+<pfb:2>
+<n>
+Puzzle 2 is ready for you, Selden!!!
+33% COMPLETE
+:3
+<n>
+<pfb:1>
+Huh?

@@ -1,0 +1,30 @@
+<sp:0.035>
+<pfb:1>
+<n>
+I can't afford a carriage.
+<pfb:2>
+<n>
+Wowiee! You completed all two puzzles!!
+Well done Selden!
+<pfb:1>
+<n>
+You only have two?
+<pfb:2>
+<n>
+Well on this version, yes!
+Would you like another one?
+Just be warned it might take some time.
+<pfb:1>
+<n>
+...Sure. Generate as many puzzles as you like!
+<pfb:2>
+<n>
+rEALLY!? I thought you didn't like my puzzles!!
+Ok... Here I go!!!
+afsdxc d;
+Et
+hkjn
+ERROERORERROER-
+ERROERORERROER-
+ERROERORERROER-
+ERROERORERROER-
