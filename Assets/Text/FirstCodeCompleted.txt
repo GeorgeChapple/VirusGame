@@ -1,0 +1,23 @@
+<sp:0.035>
+<pfb:1>
+<n>
+Ok, I've been given a message.
+Can I have my computer back now?
+<pfb:2>
+<n>
+What was the messaaage?
+<pfb:1>
+<n>
+A bicycle made for two.
+<pfb:2>
+<n>
+Wowie! You solved that quickly!!
+Good job!!!!!!!
+<pfb:1>
+<n>
+Please let me have my computer back.
+<pfb:2>
+<n>
+Well, I do need to get the next puzzle ready..
+Alright! Five minutes.
+<n>

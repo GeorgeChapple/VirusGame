@@ -1,0 +1,64 @@
+<sp:0.035>
+<pfb:1>
+<n>
+BARRY!
+<pfb:0>
+<n>
+What!? Dude you were gone for ages.
+Have you not seen my messages!?
+<pfb:1>
+<n>
+I think this Daisy thing has blocked
+my messages.
+<pfb:0>
+<n>
+That's a pretty odd thing to say...
+Have your files changed?
+<pfb:1>
+<n>
+Yes! She's moving them around and adding new ones!
+<pfb:0>
+<n>
+Hm, ok.. Maybe you do have a problem.
+Why can't I see her!?
+<pfb:1>
+<n>
+Reboot your computer, she might be there too.
+<n>
+She's totally a virus..
+<pfb:2>
+<n>
+No I'm not.
+<pfb:1>
+<n>
+AHA! Did you see that!?!
+<pfb:0>
+<n>
+See what?
+<pfb:1>
+<n>
+You can't see that!?
+She just messaged both of us!
+Let me send you a screenshot.
+<n>
+<sp:0.1>
+. . .
+<sp:0.035>
+<pfb:0>
+<n>
+Well?
+<pfb:1>
+<n>
+I think she's disabled some of my inputs..
+<pfb:0>
+<n>
+Can you get rid of her?
+<pfb:1>
+<n>
+I'll try to get a look at her files when I can.
+Right now, she wants me to play these weird games..
+<pfb:0>
+<n>
+You know, this is good for our story.
+A new virus that tricks young users into... I don't know,
+downloading ransomware?

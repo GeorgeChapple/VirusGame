@@ -226,6 +226,14 @@ PrefabInstance:
       propertyPath: file
       value: 
       objectReference: {fileID: 4900000, guid: 5fe2a4421276d4ccbbc1c609824e0efa, type: 3}
+    - target: {fileID: 186139215866373917, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
+      propertyPath: speechPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 186139215866373917, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
+      propertyPath: speechPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2097760535024557085, guid: deeaa5a8433ec4cbebee51f6d38e223f, type: 3}
     - target: {fileID: 188753720511386764, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_Name
       value: ChatBox
@@ -336,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2274714754768108262, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 332.8396
+      value: 303.1238
       objectReference: {fileID: 0}
     - target: {fileID: 2299976134072551115, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchorMax.y
