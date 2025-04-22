@@ -1,0 +1,57 @@
+The text file goes through each and every aspect available in the Fake HTML system
+
+<background>
+Creates a full-screen background panel.
+
+Attributes:
+
+Attribute	    Type	 Description
+color	        string	 Background color (e.g., black)
+
+Example:
+<background color=black>
+    <text fontSize=30 color=white>Welcome</text>
+</background>
+
+<panel>
+Creates a UI panel with custom size, position, and anchoring.
+
+Attributes:
+
+Attribute	Type	Description
+width	    float	Width of the panel (ignored if stretching)
+height	    float	Height of the panel (ignored if stretching)
+color	    string	Background color
+anchorMin	x,y	    Min anchor point (0–1)
+anchorMax	x,y	    Max anchor point (0–1)
+
+Example:
+<panel width=300 height=200 color=gray anchorMin=0.5,0.5 anchorMax=0.5,0.5>
+    <text fontSize=18 color=white>Centered Panel</text>
+</panel>
+
+<panel height=150 color=blue anchorMin=0,0 anchorMax=1,0>
+    <text fontSize=16 color=white>Bottom Bar (stretched)</text>
+</panel>
+
+<text>
+Adds a TextMeshProUGUI element.
+
+Attributes:
+
+Attribute	Type	Description
+fontSize	int	    Font size
+color	    string	Text color
+
+Example:
+<text fontSize=24 color=yellow>Hello World!</text>
+
+Color Keywords:
+Keyword	    Result Color
+black	    Color.black
+white	    Color.white
+red	        Color.red
+green	    Color.green
+blue	    Color.blue
+gray	    Color.gray
+(other)	    Color.magenta fallback
