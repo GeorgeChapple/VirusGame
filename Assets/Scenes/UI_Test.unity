@@ -150,7 +150,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51572685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -232,6 +232,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!65 &51572690
@@ -265,7 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 58455104}
   - component: {fileID: 58455106}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WindowHierarchy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,10 +338,10 @@ RectTransform:
   - {fileID: 1793765766}
   m_Father: {fileID: 1855734698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 850.00006, y: 0}
-  m_SizeDelta: {x: -1699.9999, y: 0}
+  m_AnchoredPosition: {x: -110, y: 0}
+  m_SizeDelta: {x: 220, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &304000007
 MonoBehaviour:
@@ -713,7 +715,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687545929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 102}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -757,6 +759,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!65 &687545932
@@ -994,13 +998,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1190449428}
-  desktop: {fileID: 2004732458}
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 1967212188711695967, guid: 057dd7ab2d8d6184bb49d637e092526e, type: 3}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 2004732458}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  canBeDragged: 0
 --- !u!114 &831917438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +1087,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &831917439
@@ -1448,13 +1467,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
-  desktop: {fileID: 2004732458}
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 2004732458}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  canBeDragged: 0
 --- !u!114 &1365013216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,6 +1544,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &1365013217
@@ -1817,13 +1851,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
-  desktop: {fileID: 2004732458}
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 2004732458}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  canBeDragged: 0
 --- !u!114 &1551287702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1881,6 +1928,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &1551287703
@@ -1952,10 +2001,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1552788623}
   - component: {fileID: 1552788625}
-  - component: {fileID: 1552788624}
   - component: {fileID: 1552788628}
   - component: {fileID: 1552788627}
-  m_Layer: 5
+  - component: {fileID: 1552788629}
+  m_Layer: 8
   m_Name: LeftPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1978,40 +2027,10 @@ RectTransform:
   m_Father: {fileID: 1855734698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2500, y: 0}
+  m_SizeDelta: {x: 5000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1552788624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552788622}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1552788625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2056,8 +2075,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60be9b3e5d8c22479974c61268ea02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskBarIconPrefab: {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
+  grid: {fileID: 1552788627}
+  taskBarIconPrefab: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
   taskBarFileDirectory: {fileID: 11400000, guid: 1a9c9252a348bb44e833fec44cd6e97e, type: 2}
+  taskbarSpaces: []
+--- !u!65 &1552788629
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552788622}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5000, y: 50, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1571069284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,13 +2417,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
-  desktop: {fileID: 2004732458}
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 2004732458}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  canBeDragged: 0
 --- !u!114 &1702415390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2439,6 +2494,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &1702415391
@@ -2668,7 +2725,7 @@ GameObject:
   - component: {fileID: 1855734698}
   - component: {fileID: 1855734700}
   - component: {fileID: 1855734699}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TaskBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2878,7 +2935,8 @@ GameObject:
   - component: {fileID: 2004732456}
   - component: {fileID: 2004732458}
   - component: {fileID: 2004732455}
-  m_Layer: 5
+  - component: {fileID: 2004732459}
+  m_Layer: 8
   m_Name: DesktopUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2983,15 +3041,28 @@ MonoBehaviour:
   windowsIconPrefab: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
   grid: {fileID: 2004732455}
   desktopSpaces: []
-  desktopIcons:
-  - {fileID: 1595356956824147739, guid: 63e8da92f7557854093ae46c09af5d86, type: 3}
-  - {fileID: 1595356956824147739, guid: 6b84d686ca1c42247a0dac712ec0e71c, type: 3}
-  - {fileID: 1595356956824147739, guid: 525707240e41f5d4e81319ce4f7aa4fc, type: 3}
-  - {fileID: 1595356956824147739, guid: 3caf6e86fc5c7ec4e81f475eb5e20e12, type: 3}
-  - {fileID: 1595356956824147739, guid: dcfa3489dae2a194d80ebe5b68ab8b5d, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
   deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
+--- !u!65 &2004732459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004732453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1920, y: 1080, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

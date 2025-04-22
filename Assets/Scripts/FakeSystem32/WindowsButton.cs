@@ -6,25 +6,43 @@ using UnityEngine.UI;
 */
 public class WindowsButton : MonoBehaviour
 {
+    [Header("Manual Input Settings")]
     public Canvas canvas;
+    public Camera cam;
     public GameObject hierarchy;
     [Tooltip("If this WindowsButton is on a prefab it needs to be set in code if not then set it here and it won't size it wrong")]
     public GridLayoutGroup layoutGroup;
-    public Desktop desktop;
     public AdditiveSceneHandler additiveSceneHandler;
     public SpriteHandlerScript spriteHandlerScript;
     [Tooltip("We'll use this to spawn the application we wanna open, everything else will be done by the application we open (like putting icons in the taskbar)")]
     public GameObject applicationToOpen;
-    [Tooltip("This doesn't get set in editor")]
-    public GameObject application;
+    public LayerMask dropLayer;
+    public LayerMask iconLayer;
+    public GameObject fileExplorerIconPrefab;
+    public bool isFileExplorerIcon;
+
+    [Header("Non-Manual Input Settings")]
+    public bool canBeTaskbarIcon;
+    [HideInInspector] public GameObject application;
+    public Desktop desktop;
+    public Taskbar taskbar;
+    public GameObject previousParent;
+    private FileExplorer fileExplorer;
+    public bool canBeDragged;
 
     private void Awake()
     {
+        if (!canBeDragged)
+        {
+            Destroy(GetComponent<WindowScript>());
+        }
         hierarchy = GameObject.Find("WindowHierarchy");
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         if (canvas == null)
         {
-            canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();            
+            canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();
             desktop = GameObject.Find("DesktopUI").GetComponent<Desktop>();
+            taskbar = GameObject.Find("TaskBar").GetComponentInChildren<Taskbar>();
             if (layoutGroup == null)
             {
                 layoutGroup = GameObject.Find("DesktopUI").GetComponent<GridLayoutGroup>();
@@ -35,7 +53,7 @@ public class WindowsButton : MonoBehaviour
             {
                 additiveSceneHandler = sceneHandler;
                 additiveSceneHandler.canvas = canvas;
-                additiveSceneHandler.manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();                
+                additiveSceneHandler.manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();
             }
         }
     }
@@ -55,8 +73,9 @@ public class WindowsButton : MonoBehaviour
         applicationToOpen = application;
         additiveSceneHandler.SetVariablesFromFileData(caller);
     }
-    public void DropOntoGrid()
+    public void DropOntoDesktopGrid(bool fromFileExplorer)
     {
+        //check if its a file explorer icon first
         //find which empty space the icon is above then make it the child of it
         GameObject smallestDistanceObj = null;
         float smallestDistance = 10000000;
@@ -74,13 +93,123 @@ public class WindowsButton : MonoBehaviour
                 }
             }
         }
+        if (!fromFileExplorer)
+        {
+            gameObject.transform.SetParent(smallestDistanceObj.transform);
+            gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+            GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+            gameObject.transform.position = smallestDistanceObj.transform.position + new Vector3(0, 0, -1);
+        }
+        else
+        {
+            GameObject newIcon = Instantiate(gameObject);
+            newIcon.transform.SetParent(smallestDistanceObj.transform);
+            newIcon.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            newIcon.GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+            newIcon.transform.position = smallestDistanceObj.transform.position + new Vector3(0, 0, -1);
+            Destroy(gameObject);
+        }
 
-        gameObject.transform.SetParent(smallestDistanceObj.transform);
+    }
+    public void DropOntoTaskBarGrid(bool fromFileExplorer)
+    {
+        //check if its a file explorer icon first
+        if (!fromFileExplorer)
+        {
+            if (canBeTaskbarIcon)
+            {
+                gameObject.transform.SetParent(taskbar.gameObject.transform);
+                gameObject.transform.position = taskbar.transform.position;
+                gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+                gameObject.GetComponent<BoxCollider>().size = new Vector3(taskbar.grid.cellSize.x, taskbar.grid.cellSize.y, 1);
+                gameObject.transform.position = taskbar.transform.position + new Vector3(0, 0, -1);
+            }
+            else
+            {
+                gameObject.transform.SetParent(previousParent.transform);
+                gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+                GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+                GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+                gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
+            }
+        }
+        else
+        {
+            GameObject newIcon = Instantiate(gameObject);
+            newIcon.transform.SetParent(taskbar.transform);
+            newIcon.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            newIcon.GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+            newIcon.transform.position = taskbar.transform.position + new Vector3(0, 0, -1);
+        }
+
+    }
+    public void DropOntoFileExplorerGrid(bool fromFileExplorer)
+    {
+        //spawn file explorer icon
+        GameObject newFileIcon = Instantiate(fileExplorerIconPrefab, fileExplorer.contentArea.transform);
+        //place in file explorer :)
+        //delete old icon
+
+        //gonna have to rework how buttons are made to do this(i'll do it later i gotta work on the browser rn)
+    }
+    public void DropOnPreviousParent()
+    {
+        gameObject.transform.SetParent(previousParent.transform);
         gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+        GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+        gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
+    }
+    public void HoverDrop()
+    {
+        if (!canBeDragged) return;
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, Vector3.forward, out hitInfo, Mathf.Infinity, iconLayer))
+        { //if we dropped the icon onto another icon
+            Debug.Log("dropped onto icon");
+            //tell the icon we dropped onto to do something with the icon we dropped it onto
+            DropOnPreviousParent();
+        }
+        else if (Physics.Raycast(transform.position, Vector3.forward, out hitInfo, Mathf.Infinity, dropLayer))
+        { //check if we dropped onto the desktop, taskbar or file explorer
+            if (hitInfo.transform.TryGetComponent(out Desktop desktop))
+            {
+                DropOntoDesktopGrid(isFileExplorerIcon);
+            }
+            else if (hitInfo.transform.TryGetComponent(out Taskbar taskbar))
+            {
+                DropOntoTaskBarGrid(isFileExplorerIcon);
+            }
+            else if (hitInfo.transform.TryGetComponent(out FileExplorer fileExplorerInstance))
+            {
+                fileExplorer = fileExplorerInstance;
+                DropOntoFileExplorerGrid(isFileExplorerIcon);
+            }
+            else //if whatever we dropped on had the layer but none of these scripts
+            {
+                Debug.LogWarning("Dropped onto something with the correct layer but not something we can do anything with!");
+                DropOnPreviousParent();
+            }
+        }
+        else // if we somehow dropped onto nothing
+        {
+            Debug.LogWarning("Dropped onto nothing!");
+            DropOnPreviousParent();
+        }
+    }
+    public void SavePreviousPosition()
+    {
+        previousParent = gameObject.transform.parent.gameObject;
     }
     public void MoveToTopOfHierarchy()
     {
-        gameObject.transform.SetParent(canvas.transform, true);
+        if (canBeDragged) 
+        {
+            gameObject.transform.SetParent(canvas.transform, true);
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -1);
+        }
+        
     }
     public void OpenApplication()
     {

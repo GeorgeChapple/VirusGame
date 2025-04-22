@@ -13,6 +13,9 @@ public class HitEventScript : MonoBehaviour
     public UnityEvent doubleHitEvent;
     public UnityEvent letGoEvent;
 
+    public bool hovering = false;
+    public GameObject hoveringObject;
+
     public float timeToDoubleHit = 0.5f;
 
     public bool doubleAvailable;
@@ -44,7 +47,6 @@ public class HitEventScript : MonoBehaviour
     {
         doubleAvailable = true;
         yield return new WaitForSeconds(timeToDoubleHit);
-        Debug.Log("timer done");
         doubleAvailable = false;
         yield return null;
     }

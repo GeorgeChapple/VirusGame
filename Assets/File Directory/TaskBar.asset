@@ -20,7 +20,6 @@ MonoBehaviour:
   children:
   - {fileID: 11400000, guid: 4592327462e27bd4ba7ca78604a38d95, type: 2}
   - {fileID: 11400000, guid: cbd2238e46c1b5249b7d3717f1f050fa, type: 2}
-  - {fileID: 11400000, guid: e810bd82151d8d94284a5408572ed5c8, type: 2}
   parent: {fileID: 11400000}
   linkedFiles: []
   fileExplorer: {fileID: 0}
@@ -31,3 +30,4 @@ MonoBehaviour:
   OnDoubleClick: []
   sceneIndex: 0
   cameraMaterial: {fileID: 0}
+  canBeTaskBarIcon: 0

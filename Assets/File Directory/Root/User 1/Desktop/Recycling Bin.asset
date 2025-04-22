@@ -30,3 +30,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6198aea3fe564e45b564fa08c9f0a78, type: 2}
   sceneIndex: 0
   cameraMaterial: {fileID: 0}
+  canBeTaskBarIcon: 1
+  canBeDragged: 1

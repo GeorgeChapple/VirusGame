@@ -14,7 +14,7 @@ public class FileExplorer : MonoBehaviour
 
     [SerializeField] private GameObject sideBar;
     [SerializeField] private GameObject pathBar;
-    [SerializeField] private GameObject contentArea;
+    public GameObject contentArea;
     [SerializeField] private GameObject buttonPrefab;
 
     [SerializeField] private FileData currentFolder;

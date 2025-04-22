@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
@@ -11,10 +13,8 @@ public class Desktop : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject emptySpacePrefab;
     [SerializeField] private GameObject windowsIconPrefab;
-    [SerializeField] private GridLayoutGroup grid;
+    public GridLayoutGroup grid;
     public List<GameObject> desktopSpaces = new List<GameObject>();
-    public List<GameObject> desktopIcons = new List<GameObject>();
-    public Dictionary<GameObject, FileData> dictionary = new Dictionary<GameObject, FileData>();
 
     [Tooltip("This var needs to have the desktop fileData file in it")]
     [SerializeField] private FileData deskTopFileDirectory;
@@ -73,6 +73,9 @@ public class Desktop : MonoBehaviour
 
             obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
             obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
+            obj.GetComponent<WindowsButton>().canBeTaskbarIcon = file.canBeTaskBarIcon;
+            obj.GetComponentInChildren<TextMeshProUGUI>().text = file.name;            
+            obj.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;
 
 
             foreach (EventPass eventPass in file.OnDoubleClick)

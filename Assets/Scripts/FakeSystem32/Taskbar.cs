@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,21 +11,31 @@ using UnityEngine.UI;
 */
 public class Taskbar : MonoBehaviour
 {
-    //public List<GameObject> taskBarSpaces = new List<GameObject>();
+    public GridLayoutGroup grid;
     public GameObject taskBarIconPrefab;
 
     [Tooltip("This var needs to have the taskbar fileData file in it")]
     [SerializeField] private FileData taskBarFileDirectory;
+
+    [SerializeField] private List<GameObject> taskbarSpaces = new List<GameObject>();
 
     public void SetUpTaskBarSpaces()
     {
         foreach (FileData file in taskBarFileDirectory.children)
         {
             GameObject icon = Instantiate(taskBarIconPrefab, gameObject.transform);
+
+            icon.GetComponent<BoxCollider>().size = new Vector3(grid.cellSize.x, grid.cellSize.y, 1);
+
+            taskbarSpaces.Add(icon);
+
             icon.name = file.name + " Icon";
 
             icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, icon.GetComponent<SpriteHandlerScript>());
             icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
+            icon.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;
+            icon.GetComponentInChildren<TextMeshProUGUI>().text = file.name;
+            //icon.GetComponentInChildren<TextMeshProUGUI>() make text invisible
 
 
             foreach (EventPass eventPass in file.OnDoubleClick)

@@ -29,3 +29,5 @@ MonoBehaviour:
   OnDoubleClick: []
   sceneIndex: 0
   cameraMaterial: {fileID: 0}
+  canBeTaskBarIcon: 1
+  canBeDragged: 1

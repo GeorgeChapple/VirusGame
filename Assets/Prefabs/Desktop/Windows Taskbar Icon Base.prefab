@@ -32,7 +32,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595356956824147739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -127,6 +127,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &1841613337661778305
@@ -145,10 +147,14 @@ MonoBehaviour:
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 0}
   desktop: {fileID: 0}
+  taskbar: {fileID: 0}
   additiveSceneHandler: {fileID: 8187799400616148702}
   spriteHandlerScript: {fileID: 5752530453539114896}
   applicationToOpen: {fileID: 0}
   application: {fileID: 0}
+  desktopIconPrefab: {fileID: 0}
+  taskbarIconPrefab: {fileID: 0}
+  fileExplorerIconPrefab: {fileID: 0}
 --- !u!65 &4866702108266484479
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseDistance: {x: 0, y: 0}
   manager: {fileID: 0}
+  canBeDragged: 1
 --- !u!114 &3005874537562586388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +181,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!65 &6919148178413609924
@@ -346,6 +349,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!1 &7970603857852692154

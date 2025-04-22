@@ -168,7 +168,8 @@ GameObject:
   - component: {fileID: 5602920294406409397}
   - component: {fileID: 8579945003974412934}
   - component: {fileID: 4282855472889880528}
-  m_Layer: 5
+  - component: {fileID: 3417054602266476899}
+  m_Layer: 7
   m_Name: FileExplorerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,6 +232,54 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1358193907104645357}
+        m_TargetAssemblyTypeName: WindowsButton, Assembly-CSharp
+        m_MethodName: SavePreviousPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1358193907104645357}
+        m_TargetAssemblyTypeName: WindowsButton, Assembly-CSharp
+        m_MethodName: MoveToTopOfHierarchy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3417054602266476899}
+        m_TargetAssemblyTypeName: WindowScript, Assembly-CSharp
+        m_MethodName: GetMouseDistance
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3417054602266476899}
+        m_TargetAssemblyTypeName: WindowScript, Assembly-CSharp
+        m_MethodName: EnlargeCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 6143545805070354075}
         m_TargetAssemblyTypeName: HitEventScript, Assembly-CSharp
         m_MethodName: StartDoubleTimer
@@ -248,7 +297,21 @@ MonoBehaviour:
       m_Calls: []
   letGoEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1358193907104645357}
+        m_TargetAssemblyTypeName: WindowsButton, Assembly-CSharp
+        m_MethodName: HoverDrop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &1358193907104645357
@@ -264,13 +327,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 0}
-  desktop: {fileID: 0}
   additiveSceneHandler: {fileID: 7038263785172726493}
   spriteHandlerScript: {fileID: 5996709191688586830}
   applicationToOpen: {fileID: 0}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  fileExplorerIconPrefab: {fileID: 5950363918374949844}
+  isFileExplorerIcon: 1
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 0}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
 --- !u!114 &5996709191688586830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +438,20 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &3417054602266476899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950363918374949844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8c436b84f2f9843982836f990a6004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseDistance: {x: 0, y: 0}
+  manager: {fileID: 0}
 --- !u!1 &6446922425535185698
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +550,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535

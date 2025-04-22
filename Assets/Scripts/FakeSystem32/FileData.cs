@@ -32,4 +32,8 @@ public class FileData : ScriptableObject
     [Header("Additive Scene Handler")]
     public int sceneIndex;
     public Material cameraMaterial;
+
+    [Header("Miscellaneous")]
+    public bool canBeTaskBarIcon = true;
+    public bool canBeDragged = true;
 }
