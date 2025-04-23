@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
-    Edited by         : Jason Lodge
+    Edited by         : Jason Lodge, George Chapple
 */
 public class WindowsButton : MonoBehaviour
 {
@@ -72,7 +72,7 @@ public class WindowsButton : MonoBehaviour
         spriteHandlerScript.ReceiveSprites(caller);
         spriteHandlerScript.SetUp();
     }
-    public void SetUpVariables(FileData caller, GameObject application, int sceneIndex, Material cameraMaterial)
+    public void SetUpVariables(FileData caller, GameObject application, string sceneName, Material cameraMaterial)
     {
         applicationToOpen = application;
         additiveSceneHandler.SetVariablesFromFileData(caller);

@@ -72,7 +72,7 @@ public class Desktop : MonoBehaviour
             obj.name = file.name;
 
             obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
-            obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
+            obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
             obj.GetComponent<WindowsButton>().canBeTaskbarIcon = file.canBeTaskBarIcon;
             obj.GetComponentInChildren<TextMeshProUGUI>().text = file.name;            
             obj.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;

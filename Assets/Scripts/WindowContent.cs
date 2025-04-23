@@ -3,26 +3,27 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
-    Edited by         : Jason Lodge
+    Edited by         : Jason Lodge, George Chapple
 */
 public class WindowContent : MonoBehaviour
 {
     private FakeWindows32 windows32;
     [SerializeField] private WindowSpawner manager;
-    [SerializeField] private int sceneIndex;
+    [SerializeField] private string sceneName;
     [SerializeField] private Image content;
     [SerializeField] private Material cameraMaterial;
     private void Awake()
     {
-        windows32 = GameObject.FindAnyObjectByType<FakeWindows32>();
+        windows32 = FindAnyObjectByType<FakeWindows32>();
         windows32.OnHierarchyUpdated();
         gameObject.name = "Window " + Random.Range(0, 99);
     }
+
     public void OnceSpawned()
     {
         if (manager != null)
         {
-            sceneIndex = manager.sceneIndex;
+            sceneName = manager.sceneName;
             cameraMaterial = manager.cameraMaterial;
             content.material = cameraMaterial;
         }
@@ -36,9 +37,9 @@ public class WindowContent : MonoBehaviour
 
     public void DestroyConnectedScene()
     {
-        if (sceneIndex >= 0)
+        if (sceneName != null)
         {
-            SceneManager.UnloadSceneAsync(sceneIndex);
+            SceneManager.UnloadSceneAsync(sceneName);
         }
     }
 }

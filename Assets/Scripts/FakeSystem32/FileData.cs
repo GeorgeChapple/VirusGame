@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+
 /*
     Script created by : Jason Lodge
-    Edited by         : Jason Lodge
+    Edited by         : Jason Lodge, George Chapple
 */
+
 [CreateAssetMenu(fileName = "File")]
 public class FileData : ScriptableObject
 {
@@ -30,7 +31,7 @@ public class FileData : ScriptableObject
     public List<EventPass> OnDoubleClick;
 
     [Header("Additive Scene Handler")]
-    public int sceneIndex;
+    public string sceneName;
     public Material cameraMaterial;
 
     [Header("Miscellaneous")]

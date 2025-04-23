@@ -3,10 +3,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+
 /*
     Script created by : Jason Lodge
-    Edited by         : Jason Lodge
+    Edited by         : Jason Lodge, George Chapple
 */
+
 public class Taskbar : MonoBehaviour
 {
     public GridLayoutGroup grid;
@@ -30,7 +32,7 @@ public class Taskbar : MonoBehaviour
             icon.name = file.name + " Icon";
 
             icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, icon.GetComponent<SpriteHandlerScript>());
-            icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
+            icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
             icon.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;
             icon.GetComponent<WindowsButton>().canBeTaskbarIcon = file.canBeTaskBarIcon;
 

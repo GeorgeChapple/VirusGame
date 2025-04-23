@@ -60,7 +60,7 @@ public class FileExplorer : MonoBehaviour
             button.GetComponentInChildren<Image>().sprite = file.icon[0];
 
             button.GetComponent<WindowsButton>().SetUpVariables(file, file.application, button.GetComponent<SpriteHandlerScript>());
-            button.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
+            button.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
 
 
             if (file.dataType == "Folder")
