@@ -5,34 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/UI_Test.unity
     guid: c6db7950cb421ad43869a7e071a04dbe
-  - enabled: 0
+  - enabled: 1
     path: Assets/Arthurs Puzzle Scene/Scenes/Arthur's puzzle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/DeletingDAISY.unity
     guid: 4eaf916de9f3a4987b1e41546df1b1f9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GeneratingNewPuzzles.unity
     guid: 92f47c4a3262f4a008e4dc36cc7136d2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tami/SampleScene.unity
     guid: 8c43a3b9d32d7438592e528e2f1eaa31
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tami Tabs/1ChickenTami/ChickenTami.unity
     guid: d5678ef991c7a41ab87d864c535dfbbf
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tami Tabs/2QuickPlatformer/PlatformerQuick.unity
     guid: 9bf2db6cb065147e1a4955a4519ca19b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tami Tabs/3Therapy/TherapyRoom.unity
     guid: ae434ccdb89a34cf0964282fb783cead
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tami Tabs/6TamiPretty/Pretty.unity
     guid: cc6b369b75efa499e8ad32839b15157d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tami Tabs/11BreakTamiOut/Innocent1.unity
     guid: 3ed959b448a5f4e909feca9a4059da04
   - enabled: 1
@@ -41,13 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End of Game/EndPuzzle2.unity
     guid: 41898d5492c694811aaaec961d018ab4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/End of Game/EndPuzzle3.unity
     guid: f8d400b69e0534afb891e6c354149124
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/End of Game/EndPuzzle4.unity
     guid: fe94493b7545640aba345db632f4bdb1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/End of Game/EndPuzzle5.unity
     guid: c9924349bfd314060b8816bec76e99a2
   m_configObjects:

@@ -29,7 +29,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 89ec68609d8515c4c8ea0c639effc226, type: 2}
   - {fileID: 11400000, guid: 245b16d5cd0267d41819e161d1a42882, type: 2}
   - {fileID: 11400000, guid: e07034bbb3e242a47bfdcd8502dc642a, type: 2}
-  sceneIndex: 2
+  sceneName: Arthur's puzzle
   cameraMaterial: {fileID: 2100000, guid: d9d3dda5b11603a43b7ab05ff8f3d2a4, type: 2}
   canBeTaskBarIcon: 1
   canBeDragged: 1
