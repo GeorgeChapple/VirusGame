@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -34,8 +32,13 @@ public class Taskbar : MonoBehaviour
             icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, icon.GetComponent<SpriteHandlerScript>());
             icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneIndex, file.cameraMaterial);
             icon.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;
-            icon.GetComponentInChildren<TextMeshProUGUI>().text = file.name;
-            //icon.GetComponentInChildren<TextMeshProUGUI>() make text invisible
+            icon.GetComponent<WindowsButton>().canBeTaskbarIcon = file.canBeTaskBarIcon;
+
+            //make text invisible so that once it becomes a desktop icon it appears
+            TextMeshProUGUI text = icon.GetComponentInChildren<TextMeshProUGUI>();
+            text.text = file.name;
+            Color transparentCol = new Color(text.color.r, text.color.g, text.color.b, 0);
+            text.color = transparentCol;
 
 
             foreach (EventPass eventPass in file.OnDoubleClick)

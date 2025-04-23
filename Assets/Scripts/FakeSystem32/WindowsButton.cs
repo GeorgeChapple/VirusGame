@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 /*
@@ -20,6 +21,9 @@ public class WindowsButton : MonoBehaviour
     public LayerMask iconLayer;
     public GameObject fileExplorerIconPrefab;
     public bool isFileExplorerIcon;
+
+    private enum IconState { Desktop = 0, Taskbar = 1, FileExplorer = 2 };
+    IconState iconState = IconState.Desktop;
 
     [Header("Non-Manual Input Settings")]
     public bool canBeTaskbarIcon;
@@ -100,6 +104,10 @@ public class WindowsButton : MonoBehaviour
             GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
             GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
             gameObject.transform.position = smallestDistanceObj.transform.position + new Vector3(0, 0, -1);
+            TextMeshProUGUI text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+            Color transparentCol = new Color(text.color.r, text.color.g, text.color.b, 255);
+            text.color = transparentCol;
+            iconState = IconState.Desktop;
         }
         else
         {
@@ -109,6 +117,7 @@ public class WindowsButton : MonoBehaviour
             newIcon.GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
             newIcon.transform.position = smallestDistanceObj.transform.position + new Vector3(0, 0, -1);
             Destroy(gameObject);
+            iconState = IconState.Desktop;
         }
 
     }
@@ -119,14 +128,30 @@ public class WindowsButton : MonoBehaviour
         {
             if (canBeTaskbarIcon)
             {
-                gameObject.transform.SetParent(taskbar.gameObject.transform);
-                gameObject.transform.position = taskbar.transform.position;
-                gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-                gameObject.GetComponent<BoxCollider>().size = new Vector3(taskbar.grid.cellSize.x, taskbar.grid.cellSize.y, 1);
-                gameObject.transform.position = taskbar.transform.position + new Vector3(0, 0, -1);
+                if (iconState == IconState.Taskbar)
+                {
+                    gameObject.transform.SetParent(previousParent.transform);
+                    gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+                    GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+                    GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+                    gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
+                }
+                else
+                {
+                    gameObject.transform.SetParent(taskbar.gameObject.transform);
+                    gameObject.transform.position = taskbar.transform.position;
+                    gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+                    gameObject.GetComponent<BoxCollider>().size = new Vector3(taskbar.grid.cellSize.x, taskbar.grid.cellSize.y, 1);
+                    gameObject.transform.position = taskbar.transform.position + new Vector3(0, 0, -1);
+                    TextMeshProUGUI text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+                    Color transparentCol = new Color(text.color.r, text.color.g, text.color.b, 0);
+                    text.color = transparentCol;
+                    iconState = IconState.Taskbar;
+                }
+
             }
             else
-            {
+            {   //if can't the move it back
                 gameObject.transform.SetParent(previousParent.transform);
                 gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
                 GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
@@ -141,6 +166,10 @@ public class WindowsButton : MonoBehaviour
             newIcon.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
             newIcon.GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
             newIcon.transform.position = taskbar.transform.position + new Vector3(0, 0, -1);
+            TextMeshProUGUI text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+            Color transparentCol = new Color(text.color.r, text.color.g, text.color.b, 0);
+            text.color = transparentCol;
+            iconState = IconState.Taskbar;
         }
 
     }
@@ -204,12 +233,12 @@ public class WindowsButton : MonoBehaviour
     }
     public void MoveToTopOfHierarchy()
     {
-        if (canBeDragged) 
+        if (canBeDragged)
         {
             gameObject.transform.SetParent(canvas.transform, true);
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -1);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -1);
         }
-        
+
     }
     public void OpenApplication()
     {

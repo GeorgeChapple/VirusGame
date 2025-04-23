@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 1957121254002479825}
   - component: {fileID: 7727479654137866196}
   m_Layer: 5
-  m_Name: WebsiteBase
+  m_Name: WebsiteExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

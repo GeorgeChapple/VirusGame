@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78837297c53f5634f9248a4ccff78f6a, type: 3}
-  m_Name: Internet
+  m_Name: InternetTaskbar
   m_EditorClassIdentifier: 
   root: 0
   icon:

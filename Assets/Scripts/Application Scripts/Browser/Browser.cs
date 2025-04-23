@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 public class Browser : MonoBehaviour
@@ -6,45 +7,99 @@ public class Browser : MonoBehaviour
     [SerializeField] private TMP_InputField URLField;
     public string URL;
 
+    [SerializeField] private List<Website> websites = new List<Website>();
+
+    [SerializeField] private List<string> websiteNames = new List<string>();
+    [SerializeField] private List<string> websiteURLs = new List<string>();
+
+    public int maxSuggestions = 5;
+    private List<GameObject> currentSuggestions = new List<GameObject>();
+    private string currentSuggestion = "";
+    public RectTransform suggestionPanel;
+    public GameObject suggestionItemPrefab;
+
     [Header("Website will be a prefab that gets spawned into here.")]
     [SerializeField] private GameObject contentPanel;
-    [SerializeField] private TMP_Dropdown urlDropdown;
 
-    [SerializeField] private List<Website> websites = new List<Website>();
-    [SerializeField] private List<string> websiteNames = new List<string>();
+
     string closestURL = "";
     private void Start()
     {
+        URLField.onValueChanged.AddListener(OnInputChanged);
+        suggestionPanel.gameObject.SetActive(false);
         foreach (var website in websites)
         {
             websiteNames.Add(website.siteName);
         }
     }
-    public void URLSelect()
+    private void LateUpdate()
     {
-        urlDropdown.ClearOptions();
-        urlDropdown.AddOptions(websiteNames);
-        urlDropdown.Show();
+        //this is horrible, ill change it soon
+        URLField.onSubmit.RemoveAllListeners();
+        URLField.onSubmit.AddListener(delegate { URLInput(currentSuggestion); });
     }
-    public void URLUpdate()
+    private void OnInputChanged(string input)
     {
-        closestURL = FindClosestMatch(URL, websiteNames);
+        ClearSuggestions();
+
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            suggestionPanel.gameObject.SetActive(false);
+            return;
+        }
+
+        var matches = websiteNames.Select(option => new { option, distance = LevenshteinDistance(input.ToLower(), option.ToLower()) }).OrderBy(x => x.distance).Take(maxSuggestions).ToList();
+
+        if (matches.Count == 0)
+        {
+            suggestionPanel.gameObject.SetActive(false);
+            return;
+        }
+
+        foreach (var match in matches)
+        {
+            GameObject item = Instantiate(suggestionItemPrefab, suggestionPanel);
+            item.GetComponentInChildren<TMP_Text>().text = match.option;
+            item.GetComponent<HitEventScript>().hitEvent.AddListener(() => URLInput(match.option));
+            item.GetComponent<BoxCollider>().size = new Vector3(suggestionPanel.rect.width, 50, 1);
+            currentSuggestions.Add(item);
+        }
+        suggestionPanel.gameObject.SetActive(true);
+
+        currentSuggestion = currentSuggestions[0].GetComponentInChildren<TMP_Text>().text;
     }
-    public void URLInput(string name)
+    private void OnSuggestionClicked(string suggestion)
     {
+        URLField.text = suggestion;
+        ClearSuggestions();
+        suggestionPanel.gameObject.SetActive(false);
+    }
+
+    private void ClearSuggestions()
+    {
+        foreach (GameObject item in currentSuggestions)
+        {
+            Destroy(item);
+        }
+
+        currentSuggestions.Clear();
+    }
+    public void URLInput(string suggestion)
+    {
+        Debug.Log("search is: " + suggestion);
         //do new website stuff here        
-        string closestName = FindClosestMatch(name, websiteNames);
 
         foreach (var website in websites)
         {
-            if (website.siteName == closestName)
+            if (website.siteName == suggestion)
             {
                 URLField.text = website.siteUrl;
                 LoadWebsite(website);
                 break;
             }
         }
-        urlDropdown.Hide();
+        ClearSuggestions();
+        suggestionPanel.gameObject.SetActive(false);
     }
     private void LoadWebsite(Website website)
     {
@@ -54,23 +109,6 @@ public class Browser : MonoBehaviour
 
     }
 
-    string FindClosestMatch(string target, List<string> list)
-    {
-        string closest = null;
-        int minDistance = int.MaxValue;
-
-        foreach (string s in list)
-        {
-            int dist = LevenshteinDistance(target, s);
-            if (dist < minDistance)
-            {
-                minDistance = dist;
-                closest = s;
-            }
-        }
-
-        return closest;
-    }
     //first thing that came up when i searched up how to get a closest string, pretty cool
     int LevenshteinDistance(string a, string b)
     {
