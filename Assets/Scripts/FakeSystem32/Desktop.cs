@@ -71,9 +71,13 @@ public class Desktop : MonoBehaviour
             GameObject obj = GameObject.Instantiate(windowsIconPrefab, desktopSpaces[i].transform);
             obj.name = file.name;
 
-            obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
-            obj.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
-            obj.GetComponent<WindowsButton>().canBeTaskbarIcon = file.canBeTaskBarIcon;
+            WindowsButton wbComp = obj.GetComponent<WindowsButton>();
+
+
+            wbComp.SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
+            wbComp.SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
+            wbComp.canBeTaskbarIcon = file.canBeTaskBarIcon;
+            wbComp.iconState = WindowsButton.IconState.Desktop;
             obj.GetComponentInChildren<TextMeshProUGUI>().text = file.name;            
             obj.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;
 

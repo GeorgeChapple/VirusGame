@@ -27,8 +27,9 @@ MonoBehaviour:
   OnSpawnAsDeskTopIcon: []
   OnSpawnAsTaskBarIcon: []
   OnSpawnAsFileExplorerIcon: []
-  OnDoubleClick: []
-  sceneIndex: 0
+  OnDoubleClick:
+  - {fileID: 11400000, guid: 8c208a792c223fe41b5dee29e2998a22, type: 2}
+  sceneName: 
   cameraMaterial: {fileID: 0}
   canBeTaskBarIcon: 1
   canBeDragged: 1

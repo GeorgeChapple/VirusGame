@@ -20,7 +20,8 @@ MonoBehaviour:
   dataType: Application
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
-  linkedFiles: []
+  linkedFiles:
+  - {fileID: 11400000, guid: 4592327462e27bd4ba7ca78604a38d95, type: 2}
   fileExplorer: {fileID: 0}
   application: {fileID: 1595356956824147739, guid: 3caf6e86fc5c7ec4e81f475eb5e20e12, type: 3}
   OnSpawnAsDeskTopIcon: []
@@ -28,7 +29,7 @@ MonoBehaviour:
   OnSpawnAsFileExplorerIcon: []
   OnDoubleClick:
   - {fileID: 11400000, guid: 8c208a792c223fe41b5dee29e2998a22, type: 2}
-  sceneIndex: 0
+  sceneName: 
   cameraMaterial: {fileID: 0}
   canBeTaskBarIcon: 1
   canBeDragged: 1

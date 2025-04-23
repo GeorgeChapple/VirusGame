@@ -22,8 +22,8 @@ public class WindowsButton : MonoBehaviour
     public GameObject fileExplorerIconPrefab;
     public bool isFileExplorerIcon;
 
-    private enum IconState { Desktop = 0, Taskbar = 1, FileExplorer = 2 };
-    IconState iconState = IconState.Desktop;
+    public enum IconState { Desktop = 0, Taskbar = 1, FileExplorer = 2 };
+    public IconState iconState = IconState.Desktop;
 
     [Header("Non-Manual Input Settings")]
     public bool canBeTaskbarIcon;
@@ -31,6 +31,7 @@ public class WindowsButton : MonoBehaviour
     public Desktop desktop;
     public Taskbar taskbar;
     public GameObject previousParent;
+    public int previousParentChildPos;
     private FileExplorer fileExplorer;
     public bool canBeDragged;
 
@@ -130,11 +131,7 @@ public class WindowsButton : MonoBehaviour
             {
                 if (iconState == IconState.Taskbar)
                 {
-                    gameObject.transform.SetParent(previousParent.transform);
-                    gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-                    GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-                    GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-                    gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
+                    DropOnPreviousParent();
                 }
                 else
                 {
@@ -152,11 +149,7 @@ public class WindowsButton : MonoBehaviour
             }
             else
             {   //if can't the move it back
-                gameObject.transform.SetParent(previousParent.transform);
-                gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-                GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-                GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-                gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
+                DropOnPreviousParent();
             }
         }
         else
@@ -184,7 +177,8 @@ public class WindowsButton : MonoBehaviour
     }
     public void DropOnPreviousParent()
     {
-        gameObject.transform.SetParent(previousParent.transform);
+        gameObject.transform.SetParent(previousParent.transform);        
+        gameObject.transform.SetSiblingIndex(previousParentChildPos);
         gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
         GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
         GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
@@ -230,6 +224,7 @@ public class WindowsButton : MonoBehaviour
     public void SavePreviousPosition()
     {
         previousParent = gameObject.transform.parent.gameObject;
+        previousParentChildPos = gameObject.transform.GetSiblingIndex();
     }
     public void MoveToTopOfHierarchy()
     {

@@ -31,10 +31,12 @@ public class Taskbar : MonoBehaviour
 
             icon.name = file.name + " Icon";
 
-            icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, icon.GetComponent<SpriteHandlerScript>());
-            icon.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
-            icon.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;
-            icon.GetComponent<WindowsButton>().canBeTaskbarIcon = file.canBeTaskBarIcon;
+            WindowsButton wbComp = icon.GetComponent<WindowsButton>();
+            wbComp.SetUpVariables(file, file.application, icon.GetComponent<SpriteHandlerScript>());
+            wbComp.SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
+            wbComp.canBeDragged = file.canBeDragged;
+            wbComp.canBeTaskbarIcon = file.canBeTaskBarIcon;
+            wbComp.iconState = WindowsButton.IconState.Taskbar;
 
             //make text invisible so that once it becomes a desktop icon it appears
             TextMeshProUGUI text = icon.GetComponentInChildren<TextMeshProUGUI>();
