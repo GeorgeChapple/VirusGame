@@ -12,13 +12,24 @@ public class VirusScannerScript : MonoBehaviour {
     [SerializeField] private bool success;
     [SerializeField] private GameObject scannerLine;
     private SpriteHandlerScript spriteHandler;
+    public FileData fileToScan;
     private bool scanning;
 
     private void Awake() {
         spriteHandler = GetComponent<SpriteHandlerScript>();
     }
+    private void Start()
+    {
+        if (name != "Virus Scanner")
+        {
+            Destroy(scannerLine);
+            Destroy(this);
+        }
+    }
 
     public void ScanEvent() {
+        if (fileToScan == null) { Debug.Log("No file to scan"); }
+        else if (fileToScan.hasVirus) { success = true; }
         if (scannerLine != null){
             if (!scanning) {
                 scanning = true;
@@ -48,8 +59,10 @@ public class VirusScannerScript : MonoBehaviour {
             yield return null;
         }
         scannerLine.SetActive(false);
-        if (!success) {
+        if (!success){
             StartCoroutine(FailScan());
+        } else { 
+            StartCoroutine(SuccessScan());
         }
     }
 
@@ -61,6 +74,19 @@ public class VirusScannerScript : MonoBehaviour {
             spriteHandler.spriteIndex++; spriteHandler.RefreshSprite();
             yield return new WaitForSeconds(0.5f);
             spriteHandler.spriteIndex--; spriteHandler.RefreshSprite();
+            animationState++;
+        }
+        spriteHandler.spriteIndex = 1; spriteHandler.RefreshSprite();
+        scanning = false;
+    }
+    private IEnumerator SuccessScan() {
+        int animationState = 0;
+        spriteHandler.spriteIndex = 4; spriteHandler.RefreshSprite();
+        while (animationState < 3) {
+            yield return new WaitForSeconds(0.5f);
+            spriteHandler.spriteIndex = 0; spriteHandler.RefreshSprite();
+            yield return new WaitForSeconds(0.5f);
+            spriteHandler.spriteIndex = 4; spriteHandler.RefreshSprite();
             animationState++;
         }
         spriteHandler.spriteIndex = 1; spriteHandler.RefreshSprite();

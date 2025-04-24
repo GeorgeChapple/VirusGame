@@ -23,6 +23,7 @@ public class WindowsButton : MonoBehaviour
     public GameObject fileExplorerIconPrefab;
     public bool isFileExplorerIcon;
     public FileData file;
+    public FileData fileThatDroppedOnUs;
     public UnityEvent DropOnIconEvent;
 
     public enum IconState { Desktop = 0, Taskbar = 1, FileExplorer = 2 };
@@ -166,9 +167,6 @@ public class WindowsButton : MonoBehaviour
     }
     public void DropOntoFileExplorerGrid(bool fromFileExplorer)
     {
-        //spawn file explorer icon
-        //place in file explorer :)
-        //delete old icon
         if (!fromFileExplorer)
         {
             fileExplorer.SetUpButton(file, 0);
@@ -178,15 +176,13 @@ public class WindowsButton : MonoBehaviour
         {
             DropOnPreviousParent();
         }
-
-
-        //gonna have to rework how buttons are made to do this(i'll do it later i gotta work on the browser rn)
     }
     public void DropOnPreviousParent()
     {
+        Debug.Log("Drop on previous parent");
         gameObject.transform.SetParent(previousParent.transform);
         gameObject.transform.SetSiblingIndex(previousParentChildPos);
-        //gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
         //GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
         //GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
         //gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
@@ -198,6 +194,9 @@ public class WindowsButton : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.forward, out hitInfo, Mathf.Infinity, iconLayer))
         { //if we dropped the icon onto another icon
             Debug.Log("dropped onto icon");
+            hitInfo.transform.GetComponent<WindowsButton>().fileThatDroppedOnUs = file;
+            hitInfo.transform.TryGetComponent<VirusScannerScript>(out VirusScannerScript virusScanner);
+            if (virusScanner != null) { virusScanner.fileToScan = file; }            
             hitInfo.transform.GetComponent<WindowsButton>().DropOnIconEvent.Invoke();
             //tell the icon we dropped onto to do something with the icon we dropped it onto
             DropOnPreviousParent();

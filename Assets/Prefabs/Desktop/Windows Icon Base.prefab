@@ -223,8 +223,9 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 0}
-  additiveSceneHandler: {fileID: 0}
-  spriteHandlerScript: {fileID: 0}
+  additiveSceneHandler: {fileID: -888148962885325046}
+  spriteHandlerScript: {fileID: -7443175887929115226}
+  windowScript: {fileID: 79250788366257752}
   applicationToOpen: {fileID: 0}
   dropLayer:
     serializedVersion: 2
@@ -234,11 +235,30 @@ MonoBehaviour:
     m_Bits: 128
   fileExplorerIconPrefab: {fileID: 5950363918374949844, guid: 9c0c65ef030680d439cfacd84a0b6541, type: 3}
   isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4018647991422760785}
+        m_TargetAssemblyTypeName: VirusScannerScript, Assembly-CSharp
+        m_MethodName: ScanEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 0}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 1
 --- !u!65 &4866702108266484479
 BoxCollider:
@@ -290,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   manager: {fileID: 0}
-  sceneIndex: 0
+  sceneName: 
   cameraMaterial: {fileID: 0}
 --- !u!114 &4018647991422760785
 MonoBehaviour:
@@ -308,6 +328,7 @@ MonoBehaviour:
   scannerLineEndPos: {x: 0, y: -50, z: 0}
   success: 0
   scannerLine: {fileID: 6515161216921300003}
+  fileToScan: {fileID: 0}
 --- !u!1 &3080743467594207845
 GameObject:
   m_ObjectHideFlags: 0

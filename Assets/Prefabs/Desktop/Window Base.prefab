@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  sceneIndex: 0
+  sceneName: 
   content: {fileID: 3794802903842107748}
   cameraMaterial: {fileID: 0}
 --- !u!114 &9026229797594028167
@@ -456,6 +456,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4967184165919857109}
         m_TargetAssemblyTypeName: WindowScript, Assembly-CSharp
         m_MethodName: DestroySelf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3005874537562586388}
+        m_TargetAssemblyTypeName: WindowContent, Assembly-CSharp
+        m_MethodName: DestroyConnectedScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

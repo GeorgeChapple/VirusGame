@@ -37,7 +37,7 @@ public class WindowContent : MonoBehaviour
 
     public void DestroyConnectedScene()
     {
-        if (sceneName != null)
+        if (string.IsNullOrEmpty(sceneName))
         {
             SceneManager.UnloadSceneAsync(sceneName);
         }
