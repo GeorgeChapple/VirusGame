@@ -1012,11 +1012,13 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 2004732458}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!114 &831917438
 MonoBehaviour:
@@ -1183,7 +1185,7 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0.42175674, a: 1}
   - {r: 1, g: 0, b: 0.20997238, a: 1}
   - {r: 1, g: 0, b: 0.08507776, a: 1}
-  sceneIndex: -1
+  sceneName: 
   cameraMaterial: {fileID: 0}
 --- !u!4 &1092199276
 Transform:
@@ -1481,11 +1483,13 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 2004732458}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!114 &1365013216
 MonoBehaviour:
@@ -1865,11 +1869,13 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 2004732458}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!114 &1551287702
 MonoBehaviour:
@@ -2431,11 +2437,13 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 2004732458}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!114 &1702415390
 MonoBehaviour:

@@ -16,6 +16,7 @@ public class HitEventScript : MonoBehaviour
     public bool hovering = false;
     public GameObject hoveringObject;
 
+    private float timer = 0.5f;
     public float timeToDoubleHit = 0.5f;
 
     public bool doubleAvailable;
@@ -29,9 +30,7 @@ public class HitEventScript : MonoBehaviour
         {
             //fire the double hit
             doubleHitEvent.Invoke();
-            doubleAvailable = false; //so someone cant spam a triple click
-            StopCoroutine(Timer());
-            StopAllCoroutines();
+            timer = 0;
         }
     }
     public void StartDoubleTimer()
@@ -41,12 +40,17 @@ public class HitEventScript : MonoBehaviour
             return;
         }
         if (doubleAvailable) { return; }
+        timer = timeToDoubleHit;
         StartCoroutine(Timer());
     }
     private IEnumerator Timer()
     {
         doubleAvailable = true;
-        yield return new WaitForSeconds(timeToDoubleHit);
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
         doubleAvailable = false;
         yield return null;
     }
