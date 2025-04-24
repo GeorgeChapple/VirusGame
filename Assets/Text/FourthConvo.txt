@@ -1,6 +1,4 @@
 <sp:0.035>
-<pfb:1>
-<n>
 What now, Barry?
 What is this music!?
 <pfb:2>

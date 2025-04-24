@@ -14,8 +14,7 @@ public class ChatBoxManager_Editor : Editor {
         manager.fileIndex = Mathf.Clamp(EditorGUILayout.IntField(new GUIContent("File Index", "Index for which file in the list to read."), manager.fileIndex), 0, manager.dialogueTextFiles.Count - 1);
 
         if (GUILayout.Button(new GUIContent("Start Read", "Force chat box to start reading file at currently stored index."))) {
-            manager.StartText(manager.fileIndex);
+            manager.StartText(manager.fileIndex, 0);
         }
     }
-
 }

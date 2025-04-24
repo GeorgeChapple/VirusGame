@@ -1,6 +1,4 @@
 <sp:0.035>
-<pfb:1>
-<n>
 I can't afford a carriage.
 <pfb:2>
 <n>

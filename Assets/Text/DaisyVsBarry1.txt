@@ -1,6 +1,4 @@
 <sp:0.035>
-<pfb:1>
-<n>
 I've done it! DAISY has been deleted!
 <pfb:0>
 <n>

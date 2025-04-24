@@ -16,10 +16,10 @@ public class SpeechManager : MonoBehaviour {
     [HideInInspector] public bool next;
     [HideInInspector] public bool texting;
     [HideInInspector] public bool skip;
+    [HideInInspector] public int speechPrafabsIndex = 0;
 
     public List<GameObject> speechPrefabs = new List<GameObject>(); // Stores the prefab speech bubbles
 
-    private int speechPrafabsIndex = 0;
     private float textSpeed = 0.05f;
     private bool autoLineBreak = true;
     private string filePath = "currentFile.txt"; // File path of the .txt file that will be read from, used to place desired dialogue in ready to be read

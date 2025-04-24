@@ -1,6 +1,4 @@
 <sp:0.035>
-<pfb:1>
-<n>
 Ok, I've been given a message.
 Can I have my computer back now?
 <pfb:2>

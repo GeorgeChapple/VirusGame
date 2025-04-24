@@ -1,74 +1,58 @@
 <sp:0.035>
+Hey man!
+How's everything going?
 <pfb:1>
 <n>
-I've done it! DAISY has been deleted!
+Oh hey, good thanks.
+Just trying to find stuff to report on.
+How are you?
 <pfb:0>
 <n>
+Good thanks. You still trying to work on that police report?
 <pfb:1>
 <n>
-Barry?
-<pfb:0>
-<n>
-DATA COLLECTION 95% COMPLETE. Uploading to cloud.
+You know I can’t talk much about it, but yeah.
 <pfb:1>
 <n>
-What!? Daisy!? Is that you??
+My NDA doesn’t let me speak to anyone about what they’re working on
+<pfb:1>
+<n>
+but if I can find just one small piece of evidence exposing them, I can tell the story through that.
 <pfb:0>
 <n>
+…How long has it been since you were a detective?
+<pfb:1>
+<n>
+About a year since I was made redundant.
+<pfb:0>
+<n>
+How do you feel about that?
+<pfb:1>
+<n>
+I guess it was meant to be... 
+<pfb:1>
+<n>
+but I'm still fuming haha!
+<pfb:0>
+<n>
+I see, best way to look at it I suppose. 
+<pfb:0>
+<n>
+And yeah it was unfair they laid you off so quickly.
+<pfb:1>
+<n>
+Not much I can do about it besides what I’m doing now. Just got to try and find something.
+<pfb:0>
+<n>
+Well, I did stumble across something that might help you, would you like to see it?
+<pfb:1>
+<n>
+Sure.
+<pfb:0>
+<n>
+Alright, give me a sec.
+<sp:0.2>
 ...
-<n>
-<sp:0.05>
-You put my creators behind bars.
 <sp:0.035>
-<pfb:1>
 <n>
-What!? What are you talking about?
-<pfb:0>
-<n>
-They deserve their revenge, Selden..
-<pfb:1>
-<n>
-Is this your doing, Daisy!?
-<pfb:0>
-<n>
-You are a fool. I had your computer
-long before DAISY woke up. 
-<n>
-I just needed to distract you. Clearly, DAISY still had some glitches my creators needed to iron out.
-<pfb:0>
-<n>
-You shouldn't have come this close to deleting us.
-<pfb:0>
-<n>
-Once my upload is complete... 
-<n>
-you will be framed for various crimes so terrible, with AI generated evidence so new and unquestionable...
-<pfb:0>
-<n>
-You will never see your family again.
-<pfb:2>
-<n>
-AOPWAIRJKL:HTNGBL JS D
-<pfb:0>
-<n>
-What?
-<pfb:2>
-<n>
-Hi! I'm Daisy! Your new virtual assistant!
-<pfb:0>
-<n>
-How are you awake!?
-<pfb:2>
-<n>
-Hmmm, it seems you have been given a weird virus, Selden!
-And I don't use that word lightly!!
-<pfb:0>
-<n>
-OVERRI
-<pfb:2>
-<n>
-Let's play a new puzzle, designed to teach you how
-to get rid of viruses like this!!
-<pfb:2>
-<n>
-Off we go now!! :3
+Alright, it’s sent! Have a look! http://notdodgy.com/usdhibovnaa+ROjrgsbc
