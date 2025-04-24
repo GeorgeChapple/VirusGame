@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,15 +11,17 @@ using UnityEngine.Events;
 */
 
 public class SpeechManager : MonoBehaviour {
+    [HideInInspector] public List<GameObject> speechBubbles = new List<GameObject>(); // Stores all currently spawned speechBubbles
+    [HideInInspector] public UnityEvent newBubbleCreated;
+    [HideInInspector] public bool next;
+    [HideInInspector] public bool texting;
+
     public List<GameObject> speechPrefabs = new List<GameObject>(); // Stores the prefab speech bubbles
-    public List<GameObject> speechBubbles = new List<GameObject>(); // Stores all currently spawned speechBubbles
-    public TextAsset file; // Stores the text file to be read and displayed
-    public UnityEvent newBubbleCreated;
-    public bool next;
-    [SerializeField] private int speechPrafabsIndex = 0;
+
+    private int speechPrafabsIndex = 0;
     private float textSpeed = 0.05f;
     private bool autoLineBreak = true;
-    private string filePath;
+    private string filePath = "currentFile.txt";
     private string errorMessage = " <br>***TEXT BOX SYNTAX ERROR*** <br>";
     
     // Grabs file path and starts the process of reading it
@@ -29,9 +30,11 @@ public class SpeechManager : MonoBehaviour {
         StartCoroutine(TextLoop());
     }
 
-    // Finds the file path of the given .txt file
+    // 
     private void GetNewTextFile(TextAsset inputFile) {
-        file = inputFile;
+        using (StreamWriter sw = new StreamWriter(filePath)) {
+            sw.Write(inputFile.text);
+        }
         //filePath = AssetDatabase.GetAssetPath(file); //this only works in editor
         //filePath = Application.streamingAssetsPath + "/Text/" + file.name + ".txt"; //this dont work either
     }
@@ -49,6 +52,7 @@ public class SpeechManager : MonoBehaviour {
 
     // Reads the current stored .txt file line by line, processing commands
     private IEnumerator TextLoop() {
+        texting = true;
         bool continueRead;
         bool newBubble;
         speechBubbles.Add(Instantiate(speechPrefabs[speechPrafabsIndex])); // Instantiates the first speech bubble, using the default index
@@ -122,5 +126,6 @@ public class SpeechManager : MonoBehaviour {
                 yield return null;
             }
         }
+        texting = false;
     }
 }

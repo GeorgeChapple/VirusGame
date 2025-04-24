@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: 0
   icon:
-  - {fileID: -566345806, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
-  - {fileID: 177438484, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
-  - {fileID: -1156537565, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
-  - {fileID: 1000651471, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
-  - {fileID: 92543915, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
-  - {fileID: -736075354, guid: 78f81e9183368c941ba1f034275107a0, type: 3}
+  - {fileID: 21300000, guid: c8b68d96868563440a36574187c46fe6, type: 3}
+  - {fileID: 21300000, guid: f25bb186a57dd94468da8684a18f132e, type: 3}
+  - {fileID: 21300000, guid: 5cde305c3810c6e4797b1b709f166d48, type: 3}
+  - {fileID: 21300000, guid: 7c015f7f3530ce5488f1d9f9a95bfd56, type: 3}
+  - {fileID: 21300000, guid: 436949fa34614f344936b494ef9234f6, type: 3}
+  - {fileID: 21300000, guid: db2a3cb479f40384d8b1bf35bad9c018, type: 3}
   name: Virus Scanner
   dataType: Application
   children: []
@@ -32,7 +32,7 @@ MonoBehaviour:
   OnSpawnAsFileExplorerIcon: []
   OnDoubleClick:
   - {fileID: 11400000, guid: 7143e8a1ef6d37349a613ab3c5abc6ab, type: 2}
-  sceneIndex: 0
+  sceneName: 
   cameraMaterial: {fileID: 0}
   canBeTaskBarIcon: 0
   canBeDragged: 1

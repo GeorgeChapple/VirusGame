@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: EmailEvent1
   m_EditorClassIdentifier: 
   passValThrough: 1
-  methodName: SetSpriteIndex
+  methodName: OpenApplication
   passSelfVal: 0
   self: {fileID: 0}
   passStringVal: 0
   stringVal: 
   passIntVal: 1
-  intVal: 1
+  intVal: 0
   passFloatVal: 0
   floatVal: 0

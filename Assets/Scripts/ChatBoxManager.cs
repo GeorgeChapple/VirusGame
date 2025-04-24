@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class ChatBoxManager : MonoBehaviour
 {
+    public List<TextAsset> dialogueTextFiles = new List<TextAsset>();
+
     private SpeechManager speechManager; // Stores the speech manager script attatched to the chatbox
     private RectTransform contentRect; // Stores the content UI, this is where the speech bubbles get placed on to be scrolled through
     private GridLayoutGroup contentRectGridBox;
@@ -22,7 +24,13 @@ public class ChatBoxManager : MonoBehaviour
     }
 
     private void Start() {
-        speechManager.StartTextLoop(speechManager.file);
+        speechManager.StartTextLoop(dialogueTextFiles[0]);
+    }
+
+    public void Next() {
+        if (speechManager.texting == true) {
+            speechManager.next = true;
+        }
     }
 
     // Listens for when speech manager spawns a new speech bubble, sets the default values and parent of the new bubble
