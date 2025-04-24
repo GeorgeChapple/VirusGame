@@ -26,23 +26,23 @@ What!? What are you talking about?
 <pfb:0>
 <n>
 They deserve their revenge, Selden..
-<n>
 <pfb:1>
+<n>
 Is this your doing, Daisy!?
 <pfb:0>
 <n>
 You are a fool. I had your computer
-long before DAISY woke up. I just needed
-to distract you. Clearly, DAISY still had
-some glitches my creators needed to iron out.
+long before DAISY woke up. 
+<n>
+I just needed to distract you. Clearly, DAISY still had some glitches my creators needed to iron out.
 <pfb:0>
 <n>
 You shouldn't have come this close to deleting us.
 <pfb:0>
 <n>
-Once my upload is complete, you will be framed
-for various crimes so terrible, with AI generated
-evidence so new and unquestionable...
+Once my upload is complete... 
+<n>
+you will be framed for various crimes so terrible, with AI generated evidence so new and unquestionable...
 <pfb:0>
 <n>
 You will never see your family again.

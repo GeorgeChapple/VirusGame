@@ -1,8 +1,5 @@
 using System.Collections;
-using System.IO;
-using System;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 
 /*
@@ -12,9 +9,9 @@ using UnityEngine;
 
 public class SpeechScript : MonoBehaviour
 {
-    public float textSpeed = 0.05f;
-    public bool autoLineBreak = true;
-    public string text;
+    [HideInInspector] public float textSpeed = 0.05f;
+    [HideInInspector] public bool autoLineBreak = true;
+    [HideInInspector] public string text;
     private TextMeshProUGUI textBox;
 
     private void Awake() {

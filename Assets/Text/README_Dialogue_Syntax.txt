@@ -5,7 +5,6 @@ To use dialogue box, write text into a ".txt" file ("New Text Document" option i
 Place this text file into the "text" folder in the unity project.
 
 Text will be read line by line, character by character, as seen in the txt file.
-For examples on the following commands, use "testFile.txt"
 
 ------------------------
 MANAGERS

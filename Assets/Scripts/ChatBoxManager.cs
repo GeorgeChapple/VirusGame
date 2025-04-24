@@ -31,6 +31,7 @@ public class ChatBoxManager : MonoBehaviour
         }
     }
 
+    // If not already reading, read file at given index
     public void StartText(int index) {
         if (speechManager.texting) {
             Debug.LogWarning("Speech manager is currently already reading a file and cannot open another one yet!");
@@ -39,9 +40,17 @@ public class ChatBoxManager : MonoBehaviour
         }
     }
 
+    // Tells dialogue box to proceed
     public void Next() {
         if (speechManager.texting == true) {
             speechManager.next = true;
+        }
+    }
+
+    // Tells dialogue box to blast through text
+    public void Skip() {
+        if (speechManager.texting == true) {
+            speechManager.skip = true;
         }
     }
 

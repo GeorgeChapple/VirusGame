@@ -8,9 +8,10 @@ Yes! Hey man, what's going on?
 <pfb:1>
 <n>
 I think I've tricked Daisy into generating
-as many puzzles as possible. She should be
-occupied for a while.
-<pfb:1>
+as many puzzles as possible. 
+<n>
+She should be occupied for a while.
+<pfb:0>
 <n>
 Oh okay! Well that's an interesting technique
 for our readers!! What are you going to do now?
@@ -40,9 +41,8 @@ my data at risk anymore.
 <pfb:0>
 <n>
 . . .
-<pfb:0>
 <sp:0.035>
-<n>
+<p>
 Keep her alive.
 <pfb:1>
 <n>
@@ -56,4 +56,5 @@ Just keep her alive.
 No man, I'm ending this.
 She's being deleted.
 <pfb:0>
+<n>
 Wait-

@@ -13,6 +13,7 @@ You only have two?
 <n>
 Well on this version, yes!
 Would you like another one?
+<n>
 Just be warned it might take some time.
 <pfb:1>
 <n>
@@ -22,6 +23,7 @@ Just be warned it might take some time.
 rEALLY!? I thought you didn't like my puzzles!!
 Ok... Here I go!!!
 afsdxc d;
+<n>
 Et
 hkjn
 ERROERORERROER-

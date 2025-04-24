@@ -1,4 +1,3 @@
-<n>
 <pfb:0>
 <sp:0.035>
 Do you recognise the name?
@@ -34,7 +33,7 @@ Look, I know you can't tell me, but just hear me out...
 <n>
 In my mind, this could be something related to what you went through, if not exactly what happened to you.
 <pfb:0>
-<n> 
+<n>
 Regardless of whether or not you can tell me directly, what if we stole elements from this website, and combined them with some experiences you had? 
 <pfb:0>
 <n>
@@ -97,5 +96,3 @@ KP”0-e5hb asdxf
 {} O{£O%
 {} O{£O%
 <pfb:0>
-<n>
-

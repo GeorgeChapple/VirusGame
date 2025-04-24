@@ -352,11 +352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2299976134072551115, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2299976134072551115, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3497683059558270076, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_IsActive
@@ -376,19 +376,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5758844853177681102, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5758844853177681102, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5758844853177681102, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5758844853177681102, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6078315498430365619, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_Size
@@ -408,11 +408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7917348119758592186, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7917348119758592186, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -435,6 +435,10 @@ PrefabInstance:
     - target: {fileID: 1967212188711695967, guid: 2b1ce57b961da864f8762db6cdea3b44, type: 3}
       propertyPath: m_Name
       value: Messenger Window Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967212188711695967, guid: 2b1ce57b961da864f8762db6cdea3b44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2125625574217040648, guid: 2b1ce57b961da864f8762db6cdea3b44, type: 3}
       propertyPath: m_Pivot.x
@@ -542,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8720962295843414625, guid: 2b1ce57b961da864f8762db6cdea3b44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 645.3788
+      value: 645.37836
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

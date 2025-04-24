@@ -15,6 +15,7 @@ public class SpeechManager : MonoBehaviour {
     [HideInInspector] public UnityEvent newBubbleCreated;
     [HideInInspector] public bool next;
     [HideInInspector] public bool texting;
+    [HideInInspector] public bool skip;
 
     public List<GameObject> speechPrefabs = new List<GameObject>(); // Stores the prefab speech bubbles
 
@@ -53,6 +54,7 @@ public class SpeechManager : MonoBehaviour {
         texting = true;
         bool continueRead;
         bool newBubble;
+        bool commandRun;
         speechBubbles.Add(Instantiate(speechPrefabs[speechPrafabsIndex])); // Instantiates the first speech bubble, using the default index
         newBubbleCreated.Invoke();
         using (StreamReader sr = new StreamReader(filePath)) { // Opens a stream reader, closes the stream reader when done
@@ -62,6 +64,7 @@ public class SpeechManager : MonoBehaviour {
                 yield return new WaitForSeconds(nextLine.Length * textSpeed + 0.1f); // Waits until previous line has finished being displayed, prevents text being overwritten
                 continueRead = true; // If continue read is set to false in if statements, reading will pause
                 newBubble = false; // If set to true by if statements, a new speech bubble will be spawned, which will be used by the next line of text
+                commandRun = true; // Set false if no commands are run, used to prevent auto line break from creating new lines for commands
                 nextLine = "";
                 // Checks the next line, determines what command it is, runs the desired command, if no command is present, line is text and is sent to the speech bubble to be written
                 if (line == "<n>") { // Checks for new speech bubble command, tells loop to spawn a new speech bubble 
@@ -103,15 +106,21 @@ public class SpeechManager : MonoBehaviour {
                     }
                 } else { // If line has no commands, it is text to be read, sets next line to current line
                     nextLine += line;
+                    commandRun = false;
                 }
                 SpeechScript currentBubble = speechBubbles[speechBubbles.Count - 1].GetComponent<SpeechScript>(); // Sets current speech bubble to last speech bubble stored in list (which would be the latest one spawned in)
                 // Set the values in speech bubble to those of the manager, keeps speech bubble/newly spawned bubbles up with the correct settings set by the text file
+                if (skip) {
+                    textSpeed = 0f;
+                }
                 currentBubble.textSpeed = textSpeed;
                 currentBubble.autoLineBreak = autoLineBreak;
                 currentBubble.text = nextLine;
-                currentBubble.StartText(); // Starts writing the line of text
+                if (commandRun == false) {
+                    currentBubble.StartText(); // Starts writing the line of text
+                }
                 while (!continueRead) { // Checks if loop set to pause, pauses when true, waits to be told to go next
-                    if (next) {
+                    if (next || skip) {
                         if (newBubble) { // If new bubble needs to be spawned, spawn a new speech bubble, unpause
                             speechBubbles.Add(Instantiate(speechPrefabs[speechPrafabsIndex]));
                             newBubbleCreated.Invoke();
@@ -125,5 +134,7 @@ public class SpeechManager : MonoBehaviour {
             }
         }
         texting = false;
+        skip = false;
+        next = false;
     }
 }

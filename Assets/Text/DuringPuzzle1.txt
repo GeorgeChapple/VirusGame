@@ -4,12 +4,14 @@
 Uh, Daisy...
 Your puzzle doesn't work..
 <pfb:2>
+<n>
 Hmmmmmm???
 <pfb:1>
 <n>
 I've collected all the coins,
 but nothing changed..
 <pfb:2>
+<n>
 That's clearly not the solution then!
 <pfb:1>
 <n>
@@ -25,4 +27,3 @@ Excuse me!?
 Go and have a look at the new
 files on your computer!
 Maybe the answer is there...?
-<n>
