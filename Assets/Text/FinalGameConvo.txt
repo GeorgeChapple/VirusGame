@@ -1,0 +1,32 @@
+<sp:0.035>
+<pfb:2>
+<n>
+Wowie, Sellden! We sure learned a lot.
+What will you do now?
+<pfb:1?
+I think... I'm going to turn my
+computer off for a while.
+<pfb:2>
+<n>
+:O
+<pfb:1>
+<n>
+You helped me, Daisy, you may as well
+stay here for a bit. I don't think
+you're any harm.
+<n>
+I'll figure you out later. For now...
+<n>
+Maybe I'll spend some time with my
+daughter. Do some reading, I don't know.
+<n>
+I think it's time to spend some time away
+from all this tech.
+<n>
+Go see the real world, y'know?
+<pfb:2>
+<n>
+. . .
+<n>
+Weirdo. :3
+<n>
