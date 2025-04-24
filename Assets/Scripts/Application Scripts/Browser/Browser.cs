@@ -29,9 +29,6 @@ public class Browser : MonoBehaviour
 
     [Header("Website will be a prefab that gets spawned into here.")]
     [SerializeField] private GameObject contentPanel;
-
-
-    string closestURL = "";
     private void Start()
     {
         URLField.onValueChanged.AddListener(OnInputChanged);

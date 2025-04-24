@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
@@ -21,6 +22,8 @@ public class WindowsButton : MonoBehaviour
     public LayerMask iconLayer;
     public GameObject fileExplorerIconPrefab;
     public bool isFileExplorerIcon;
+    public FileData file;
+    public UnityEvent DropOnIconEvent;
 
     public enum IconState { Desktop = 0, Taskbar = 1, FileExplorer = 2 };
     public IconState iconState = IconState.Desktop;
@@ -34,13 +37,8 @@ public class WindowsButton : MonoBehaviour
     public int previousParentChildPos;
     private FileExplorer fileExplorer;
     public bool canBeDragged;
-
     private void Awake()
     {
-        if (!canBeDragged)
-        {
-            Destroy(GetComponent<WindowScript>());
-        }
         hierarchy = GameObject.Find("WindowHierarchy");
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         if (canvas == null)
@@ -62,7 +60,15 @@ public class WindowsButton : MonoBehaviour
             }
         }
     }
-    private void Start() => application = applicationToOpen;
+    private void Start()
+    {
+        if (!canBeDragged)
+        {
+            Destroy(GetComponent<WindowScript>());
+        }
+        application = applicationToOpen;
+        
+    }
     public void SetUpVariables(FileData caller, GameObject application)
     {
         applicationToOpen = application;
@@ -85,6 +91,8 @@ public class WindowsButton : MonoBehaviour
         //find which empty space the icon is above then make it the child of it
         GameObject smallestDistanceObj = null;
         float smallestDistance = 10000000;
+        int i = 0;
+        int spotOnDesktop = 0;
         foreach (GameObject space in desktop.desktopSpaces)
         {
             //get distances to all
@@ -96,8 +104,10 @@ public class WindowsButton : MonoBehaviour
                 {
                     smallestDistance = distance;
                     smallestDistanceObj = space;
+                    spotOnDesktop = i;
                 }
             }
+            i++;
         }
         if (!fromFileExplorer)
         {
@@ -113,15 +123,9 @@ public class WindowsButton : MonoBehaviour
         }
         else
         {
-            GameObject newIcon = Instantiate(gameObject);
-            newIcon.transform.SetParent(smallestDistanceObj.transform);
-            newIcon.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-            newIcon.GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-            newIcon.transform.position = smallestDistanceObj.transform.position + new Vector3(0, 0, -1);
+            desktop.SetUpIcon(file, spotOnDesktop);
             Destroy(gameObject);
-            iconState = IconState.Desktop;
         }
-
     }
     public void DropOntoTaskBarGrid(bool fromFileExplorer)
     {
@@ -155,35 +159,37 @@ public class WindowsButton : MonoBehaviour
         }
         else
         {
-            GameObject newIcon = Instantiate(gameObject);
-            newIcon.transform.SetParent(taskbar.transform);
-            newIcon.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-            newIcon.GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-            newIcon.transform.position = taskbar.transform.position + new Vector3(0, 0, -1);
-            TextMeshProUGUI text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-            Color transparentCol = new Color(text.color.r, text.color.g, text.color.b, 0);
-            text.color = transparentCol;
-            iconState = IconState.Taskbar;
+            taskbar.SetUpTaskbarIcon(file);
+            Destroy(gameObject);
         }
 
     }
     public void DropOntoFileExplorerGrid(bool fromFileExplorer)
     {
         //spawn file explorer icon
-        GameObject newFileIcon = Instantiate(fileExplorerIconPrefab, fileExplorer.contentArea.transform);
         //place in file explorer :)
         //delete old icon
+        if (!fromFileExplorer)
+        {
+            fileExplorer.SetUpButton(file, 0);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DropOnPreviousParent();
+        }
+
 
         //gonna have to rework how buttons are made to do this(i'll do it later i gotta work on the browser rn)
     }
     public void DropOnPreviousParent()
     {
-        gameObject.transform.SetParent(previousParent.transform);        
+        gameObject.transform.SetParent(previousParent.transform);
         gameObject.transform.SetSiblingIndex(previousParentChildPos);
-        gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-        GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-        GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-        gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
+        //gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        //GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+        //GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
+        //gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
     }
     public void HoverDrop()
     {
@@ -192,11 +198,12 @@ public class WindowsButton : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.forward, out hitInfo, Mathf.Infinity, iconLayer))
         { //if we dropped the icon onto another icon
             Debug.Log("dropped onto icon");
+            hitInfo.transform.GetComponent<WindowsButton>().DropOnIconEvent.Invoke();
             //tell the icon we dropped onto to do something with the icon we dropped it onto
             DropOnPreviousParent();
         }
         else if (Physics.Raycast(transform.position, Vector3.forward, out hitInfo, Mathf.Infinity, dropLayer))
-        { //check if we dropped onto the desktop, taskbar or file explorer
+        { //check if we dropped onto the desktop, taskbar or file explorer            
             if (hitInfo.transform.TryGetComponent(out Desktop desktop))
             {
                 DropOntoDesktopGrid(isFileExplorerIcon);
@@ -205,7 +212,7 @@ public class WindowsButton : MonoBehaviour
             {
                 DropOntoTaskBarGrid(isFileExplorerIcon);
             }
-            else if (hitInfo.transform.TryGetComponent(out FileExplorer fileExplorerInstance))
+            else if (hitInfo.transform.parent.parent.TryGetComponent(out FileExplorer fileExplorerInstance))
             {
                 fileExplorer = fileExplorerInstance;
                 DropOntoFileExplorerGrid(isFileExplorerIcon);

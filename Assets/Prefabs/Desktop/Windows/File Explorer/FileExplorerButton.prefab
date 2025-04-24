@@ -33,10 +33,10 @@ RectTransform:
   - {fileID: 8152902924485042635}
   m_Father: {fileID: 7464762393945297641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 25, y: -25}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1671013404692705561
 CanvasRenderer:
@@ -167,11 +167,10 @@ GameObject:
   - component: {fileID: 7038263785172726493}
   - component: {fileID: 5602920294406409397}
   - component: {fileID: 8579945003974412934}
-  - component: {fileID: 4282855472889880528}
   - component: {fileID: 3417054602266476899}
   m_Layer: 7
   m_Name: FileExplorerButton
-  m_TagString: Untagged
+  m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,11 +340,14 @@ MonoBehaviour:
     m_Bits: 128
   fileExplorerIconPrefab: {fileID: 5950363918374949844}
   isFileExplorerIcon: 1
+  iconState: 2
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 0}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
+  canBeDragged: 0
 --- !u!114 &5996709191688586830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   manager: {fileID: 0}
-  sceneIndex: 0
+  sceneName: 
   cameraMaterial: {fileID: 0}
 --- !u!114 &5602920294406409397
 MonoBehaviour:
@@ -414,30 +416,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1000, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4282855472889880528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5950363918374949844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 5
-    m_Right: 5
-    m_Top: 5
-    m_Bottom: 5
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 40, y: 40}
-  m_Spacing: {x: 10, y: 10}
-  m_Constraint: 0
-  m_ConstraintCount: 2
 --- !u!114 &3417054602266476899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,10 +462,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7464762393945297641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -25}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4698313776925335759
 CanvasRenderer:

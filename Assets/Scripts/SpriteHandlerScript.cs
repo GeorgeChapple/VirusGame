@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 /*
     Script created by : George Chapple
-    Edited by         : George Chapple
+    Edited by         : George Chapple, Jason Lodge
 */
 public class SpriteHandlerScript : MonoBehaviour {
-    [SerializeField] private Sprite[] spriteSheet;
+    public Sprite[] spriteSheet;
     public int spriteIndex;
     [SerializeField] private Image image;
 

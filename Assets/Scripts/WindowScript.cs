@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 /*
     Script created by : George Chapple
-    Edited by         : George Chapple
+    Edited by         : George Chapple, Jason Lodge
 */
 public class WindowScript : MonoBehaviour
 {
@@ -36,9 +36,6 @@ public class WindowScript : MonoBehaviour
     }
     public void PutInFront()
     {
-        //manager.windowHierarchy.RemoveAt(manager.windowHierarchy.IndexOf(this));
-        //manager.windowHierarchy.Insert(0, this);
-        //manager.OnHierarchyUpdated();
         gameObject.transform.SetParent(manager.windowHierarchy.transform, true);
         gameObject.transform.SetAsFirstSibling();
         manager.OnHierarchyUpdated();

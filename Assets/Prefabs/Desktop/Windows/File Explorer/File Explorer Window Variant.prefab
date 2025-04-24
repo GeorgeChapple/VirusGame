@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 1980394221784942034}
   - component: {fileID: 5474635791775629087}
   - component: {fileID: 8964051513447299053}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: ContentArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -552.44995, y: 320.74936}
+  m_AnchoredPosition: {x: -552.44995, y: 320.74985}
   m_SizeDelta: {x: 1104, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1980394221784942034
@@ -1957,7 +1957,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1121.9, y: 658.5, z: 1}
+  m_Size: {x: 1121.9, y: 658.5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8784777210167213734
 GameObject:

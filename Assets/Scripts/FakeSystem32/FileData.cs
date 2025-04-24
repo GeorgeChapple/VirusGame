@@ -14,7 +14,6 @@ public class FileData : ScriptableObject
     [Tooltip("These are the sprites that will go into the SpriteHandlerScript")]
     public List<Sprite> icon;
     public new string name = "";
-    //public string dataType = "";
     public enum DataType { Folder=0, Application=1, Image=2 };
     public DataType dataType;
 
@@ -27,9 +26,6 @@ public class FileData : ScriptableObject
     [Header("Application")]
     [Tooltip("The Application must be either the window prefab or an application prefab like file explorer")]
     public GameObject application;
-    public List<EventPass> OnSpawnAsDeskTopIcon;
-    public List<EventPass> OnSpawnAsTaskBarIcon;
-    public List<EventPass> OnSpawnAsFileExplorerIcon;
     public List<EventPass> OnDoubleClick;
 
     [Header("Additive Scene Handler")]

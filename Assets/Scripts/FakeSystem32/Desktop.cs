@@ -58,6 +58,65 @@ public class Desktop : MonoBehaviour
             desktopSpaces.Add(space);
         }
     }
+    public void SetUpIcon(FileData file, int spotToSpawnIn)
+    {
+        GameObject obj = GameObject.Instantiate(windowsIconPrefab, desktopSpaces[spotToSpawnIn].transform);
+        obj.name = file.name;
+
+        WindowsButton wbComp = obj.GetComponent<WindowsButton>();
+
+
+        wbComp.SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
+        wbComp.SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
+        wbComp.canBeTaskbarIcon = file.canBeTaskBarIcon;
+        wbComp.iconState = WindowsButton.IconState.Desktop;
+        obj.GetComponentInChildren<TextMeshProUGUI>().text = file.name;
+        obj.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;
+
+        wbComp.file = file;
+
+
+        foreach (EventPass eventPass in file.OnDoubleClick)
+        {
+            UnityAction action;
+            string methodName = eventPass.methodName; //get event values out
+            int intVal = eventPass.intVal;
+            float floatVal = eventPass.floatVal;
+            string stringVal = eventPass.stringVal;
+            FileData selfVal = eventPass.self;
+            if (eventPass.passValThrough)
+            {
+                if (eventPass.passIntVal)
+                {
+                    action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
+                }
+                else if (eventPass.passFloatVal)
+                {
+                    action = new UnityAction(delegate { obj.SendMessage(methodName, floatVal); });
+                }
+                else if (eventPass.passStringVal)
+                {
+                    action = new UnityAction(delegate { obj.SendMessage(methodName, stringVal); });
+                }
+                else if (eventPass.passSelfVal)
+                {
+                    action = new UnityAction(delegate { obj.SendMessage(methodName, selfVal); });
+                }
+                else
+                {
+                    action = new UnityAction(delegate { obj.SendMessage(methodName); });
+                }
+            }
+            else
+            {
+                action = new UnityAction(delegate { obj.SendMessage(methodName); });
+            }
+            if (action != null)
+            {
+                obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
+            }
+        }
+    }
     public void SetUpDesktopSavedLayout()
     {
         int i = 0;
@@ -68,60 +127,7 @@ public class Desktop : MonoBehaviour
                 i++;
                 continue;
             }
-            GameObject obj = GameObject.Instantiate(windowsIconPrefab, desktopSpaces[i].transform);
-            obj.name = file.name;
-
-            WindowsButton wbComp = obj.GetComponent<WindowsButton>();
-
-
-            wbComp.SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
-            wbComp.SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
-            wbComp.canBeTaskbarIcon = file.canBeTaskBarIcon;
-            wbComp.iconState = WindowsButton.IconState.Desktop;
-            obj.GetComponentInChildren<TextMeshProUGUI>().text = file.name;            
-            obj.GetComponent<WindowsButton>().canBeDragged = file.canBeDragged;
-
-
-            foreach (EventPass eventPass in file.OnDoubleClick)
-            {
-                UnityAction action;
-                string methodName = eventPass.methodName; //get event values out
-                int intVal = eventPass.intVal;
-                float floatVal = eventPass.floatVal;
-                string stringVal = eventPass.stringVal;
-                FileData selfVal = eventPass.self;
-                if (eventPass.passValThrough)
-                {
-                    if (eventPass.passIntVal)
-                    {
-                        action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
-                    }
-                    else if (eventPass.passFloatVal)
-                    {
-                        action = new UnityAction(delegate { obj.SendMessage(methodName, floatVal); });
-                    }
-                    else if (eventPass.passStringVal)
-                    {
-                        action = new UnityAction(delegate { obj.SendMessage(methodName, stringVal); });
-                    }
-                    else if (eventPass.passSelfVal)
-                    {
-                        action = new UnityAction(delegate { obj.SendMessage(methodName, selfVal); });
-                    }
-                    else
-                    {
-                        action = new UnityAction(delegate { obj.SendMessage(methodName); });
-                    }
-                }
-                else
-                {
-                    action = new UnityAction(delegate { obj.SendMessage(methodName); });
-                }
-                if (action != null)
-                {
-                    obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
-                }
-            }
+            SetUpIcon(file, i);
             i++;
         }        
     }
