@@ -10,6 +10,9 @@ using UnityEngine.UI;
 
 public class ChatBoxManager : MonoBehaviour
 {
+    [HideInInspector] public int fileIndex = 0;
+    [HideInInspector] public bool readOnStart;
+
     public List<TextAsset> dialogueTextFiles = new List<TextAsset>();
 
     private SpeechManager speechManager; // Stores the speech manager script attatched to the chatbox
@@ -24,7 +27,17 @@ public class ChatBoxManager : MonoBehaviour
     }
 
     private void Start() {
-        speechManager.StartTextLoop(dialogueTextFiles[0]);
+        if (readOnStart) {
+            StartText(fileIndex);
+        }
+    }
+
+    public void StartText(int index) {
+        if (speechManager.texting) {
+            Debug.LogWarning("Speech manager is currently already reading a file and cannot open another one yet!");
+        } else {
+            speechManager.StartTextLoop(dialogueTextFiles[fileIndex]);
+        }
     }
 
     public void Next() {
