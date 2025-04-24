@@ -21,7 +21,7 @@ public class SpeechManager : MonoBehaviour {
     private int speechPrafabsIndex = 0;
     private float textSpeed = 0.05f;
     private bool autoLineBreak = true;
-    private string filePath = "currentFile.txt";
+    private string filePath = "currentFile.txt"; // File path of the .txt file that will be read from, used to place desired dialogue in ready to be read
     private string errorMessage = " <br>***TEXT BOX SYNTAX ERROR*** <br>";
     
     // Grabs file path and starts the process of reading it
@@ -30,13 +30,11 @@ public class SpeechManager : MonoBehaviour {
         StartCoroutine(TextLoop());
     }
 
-    // 
+    // Writes the contents of the given file into the current file
     private void GetNewTextFile(TextAsset inputFile) {
         using (StreamWriter sw = new StreamWriter(filePath)) {
             sw.Write(inputFile.text);
         }
-        //filePath = AssetDatabase.GetAssetPath(file); //this only works in editor
-        //filePath = Application.streamingAssetsPath + "/Text/" + file.name + ".txt"; //this dont work either
     }
 
     // Called when a command line is read that needs to return a number of some kind, returns the string version of just the number in the command
@@ -50,7 +48,7 @@ public class SpeechManager : MonoBehaviour {
         return newVal;
     }
 
-    // Reads the current stored .txt file line by line, processing commands
+    // Reads the contents of the file stored in the filepath line by line, processing commands
     private IEnumerator TextLoop() {
         texting = true;
         bool continueRead;
@@ -74,7 +72,7 @@ public class SpeechManager : MonoBehaviour {
                 } else if (line.Length >= 4 && line.EndsWith(">") && line.Substring(0, 4) == "<sp:") { // Checks for speed command, tells loop to change text speed to the input value
                     string newSpeed = GetNewValFromCommandString(line); // grabs string version of value in the command
                     try { // Try to parse the string into a float, make this the new text speed
-                        textSpeed = float.Parse(newSpeed);
+                        textSpeed = Mathf.Clamp(float.Parse(newSpeed), 0f, float.MaxValue);
                     } catch { // If fails, input is invalid, display error message
                         nextLine += errorMessage;
                         nextLine += "~~~SPEED INVALID VALUE~~~ <br>";

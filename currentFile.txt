@@ -1,92 +1,59 @@
 <sp:0.035>
+Hey man!
+How's everything going?
 <pfb:1>
 <n>
-BARRY!
+Oh hey, good thanks.
+Just trying to find stuff to report on.
+How are you?
 <pfb:0>
 <n>
-What!? Dude you were gone for ages.
-Have you not seen my messages!?
+Good thanks. You still trying to work on that police report?
 <pfb:1>
 <n>
-I think this Daisy thing has blocked
-my messages.
+You know I can’t talk much about it, but yeah.
+<pfb:1>
+<n>
+My NDA doesn’t let me speak to anyone about what they’re working on
+<pfb:1>
+<n>
+but if I can find just one small piece of evidence exposing them, I can tell the story through that.
 <pfb:0>
 <n>
-That's a pretty odd thing to say...
-Have your files changed?
+…How long has it been since you were a detective?
 <pfb:1>
 <n>
-Yes! She's moving them around and adding new ones!
+About a year since I was made redundant.
 <pfb:0>
 <n>
-Hm, ok.. Maybe you do have a problem.
-Why can't I see her!?
+How do you feel about that?
 <pfb:1>
 <n>
-Reboot your computer, she might be there too.
-<n>
-She's totally a virus..
-<pfb:2>
-<n>
-No I'm not.
+I guess it was meant to be... 
 <pfb:1>
 <n>
-AHA! Did you see that!?!
+but I'm still fuming haha!
 <pfb:0>
 <n>
-See what?
+I see, best way to look at it I suppose. 
+<pfb:0>
+<n>
+And yeah it was unfair they laid you off so quickly.
 <pfb:1>
 <n>
-You can't see that!?
-She just messaged both of us!
-Let me send you a screenshot.
+Not much I can do about it besides what I’m doing now. Just got to try and find something.
+<pfb:0>
 <n>
-<sp:0.1>
-. . .
+Well, I did stumble across something that might help you, would you like to see it?
+<pfb:1>
+<n>
+Sure.
+<pfb:0>
+<n>
+Alright, give me a sec.
+<sp:0.2>
+...
 <sp:0.035>
-<pfb:0>
+Alright, it’s sent! Have a look! http://notdodgy.com/usdhibovnaa+ROjrgsbc
 <n>
-Well?
-<pfb:1>
-<n>
-I think she's disabled some of my inputs..
-<pfb:0>
-<n>
-Can you get rid of her?
-<pfb:1>
-<n>
-I'll try to get a look at her files when I can.
-Right now, she wants me to play these weird games..
-<pfb:0>
-<n>
-You know, this is good for our story.
-A new virus that tricks young users into... I don't know,
-downloading ransomware?
-<pfb:1>
-<n>
-Is this story worth MY data though!?
-<pfb:0>
-<n>
-Oh come on! You can't get rid of her right now anyway.
-Why don't you play along, and tell me what she's doing?
-We'll make a guide on how to stop her, and sell the story!
-<pfb:0>
-<n>
-If this virus ever becomes widespread, this story could
-make us rich!!!
-<pfb:1>
-<n>
-Well, it's not like I have a choice... Alright, I'll see
-what she's up to and let you know.
-<pfb:0>
-<n>
-I've got your back buddy! Well, in spirit.
-<n>
-<pfb:2>
-<n>
-Puzzle 2 is ready for you, Selden!!!
-33% COMPLETE
-:3
-<n>
-<pfb:1>
-Huh?
+
