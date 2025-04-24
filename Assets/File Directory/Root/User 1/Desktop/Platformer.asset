@@ -16,7 +16,7 @@ MonoBehaviour:
   icon:
   - {fileID: 21300000, guid: 18dad0301092fa6408ab1cd6c22aaf97, type: 3}
   name: Platformer
-  dataType: Application
+  dataType: 1
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []

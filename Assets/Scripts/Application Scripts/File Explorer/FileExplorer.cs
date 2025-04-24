@@ -63,13 +63,13 @@ public class FileExplorer : MonoBehaviour
             button.GetComponent<WindowsButton>().SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
 
 
-            if (file.dataType == "Folder")
+            if (file.dataType == FileData.DataType.Folder)
             {
                 button.GetComponent<HitEventScript>().doubleHitEvent.RemoveAllListeners();
                 button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(delegate { ChangeCurrentFolder(i); });
                 continue;
             }
-            else if (file.dataType == "Application")
+            else if (file.dataType == FileData.DataType.Application)
             {
                 button.GetComponentInChildren<TextMeshProUGUI>().text = file.name + ".exe";
                 button.GetComponent<WindowsButton>().applicationToOpen = file.application;                        

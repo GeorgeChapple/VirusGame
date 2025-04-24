@@ -14,7 +14,9 @@ public class FileData : ScriptableObject
     [Tooltip("These are the sprites that will go into the SpriteHandlerScript")]
     public List<Sprite> icon;
     public new string name = "";
-    public string dataType = "";
+    //public string dataType = "";
+    public enum DataType { Folder=0, Application=1 };
+    public DataType dataType;
 
     [Header("Hierarchy")]
     public List<FileData> children = new List<FileData>();

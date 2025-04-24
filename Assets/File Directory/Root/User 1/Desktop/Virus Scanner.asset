@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 436949fa34614f344936b494ef9234f6, type: 3}
   - {fileID: 21300000, guid: db2a3cb479f40384d8b1bf35bad9c018, type: 3}
   name: Virus Scanner
-  dataType: Application
+  dataType: 1
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []

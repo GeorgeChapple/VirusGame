@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c41f03e970ec3814f94c1501dc91eca2, type: 3}
   - {fileID: 21300000, guid: b6a3acce32a9c9448b0bc7067232e409, type: 3}
   name: Recycling Bin
-  dataType: Folder
+  dataType: 1
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []
@@ -28,7 +28,7 @@ MonoBehaviour:
   OnSpawnAsFileExplorerIcon: []
   OnDoubleClick:
   - {fileID: 11400000, guid: d6198aea3fe564e45b564fa08c9f0a78, type: 2}
-  sceneIndex: 0
+  sceneName: 
   cameraMaterial: {fileID: 0}
   canBeTaskBarIcon: 1
   canBeDragged: 1

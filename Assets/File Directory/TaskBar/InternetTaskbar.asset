@@ -16,7 +16,7 @@ MonoBehaviour:
   icon:
   - {fileID: 21300000, guid: 080e14d122f952440bd021dcf27c40e2, type: 3}
   name: Internet
-  dataType: Application
+  dataType: 1
   children: []
   parent: {fileID: 11400000, guid: 1a9c9252a348bb44e833fec44cd6e97e, type: 2}
   linkedFiles:
