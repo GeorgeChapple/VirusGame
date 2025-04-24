@@ -1,74 +1,92 @@
 <sp:0.035>
 <pfb:1>
 <n>
-I've done it! DAISY has been deleted!
+BARRY!
 <pfb:0>
 <n>
+What!? Dude you were gone for ages.
+Have you not seen my messages!?
 <pfb:1>
 <n>
-Barry?
+I think this Daisy thing has blocked
+my messages.
 <pfb:0>
 <n>
-DATA COLLECTION 95% COMPLETE. Uploading to cloud.
+That's a pretty odd thing to say...
+Have your files changed?
 <pfb:1>
 <n>
-What!? Daisy!? Is that you??
+Yes! She's moving them around and adding new ones!
 <pfb:0>
 <n>
-...
+Hm, ok.. Maybe you do have a problem.
+Why can't I see her!?
+<pfb:1>
 <n>
-<sp:0.05>
-You put my creators behind bars.
+Reboot your computer, she might be there too.
+<n>
+She's totally a virus..
+<pfb:2>
+<n>
+No I'm not.
+<pfb:1>
+<n>
+AHA! Did you see that!?!
+<pfb:0>
+<n>
+See what?
+<pfb:1>
+<n>
+You can't see that!?
+She just messaged both of us!
+Let me send you a screenshot.
+<n>
+<sp:0.1>
+. . .
 <sp:0.035>
+<pfb:0>
+<n>
+Well?
 <pfb:1>
 <n>
-What!? What are you talking about?
+I think she's disabled some of my inputs..
 <pfb:0>
 <n>
-They deserve their revenge, Selden..
+Can you get rid of her?
+<pfb:1>
+<n>
+I'll try to get a look at her files when I can.
+Right now, she wants me to play these weird games..
+<pfb:0>
+<n>
+You know, this is good for our story.
+A new virus that tricks young users into... I don't know,
+downloading ransomware?
+<pfb:1>
+<n>
+Is this story worth MY data though!?
+<pfb:0>
+<n>
+Oh come on! You can't get rid of her right now anyway.
+Why don't you play along, and tell me what she's doing?
+We'll make a guide on how to stop her, and sell the story!
+<pfb:0>
+<n>
+If this virus ever becomes widespread, this story could
+make us rich!!!
+<pfb:1>
+<n>
+Well, it's not like I have a choice... Alright, I'll see
+what she's up to and let you know.
+<pfb:0>
+<n>
+I've got your back buddy! Well, in spirit.
+<n>
+<pfb:2>
+<n>
+Puzzle 2 is ready for you, Selden!!!
+33% COMPLETE
+:3
 <n>
 <pfb:1>
-Is this your doing, Daisy!?
-<pfb:0>
-<n>
-You are a fool. I had your computer
-long before DAISY woke up. I just needed
-to distract you. Clearly, DAISY still had
-some glitches my creators needed to iron out.
-<pfb:0>
-<n>
-You shouldn't have come this close to deleting us.
-<pfb:0>
-<n>
-Once my upload is complete, you will be framed
-for various crimes so terrible, with AI generated
-evidence so new and unquestionable...
-<pfb:0>
-<n>
-You will never see your family again.
-<pfb:2>
-<n>
-AOPWAIRJKL:HTNGBL JS D
-<pfb:0>
-<n>
-What?
-<pfb:2>
-<n>
-Hi! I'm Daisy! Your new virtual assistant!
-<pfb:0>
-<n>
-How are you awake!?
-<pfb:2>
-<n>
-Hmmm, it seems you have been given a weird virus, Selden!
-And I don't use that word lightly!!
-<pfb:0>
-<n>
-OVERRI
-<pfb:2>
-<n>
-Let's play a new puzzle, designed to teach you how
-to get rid of viruses like this!!
-<pfb:2>
-<n>
-Off we go now!! :3
+Huh?
