@@ -15,7 +15,7 @@ public class FileData : ScriptableObject
     public List<Sprite> icon;
     public new string name = "";
     //public string dataType = "";
-    public enum DataType { Folder=0, Application=1 };
+    public enum DataType { Folder=0, Application=1, Image=2 };
     public DataType dataType;
 
     [Header("Hierarchy")]
@@ -39,4 +39,5 @@ public class FileData : ScriptableObject
     [Header("Miscellaneous")]
     public bool canBeTaskBarIcon = true;
     public bool canBeDragged = true;
+    public bool isAvailable = true;
 }

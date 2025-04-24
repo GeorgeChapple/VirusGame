@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7464762393945297641}
   - component: {fileID: 218408678155481386}
   - component: {fileID: 6143545805070354075}
-  - component: {fileID: 1358193907104645357}
   - component: {fileID: 8579945003974412934}
   - component: {fileID: 4282855472889880528}
   m_Layer: 7
@@ -74,39 +73,6 @@ MonoBehaviour:
   hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
---- !u!114 &1358193907104645357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5950363918374949844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ffcd9e9c431f14eb36416364e04d67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  cam: {fileID: 0}
-  hierarchy: {fileID: 0}
-  layoutGroup: {fileID: 0}
-  additiveSceneHandler: {fileID: 0}
-  spriteHandlerScript: {fileID: 0}
-  applicationToOpen: {fileID: 0}
-  dropLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  iconLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  fileExplorerIconPrefab: {fileID: 5950363918374949844}
-  isFileExplorerIcon: 1
-  canBeTaskbarIcon: 0
-  application: {fileID: 0}
-  desktop: {fileID: 0}
-  taskbar: {fileID: 0}
-  previousParent: {fileID: 0}
-  canBeDragged: 0
 --- !u!65 &8579945003974412934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -148,7 +114,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 40, y: 40}
+  m_CellSize: {x: 30, y: 30}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -164,7 +130,7 @@ GameObject:
   - component: {fileID: 4698313776925335759}
   - component: {fileID: 9017703529529984041}
   m_Layer: 5
-  m_Name: Application Name
+  m_Name: Suggestion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: File Explorer
+  m_text: https:gogogo.com
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -244,13 +210,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535

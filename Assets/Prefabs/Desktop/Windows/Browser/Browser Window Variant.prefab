@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2910281640367514187}
   - component: {fileID: 7853241583196338925}
   - component: {fileID: 2793247016555828725}
+  - component: {fileID: 4534073792471398461}
   - component: {fileID: 3585994707312537320}
   m_Layer: 5
   m_Name: Downloads
@@ -28,7 +29,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265242918434494797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,13 +84,13 @@ MonoBehaviour:
   hitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WindowScript, Assembly-CSharp
-        m_MethodName: DestroySelf
-        m_Mode: 1
+      - m_Target: {fileID: 4534073792471398461}
+        m_TargetAssemblyTypeName: WindowsButton, Assembly-CSharp
+        m_MethodName: OpenApplicationAndSendCaller
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 3a3761e4e6739834eb5a723c22235208, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FileData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -105,6 +106,41 @@ MonoBehaviour:
   hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
+--- !u!114 &4534073792471398461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265242918434494797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ffcd9e9c431f14eb36416364e04d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  cam: {fileID: 0}
+  hierarchy: {fileID: 0}
+  layoutGroup: {fileID: 0}
+  additiveSceneHandler: {fileID: 0}
+  spriteHandlerScript: {fileID: 0}
+  applicationToOpen: {fileID: 1967212188711695967, guid: 057dd7ab2d8d6184bb49d637e092526e, type: 3}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  iconState: 0
+  canBeTaskbarIcon: 0
+  application: {fileID: 0}
+  desktop: {fileID: 0}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  previousParentChildPos: 0
+  canBeDragged: 0
 --- !u!114 &3585994707312537320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +392,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225158392841000378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -411,9 +447,9 @@ MonoBehaviour:
   hitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WindowScript, Assembly-CSharp
-        m_MethodName: DestroySelf
+      - m_Target: {fileID: 2033769302039818624}
+        m_TargetAssemblyTypeName: Browser, Assembly-CSharp
+        m_MethodName: GoBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -682,7 +718,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6590751156817800040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -798,7 +834,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7669800632816006987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -998,7 +1034,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7883575568964547347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1053,9 +1089,9 @@ MonoBehaviour:
   hitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WindowScript, Assembly-CSharp
-        m_MethodName: DestroySelf
+      - m_Target: {fileID: 2033769302039818624}
+        m_TargetAssemblyTypeName: Browser, Assembly-CSharp
+        m_MethodName: GoForward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1413,8 +1449,10 @@ MonoBehaviour:
   websites:
   - {fileID: 11400000, guid: 1bcddab5b779c4f42b7681b4be268bc8, type: 2}
   - {fileID: 11400000, guid: 1cefc7ab0aab12242b979869f658363b, type: 2}
-  websiteNames: []
   websiteURLs: []
+  currentSite: {fileID: 11400000, guid: 1bcddab5b779c4f42b7681b4be268bc8, type: 2}
+  previousSites: []
+  futureSites: []
   maxSuggestions: 5
   suggestionPanel: {fileID: 5782752071116499821}
   suggestionItemPrefab: {fileID: 5950363918374949844, guid: d48880d4b6d26f941b9d6583988a45a2, type: 3}

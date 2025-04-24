@@ -167,11 +167,13 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 0}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!65 &283005452549643955
 BoxCollider:
@@ -472,11 +474,13 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 0}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!65 &8202555633381759943
 BoxCollider:
@@ -1061,7 +1065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -552, y: 320.75}
+  m_AnchoredPosition: {x: -552.44995, y: 320.74936}
   m_SizeDelta: {x: 1104, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1980394221784942034
@@ -1835,7 +1839,7 @@ GameObject:
   - component: {fileID: 5063006916469550692}
   - component: {fileID: 828600395482373248}
   - component: {fileID: 3794366839508493366}
-  - component: {fileID: 8492426670242997928}
+  - component: {fileID: 567771768345217356}
   - component: {fileID: 8305264686906768661}
   m_Layer: 8
   m_Name: Scroll View
@@ -1904,7 +1908,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8492426670242997928
+--- !u!114 &567771768345217356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1913,7 +1917,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8483141552449252986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Script: {fileID: 11500000, guid: b12dda56a9497014982cd1f86eb9521e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 4370161472667231004}

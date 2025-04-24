@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 /*
     Script created by : George Chapple
-    Edited by         : George Chapple
+    Edited by         : George Chapple, Jason Lodge
 */
 
 public class HitEventScript : MonoBehaviour
@@ -56,10 +56,7 @@ public class HitEventScript : MonoBehaviour
     }
     private bool IfActive()
     {
-        if (!gameObject.activeInHierarchy)
-        {
-            return false;
-        }
+        if (!gameObject.activeInHierarchy) { return false; }
         return true;
     }
 }

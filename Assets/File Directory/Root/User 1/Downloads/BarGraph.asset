@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78837297c53f5634f9248a4ccff78f6a, type: 3}
-  m_Name: Downloads
+  m_Name: BarGraph
   m_EditorClassIdentifier: 
   root: 0
   icon:
-  - {fileID: 21300000, guid: a003e586a0639a74a873d3ad9fca8e9b, type: 3}
-  name: Downloads
-  dataType: 0
-  children:
-  - {fileID: 11400000, guid: 39155d04550eaf34eab927e8d6f7c9df, type: 2}
-  parent: {fileID: 11400000, guid: 8e7218a44493b664ca88b523f9f0d6ad, type: 2}
+  - {fileID: 21300000, guid: dc0b6c0f336c98746a357b5fabc257ba, type: 3}
+  name: BarGraph
+  dataType: 2
+  children: []
+  parent: {fileID: 11400000, guid: 3a3761e4e6739834eb5a723c22235208, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
   application: {fileID: 0}

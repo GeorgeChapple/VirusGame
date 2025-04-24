@@ -47,7 +47,7 @@ public class FileExplorer : MonoBehaviour
         //spawn new buttons
         foreach (var (file, i) in currentFolder.children.Select((value, i) => (value, i)))
         {
-            if (file == null)
+            if (file == null || !file.isAvailable)
             {
                 continue;
             }
@@ -73,6 +73,10 @@ public class FileExplorer : MonoBehaviour
             {
                 button.GetComponentInChildren<TextMeshProUGUI>().text = file.name + ".exe";
                 button.GetComponent<WindowsButton>().applicationToOpen = file.application;                        
+            }
+            else if (file.dataType == FileData.DataType.Image)
+            {
+                button.GetComponentInChildren<TextMeshProUGUI>().text = file.name + ".png";
             }
             foreach (EventPass eventPass in file.OnDoubleClick)
             {

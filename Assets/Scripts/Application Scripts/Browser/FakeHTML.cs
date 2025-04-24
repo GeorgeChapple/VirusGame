@@ -3,6 +3,10 @@ using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 
 public class FakeHTML : MonoBehaviour
 {

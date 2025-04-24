@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 /*
     Script created by : George Chapple
-    Edited by         : George Chapple
+    Edited by         : George Chapple, Jason Lodge
 */
 
 public class RaycastScript : MonoBehaviour {

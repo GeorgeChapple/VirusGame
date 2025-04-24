@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 
 public class Flashlight : MonoBehaviour
 {

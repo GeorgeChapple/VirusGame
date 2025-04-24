@@ -23,8 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe1257ff4cb19e946b111451bce62955, type: 2}
   - {fileID: 11400000, guid: e56860441a1a55e4793b59fac5f8ae5f, type: 2}
   - {fileID: 11400000, guid: 8127b9c124f445c4b9e84813fcafb1f4, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 11400000, guid: ff6f650075e2d514d9451b5dd6937d82, type: 2}
   parent: {fileID: 11400000, guid: 8e7218a44493b664ca88b523f9f0d6ad, type: 2}
   linkedFiles: []
@@ -38,3 +36,4 @@ MonoBehaviour:
   cameraMaterial: {fileID: 0}
   canBeTaskBarIcon: 1
   canBeDragged: 1
+  isAvailable: 1
