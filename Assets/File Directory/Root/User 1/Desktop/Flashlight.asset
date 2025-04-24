@@ -21,7 +21,7 @@ MonoBehaviour:
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
-  application: {fileID: 0}
+  application: {fileID: 8880770604962872450, guid: eba57463802910a428da8ad5dcb4e3f6, type: 3}
   OnSpawnAsDeskTopIcon: []
   OnSpawnAsTaskBarIcon: []
   OnSpawnAsFileExplorerIcon: []

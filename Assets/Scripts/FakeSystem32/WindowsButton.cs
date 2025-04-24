@@ -62,6 +62,7 @@ public class WindowsButton : MonoBehaviour
             }
         }
     }
+    private void Start() => application = applicationToOpen;
     public void SetUpVariables(FileData caller, GameObject application)
     {
         applicationToOpen = application;
@@ -235,14 +236,34 @@ public class WindowsButton : MonoBehaviour
         }
 
     }
+    public void CheckApplicationIsOpen()
+    {
+        GameObject go = GameObject.Find(applicationToOpen.name);
+        if (go != null)
+        {
+            Debug.Log("close");
+            CloseApplication(application);
+        }
+        else
+        {
+            Debug.Log("open");
+            OpenApplication();
+        }
+    }
     public void OpenApplication()
     {
         application = Instantiate(applicationToOpen, hierarchy.transform);
+        application.name = applicationToOpen.name;
     }
     public void OpenApplicationAndSendCaller(FileData caller)
     {
         application = Instantiate(applicationToOpen, hierarchy.transform);
         application.SendMessage("ReceiveCaller", caller);
+        application.name = applicationToOpen.name;
+    }
+    public void CloseApplication(GameObject appToClose)
+    {
+        Destroy(appToClose);
     }
     public void ManagerSpawnWindow()
     {

@@ -18,7 +18,7 @@ MonoBehaviour:
   self: {fileID: 0}
   passStringVal: 0
   stringVal: 
-  passIntVal: 1
+  passIntVal: 0
   intVal: 0
   passFloatVal: 0
   floatVal: 0

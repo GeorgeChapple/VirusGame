@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlashlightEvent1
   m_EditorClassIdentifier: 
   passValThrough: 1
-  methodName: OpenApplication
+  methodName: CheckApplicationIsOpen
   passSelfVal: 0
   self: {fileID: 0}
   passStringVal: 0
