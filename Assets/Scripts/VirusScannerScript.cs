@@ -91,6 +91,7 @@ public class VirusScannerScript : MonoBehaviour {
         }
         spriteHandler.spriteIndex = 1; spriteHandler.RefreshSprite();
         scanning = false;
+        success = false;
     }
 
     // REMOVE LATER, CREATE NEW SCRIPT
