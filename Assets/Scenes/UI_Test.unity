@@ -1001,6 +1001,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1190449428}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 1967212188711695967, guid: 057dd7ab2d8d6184bb49d637e092526e, type: 3}
@@ -1477,6 +1478,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
@@ -1868,6 +1870,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
@@ -2441,6 +2444,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
