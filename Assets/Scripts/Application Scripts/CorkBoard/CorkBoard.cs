@@ -25,7 +25,7 @@ public class CorkBoard : MonoBehaviour
         foreach (KeyValuePair<CorkBoardPage, LineRenderer> keyValuePair in pageAndLine)
         {
             RectTransform rect = keyValuePair.Key.GetComponent<RectTransform>();
-            keyValuePair.Value.SetPosition(1, rect.anchoredPosition3D + new Vector3(0, rect.rect.height * 0.5f, -11));
+            keyValuePair.Value.SetPosition(1, rect.anchoredPosition3D + keyValuePair.Key.lineEnd.localPosition);
         }        
     }
     private void SetUp()
@@ -36,7 +36,7 @@ public class CorkBoard : MonoBehaviour
             RectTransform rect = newPage.GetComponent<RectTransform>();
             rect.anchoredPosition = RandomRadialWithMinVal(contentPanel.transform.position, 200, 300);
             newPage.GetComponent<CorkBoardPage>().SetData(page);
-            LineRenderer newLine = NewLine(contentPanel.transform.position + new Vector3(0, 0, -9.5f), rect.anchoredPosition3D + new Vector3(0, rect.rect.height * 0.5f, -11));
+            LineRenderer newLine = NewLine(contentPanel.transform.position + new Vector3(0, 0, -9.5f), rect.anchoredPosition3D + newPage.GetComponent<CorkBoardPage>().lineEnd.localPosition);
 
             pageAndLine.Add(newPage.GetComponent<CorkBoardPage>(), newLine);
         }

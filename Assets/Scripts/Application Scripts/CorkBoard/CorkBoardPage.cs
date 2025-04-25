@@ -6,6 +6,7 @@ public class CorkBoardPage : MonoBehaviour
     public CorkBoard board;
     private CorkBoardPageData data;
     [SerializeField] private TextMeshProUGUI text;
+    public Transform lineEnd;
 
     private void Start()
     {
