@@ -133,7 +133,12 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
-  iconState: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 2
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 0}
@@ -1449,6 +1454,7 @@ MonoBehaviour:
   websites:
   - {fileID: 11400000, guid: 1bcddab5b779c4f42b7681b4be268bc8, type: 2}
   - {fileID: 11400000, guid: 1cefc7ab0aab12242b979869f658363b, type: 2}
+  - {fileID: 11400000, guid: e3c74f863a03cf04cac752bc7108381f, type: 2}
   websiteURLs: []
   currentSite: {fileID: 11400000, guid: 1bcddab5b779c4f42b7681b4be268bc8, type: 2}
   previousSites: []

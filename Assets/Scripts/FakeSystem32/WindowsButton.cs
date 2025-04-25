@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -15,6 +14,7 @@ public class WindowsButton : MonoBehaviour
     public GameObject hierarchy;
     [Tooltip("If this WindowsButton is on a prefab it needs to be set in code if not then set it here and it won't size it wrong")]
     public GridLayoutGroup layoutGroup;
+    public bool useLayoutGroup = true;
     public AdditiveSceneHandler additiveSceneHandler;
     public SpriteHandlerScript spriteHandlerScript;
     [Tooltip("We'll use this to spawn the application we wanna open, everything else will be done by the application we open (like putting icons in the taskbar)")]
@@ -48,12 +48,15 @@ public class WindowsButton : MonoBehaviour
             canvas = GameObject.Find("FakeWindows").GetComponent<Canvas>();
             desktop = GameObject.Find("DesktopUI").GetComponent<Desktop>();
             taskbar = GameObject.Find("TaskBar").GetComponentInChildren<Taskbar>();
-            if (layoutGroup == null)
+            if (useLayoutGroup)
             {
-                layoutGroup = GameObject.Find("DesktopUI").GetComponent<GridLayoutGroup>();
+                if (layoutGroup == null)
+                {
+                    layoutGroup = GameObject.Find("DesktopUI").GetComponent<GridLayoutGroup>();
+                }
+                GetComponent<RectTransform>().sizeDelta = layoutGroup.cellSize;
+                GetComponent<BoxCollider>().size = layoutGroup.cellSize;
             }
-            GetComponent<RectTransform>().sizeDelta = layoutGroup.cellSize;
-            GetComponent<BoxCollider>().size = layoutGroup.cellSize;
             if (TryGetComponent<AdditiveSceneHandler>(out AdditiveSceneHandler sceneHandler))
             {
                 additiveSceneHandler = sceneHandler;
@@ -69,7 +72,7 @@ public class WindowsButton : MonoBehaviour
             Destroy(GetComponent<WindowScript>());
         }
         application = applicationToOpen;
-        
+
     }
     public void SetUpVariables(FileData caller, GameObject application)
     {
@@ -180,13 +183,9 @@ public class WindowsButton : MonoBehaviour
     }
     public void DropOnPreviousParent()
     {
-        Debug.Log("Drop on previous parent");
         gameObject.transform.SetParent(previousParent.transform);
         gameObject.transform.SetSiblingIndex(previousParentChildPos);
         gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-        //GetComponent<BoxCollider>().size = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-        //GetComponent<RectTransform>().sizeDelta = new Vector3(desktop.grid.cellSize.x, desktop.grid.cellSize.y, 1);
-        //gameObject.transform.position = previousParent.transform.position + new Vector3(0, 0, -1);
     }
     public void HoverDrop()
     {
@@ -195,11 +194,11 @@ public class WindowsButton : MonoBehaviour
         RaycastHit[] iconHits = Physics.RaycastAll(ray, Mathf.Infinity, iconLayer);
         RaycastHit[] dropHits = Physics.RaycastAll(ray, Mathf.Infinity, dropLayer);
         if (iconHits.Length > 1)
-        { //if we dropped the icon onto another icon
-            Debug.Log("dropped onto icon");
+        {
+            //if we dropped the icon onto another icon
             iconHits[1].transform.GetComponent<WindowsButton>().fileThatDroppedOnUs = file;
             iconHits[1].transform.TryGetComponent<VirusScannerScript>(out VirusScannerScript virusScanner);
-            if (virusScanner != null) { virusScanner.fileToScan = file; }            
+            if (virusScanner != null) { virusScanner.fileToScan = file; }
             iconHits[1].transform.GetComponent<WindowsButton>().DropOnIconEvent.Invoke();
             //tell the icon we dropped onto to do something with the icon we dropped it onto
             DropOnPreviousParent();
@@ -250,12 +249,10 @@ public class WindowsButton : MonoBehaviour
         GameObject go = GameObject.Find(applicationToOpen.name);
         if (go != null)
         {
-            Debug.Log("close");
             CloseApplication(application);
         }
         else
         {
-            Debug.Log("open");
             OpenApplication();
         }
     }

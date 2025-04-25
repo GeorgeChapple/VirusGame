@@ -10,6 +10,7 @@ TagManager:
   - DesktopSpace
   - CinemachineTarget
   - IconDroppable
+  - FlashlightChanging
   layers:
   - Default
   - TransparentFX

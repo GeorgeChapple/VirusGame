@@ -91,10 +91,7 @@ public class Browser : MonoBehaviour
         currentSuggestions.Clear();
     }
     public void URLInput(string suggestion)
-    {
-        Debug.Log("search is: " + suggestion);
-        //do new website stuff here        
-
+    {    
         foreach (var website in websites)
         {
             if (website.siteUrl == suggestion)
