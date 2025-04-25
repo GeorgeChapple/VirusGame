@@ -1013,6 +1013,7 @@ MonoBehaviour:
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
   file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
   DropOnIconEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1488,6 +1489,7 @@ MonoBehaviour:
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
   file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
   DropOnIconEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1878,6 +1880,7 @@ MonoBehaviour:
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
   file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
   DropOnIconEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2450,6 +2453,7 @@ MonoBehaviour:
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
   file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
   DropOnIconEvent:
     m_PersistentCalls:
       m_Calls: []

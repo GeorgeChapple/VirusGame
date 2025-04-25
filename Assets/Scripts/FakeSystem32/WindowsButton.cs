@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -86,7 +87,7 @@ public class WindowsButton : MonoBehaviour
         applicationToOpen = application;
         additiveSceneHandler.SetVariablesFromFileData(caller);
     }
-    public void DropOntoDesktopGrid(bool fromFileExplorer)
+    public void DropOntoDesktopGrid(bool fromFileExplorer, Vector3 posToCheckDist)
     {
         //check if its a file explorer icon first
         //find which empty space the icon is above then make it the child of it
@@ -97,7 +98,7 @@ public class WindowsButton : MonoBehaviour
         foreach (GameObject space in desktop.desktopSpaces)
         {
             //get distances to all
-            float distance = Vector3.Distance(gameObject.transform.position, space.transform.position);
+            float distance = Vector3.Distance(posToCheckDist, space.transform.position);
             //check if there is something in that space already
             if (space.transform.childCount <= 0)
             {
@@ -190,28 +191,31 @@ public class WindowsButton : MonoBehaviour
     public void HoverDrop()
     {
         if (!canBeDragged) return;
-        RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, Vector3.forward, out hitInfo, Mathf.Infinity, iconLayer))
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] iconHits = Physics.RaycastAll(ray, Mathf.Infinity, iconLayer);
+        RaycastHit[] dropHits = Physics.RaycastAll(ray, Mathf.Infinity, dropLayer);
+        if (iconHits.Length > 1)
         { //if we dropped the icon onto another icon
+            //if (hits[1].transform.gameObject.Equals(gameObject)) { Debug.Log("hit self"); DropOnPreviousParent(); return; }
             Debug.Log("dropped onto icon");
-            hitInfo.transform.GetComponent<WindowsButton>().fileThatDroppedOnUs = file;
-            hitInfo.transform.TryGetComponent<VirusScannerScript>(out VirusScannerScript virusScanner);
+            iconHits[1].transform.GetComponent<WindowsButton>().fileThatDroppedOnUs = file;
+            iconHits[1].transform.TryGetComponent<VirusScannerScript>(out VirusScannerScript virusScanner);
             if (virusScanner != null) { virusScanner.fileToScan = file; }            
-            hitInfo.transform.GetComponent<WindowsButton>().DropOnIconEvent.Invoke();
+            iconHits[1].transform.GetComponent<WindowsButton>().DropOnIconEvent.Invoke();
             //tell the icon we dropped onto to do something with the icon we dropped it onto
             DropOnPreviousParent();
         }
-        else if (Physics.Raycast(transform.position, Vector3.forward, out hitInfo, Mathf.Infinity, dropLayer))
+        else if (dropHits.Length > 0)
         { //check if we dropped onto the desktop, taskbar or file explorer            
-            if (hitInfo.transform.TryGetComponent(out Desktop desktop))
+            if (dropHits[0].transform.TryGetComponent(out Desktop desktop))
             {
-                DropOntoDesktopGrid(isFileExplorerIcon);
+                DropOntoDesktopGrid(isFileExplorerIcon, dropHits[0].point);
             }
-            else if (hitInfo.transform.TryGetComponent(out Taskbar taskbar))
+            else if (dropHits[0].transform.TryGetComponent(out Taskbar taskbar))
             {
                 DropOntoTaskBarGrid(isFileExplorerIcon);
             }
-            else if (hitInfo.transform.parent.parent.TryGetComponent(out FileExplorer fileExplorerInstance))
+            else if (dropHits[0].transform.parent.parent.TryGetComponent(out FileExplorer fileExplorerInstance))
             {
                 fileExplorer = fileExplorerInstance;
                 DropOntoFileExplorerGrid(isFileExplorerIcon);
