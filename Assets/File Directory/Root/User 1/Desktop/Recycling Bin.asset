@@ -17,18 +17,26 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c41f03e970ec3814f94c1501dc91eca2, type: 3}
   - {fileID: 21300000, guid: b6a3acce32a9c9448b0bc7067232e409, type: 3}
   name: Recycling Bin
+  hasVirus: 0
   dataType: 1
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
   application: {fileID: 1967212188711695967, guid: 057dd7ab2d8d6184bb49d637e092526e, type: 3}
-  OnSpawnAsDeskTopIcon: []
-  OnSpawnAsTaskBarIcon: []
-  OnSpawnAsFileExplorerIcon: []
   OnDoubleClick:
-  - {fileID: 11400000, guid: d6198aea3fe564e45b564fa08c9f0a78, type: 2}
+  - passValThrough: 1
+    methodName: OpenApplicationAndSendCaller
+    passSelfVal: 1
+    self: {fileID: 11400000}
+    passStringVal: 0
+    stringVal: 
+    passIntVal: 0
+    intVal: 0
+    passFloatVal: 0
+    floatVal: 0
   sceneName: 
   cameraMaterial: {fileID: 0}
   canBeTaskBarIcon: 1
   canBeDragged: 1
+  isAvailable: 1

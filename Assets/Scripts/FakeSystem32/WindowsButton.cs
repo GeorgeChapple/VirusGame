@@ -196,7 +196,6 @@ public class WindowsButton : MonoBehaviour
         RaycastHit[] dropHits = Physics.RaycastAll(ray, Mathf.Infinity, dropLayer);
         if (iconHits.Length > 1)
         { //if we dropped the icon onto another icon
-            //if (hits[1].transform.gameObject.Equals(gameObject)) { Debug.Log("hit self"); DropOnPreviousParent(); return; }
             Debug.Log("dropped onto icon");
             iconHits[1].transform.GetComponent<WindowsButton>().fileThatDroppedOnUs = file;
             iconHits[1].transform.TryGetComponent<VirusScannerScript>(out VirusScannerScript virusScanner);

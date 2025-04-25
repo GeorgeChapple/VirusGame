@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,4 +38,23 @@ public class FileData : ScriptableObject
     public bool canBeTaskBarIcon = true;
     public bool canBeDragged = true;
     public bool isAvailable = true;
+}
+
+[Serializable]
+public class EventPass
+{
+    public bool passValThrough;
+    public string methodName;
+    
+    public bool passSelfVal;
+    public FileData self;
+
+    public bool passStringVal;
+    public string stringVal;
+
+    public bool passIntVal;
+    public int intVal;
+
+    public bool passFloatVal;
+    public float floatVal;
 }
