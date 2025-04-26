@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 6084753222224183254}
   - component: {fileID: 4211495475266331182}
   - component: {fileID: 5940784309374855688}
-  - component: {fileID: 5342536677998583890}
+  - component: {fileID: 1818573246931769732}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -692,9 +692,9 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5342536677998583890}
-        m_TargetAssemblyTypeName: CMD_SearchBar, Assembly-CSharp
-        m_MethodName: Search
+      - m_Target: {fileID: 1818573246931769732}
+        m_TargetAssemblyTypeName: SearchBar, Assembly-CSharp
+        m_MethodName: SearchTheActualInternet
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
---- !u!114 &5342536677998583890
+--- !u!114 &1818573246931769732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -749,6 +749,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8381257994309664555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14bfc1a9e66ca740bf7f8201d49b824, type: 3}
+  m_Script: {fileID: 11500000, guid: ffbb4ca9c92d4f8418beeadd756a4d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
