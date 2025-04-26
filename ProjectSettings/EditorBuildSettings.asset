@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Speech_Test.unity
     guid: 61ed25fde0dafa543b4d9f51e070e968
   - enabled: 1
+    path: Assets/Scenes/OpenDAISY.unity
+    guid: 78371eb77ff244ef5a5741b4bb027543
+  - enabled: 1
     path: Assets/Scenes/UI_Test.unity
     guid: c6db7950cb421ad43869a7e071a04dbe
   - enabled: 1
