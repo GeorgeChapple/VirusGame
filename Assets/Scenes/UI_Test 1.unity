@@ -1001,6 +1001,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1190449428}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 1967212188711695967, guid: 057dd7ab2d8d6184bb49d637e092526e, type: 3}
@@ -1012,11 +1013,18 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 2004732458}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!114 &831917438
 MonoBehaviour:
@@ -1140,6 +1148,7 @@ GameObject:
   - component: {fileID: 1092199276}
   - component: {fileID: 1092199275}
   - component: {fileID: 1092199277}
+  - component: {fileID: 1092199278}
   m_Layer: 0
   m_Name: ManagerOBJ
   m_TagString: Untagged
@@ -1183,7 +1192,7 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0.42175674, a: 1}
   - {r: 1, g: 0, b: 0.20997238, a: 1}
   - {r: 1, g: 0, b: 0.08507776, a: 1}
-  sceneIndex: -1
+  sceneName: 
   cameraMaterial: {fileID: 0}
 --- !u!4 &1092199276
 Transform:
@@ -1217,6 +1226,18 @@ MonoBehaviour:
   fileDirectories: {fileID: 0}
   timeNDate: {fileID: 1571069287}
   windowHierarchy: {fileID: 58455103}
+--- !u!114 &1092199278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092199274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1045d902f0e7baf43991041ef4df5bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1178657128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1491,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
@@ -1481,11 +1503,18 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 2004732458}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!114 &1365013216
 MonoBehaviour:
@@ -1854,6 +1883,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
@@ -1865,11 +1895,18 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 2004732458}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!114 &1551287702
 MonoBehaviour:
@@ -2420,6 +2457,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
@@ -2431,11 +2469,18 @@ MonoBehaviour:
     m_Bits: 0
   fileExplorerIconPrefab: {fileID: 0}
   isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 0
   canBeTaskbarIcon: 0
   application: {fileID: 0}
   desktop: {fileID: 2004732458}
   taskbar: {fileID: 0}
   previousParent: {fileID: 0}
+  previousParentChildPos: 0
   canBeDragged: 0
 --- !u!114 &1702415390
 MonoBehaviour:

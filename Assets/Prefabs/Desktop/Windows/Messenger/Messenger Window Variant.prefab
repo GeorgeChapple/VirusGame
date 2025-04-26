@@ -565,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2274714754768108262, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 645.37854
+      value: 645.3786
       objectReference: {fileID: 0}
     - target: {fileID: 2299976134072551115, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchorMax.y
@@ -597,7 +597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4972022669321037172, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: dialogueTextFiles.Array.size
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4972022669321037172, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: dialogueTextFiles.Array.data[0]
@@ -639,6 +639,14 @@ PrefabInstance:
       propertyPath: dialogueTextFiles.Array.data[9]
       value: 
       objectReference: {fileID: 4900000, guid: 31dd1572e47a9498d9099c03847ca501, type: 3}
+    - target: {fileID: 4972022669321037172, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
+      propertyPath: dialogueTextFiles.Array.data[10]
+      value: 
+      objectReference: {fileID: 4900000, guid: b7c4ff3d1c3ae4129953dc2438697ef0, type: 3}
+    - target: {fileID: 4972022669321037172, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
+      propertyPath: dialogueTextFiles.Array.data[11]
+      value: 
+      objectReference: {fileID: 4900000, guid: 75c6096a144ac4cb6a141bdea0db6b1a, type: 3}
     - target: {fileID: 5758844853177681102, guid: 814fca8cb838be84f89fb0719e774559, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

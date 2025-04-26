@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,14 +11,15 @@ using UnityEngine.UI;
 public class ChatBoxManager : MonoBehaviour
 {
     [HideInInspector] public int fileIndex = 0;
-    [HideInInspector] public int startPrefabIndex = 0;
-    [HideInInspector] public bool readOnStart = false;
+    [HideInInspector] public int currentPrefabIndex = 0;
+    [HideInInspector] public bool finished = false;
 
     public List<TextAsset> dialogueTextFiles = new List<TextAsset>();
 
     private SpeechManager speechManager; // Stores the speech manager script attatched to the chatbox
     private RectTransform contentRect; // Stores the content UI, this is where the speech bubbles get placed on to be scrolled through
     private GridLayoutGroup contentRectGridBox;
+    private GameObject closeBlocker;
 
     private void Awake() {
         contentRect = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
@@ -26,19 +28,16 @@ public class ChatBoxManager : MonoBehaviour
         speechManager.newBubbleCreated.AddListener(AddSpeechBubble);
     }
 
-    private void Start() {
-        if (readOnStart) {
-            StartText(fileIndex, startPrefabIndex);
-        }
-    }
-
     // If not already reading, read file at given index
     public void StartText(int index, int prefabIndex) {
+        finished = false;
         if (speechManager.texting) {
             Debug.LogWarning("Speech manager is currently already reading a file and cannot open another one yet!");
         } else {
+            closeBlocker.SetActive(true);
             speechManager.speechPrafabsIndex = prefabIndex;
             speechManager.StartTextLoop(dialogueTextFiles[index]);
+            StartCoroutine(WaitForFinish());
         }
     }
 
@@ -63,5 +62,14 @@ public class ChatBoxManager : MonoBehaviour
         bubble.transform.parent = contentRect;
         bubble.GetComponent<RectTransform>().localScale = Vector3.one;
         GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
+    }
+
+    private IEnumerator WaitForFinish() {
+        while (speechManager.texting) {
+            currentPrefabIndex = speechManager.speechPrafabsIndex;
+            yield return null;
+        }
+        finished = true;
+        closeBlocker.SetActive(false);
     }
 }

@@ -21,6 +21,14 @@ public class Commands {
         }
     }
 
+    public static void ShowIP() {
+        ProcessStartInfo process = new ProcessStartInfo();
+        process.FileName = "cmd.exe";
+        process.Arguments = "/c ipconfig /c TIMEOUT T/ 999";
+        process.WindowStyle = ProcessWindowStyle.Normal;
+        Process.Start(process);
+    }
+
     // If there's a string to search, search it on the internet using Google and the user's default browser app
     public static void Search(string name) {
         if (!(name == null || name == "" || name == " ")) {

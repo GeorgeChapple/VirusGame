@@ -124,6 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf8fb9343bbadb4bb0e99b446e6a2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fileIndex: 0
+  startPrefabIndex: 0
+  readOnStart: 0
   dialogueTextFiles:
   - {fileID: 4900000, guid: 31dd1572e47a9498d9099c03847ca501, type: 3}
 --- !u!114 &186139215866373917
@@ -144,6 +147,8 @@ MonoBehaviour:
       m_Calls: []
   next: 0
   texting: 0
+  skip: 0
+  speechPrafabsIndex: 0
   speechPrefabs:
   - {fileID: 2097760535024557085, guid: b0c18777a417ca64c9d350476acd8444, type: 3}
   - {fileID: 2097760535024557085, guid: 6b45d475d581a22439289d7083a4aaa6, type: 3}
@@ -352,9 +357,9 @@ RectTransform:
   m_Father: {fileID: 975693722030895985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &5587855399149063560
 CanvasRenderer:
@@ -553,9 +558,9 @@ RectTransform:
   m_Father: {fileID: 975693722030895985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: -17}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4051102584570811805
 CanvasRenderer:
@@ -852,9 +857,9 @@ RectTransform:
   m_Father: {fileID: 975693722030895985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 20}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &113698406119058020
 CanvasRenderer:
