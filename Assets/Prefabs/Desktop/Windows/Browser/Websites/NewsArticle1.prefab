@@ -930,7 +930,6 @@ GameObject:
   - component: {fileID: 2010286101765270590}
   - component: {fileID: 620812217302817711}
   - component: {fileID: 2629030335091717603}
-  - component: {fileID: 5270754943796590488}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1102,6 +1101,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: b171cd09a108c3c4fa14b7836d7467c0, type: 2}
+        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1142,41 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab470ddef825d1489df1fa904eade2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventToCall: {fileID: 5270754943796590488}
   fileToDownload: {fileID: 11400000, guid: 39155d04550eaf34eab927e8d6f7c9df, type: 2}
---- !u!114 &5270754943796590488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4313275432759718862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065898c86d0373049a40eba0821dabb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnAwakeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDestroyEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  ByScriptEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: b171cd09a108c3c4fa14b7836d7467c0, type: 2}
-        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
-        m_MethodName: Unlock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4660602283924502374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,7 +1810,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 062ad89b72820bf49af0ec5b7940e879, type: 2}
-        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
+        m_TargetAssemblyTypeName: CorkBoardPageUnlocker, Assembly-CSharp
         m_MethodName: Unlock
         m_Mode: 1
         m_Arguments:
