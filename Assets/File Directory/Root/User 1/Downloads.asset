@@ -20,7 +20,10 @@ MonoBehaviour:
   dataType: 0
   children:
   - {fileID: 11400000, guid: 39155d04550eaf34eab927e8d6f7c9df, type: 2}
+  - {fileID: 11400000, guid: fa1dfac43cd44dd458aad880b7a5e6ea, type: 2}
+  - {fileID: 11400000, guid: be2ede65ddb0f2944b121d2e2836a949, type: 2}
   - {fileID: 11400000, guid: 30a861f7277ffd643bdbfc68dad84bc4, type: 2}
+  - {fileID: 11400000, guid: 3186cb33cb6fcf54e9eae1514593ad65, type: 2}
   parent: {fileID: 11400000, guid: 8e7218a44493b664ca88b523f9f0d6ad, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}

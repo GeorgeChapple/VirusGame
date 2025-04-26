@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 060d564d474bb7c4b8d64af4048bcbd7, type: 3}
-  m_Name: Pink Screen
+  m_Name: Money image
   m_EditorClassIdentifier: 
-  Text: This image of the error their project gave out, not sure what to make of
-    it.
+  Text: Downloaded this money image from the police article, guess it was supposed
+    to represent corruption. Though the image was corrupted too, corruption works
+    fast huh? no pun intended
   active: 0

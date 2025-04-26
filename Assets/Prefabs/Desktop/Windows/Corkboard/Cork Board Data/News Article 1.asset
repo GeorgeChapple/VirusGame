@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060d564d474bb7c4b8d64af4048bcbd7, type: 3}
   m_Name: News Article 1
   m_EditorClassIdentifier: 
-  Text: Webpage 1
+  Text: Barry gave me this url over email, He said it seemed important.
   active: 0

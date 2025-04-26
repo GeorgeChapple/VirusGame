@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b6a3acce32a9c9448b0bc7067232e409, type: 3}
   name: Recycling Bin
   hasVirus: 0
-  dataType: 1
+  dataType: 0
   children: []
   parent: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
   linkedFiles: []

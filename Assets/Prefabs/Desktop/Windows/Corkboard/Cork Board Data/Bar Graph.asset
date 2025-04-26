@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Bar Graph
   m_EditorClassIdentifier: Assembly-CSharp::CorkBoardPageData
-  Text: BarGraph
+  Text: Downloaded this bar graph image from the police article, It was weird and
+    had this corrupted look to it.
   active: 0

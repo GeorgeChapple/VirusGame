@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060d564d474bb7c4b8d64af4048bcbd7, type: 3}
   m_Name: News Article 2
   m_EditorClassIdentifier: 
-  Text: Webpage 2
+  Text: This website is similar to the last only it's talking about some new project
+    to predict crimes.
   active: 0

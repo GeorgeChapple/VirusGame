@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060d564d474bb7c4b8d64af4048bcbd7, type: 3}
   m_Name: Coloured Text
   m_EditorClassIdentifier: 
-  Text: Coloured Text
+  Text: When the flash light turned on, the text on the article changed colour. I
+    wonder what it means.
   active: 0
