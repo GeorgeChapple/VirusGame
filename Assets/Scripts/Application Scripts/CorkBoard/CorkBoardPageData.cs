@@ -6,5 +6,10 @@ using UnityEngine;
 public class CorkBoardPageData : ScriptableObject
 {
     public string Text;
-    public bool active;
+    public bool active = false;
+
+    public void Unlock()
+    {
+        active = true;
+    }
 }

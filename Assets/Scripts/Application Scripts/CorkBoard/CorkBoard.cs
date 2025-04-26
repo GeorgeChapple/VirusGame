@@ -32,6 +32,7 @@ public class CorkBoard : MonoBehaviour
     {
         foreach (var page in pages)
         {
+            if (!page.active) { continue; }
             GameObject newPage = Instantiate(pagePrefab, contentPanel.transform);
             RectTransform rect = newPage.GetComponent<RectTransform>();
             rect.anchoredPosition = RandomRadialWithMinVal(contentPanel.transform.position, 200, 300);

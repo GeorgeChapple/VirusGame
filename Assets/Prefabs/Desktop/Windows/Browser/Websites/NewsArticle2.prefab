@@ -769,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab470ddef825d1489df1fa904eade2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventToCall: {fileID: 1575009524331054213}
   fileToDownload: {fileID: 11400000, guid: 30a861f7277ffd643bdbfc68dad84bc4, type: 2}
 --- !u!114 &7223221856430140829
 MonoBehaviour:
@@ -1300,6 +1301,7 @@ GameObject:
   - component: {fileID: 8424266083056910882}
   - component: {fileID: 8623729321937376709}
   - component: {fileID: 9052187561867057740}
+  - component: {fileID: 2573349911451689724}
   m_Layer: 5
   m_Name: ColouredTextFirstHalf
   m_TagString: FlashlightChanging
@@ -1362,7 +1364,7 @@ MonoBehaviour:
     their decision.\n \nThere have been a variety of strange occurrences with this
     system, however. It must\u2019ve been some kind of glitch, but the computer it
     was operating on showed a bright <color=#FF00FF>pink</color> screen for a moment,
-    then a <color=\"red\">red</color> warning error. It was completely out of the 
+    then a <color=\"red\">red</color> warning error. It was completely out of the
     <color=\"blue\">blue</color>, and nobody knows why it happened or where this
     error came from.\n\n"
   m_isRightToLeft: 0
@@ -1447,6 +1449,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashlightOpen: 0
   textToDisable: {fileID: 4956981751407323330}
+  eventHandler: {fileID: 2573349911451689724}
+--- !u!114 &2573349911451689724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660602283924502374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065898c86d0373049a40eba0821dabb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAwakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ByScriptEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4918ba834b61eb742a6352f9df0e8242, type: 2}
+        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4977019961853861518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,6 +1876,7 @@ GameObject:
   - component: {fileID: 7789494764808990015}
   - component: {fileID: 3100224936802239669}
   - component: {fileID: 31600417603900372}
+  - component: {fileID: 735434019079249178}
   m_Layer: 5
   m_Name: ColouredTextSecondHalf
   m_TagString: FlashlightChanging
@@ -1987,6 +2024,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashlightOpen: 0
   textToDisable: {fileID: 6854499534226040976}
+  eventHandler: {fileID: 735434019079249178}
+--- !u!114 &735434019079249178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314029619984473510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065898c86d0373049a40eba0821dabb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAwakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ByScriptEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4918ba834b61eb742a6352f9df0e8242, type: 2}
+        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7371886537947313075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2105,7 @@ GameObject:
   - component: {fileID: 9063277053119996682}
   - component: {fileID: 1957121254002479825}
   - component: {fileID: 7727479654137866196}
+  - component: {fileID: 1575009524331054213}
   m_Layer: 5
   m_Name: NewsArticle2
   m_TagString: Untagged
@@ -2099,3 +2171,48 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1575009524331054213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479257061099650463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065898c86d0373049a40eba0821dabb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAwakeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: bf2a66c49a9b6a447b4af0c2b22b38f2, type: 2}
+        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ByScriptEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4513be29d002b9a4bb5e6e5b146796eb, type: 2}
+        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

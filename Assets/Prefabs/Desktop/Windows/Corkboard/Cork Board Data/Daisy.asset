@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Daisy
   m_EditorClassIdentifier: Assembly-CSharp::CorkBoardPageData
   Text: Daisy
-  active: 1
+  active: 0

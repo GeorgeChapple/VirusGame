@@ -7,6 +7,7 @@ public class FlashlightText : MonoBehaviour
     public bool flashlightOpen = false;
     private TextMeshProUGUI selfText;
     [SerializeField] private TextMeshProUGUI textToDisable;
+    public GenericEventHandler eventHandler;
 
     void Awake()
     {
@@ -15,6 +16,11 @@ public class FlashlightText : MonoBehaviour
         if (selfText != null)
         {
             flashlightOpen = GameObject.Find("Flashlight");
+            
+        }
+        if (flashlightOpen)
+        {
+            eventHandler.ByScriptEvent.Invoke();
         }
         ChangeText();
     }

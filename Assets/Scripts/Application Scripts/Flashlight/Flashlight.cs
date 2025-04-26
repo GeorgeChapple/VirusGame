@@ -33,6 +33,7 @@ public class Flashlight : MonoBehaviour
             text.TryGetComponent(out FlashlightText flashlightText);
             flashlightText.flashlightOpen = open;
             flashlightText.ChangeText();
+            flashlightText.GetComponent<GenericEventHandler>().ByScriptEvent.Invoke();
         }
     }
 }
