@@ -694,7 +694,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5342536677998583890}
         m_TargetAssemblyTypeName: CMD_SearchBar, Assembly-CSharp
-        m_MethodName: CreateDesktopFile
+        m_MethodName: Search
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
