@@ -8,10 +8,10 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private float popUpSpawnInterval;
     [SerializeField] private bool spawnPopUps;
 
+    //delete this when jimbo finishes game events
     private void Start()
     {
-        spawnPopUps = true;
-        StartCoroutine(popUpSpawnLoop());
+        StartSpawningPopUps();
     }
     private IEnumerator popUpSpawnLoop()
     {
@@ -20,5 +20,10 @@ public class PopUpManager : MonoBehaviour
             yield return new WaitForSeconds(popUpSpawnInterval); 
             Instantiate(popUpPrefab, hierarchy.transform);
         }
+    }
+    public void StartSpawningPopUps() 
+    {
+        spawnPopUps = true;
+        StartCoroutine(popUpSpawnLoop());
     }
 }

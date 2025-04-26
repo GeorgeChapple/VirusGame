@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GeneratingNewPuzzles.unity
     guid: 92f47c4a3262f4a008e4dc36cc7136d2
   - enabled: 1
-    path: Assets/Scenes/Tami/SampleScene.unity
+    path: Assets/Scenes/Tami/TamiScene.unity
     guid: 8c43a3b9d32d7438592e528e2f1eaa31
   - enabled: 1
     path: Assets/Scenes/Tami Tabs/1ChickenTami/ChickenTami.unity
