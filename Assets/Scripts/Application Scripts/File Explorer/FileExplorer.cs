@@ -68,6 +68,10 @@ public class FileExplorer : MonoBehaviour
         {
             button.GetComponentInChildren<TextMeshProUGUI>().text = file.name + ".png";
         }
+        else
+        {
+            button.GetComponentInChildren<TextMeshProUGUI>().text = file.name + ".file";
+        }
         foreach (EventPass eventPass in file.OnDoubleClick)
         {
             UnityAction action;

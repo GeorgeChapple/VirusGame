@@ -16,7 +16,7 @@ public class FileData : ScriptableObject
     public List<Sprite> icon;
     public new string name = "";
     public bool hasVirus = false;
-    public enum DataType { Folder=0, Application=1, Image=2 };
+    public enum DataType { Folder=0, Application=1, Image=2, File=3 };
     public DataType dataType;
 
     [Header("Hierarchy")]
@@ -38,6 +38,7 @@ public class FileData : ScriptableObject
     public bool canBeTaskBarIcon = true;
     public bool canBeDragged = true;
     public bool isAvailable = true;
+    public Sprite colouredBallForVirusScanner;
 }
 
 [Serializable]

@@ -24,6 +24,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be2ede65ddb0f2944b121d2e2836a949, type: 2}
   - {fileID: 11400000, guid: 30a861f7277ffd643bdbfc68dad84bc4, type: 2}
   - {fileID: 11400000, guid: 3186cb33cb6fcf54e9eae1514593ad65, type: 2}
+  - {fileID: 11400000, guid: 6c72efe0db01d914c95c0cfa8eaa4ebb, type: 2}
+  - {fileID: 11400000, guid: babfa171ab47fea4281e363a0628a28e, type: 2}
   parent: {fileID: 11400000, guid: 8e7218a44493b664ca88b523f9f0d6ad, type: 2}
   linkedFiles: []
   fileExplorer: {fileID: 0}
@@ -34,3 +36,4 @@ MonoBehaviour:
   canBeTaskBarIcon: 0
   canBeDragged: 0
   isAvailable: 1
+  colouredBallForVirusScanner: {fileID: 0}

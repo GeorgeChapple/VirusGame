@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
     Script created by : George Chapple
@@ -11,12 +12,14 @@ public class VirusScannerScript : MonoBehaviour {
     [SerializeField] private Vector3 scannerLineEndPos;
     [SerializeField] private bool success;
     [SerializeField] private GameObject scannerLine;
+    [SerializeField] private Image colouredBallImage;
     private SpriteHandlerScript spriteHandler;
     public FileData fileToScan;
     private bool scanning;
 
     private void Awake() {
         spriteHandler = GetComponent<SpriteHandlerScript>();
+        colouredBallImage.enabled = false;
     }
     private void Start()
     {
@@ -61,7 +64,9 @@ public class VirusScannerScript : MonoBehaviour {
         scannerLine.SetActive(false);
         if (!success){
             StartCoroutine(FailScan());
-        } else { 
+        } else {
+            colouredBallImage.enabled = true;
+            colouredBallImage.sprite = fileToScan.colouredBallForVirusScanner;
             StartCoroutine(SuccessScan());
         }
     }
@@ -92,6 +97,7 @@ public class VirusScannerScript : MonoBehaviour {
         spriteHandler.spriteIndex = 1; spriteHandler.RefreshSprite();
         scanning = false;
         success = false;
+        colouredBallImage.enabled = false;
     }
 
     // REMOVE LATER, CREATE NEW SCRIPT
