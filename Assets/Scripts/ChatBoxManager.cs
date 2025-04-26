@@ -22,6 +22,7 @@ public class ChatBoxManager : MonoBehaviour
     private GameObject closeBlocker;
 
     private void Awake() {
+        closeBlocker = transform.GetChild(3).gameObject;
         contentRect = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
         contentRectGridBox = contentRect.GetComponent<GridLayoutGroup>();
         speechManager = GetComponent<SpeechManager>();

@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEventsManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class GameEventsManager : MonoBehaviour {
+    [HideInInspector] public string icons_SaveFilePath = "icons.txt";
+
+    [Tooltip("This var needs to have the desktop fileData file in it")]
+    public FileData deskTopFileDirectory;
+
+    private List<GameObject> desktopIcons = new List<GameObject>();
 }

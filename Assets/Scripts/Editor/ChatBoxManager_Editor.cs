@@ -1,6 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
+
 [CustomEditor(typeof(ChatBoxManager))]
 public class ChatBoxManager_Editor : Editor {
     public override void OnInspectorGUI() {

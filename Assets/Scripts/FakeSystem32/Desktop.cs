@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,8 +7,9 @@ using UnityEngine.UI;
 
 /*
     Script created by : Jason Lodge
-    Edited by         : Jason Lodge
+    Edited by         : Jason Lodge, George Chapple
 */
+
 public class Desktop : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
@@ -18,6 +20,13 @@ public class Desktop : MonoBehaviour
 
     [Tooltip("This var needs to have the desktop fileData file in it")]
     [SerializeField] private FileData deskTopFileDirectory;
+
+    private GameEventsManager manager;
+
+    private void Awake() {
+        manager = FindObjectOfType<GameEventsManager>();
+    }
+
     public void SetUpDesktopGrid()
     {
         //for if there are any objects in grid space already
@@ -127,8 +136,15 @@ public class Desktop : MonoBehaviour
                 i++;
                 continue;
             }
-            SetUpIcon(file, i);
-            i++;
+            using (StreamReader sr = new StreamReader(manager.icons_SaveFilePath)) {
+                string line;
+                while ((line = sr.ReadLine()) != null) {
+                    if (line.Contains(file.name) && line[0] == '1') {
+                        SetUpIcon(file, i);
+                    }
+                }
+                i++;
+            }
         }        
     }
 }

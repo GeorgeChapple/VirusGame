@@ -1238,6 +1238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1045d902f0e7baf43991041ef4df5bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icons_SaveFilePath: icons.txt
+  deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
 --- !u!1 &1178657128
 GameObject:
   m_ObjectHideFlags: 0
