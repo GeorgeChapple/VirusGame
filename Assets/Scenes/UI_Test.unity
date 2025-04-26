@@ -1262,6 +1262,7 @@ GameObject:
   - component: {fileID: 1092199276}
   - component: {fileID: 1092199275}
   - component: {fileID: 1092199277}
+  - component: {fileID: 1092199278}
   m_Layer: 0
   m_Name: ManagerOBJ
   m_TagString: Untagged
@@ -1339,6 +1340,22 @@ MonoBehaviour:
   fileDirectories: {fileID: 0}
   timeNDate: {fileID: 1571069287}
   windowHierarchy: {fileID: 58455103}
+--- !u!114 &1092199278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092199274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae95e56bdfd85b4da00f07f073ce548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpPrefab: {fileID: 1967212188711695967, guid: 7de13394311a97046a13514069ddc051, type: 3}
+  hierarchy: {fileID: 58455103}
+  popUpSpawnInterval: 5
+  spawnPopUps: 0
 --- !u!1 &1178657128
 GameObject:
   m_ObjectHideFlags: 0
