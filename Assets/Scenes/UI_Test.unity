@@ -611,10 +611,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fe70bd337c04bfa48a46e449d5728888, type: 2}
+    - target: {fileID: 4720975245249000432, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c079c148da5d62f45aeecf6f96e922d3, type: 3}
     - target: {fileID: 7336235705486283185, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 078ce556576851e4b9259654d99bde9c, type: 2}
+      objectReference: {fileID: 9100000, guid: 36eb277e42b6d454fb625246e754c5ca, type: 2}
     - target: {fileID: 7664541312653723215, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_Name
       value: Daisy
