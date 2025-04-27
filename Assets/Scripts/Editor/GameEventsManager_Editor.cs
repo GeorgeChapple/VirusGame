@@ -19,7 +19,7 @@ public class GameEventsManager_Editor : Editor {
 
         EditorGUILayout.LabelField(new GUIContent("Save Data Options", "For inspector/editor use only. Change the current file index and begin reading."));
 
-        if (GUILayout.Button(new GUIContent("Set Save Files", "Sets up save data files/sets save data files to default values."))) {
+        if (GUILayout.Button(new GUIContent("Set Save Files", "ASK BEFORE YOU PRESS THIS BUTTON! Sets up save data files/sets save data files to default values."))) {
             using (StreamWriter sw = new StreamWriter(manager.default_SaveFilePath + manager.icons_SaveFilePath)) {
                 foreach (FileData file in manager.deskTopFileDirectory.children) {
                     if (file == null) {
