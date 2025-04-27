@@ -34,6 +34,11 @@ public class GameEventsManager_Editor : Editor {
                     sw.WriteLine("0 (pfb) - " + i + " (txt)");
                 }
             }
+            string[] eventsText = File.ReadAllLines(manager.default_SaveFilePath + manager.events_SaveFilePath);
+            for (int i = 0; i < eventsText.Length; i++) {
+                eventsText[i] = "0 - " + eventsText[i].Substring(4, eventsText[i].Length - 4);
+            }
+            File.WriteAllLines(manager.default_SaveFilePath + manager.events_SaveFilePath, eventsText);
         }
     }
 }

@@ -22,10 +22,12 @@ public class ChatBoxManager : MonoBehaviour
     private GameEventsManager gameEventsManager;
     private GameObject closeBlocker;
     private GameObject desktopIcon;
+    private DaisyScript daisy;
 
     private void Awake() {
         desktopIcon = GameObject.Find("Email");
         gameEventsManager = FindFirstObjectByType<GameEventsManager>();
+        daisy= FindFirstObjectByType<DaisyScript>();
         if (desktopIcon != null ) {
             desktopIcon.GetComponent<SpriteHandlerScript>().spriteIndex = 1;
             desktopIcon.GetComponent<SpriteHandlerScript>().RefreshSprite();

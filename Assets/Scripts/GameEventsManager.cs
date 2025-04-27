@@ -12,6 +12,7 @@ public class GameEventsManager : MonoBehaviour {
     [HideInInspector] public string default_SaveFilePath = "default_";
     [HideInInspector] public string icons_SaveFilePath = "icons.txt";
     [HideInInspector] public string dialogue_SaveFilePath = "dialogue.txt";
+    [HideInInspector] public string events_SaveFilePath = "events.txt";
     [HideInInspector] public List<GameObject> desktopIcons = new List<GameObject>();
     [HideInInspector] public int totalDialogue = 12;
     [HideInInspector] public int dialoguePrefabIndex;
@@ -19,13 +20,17 @@ public class GameEventsManager : MonoBehaviour {
     public bool useDefaults;
     public int dialogueIndex;
 
+    private DaisyScript daisy;
+
     [Tooltip("This var needs to have the desktop fileData file in it")]
     public FileData deskTopFileDirectory;
 
     private void Awake() {
+        daisy = FindFirstObjectByType<DaisyScript>();
         if (useDefaults) {
             DefaultOverwriteFiles(icons_SaveFilePath);
             DefaultOverwriteFiles(dialogue_SaveFilePath);
+            DefaultOverwriteFiles(events_SaveFilePath);
         }
         using (StreamReader sr = new StreamReader(dialogue_SaveFilePath)) {
             string line; 
