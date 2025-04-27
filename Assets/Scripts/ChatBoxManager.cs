@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class ChatBoxManager : MonoBehaviour
     [HideInInspector] public bool finished = false;
 
     public List<TextAsset> dialogueTextFiles = new List<TextAsset>();
+    public List<TextAsset> daisyTextFiles = new List<TextAsset>();
 
     private SpeechManager speechManager; // Stores the speech manager script attatched to the chatbox
     private RectTransform contentRect; // Stores the content UI, this is where the speech bubbles get placed on to be scrolled through
@@ -23,6 +25,9 @@ public class ChatBoxManager : MonoBehaviour
     private GameObject closeBlocker;
     private GameObject desktopIcon;
     private DaisyScript daisy;
+    private int daisySpriteIndex = 0;
+    private const string daisyAnims_FilePath= "currentAnim.txt";
+    private string[] daisyAnims;
 
     private void Awake() {
         desktopIcon = GameObject.Find("Email");
@@ -51,10 +56,23 @@ public class ChatBoxManager : MonoBehaviour
         if (gameEventsManager != null) {
             gameEventsManager.NextDialogue();
         }
+        if (daisy != null) {
+            daisy.chatBoxActive = false;
+            daisy.UpdateAnimator("IDLE");
+        }
     }
 
     // If not already reading, read file at given index
     public void StartText(int index, int prefabIndex) {
+        if (daisy != null) {
+            daisySpriteIndex = 0;
+            daisy.chatBoxActive = true;
+            daisy.UpdateAnimator("IDLE");
+        }
+        using (StreamWriter sw = new StreamWriter(daisyAnims_FilePath)) {
+            sw.Write(daisyTextFiles[gameEventsManager.dialogueIndex].text);
+        }
+        daisyAnims = File.ReadAllLines(daisyAnims_FilePath);
         finished = false;
         if (speechManager.texting) {
             Debug.LogWarning("Speech manager is currently already reading a file and cannot open another one yet!");
@@ -87,6 +105,10 @@ public class ChatBoxManager : MonoBehaviour
         bubble.transform.parent = contentRect;
         bubble.GetComponent<RectTransform>().localScale = Vector3.one;
         GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
+        if (speechManager.speechPrafabsIndex == 2) {
+            daisySpriteIndex++;
+            daisy.UpdateAnimator(daisyAnims[daisySpriteIndex]);
+        }
     }
 
     private IEnumerator WaitForFinish() {
@@ -95,6 +117,7 @@ public class ChatBoxManager : MonoBehaviour
             yield return null;
         }
         finished = true;
+        daisySpriteIndex = 0;
         closeBlocker.SetActive(false);
     }
 }

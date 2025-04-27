@@ -50,7 +50,7 @@ public class GameEventsManager : MonoBehaviour {
         string[] text = File.ReadAllLines(dialogue_SaveFilePath);
         text[0] = dialogueIndex.ToString();
         File.WriteAllLines(dialogue_SaveFilePath, text);
-        dialoguePrefabIndex = int.Parse(text[dialogueIndex + 1][0].ToString());
+        dialoguePrefabIndex = Mathf.Clamp(int.Parse(text[dialogueIndex + 1][0].ToString()),0,totalDialogue - 1);
         EmailNotif();
     }
 

@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    Script created by : George Chapple
+    Edited by         : George Chapple
+*/
+
 public class DaisyScript : MonoBehaviour
 {
     [Serializable]

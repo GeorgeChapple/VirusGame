@@ -34,10 +34,14 @@ Look, I know you can't tell me, but just hear me out...
 In my mind, this could be something related to what you went through, if not exactly what happened to you.
 <pfb:0>
 <n>
-Regardless of whether or not you can tell me directly, what if we stole elements from this website, and combined them with some experiences you had? 
+Regardless of whether or not you can tell me directly, what if we stole elements from this website, 
+<n>
+and combined them with some experiences you had? 
 <pfb:0>
 <n>
-That way, you won’t be breaking any contract you signed, and we have a new and interesting story!
+That way, you won’t be breaking any contract you signed
+<p>
+and we have a new and interesting story!
 <pfb:1>
 <n>
 How do you know any of this is factual?!

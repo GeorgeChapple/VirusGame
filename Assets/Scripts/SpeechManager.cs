@@ -111,7 +111,7 @@ public class SpeechManager : MonoBehaviour {
                 SpeechScript currentBubble = speechBubbles[speechBubbles.Count - 1].GetComponent<SpeechScript>(); // Sets current speech bubble to last speech bubble stored in list (which would be the latest one spawned in)
                 // Set the values in speech bubble to those of the manager, keeps speech bubble/newly spawned bubbles up with the correct settings set by the text file
                 if (skip) {
-                    textSpeed = 0f;
+                    textSpeed = 0.001f;
                 }
                 currentBubble.textSpeed = textSpeed;
                 currentBubble.autoLineBreak = autoLineBreak;

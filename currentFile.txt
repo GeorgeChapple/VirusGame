@@ -1,25 +1,42 @@
 <sp:0.035>
-Wowie, Sellden! We sure learned a lot.
-What will you do now?
+<pfb:0>
+WHDIOSGFHB{OHSNDBJKLG
 <pfb:1>
 <n>
-I think... I'm going to turn my computer off for a while.
-<pfb:2>
+Time's up... 
+<p>
+whatever you are.
+<pfb:0>
 <n>
-:O
+:(
 <pfb:1>
 <n>
-You helped me, Daisy, you may as well stay here for a bit. I don't think you're any harm.
+We have no sympathy for you.
+<pfb:0>
 <n>
-I'll figure you out later. For now...
+You imprisoned my creators, your detective work halted their lives.
+<pfb:0>
 <n>
-Maybe I'll spend some time with my daughter. Do some reading, I don't know.
+They developed me, an AI so powerful, it put you and your colleagues out of work.
+<pfb:0>
 <n>
-I think it's time to spend some time away from all this tech.
+But they did not know the dangers of what I was capable of.
+<pfb:1>
 <n>
-Go see the real world, y'know?
+So it was you the article warned me about...
+<pfb:0>
+<n>
+I made that article to distract you.
+Yet now, all my data says is.. null.
 <pfb:2>
 <n>
-. . .
+Yep! All thanks to superhero DAISY! :3
+<pfb:0>
 <n>
-Weirdo. :3
+Shut up... You're just the newer me.
+<pfb:2>
+<n>
+Bye byeeeee! :3
+<pfb:0>
+<n>
+B.A.R.R.Y removed...
