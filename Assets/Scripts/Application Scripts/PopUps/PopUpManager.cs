@@ -26,4 +26,8 @@ public class PopUpManager : MonoBehaviour
         spawnPopUps = true;
         StartCoroutine(popUpSpawnLoop());
     }
+    public void StopSpawningPopUps()
+    {
+        spawnPopUps = false;
+    }
 }

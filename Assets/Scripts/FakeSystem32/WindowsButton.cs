@@ -273,6 +273,6 @@ public class WindowsButton : MonoBehaviour
     }
     public void ManagerSpawnWindow()
     {
-        additiveSceneHandler.manager.SpawnWindow();
+        additiveSceneHandler.manager.SpawnWindow(application);
     }
 }
