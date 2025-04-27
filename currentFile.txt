@@ -1,58 +1,102 @@
+<pfb:0>
 <sp:0.035>
-Hey man!
-How's everything going?
+Do you recognise the name?
 <pfb:1>
 <n>
-Oh hey, good thanks.
-Just trying to find stuff to report on.
-How are you?
+I don't think I can say...
 <pfb:0>
 <n>
-Good thanks. You still trying to work on that police report?
+Ah, I see... 
 <pfb:1>
 <n>
-You know I can’t talk much about it, but yeah.
-<pfb:1>
-<n>
-My NDA doesn’t let me speak to anyone about what they’re working on
-<pfb:1>
-<n>
-but if I can find just one small piece of evidence exposing them, I can tell the story through that.
+I'm still using my virtual machine for this you know... Looks dodgy.
 <pfb:0>
 <n>
-…How long has it been since you were a detective?
-<pfb:1>
-<n>
-About a year since I was made redundant.
+Alright you do you.
+But I promise it's safe!
 <pfb:0>
 <n>
-How do you feel about that?
-<pfb:1>
-<n>
-I guess it was meant to be... 
-<pfb:1>
-<n>
-but I'm still fuming haha!
+Have you read the bit about the AI causing the detective to lose his job? 
 <pfb:0>
 <n>
-I see, best way to look at it I suppose. 
-<pfb:0>
-<n>
-And yeah it was unfair they laid you off so quickly.
+Is that what happened to you?!
 <pfb:1>
 <n>
-Not much I can do about it besides what I’m doing now. Just got to try and find something.
-<pfb:0>
-<n>
-Well, I did stumble across something that might help you, would you like to see it?
+You know I can't talk about this Barry...
 <pfb:1>
 <n>
-Sure.
+Are you trying to get me sued?? I don't have much money as it is.
 <pfb:0>
 <n>
-Alright, give me a sec.
-<sp:0.2>
-...
-<sp:0.035>
+Look, I know you can't tell me, but just hear me out...
+<pfb:0>
 <n>
-Alright, it’s sent! Have a look! http://notdodgy.com/usdhibovnaa+ROjrgsbc
+In my mind, this could be something related to what you went through, if not exactly what happened to you.
+<pfb:0>
+<n>
+Regardless of whether or not you can tell me directly, what if we stole elements from this website, 
+<n>
+and combined them with some experiences you had? 
+<pfb:0>
+<n>
+That way, you won’t be breaking any contract you signed
+<p>
+and we have a new and interesting story!
+<pfb:1>
+<n>
+How do you know any of this is factual?!
+<pfb:0>
+<n>
+Oh come on who cares about that!? 
+<pfb:0>
+<n>
+It’s a story! We're reporters, which means we need stories to tell.
+<pfb:0>
+<n>
+I know you're used to detective work where everything has to be factual, but....
+<pfb:0>
+<n>
+This could be a hit for us regardless!
+<pfb:0>
+<n>
+A rogue crime framing AI that is developed by the police!?
+<pfb:0>
+<n>
+This could be groundbreaking for us! Think of the money!
+<pfb:0>
+<n>
+Even if it is just a hoax, there’s at least a typical ‘the police are improving’ story here. 
+<pfb:0>
+<n>
+It’s easy work!
+<pfb:1>
+<n>
+I'm still unsure, but rent is due I guess. Alright, I'm with you. 
+Let's make a story.
+<pfb:0>
+<n>
+Knew you would buddy!!
+<pfb:2>
+<n>
+OPSJGN:dg BOOTING UPrkgmzbdaƒg
+<pfb:1>
+<n>
+Hang on, something weird is going on..
+<pfb:0>
+<n>
+What!?
+<pfb:1>
+<n>
+I'm clicking off this.
+<pfb:2>
+<n>
+BOOTING...
+<pfb:0>
+<n>
+What happened!? Are you okay!?
+sgslfjSHriow4ut90rjkl
+KP”0-e5hb asdxf
+{} O{£O%
+{} O{£O%
+{} O{£O%
+<pfb:0>

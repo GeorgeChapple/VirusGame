@@ -24,6 +24,7 @@ public class ChatBoxManager : MonoBehaviour
     private GameEventsManager gameEventsManager;
     private GameObject closeBlocker;
     private GameObject desktopIcon;
+    private Transform daisyTeleportPoint;
     private DaisyScript daisy;
     private int daisySpriteIndex = 0;
     private const string daisyAnims_FilePath= "currentAnim.txt";
@@ -31,8 +32,9 @@ public class ChatBoxManager : MonoBehaviour
 
     private void Awake() {
         desktopIcon = GameObject.Find("Email");
+        daisyTeleportPoint = GameObject.Find("DaisyPoint").transform;
         gameEventsManager = FindFirstObjectByType<GameEventsManager>();
-        daisy= FindFirstObjectByType<DaisyScript>();
+        daisy = FindFirstObjectByType<DaisyScript>();
         if (desktopIcon != null ) {
             desktopIcon.GetComponent<SpriteHandlerScript>().spriteIndex = 1;
             desktopIcon.GetComponent<SpriteHandlerScript>().RefreshSprite();
@@ -108,6 +110,9 @@ public class ChatBoxManager : MonoBehaviour
         if (speechManager.speechPrafabsIndex == 2) {
             daisySpriteIndex++;
             daisy.UpdateAnimator(daisyAnims[daisySpriteIndex]);
+            daisy.GetComponent<WindowScript>().DetachFromHierarchy();
+            daisy.GetComponent<WindowScript>().PutInFront();
+            daisy.transform.position = new Vector3(daisyTeleportPoint.position.x, daisyTeleportPoint.position.y, transform.root.position.z + 10);
         }
     }
 
