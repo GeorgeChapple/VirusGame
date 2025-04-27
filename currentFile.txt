@@ -1,42 +1,58 @@
 <sp:0.035>
-<pfb:0>
-WHDIOSGFHB{OHSNDBJKLG
+Hey man!
+How's everything going?
 <pfb:1>
 <n>
-Time's up... 
-<p>
-whatever you are.
+Oh hey, good thanks.
+Just trying to find stuff to report on.
+How are you?
 <pfb:0>
 <n>
-:(
+Good thanks. You still trying to work on that police report?
 <pfb:1>
 <n>
-We have no sympathy for you.
-<pfb:0>
-<n>
-You imprisoned my creators, your detective work halted their lives.
-<pfb:0>
-<n>
-They developed me, an AI so powerful, it put you and your colleagues out of work.
-<pfb:0>
-<n>
-But they did not know the dangers of what I was capable of.
+You know I can’t talk much about it, but yeah.
 <pfb:1>
 <n>
-So it was you the article warned me about...
+My NDA doesn’t let me speak to anyone about what they’re working on
+<pfb:1>
+<n>
+but if I can find just one small piece of evidence exposing them, I can tell the story through that.
 <pfb:0>
 <n>
-I made that article to distract you.
-Yet now, all my data says is.. null.
-<pfb:2>
+…How long has it been since you were a detective?
+<pfb:1>
 <n>
-Yep! All thanks to superhero DAISY! :3
+About a year since I was made redundant.
 <pfb:0>
 <n>
-Shut up... You're just the newer me.
-<pfb:2>
+How do you feel about that?
+<pfb:1>
 <n>
-Bye byeeeee! :3
+I guess it was meant to be... 
+<pfb:1>
+<n>
+but I'm still fuming haha!
 <pfb:0>
 <n>
-B.A.R.R.Y removed...
+I see, best way to look at it I suppose. 
+<pfb:0>
+<n>
+And yeah it was unfair they laid you off so quickly.
+<pfb:1>
+<n>
+Not much I can do about it besides what I’m doing now. Just got to try and find something.
+<pfb:0>
+<n>
+Well, I did stumble across something that might help you, would you like to see it?
+<pfb:1>
+<n>
+Sure.
+<pfb:0>
+<n>
+Alright, give me a sec.
+<sp:0.2>
+...
+<sp:0.035>
+<n>
+Alright, it’s sent! Have a look! http://notdodgy.com/usdhibovnaa+ROjrgsbc
