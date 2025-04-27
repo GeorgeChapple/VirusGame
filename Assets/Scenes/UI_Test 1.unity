@@ -1170,7 +1170,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1641267664}
   hierarchy: {fileID: 58455103}
-  windowPrefab: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
   colours:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 0.6106477, b: 0, a: 1}
@@ -1238,7 +1237,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1045d902f0e7baf43991041ef4df5bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  default_SaveFilePath: default_
   icons_SaveFilePath: icons.txt
+  dialogue_SaveFilePath: dialogue.txt
+  desktopIcons: []
+  totalDialogue: 12
+  useDefaults: 1
+  dialogueIndex: 0
   deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
 --- !u!1 &1178657128
 GameObject:

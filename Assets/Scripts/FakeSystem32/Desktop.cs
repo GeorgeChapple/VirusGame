@@ -124,11 +124,18 @@ public class Desktop : MonoBehaviour
             {
                 obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
             }
+            manager.desktopIcons.Add(obj);
         }
     }
     public void SetUpDesktopSavedLayout()
     {
         int i = 0;
+        manager.desktopIcons.Clear();
+        foreach (GameObject obj in desktopSpaces) {
+            if (obj.transform.childCount > 0) {
+                Destroy(obj.transform.GetChild(0).gameObject);
+            }
+        }
         foreach (FileData file in deskTopFileDirectory.children)
         {
             if (file == null)

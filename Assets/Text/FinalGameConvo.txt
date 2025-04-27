@@ -1,6 +1,4 @@
 <sp:0.035>
-<pfb:2>
-<n>
 Wowie, Sellden! We sure learned a lot.
 What will you do now?
 <pfb:1>

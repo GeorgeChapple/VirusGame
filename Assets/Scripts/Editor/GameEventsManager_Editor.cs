@@ -17,13 +17,21 @@ public class GameEventsManager_Editor : Editor {
 
         GameEventsManager manager = (GameEventsManager)target;
 
+        EditorGUILayout.LabelField(new GUIContent("Save Data Options", "For inspector/editor use only. Change the current file index and begin reading."));
+
         if (GUILayout.Button(new GUIContent("Set Save Files", "Sets up save data files/sets save data files to default values."))) {
-            using (StreamWriter sw = new StreamWriter(manager.icons_SaveFilePath)) {
+            using (StreamWriter sw = new StreamWriter(manager.default_SaveFilePath + manager.icons_SaveFilePath)) {
                 foreach (FileData file in manager.deskTopFileDirectory.children) {
                     if (file == null) {
                         continue;
                     }
                     sw.WriteLine("0 - " + file.name);
+                }
+            }
+            using (StreamWriter sw = new StreamWriter(manager.default_SaveFilePath + manager.dialogue_SaveFilePath)) {
+                sw.WriteLine("0");
+                for (int i = 0; i < manager.totalDialogue; i++) {
+                    sw.WriteLine("0 (pfb) - " + i + " (txt)");
                 }
             }
         }

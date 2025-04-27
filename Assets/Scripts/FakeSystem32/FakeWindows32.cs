@@ -9,7 +9,7 @@ public class FakeWindows32 : MonoBehaviour
 {
     [Header("Serialisations")]
     [SerializeField] private Taskbar taskBar;
-    [SerializeField] private Desktop desktop;
+    public Desktop desktop;
 
     [SerializeField] private FileData fileDirectories;
 

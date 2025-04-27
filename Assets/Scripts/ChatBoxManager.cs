@@ -19,14 +19,36 @@ public class ChatBoxManager : MonoBehaviour
     private SpeechManager speechManager; // Stores the speech manager script attatched to the chatbox
     private RectTransform contentRect; // Stores the content UI, this is where the speech bubbles get placed on to be scrolled through
     private GridLayoutGroup contentRectGridBox;
+    private GameEventsManager gameEventsManager;
     private GameObject closeBlocker;
+    private GameObject desktopIcon;
 
     private void Awake() {
+        desktopIcon = GameObject.Find("Email");
+        gameEventsManager = FindFirstObjectByType<GameEventsManager>();
+        if (desktopIcon != null ) {
+            desktopIcon.GetComponent<SpriteHandlerScript>().spriteIndex = 1;
+            desktopIcon.GetComponent<SpriteHandlerScript>().RefreshSprite();
+        }
         closeBlocker = transform.GetChild(3).gameObject;
         contentRect = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
         contentRectGridBox = contentRect.GetComponent<GridLayoutGroup>();
         speechManager = GetComponent<SpeechManager>();
         speechManager.newBubbleCreated.AddListener(AddSpeechBubble);
+    }
+
+    private void Start() {
+        StartText(gameEventsManager.dialogueIndex, gameEventsManager.dialoguePrefabIndex);
+    }
+
+    private void OnDestroy() {
+        if (desktopIcon != null) {
+            desktopIcon.GetComponent<SpriteHandlerScript>().spriteIndex = 0;
+            desktopIcon.GetComponent<SpriteHandlerScript>().RefreshSprite();
+        }
+        if (gameEventsManager != null) {
+            gameEventsManager.NextDialogue();
+        }
     }
 
     // If not already reading, read file at given index

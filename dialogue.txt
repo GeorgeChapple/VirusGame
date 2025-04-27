@@ -1,0 +1,13 @@
+12
+0 (pfb) - 0 (txt)
+0 (pfb) - 1 (txt)
+0 (pfb) - 2 (txt)
+1 (pfb) - 3 (txt)
+1 (pfb) - 4 (txt)
+1 (pfb) - 5 (txt)
+1 (pfb) - 6 (txt)
+1 (pfb) - 7 (txt)
+1 (pfb) - 8 (txt)
+1 (pfb) - 9 (txt)
+0 (pfb) - 10 (txt)
+2 (pfb) - 11 (txt)
