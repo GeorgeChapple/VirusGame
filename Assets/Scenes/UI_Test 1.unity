@@ -1155,6 +1155,7 @@ GameObject:
   - component: {fileID: 1092199275}
   - component: {fileID: 1092199277}
   - component: {fileID: 1092199278}
+  - component: {fileID: 1092199279}
   m_Layer: 0
   m_Name: ManagerOBJ
   m_TagString: Untagged
@@ -1250,9 +1251,25 @@ MonoBehaviour:
   desktopIcons: []
   totalDialogue: 12
   dialoguePrefabIndex: 0
+  soundScript: {fileID: 0}
   useDefaults: 1
   dialogueIndex: 0
   deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
+--- !u!114 &1092199279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092199274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c967c365a4072a943a365e9440c72a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 63860b36e7c993c4cba60c2fd22e93ec, type: 3}
+  - {fileID: 8300000, guid: 1e716bb5035eb314c9f8a98e1d23e5f9, type: 3}
 --- !u!1 &1178657128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,11 +2683,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3120695495814369593, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -1925
       objectReference: {fileID: 0}
     - target: {fileID: 3120695495814369593, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3120695495814369593, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2690,7 +2707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7664541312653723215, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -26,12 +26,14 @@ public class ChatBoxManager : MonoBehaviour
     private GameObject desktopIcon;
     private Transform daisyTeleportPoint;
     private DaisyScript daisy;
+    private SoundScript soundScript;
     private int daisySpriteIndex = 0;
     private const string daisyAnims_FilePath= "currentAnim.txt";
     private string[] daisyAnims;
 
     private void Awake() {
         desktopIcon = GameObject.Find("Email");
+        soundScript = GetComponent<SoundScript>();
         daisyTeleportPoint = GameObject.Find("DaisyPoint").transform;
         gameEventsManager = FindFirstObjectByType<GameEventsManager>();
         daisy = FindFirstObjectByType<DaisyScript>();
@@ -47,6 +49,7 @@ public class ChatBoxManager : MonoBehaviour
     }
 
     private void Start() {
+        soundScript.PlaySound(0, 1, 1);
         StartText(gameEventsManager.dialogueIndex, gameEventsManager.dialoguePrefabIndex);
     }
 
@@ -57,6 +60,7 @@ public class ChatBoxManager : MonoBehaviour
         }
         if (gameEventsManager != null) {
             gameEventsManager.NextDialogue();
+            gameEventsManager.soundScript.PlaySound(1, 1, 1);
         }
         if (daisy != null) {
             daisy.chatBoxActive = false;

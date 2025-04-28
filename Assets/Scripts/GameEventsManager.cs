@@ -16,6 +16,7 @@ public class GameEventsManager : MonoBehaviour {
     [HideInInspector] public List<GameObject> desktopIcons = new List<GameObject>();
     [HideInInspector] public int totalDialogue = 12;
     [HideInInspector] public int dialoguePrefabIndex;
+    [HideInInspector] public SoundScript soundScript;
 
     public bool useDefaults;
     public int dialogueIndex;
@@ -27,6 +28,7 @@ public class GameEventsManager : MonoBehaviour {
 
     private void Awake() {
         daisy = FindFirstObjectByType<DaisyScript>();
+        soundScript = GetComponent<SoundScript>();
         if (useDefaults) {
             DefaultOverwriteFiles(icons_SaveFilePath);
             DefaultOverwriteFiles(dialogue_SaveFilePath);
@@ -75,6 +77,7 @@ public class GameEventsManager : MonoBehaviour {
             if (obj.name == "Email") {
                 obj.GetComponent<SpriteHandlerScript>().spriteIndex = 2;
                 obj.GetComponent<SpriteHandlerScript>().RefreshSprite();
+                soundScript.PlaySound(0, 1, 1);
             }
         }
     }
