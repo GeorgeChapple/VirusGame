@@ -36,10 +36,6 @@ public class AdditiveSceneHandler : MonoBehaviour
     }
     public void SetVariablesFromFileData(FileData fileData)
     {
-        if (windowsButton.application != null)
-        {
-            return;
-        }
         sceneName = fileData.sceneName;
         cameraMaterial = fileData.cameraMaterial;
     }

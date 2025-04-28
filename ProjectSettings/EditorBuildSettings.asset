@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Speech_Test.unity
     guid: 61ed25fde0dafa543b4d9f51e070e968
+  - enabled: 0
+    path: Assets/Scenes/UI_Test.unity
+    guid: c6db7950cb421ad43869a7e071a04dbe
   - enabled: 1
     path: Assets/Scenes/OpenDAISY.unity
     guid: 78371eb77ff244ef5a5741b4bb027543
   - enabled: 1
-    path: Assets/Scenes/UI_Test.unity
-    guid: c6db7950cb421ad43869a7e071a04dbe
+    path: Assets/Scenes/UI_Test 1.unity
+    guid: 2a0bb3384aa29274f867320a9411e79e
   - enabled: 1
     path: Assets/Scenes/End of Game/EndPuzzle1.unity
     guid: 5a21d597f04df490799b20fd2d991854

@@ -548,7 +548,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1936028063350441777}
         m_TargetAssemblyTypeName: TamiManager, Assembly-CSharp
         m_MethodName: FeedTami
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -624,7 +624,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2579330091310976404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -860,7 +860,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3412627105604603700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1070,7 +1070,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3987026250725412280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1145,7 +1145,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5810594312764466960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1357,7 +1357,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1936028063350441777}
         m_TargetAssemblyTypeName: TamiManager, Assembly-CSharp
         m_MethodName: PlayWithTami
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1598,7 +1598,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1936028063350441777}
         m_TargetAssemblyTypeName: TamiManager, Assembly-CSharp
         m_MethodName: HydrateTami
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1673,7 +1673,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8509081900378885710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2009,21 +2009,25 @@ MonoBehaviour:
   moodBarSprites:
   - {fileID: 21300000, guid: 4f8d277a3a299d542822293481c6871f, type: 3}
   - {fileID: 21300000, guid: ceeed9a9424751348a2e06c772e69fca, type: 3}
-  tamiTabsGO: []
+  tamiTabsGO:
+  - {fileID: 2668110347988534661, guid: 66ec4e99c9d01c44ba786d72c879a4ca, type: 3}
+  - {fileID: 2668110347988534661, guid: 769618017b24e6942bb1578ffdd5aa9e, type: 3}
   tamiTabsSTR: []
-  tamiTabsMAT: []
+  tamiTab: {fileID: 0}
   rateOfFoodDepletion: 60
   rateOfThirstDepletion: 60
   rateOfMoodDepletion: 60
   foodAddAmount: 2
   thirstAddAmount: 2
   moodAddAmount: 2
-  popUpSpawnTime: 5
+  popUpSpawnTime: 15
   popUpSpawnMin: 5
   rateOfPopUpSpawn: 45000
   gameTimeSinceSpawn: 0
+  contentPanel: {fileID: 7992869705259326661}
   additiveSceneHandler: {fileID: -5971275584993759397}
   manager: {fileID: 0}
+  gold: 0
 --- !u!114 &-5971275584993759397
 MonoBehaviour:
   m_ObjectHideFlags: 0

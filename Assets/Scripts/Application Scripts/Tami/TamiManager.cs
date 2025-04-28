@@ -21,7 +21,7 @@ public class TamiManager : MonoBehaviour
     [SerializeField] private Sprite[] moodBarSprites;
     [SerializeField] private GameObject[] tamiTabsGO;
     [SerializeField] private string[] tamiTabsSTR;
-    [SerializeField] private Material[] tamiTabsMAT;
+    [SerializeField] private GameObject tamiTab;
 
 
     [Header("Time in seconds before full bar is empty.")]
@@ -42,10 +42,11 @@ public class TamiManager : MonoBehaviour
 
 
     [Header("Serialisations")]
+    [SerializeField] private GameObject contentPanel;
     [SerializeField] private AdditiveSceneHandler additiveSceneHandler;
     [SerializeField] private WindowSpawner manager;
 
-    private float gold = 0;
+    [HideInInspector] public float gold = 0;
     private float healthDiv = 120;
     private float health = 100;
     private float food = 100;
@@ -59,7 +60,7 @@ public class TamiManager : MonoBehaviour
         manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();
         healthDiv = rateOfHealthDepletion;
         StartCoroutine(GameTimer());
-        StartCoroutine(SpawnPopUpRepeated());
+        StartCoroutine(SpawnPopUp_E());
     }
     private void Update()
     {
@@ -70,7 +71,7 @@ public class TamiManager : MonoBehaviour
     }
     private IEnumerator GameTimer()
     {
-        while (true)
+        while (tamiTab == null)
         {
             yield return new WaitForEndOfFrame();
             gameTimeSinceSpawn += Time.deltaTime;
@@ -78,33 +79,54 @@ public class TamiManager : MonoBehaviour
             popUpSpawnTime = Mathf.Clamp(popUpSpawnTime, popUpSpawnMin, 100);
         }
     }
-    private IEnumerator SpawnPopUpRepeated()
+    public void PopUpDestroyed()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(popUpSpawnTime);
-            Debug.Log("spawn");
-            if (tamiTabsGO.Length > 0)
-            {
-                int num = Random.Range(0, tamiTabsGO.Length);
-                SpawnPopUp(num);
-            }
-        }
+        StartCoroutine(SpawnPopUp_E());
+    }
+    public IEnumerator SpawnPopUp_E()
+    {
+        yield return new WaitForSeconds(popUpSpawnTime);
+
+        int num = Random.Range(0, tamiTabsGO.Length);
+        SpawnPopUp(num);
     }
     public void SpawnPopUp(int num)
     {
-        // Do additive stuff first
-        SceneManager.LoadScene(tamiTabsSTR[num], LoadSceneMode.Additive);
+        if (tamiTab != null)
+        {
+            // Destroy if already there
+            Destroy(tamiTab);
+            tamiTab = null;
+        }
+        // Spawn Pop Up
+        GameObject newPopUp = Instantiate(tamiTabsGO[num], contentPanel.transform);
+        newPopUp.transform.SetAsLastSibling();
 
-        manager.sceneName = tamiTabsSTR[num];
-        manager.cameraMaterial = tamiTabsMAT[num];
-        manager.SpawnWindow(tamiTabsGO[num]);
-        //additiveSceneHandler.cameraMaterial = tamiTabsMAT[num];
-        //GameObject newPopUp = Instantiate(tamiTabsGO[num]);
-        //newPopUp.GetComponent<WindowContent>().SetManager(manager);
-        //newPopUp.GetComponent<WindowContent>().OnceSpawned();
-        // Do stuff once spawned
+        newPopUp.GetComponent<WindowContent>().SetManager(manager);
+        newPopUp.GetComponent<WindowContent>().OnceSpawned();
     }
+    public void PopUpYesButton1(int cost)
+    {
+        gold -= cost;
+    }
+    public void PopUpYesButton2(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                FeedTami(true);
+                break;
+            case 1:
+                HydrateTami(true);
+                break;
+            case 2:
+                PlayWithTami(true);
+                break;
+            default:
+                break;
+        }
+    }
+
     private void UpdateBars()
     {
         if (food <= 0 && thirst <= 0 && mood <= 0)
@@ -143,6 +165,8 @@ public class TamiManager : MonoBehaviour
             mood -= Time.deltaTime / (rateOfMoodDepletion / 100);
             moodBarImg.fillAmount = mood / 100;
         }
+        gold += 0.01f;
+        OnGoldValChanged();
     }
     public Sprite PickElement(float value, Sprite[] sprites)
     {
@@ -159,20 +183,24 @@ public class TamiManager : MonoBehaviour
         goldText.text = "Gold: " + gold.ToString();
     }
     // All buttons/tami event thingys
-    public void FeedTami()
+    public void FeedTami(bool fromPopUp)
     {
         food = Mathf.Clamp(food + foodAddAmount, 0, 100);
+        if (fromPopUp) { food = 100; }
     }
-    public void HydrateTami()
+    public void HydrateTami(bool fromPopUp)
     {
         thirst = Mathf.Clamp(thirst + thirstAddAmount, 0, 100);
+        if (fromPopUp) { thirst = 100; }
     }
-    public void PlayWithTami()
+    public void PlayWithTami(bool fromPopUp)
     {
         mood = Mathf.Clamp(mood + moodAddAmount, 0, 100);
+        if (fromPopUp) { mood = 100; }
     }
     private void TamiReviveEvent()
     {
+        Destroy(tamiTab);
         healthDiv += 30;
         health = 100;
         reviveCounter++;
