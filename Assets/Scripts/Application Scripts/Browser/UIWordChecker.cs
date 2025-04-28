@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
 using TMPro;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class UIWordChecker : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     private Camera cam;
     [SerializeField] private Downloader downloader;
     private string wordWeHit;
+    public string link;
+    public bool checkColor = true;
 
     private void Awake()
     {
@@ -29,9 +31,17 @@ public class UIWordChecker : MonoBehaviour
 
             // get the color from one of the character's vertices (they should all match)
             Color32 color = text.textInfo.meshInfo[charInfo.materialReferenceIndex].colors32[charInfo.vertexIndex];
-            if (!color.Equals(new Color32(255,255,255,255)))
+            if (checkColor)
             {
-                downloader.DownloadFile();
+                if (!color.Equals(new Color32(255, 255, 255, 255)))
+                {
+                    downloader.DownloadFile();
+                }
+                
+            }
+            else
+            {
+                //spawn browser and change website to link
             }
         }
     }
