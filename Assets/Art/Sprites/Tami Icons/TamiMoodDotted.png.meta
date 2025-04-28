@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ceeed9a9424751348a2e06c772e69fca
+guid: a1eb654efd470c045bd20a67636d3448
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,51 +93,9 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: HAPPY_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -32}
-        - {x: 32, y: 0}
-        - {x: 0, y: 32}
-        - {x: -32, y: 0}
-      physicsShape:
-      - - {x: 0, y: -32}
-        - {x: 32, y: 0}
-        - {x: 0, y: 32}
-        - {x: -32, y: 0}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27a0064563bb80f45adfb991477ba68b
-      internalID: -1762834527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -148,8 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      HAPPY_0: -1762834527
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
