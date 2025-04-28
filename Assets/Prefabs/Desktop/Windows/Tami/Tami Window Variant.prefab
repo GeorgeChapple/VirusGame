@@ -2008,6 +2008,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 92268a9404c90d942bee92a1753e35dc, type: 3}
   moodBarSprites:
   - {fileID: 21300000, guid: 4f8d277a3a299d542822293481c6871f, type: 3}
+  - {fileID: 21300000, guid: fcca7409958d2ce4f8bd5776a21e4777, type: 3}
   - {fileID: 21300000, guid: ceeed9a9424751348a2e06c772e69fca, type: 3}
   tamiTabsGO:
   - {fileID: 2668110347988534661, guid: 66ec4e99c9d01c44ba786d72c879a4ca, type: 3}
