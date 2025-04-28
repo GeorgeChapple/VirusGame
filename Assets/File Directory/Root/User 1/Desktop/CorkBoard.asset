@@ -39,3 +39,4 @@ MonoBehaviour:
   canBeTaskBarIcon: 1
   canBeDragged: 1
   isAvailable: 1
+  colouredBallForVirusScanner: {fileID: 0}

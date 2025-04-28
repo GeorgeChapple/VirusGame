@@ -2688,6 +2688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Daisy
       objectReference: {fileID: 0}
+    - target: {fileID: 7664541312653723215, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

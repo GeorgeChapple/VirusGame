@@ -2005,13 +2005,18 @@ MonoBehaviour:
   moodBarSprites:
   - {fileID: 21300000, guid: 4f8d277a3a299d542822293481c6871f, type: 3}
   - {fileID: 21300000, guid: ceeed9a9424751348a2e06c772e69fca, type: 3}
+  tamiTabs: []
   rateOfFoodDepletion: 60
   rateOfThirstDepletion: 60
   rateOfMoodDepletion: 60
-  health: 100
-  food: 100
-  thirst: 100
-  mood: 100
+  foodAddAmount: 2
+  thirstAddAmount: 2
+  moodAddAmount: 2
+  popUpSpawnTime: 15
+  popUpSpawnMin: 5
+  rateOfPopUpSpawn: 45000
+  gameTimeSinceSpawn: 0
+  testTime: 0
 --- !u!224 &2125625574217040648 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3553542902400665179, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}

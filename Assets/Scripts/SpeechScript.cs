@@ -13,6 +13,7 @@ public class SpeechScript : MonoBehaviour
     [HideInInspector] public bool autoLineBreak = true;
     [HideInInspector] public string text;
     private TextMeshProUGUI textBox;
+    public bool finished = false;
 
     private void Awake() {
         textBox = GetComponentInChildren<TextMeshProUGUI>();
@@ -31,5 +32,6 @@ public class SpeechScript : MonoBehaviour
         if (autoLineBreak) { // Checks to see if auto line break is enabled, add a line break if yes
             textBox.text += "<br>";
         }
+        finished = true;
     }
 }
