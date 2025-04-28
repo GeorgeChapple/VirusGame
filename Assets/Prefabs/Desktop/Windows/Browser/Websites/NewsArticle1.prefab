@@ -212,6 +212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1359861534961258258}
   downloader: {fileID: 1446255406996548373}
+  link: 
+  checkColor: 1
 --- !u!114 &1446255406996548373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2490512046499385240}
   downloader: {fileID: 6913894443467115699}
+  link: 
+  checkColor: 1
 --- !u!114 &6913894443467115699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2427,6 +2431,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 062ad89b72820bf49af0ec5b7940e879, type: 2}
+        m_TargetAssemblyTypeName: CorkBoardPageUnlocker, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 1cefc7ab0aab12242b979869f658363b, type: 2}
         m_TargetAssemblyTypeName: CorkBoardPageUnlocker, Assembly-CSharp
         m_MethodName: Unlock
         m_Mode: 1

@@ -15,3 +15,4 @@ MonoBehaviour:
   siteName: GOGOGO!
   siteUrl: https:gogogo.com
   websitePrefab: {fileID: 6038153607044932317, guid: 80ee40d7ddd3fab47bbf22f44826d5fa, type: 3}
+  active: 1

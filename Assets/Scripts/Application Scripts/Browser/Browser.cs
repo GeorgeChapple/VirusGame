@@ -35,7 +35,10 @@ public class Browser : MonoBehaviour
         suggestionPanel.gameObject.SetActive(false);
         foreach (var website in websites)
         {
-            websiteURLs.Add(website.siteUrl);
+            if (website.active)
+            {
+                websiteURLs.Add(website.siteUrl);
+            }
         }
     }
     private void LateUpdate()

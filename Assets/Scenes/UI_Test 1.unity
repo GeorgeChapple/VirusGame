@@ -1252,6 +1252,10 @@ MonoBehaviour:
   totalDialogue: 12
   dialoguePrefabIndex: 0
   soundScript: {fileID: 0}
+  textReadOnce: 0
+  articles:
+  - {fileID: 11400000, guid: 1cefc7ab0aab12242b979869f658363b, type: 2}
+  - {fileID: 11400000, guid: e3c74f863a03cf04cac752bc7108381f, type: 2}
   useDefaults: 1
   dialogueIndex: 0
   deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}

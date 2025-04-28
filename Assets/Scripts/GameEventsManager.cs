@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 
 /*
     Script created by : George Chapple
@@ -17,6 +18,9 @@ public class GameEventsManager : MonoBehaviour {
     [HideInInspector] public int totalDialogue = 12;
     [HideInInspector] public int dialoguePrefabIndex;
     [HideInInspector] public SoundScript soundScript;
+    [HideInInspector] public bool textReadOnce = false;
+
+    [SerializeField] private List<Website> articles = new List<Website>();
 
     public bool useDefaults;
     public int dialogueIndex;
@@ -44,16 +48,27 @@ public class GameEventsManager : MonoBehaviour {
     }
 
     private void Start() {
-        StartCoroutine(wait());
+        NextDialogue(dialogueIndex);
     }
 
-    public void NextDialogue() {
-        dialogueIndex++;
-        string[] text = File.ReadAllLines(dialogue_SaveFilePath);
-        text[0] = dialogueIndex.ToString();
-        File.WriteAllLines(dialogue_SaveFilePath, text);
-        dialoguePrefabIndex = Mathf.Clamp(int.Parse(text[dialogueIndex + 1][0].ToString()),0,totalDialogue - 1);
-        EmailNotif();
+    public void TriggerEvent()
+    {
+        if (dialogueIndex >= 0)
+        {
+            Events_OpenArticle();
+        }
+    }
+
+    public void NextDialogue(int eventIndex) {
+        if (dialogueIndex == eventIndex)
+        {
+            dialogueIndex++;
+            string[] text = File.ReadAllLines(dialogue_SaveFilePath);
+            text[0] = dialogueIndex.ToString();
+            File.WriteAllLines(dialogue_SaveFilePath, text);
+            dialoguePrefabIndex = Mathf.Clamp(int.Parse(text[dialogueIndex + 1][0].ToString()), 0, totalDialogue - 1);
+            EmailNotif();
+        }
     }
 
     private void DefaultOverwriteFiles(string filePath) {
@@ -67,11 +82,6 @@ public class GameEventsManager : MonoBehaviour {
         }
     }
 
-    private IEnumerator wait() {
-        yield return new WaitForSeconds(5);
-        EmailNotif();
-    }
-
     private void EmailNotif() {
         foreach (GameObject obj in desktopIcons) {
             if (obj.name == "Email") {
@@ -79,6 +89,20 @@ public class GameEventsManager : MonoBehaviour {
                 obj.GetComponent<SpriteHandlerScript>().RefreshSprite();
                 soundScript.PlaySound(0, 1, 1);
             }
+        }
+    }
+
+    private IEnumerator WaitForEmail()
+    {
+        yield return new WaitForSeconds(5);
+        EmailNotif();
+    }
+
+    private void Events_OpenArticle()
+    {
+        foreach (Website wb in articles)
+        {
+            wb.active = true;
         }
     }
 }
