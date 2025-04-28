@@ -55,26 +55,17 @@ public class SpeechManager : MonoBehaviour {
         bool continueRead;
         bool newBubble;
         bool commandRun;
-        bool wait;
-        bool first = true;
         speechBubbles.Add(Instantiate(speechPrefabs[speechPrafabsIndex])); // Instantiates the first speech bubble, using the default index
         newBubbleCreated.Invoke();
         using (StreamReader sr = new StreamReader(filePath)) { // Opens a stream reader, closes the stream reader when done
             string line;
             string nextLine = "";
             while ((line = sr.ReadLine()) != null) { // Reads the file line by line until there are no more lines
-                wait = true;
-                while (wait && !first) { // Waits for current speech bubble to finish reading.
-                    yield return new WaitForEndOfFrame();
-                    if (!speechBubbles[speechBubbles.Count - 1].GetComponent<SpeechScript>().finished) {
-                        wait = false;
-                        first = false;
-                    }
-                }
+                yield return new WaitForSeconds(nextLine.Length * textSpeed + 0.1f);
                 continueRead = true; // If continue read is set to false in if statements, reading will pause
                 newBubble = false; // If set to true by if statements, a new speech bubble will be spawned, which will be used by the next line of text
                 commandRun = true; // Set false if no commands are run, used to prevent auto line break from creating new lines for commands
-                nextLine = "";
+                nextLine = "";                
                 // Checks the next line, determines what command it is, runs the desired command, if no command is present, line is text and is sent to the speech bubble to be written
                 if (line == "<n>") { // Checks for new speech bubble command, tells loop to spawn a new speech bubble 
                     continueRead = false;
@@ -118,9 +109,10 @@ public class SpeechManager : MonoBehaviour {
                     commandRun = false;
                 }
                 SpeechScript currentBubble = speechBubbles[speechBubbles.Count - 1].GetComponent<SpeechScript>(); // Sets current speech bubble to last speech bubble stored in list (which would be the latest one spawned in)
+                currentBubble.speechManager = this;
                 // Set the values in speech bubble to those of the manager, keeps speech bubble/newly spawned bubbles up with the correct settings set by the text file
                 if (skip) {
-                    textSpeed = 0.001f;
+                    textSpeed = 0f;
                 }
                 currentBubble.textSpeed = textSpeed;
                 currentBubble.autoLineBreak = autoLineBreak;

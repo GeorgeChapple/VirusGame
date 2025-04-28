@@ -104,7 +104,7 @@ public class ChatBoxManager : MonoBehaviour
     private void AddSpeechBubble() {
         GameObject bubble = speechManager.speechBubbles[speechManager.speechBubbles.Count - 1];
         contentRect.sizeDelta += new Vector2(0, contentRectGridBox.cellSize.y + contentRectGridBox.spacing.y);
-        bubble.transform.parent = contentRect;
+        bubble.transform.SetParent(contentRect);
         bubble.GetComponent<RectTransform>().localScale = Vector3.one;
         GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
         if (speechManager.speechPrafabsIndex == 2) {
