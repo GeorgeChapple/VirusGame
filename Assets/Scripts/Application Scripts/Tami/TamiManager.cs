@@ -1,6 +1,8 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TamiManager : MonoBehaviour
@@ -17,7 +19,10 @@ public class TamiManager : MonoBehaviour
     [SerializeField] private Sprite[] foodBarSprites;
     [SerializeField] private Sprite[] thirstBarSprites;
     [SerializeField] private Sprite[] moodBarSprites;
-    [SerializeField] private GameObject[] tamiTabs;
+    [SerializeField] private GameObject[] tamiTabsGO;
+    [SerializeField] private string[] tamiTabsSTR;
+    [SerializeField] private Material[] tamiTabsMAT;
+
 
     [Header("Time in seconds before full bar is empty.")]
     [SerializeField] private float rateOfFoodDepletion;
@@ -35,6 +40,11 @@ public class TamiManager : MonoBehaviour
     [Tooltip("DO NOT CHANGE!")]
     [SerializeField] private float gameTimeSinceSpawn = 0;
 
+
+    [Header("Serialisations")]
+    [SerializeField] private AdditiveSceneHandler additiveSceneHandler;
+    [SerializeField] private WindowSpawner manager;
+
     private float gold = 0;
     private float healthDiv = 120;
     private float health = 100;
@@ -46,6 +56,7 @@ public class TamiManager : MonoBehaviour
 
     private void Awake()
     {
+        manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();
         healthDiv = rateOfHealthDepletion;
         StartCoroutine(GameTimer());
         StartCoroutine(SpawnPopUpRepeated());
@@ -73,15 +84,25 @@ public class TamiManager : MonoBehaviour
         {
             yield return new WaitForSeconds(popUpSpawnTime);
             Debug.Log("spawn");
-            if (tamiTabs.Length > 0)
+            if (tamiTabsGO.Length > 0)
             {
-                SpawnPopUp();
+                int num = Random.Range(0, tamiTabsGO.Length);
+                SpawnPopUp(num);
             }
         }
     }
-    public void SpawnPopUp()
+    public void SpawnPopUp(int num)
     {
-        GameObject newPopUp = Instantiate(tamiTabs[Random.Range(0, tamiTabs.Length)]);
+        // Do additive stuff first
+        SceneManager.LoadScene(tamiTabsSTR[num], LoadSceneMode.Additive);
+
+        manager.sceneName = tamiTabsSTR[num];
+        manager.cameraMaterial = tamiTabsMAT[num];
+        manager.SpawnWindow(tamiTabsGO[num]);
+        //additiveSceneHandler.cameraMaterial = tamiTabsMAT[num];
+        //GameObject newPopUp = Instantiate(tamiTabsGO[num]);
+        //newPopUp.GetComponent<WindowContent>().SetManager(manager);
+        //newPopUp.GetComponent<WindowContent>().OnceSpawned();
         // Do stuff once spawned
     }
     private void UpdateBars()

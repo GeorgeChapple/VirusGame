@@ -15,9 +15,9 @@ public class WindowSpawner : MonoBehaviour
     public string sceneName;
     public Material cameraMaterial;
 
-    public void SpawnWindow(GameObject windowPrefab)
+    public GameObject SpawnWindow(GameObject windowPrefab)
     {
-        UnityEngine.GameObject obj = Instantiate(windowPrefab, new Vector3(Random.Range(-3,3), Random.Range(-3, 3), 0), Quaternion.identity, hierarchy.transform);
+        UnityEngine.GameObject obj = Instantiate(windowPrefab, new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0), Quaternion.identity, hierarchy.transform);
         if (sceneName != null && cameraMaterial != null)
         {
             obj.GetComponent<WindowContent>().SetManager(this);
@@ -25,5 +25,6 @@ public class WindowSpawner : MonoBehaviour
         }
         sceneName = null;
         cameraMaterial = null;
+        return obj;
     }
 }

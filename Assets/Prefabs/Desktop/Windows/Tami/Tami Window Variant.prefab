@@ -112,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 34.83, y: -17.5}
+  m_AnchoredPosition: {x: 34.83, y: -25}
   m_SizeDelta: {x: 69.66, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7797070804921731174
@@ -633,8 +633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 137.5, y: -30}
-  m_SizeDelta: {x: 250, y: 35}
+  m_AnchoredPosition: {x: 137.5, y: -50}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4023004054333051420
 CanvasRenderer:
@@ -869,8 +869,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -75}
-  m_SizeDelta: {x: 45, y: 45}
+  m_AnchoredPosition: {x: 42.5, y: -105}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2524782834139724006
 CanvasRenderer:
@@ -1078,8 +1078,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -160}
-  m_SizeDelta: {x: 35, y: 35}
+  m_AnchoredPosition: {x: 35, y: -225}
+  m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1570650354647192993
 CanvasRenderer:
@@ -1154,8 +1154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -200}
-  m_SizeDelta: {x: 35, y: 35}
+  m_AnchoredPosition: {x: 35, y: -280}
+  m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7208948996412009692
 CanvasRenderer:
@@ -1681,8 +1681,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -120}
-  m_SizeDelta: {x: 35, y: 35}
+  m_AnchoredPosition: {x: 35, y: -170}
+  m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7438256351359612010
 CanvasRenderer:
@@ -1958,6 +1958,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1936028063350441777}
+    - targetCorrespondingSourceObject: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: -5971275584993759397}
   m_SourcePrefab: {fileID: 100100000, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
 --- !u!1 &1967212188711695967 stripped
 GameObject:
@@ -2006,17 +2009,38 @@ MonoBehaviour:
   moodBarSprites:
   - {fileID: 21300000, guid: 4f8d277a3a299d542822293481c6871f, type: 3}
   - {fileID: 21300000, guid: ceeed9a9424751348a2e06c772e69fca, type: 3}
-  tamiTabs: []
+  tamiTabsGO: []
+  tamiTabsSTR: []
+  tamiTabsMAT: []
   rateOfFoodDepletion: 60
   rateOfThirstDepletion: 60
   rateOfMoodDepletion: 60
   foodAddAmount: 2
   thirstAddAmount: 2
   moodAddAmount: 2
-  popUpSpawnTime: 15
+  popUpSpawnTime: 5
   popUpSpawnMin: 5
   rateOfPopUpSpawn: 45000
   gameTimeSinceSpawn: 0
+  additiveSceneHandler: {fileID: -5971275584993759397}
+  manager: {fileID: 0}
+--- !u!114 &-5971275584993759397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967212188711695967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a14114fc132e694caeff975907562ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  manager: {fileID: 0}
+  sceneName: 
+  cameraMaterial: {fileID: 0}
+  windowsButton: {fileID: 0}
 --- !u!224 &2125625574217040648 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3553542902400665179, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}

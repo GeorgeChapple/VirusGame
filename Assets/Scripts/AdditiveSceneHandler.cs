@@ -13,13 +13,21 @@ public class AdditiveSceneHandler : MonoBehaviour
     [Tooltip("Make sure the scene is available in the scene manager in build settings")]
     [SerializeField] private string sceneName;
     [SerializeField] private Material cameraMaterial;
-
+    [SerializeField] private WindowsButton windowsButton;
     public void ButtonPress()
     {
+        if (windowsButton.application != null)
+        {
+            return;
+        }
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
     public void SetVariables()
     {
+        if (windowsButton.application != null)
+        {
+            return;
+        }
         if (manager != null)
         {
             manager.sceneName = sceneName;
@@ -28,6 +36,10 @@ public class AdditiveSceneHandler : MonoBehaviour
     }
     public void SetVariablesFromFileData(FileData fileData)
     {
+        if (windowsButton.application != null)
+        {
+            return;
+        }
         sceneName = fileData.sceneName;
         cameraMaterial = fileData.cameraMaterial;
     }
