@@ -71,8 +71,7 @@ public class WindowsButton : MonoBehaviour
         {
             Destroy(GetComponent<WindowScript>());
         }
-        application = applicationToOpen;
-
+        //application = applicationToOpen;
     }
     public void SetUpVariables(FileData caller, GameObject application)
     {
@@ -258,11 +257,19 @@ public class WindowsButton : MonoBehaviour
     }
     public void OpenApplication()
     {
+        if (application != null)
+        {
+            return;
+        }
         application = Instantiate(applicationToOpen, hierarchy.transform);
         application.name = applicationToOpen.name;
     }
     public void OpenApplicationAndSendCaller(FileData caller)
     {
+        if (application != null)
+        {
+            return;
+        }
         application = Instantiate(applicationToOpen, hierarchy.transform);
         application.SendMessage("ReceiveCaller", caller);
         application.name = applicationToOpen.name;

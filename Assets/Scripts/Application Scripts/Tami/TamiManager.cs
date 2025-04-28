@@ -121,9 +121,6 @@ public class TamiManager : MonoBehaviour
             thirst -= Time.deltaTime / (rateOfThirstDepletion / 100);
             mood -= Time.deltaTime / (rateOfMoodDepletion / 100);
             moodBarImg.fillAmount = mood / 100;
-
-            gold += 0.01f;
-            OnGoldValChanged();
         }
     }
     public Sprite PickElement(float value, Sprite[] sprites)
