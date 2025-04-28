@@ -14,7 +14,7 @@ public class Commands {
     public static void FlashCMD(int amount) {
         ProcessStartInfo process = new ProcessStartInfo();
         process.FileName = "cmd.exe";
-        process.Arguments = "/c TIMEOUT T/ 1 /c exit";
+        process.Arguments = "/c exit";
         process.WindowStyle = ProcessWindowStyle.Normal;
         for (int i = 0; i < amount; i++) { 
             Process.Start(process);
