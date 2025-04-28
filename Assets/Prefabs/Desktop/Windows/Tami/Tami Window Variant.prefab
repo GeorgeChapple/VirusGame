@@ -113,7 +113,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 34.83, y: -17.5}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 69.66, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7797070804921731174
 CanvasRenderer:
@@ -2016,7 +2016,6 @@ MonoBehaviour:
   popUpSpawnMin: 5
   rateOfPopUpSpawn: 45000
   gameTimeSinceSpawn: 0
-  testTime: 0
 --- !u!224 &2125625574217040648 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3553542902400665179, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
