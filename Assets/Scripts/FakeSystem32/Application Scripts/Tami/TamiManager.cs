@@ -4,7 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class TamiManager : MonoBehaviour
 {
     [Header("Important Settings")]
@@ -32,6 +35,7 @@ public class TamiManager : MonoBehaviour
     [SerializeField] private float foodAddAmount;
     [SerializeField] private float thirstAddAmount;
     [SerializeField] private float moodAddAmount;
+    [SerializeField] private float goldPerFrame = 0.001f;
 
     [SerializeField] private float popUpSpawnTime = 15;
     [SerializeField] private float popUpSpawnMin = 5;
@@ -126,6 +130,11 @@ public class TamiManager : MonoBehaviour
                 break;
         }
     }
+    public void PopUpYesButton3(int cost)
+    {
+        goldPerFrame += 0.001f;
+        gold -= cost;
+    }
 
     private void UpdateBars()
     {
@@ -165,7 +174,7 @@ public class TamiManager : MonoBehaviour
             mood -= Time.deltaTime / (rateOfMoodDepletion / 100);
             moodBarImg.fillAmount = mood / 100;
         }
-        gold += 0.01f;
+        gold += goldPerFrame;
         OnGoldValChanged();
     }
     public Sprite PickElement(float value, Sprite[] sprites)

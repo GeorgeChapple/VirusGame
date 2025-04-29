@@ -1,29 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+    Note              : This is actually a modified version of the 
+                        player movement script Arthur used in his
+                        puzzle scene.
+*/
 public class TamiMovement : MonoBehaviour
 {
     public float horizontal;
     public float speed = 8f;
+    public float inputLerpTime = 3f;
+    public float simpleInertia = 5f;
     public float jumpingPower = 16f;
-    private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform respawnPoint;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if (IsGrounded())
+        {
+            horizontal = Mathf.Lerp(horizontal, Input.GetAxisRaw("Horizontal"), Time.deltaTime * inputLerpTime);
+        }
+        else
+        {
+            horizontal = Mathf.Lerp(horizontal, Input.GetAxisRaw("Horizontal"), Time.deltaTime * simpleInertia);
+        }
+
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -34,8 +40,6 @@ public class TamiMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
-
-        Flip();
     }
 
     private void FixedUpdate()
@@ -47,15 +51,8 @@ public class TamiMovement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
-
-    private void Flip()
+    public void Kill()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x = 1f;
-            transform.localScale = localScale;
-        }
+        transform.position = respawnPoint.position;
     }
 }

@@ -2012,6 +2012,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ceeed9a9424751348a2e06c772e69fca, type: 3}
   tamiTabsGO:
   - {fileID: 2668110347988534661, guid: 66ec4e99c9d01c44ba786d72c879a4ca, type: 3}
+  - {fileID: 2668110347988534661, guid: 4ad4f57bdf84a234189e436e62901adf, type: 3}
+  - {fileID: 2668110347988534661, guid: 029510afd701aad4380fe6f9c295d0a6, type: 3}
   - {fileID: 2668110347988534661, guid: 769618017b24e6942bb1578ffdd5aa9e, type: 3}
   tamiTabsSTR: []
   tamiTab: {fileID: 0}
@@ -2021,6 +2023,7 @@ MonoBehaviour:
   foodAddAmount: 2
   thirstAddAmount: 2
   moodAddAmount: 2
+  goldPerFrame: 0.001
   popUpSpawnTime: 15
   popUpSpawnMin: 5
   rateOfPopUpSpawn: 45000

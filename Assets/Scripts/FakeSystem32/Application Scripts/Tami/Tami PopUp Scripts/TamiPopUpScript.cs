@@ -2,7 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+*/
 public class TamiPopUpScript : MonoBehaviour
 {
     [SerializeField] private TamiManager tamiManager;
@@ -38,7 +41,6 @@ public class TamiPopUpScript : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Debug.Log("Tami tam destroyed");
         tamiManager.PopUpDestroyed();
         if (!string.IsNullOrEmpty(sceneName))
         {
