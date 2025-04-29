@@ -1,58 +1,52 @@
 <sp:0.035>
-Hey man!
-How's everything going?
+What now, Barry?
+What is this music!?
+<pfb:2>
+<n>
+hELLO! I'm DAISY!!!
+Your new virtual assistant!
+<sp:0.1>
 <pfb:1>
 <n>
-Oh hey, good thanks.
-Just trying to find stuff to report on.
-How are you?
-<pfb:0>
-<n>
-Good thanks. You still trying to work on that police report?
-<pfb:1>
-<n>
-You know I can’t talk much about it, but yeah.
-<pfb:1>
-<n>
-My NDA doesn’t let me speak to anyone about what they’re working on
-<pfb:1>
-<n>
-but if I can find just one small piece of evidence exposing them, I can tell the story through that.
-<pfb:0>
-<n>
-…How long has it been since you were a detective?
-<pfb:1>
-<n>
-About a year since I was made redundant.
-<pfb:0>
-<n>
-How do you feel about that?
-<pfb:1>
-<n>
-I guess it was meant to be... 
-<pfb:1>
-<n>
-but I'm still fuming haha!
-<pfb:0>
-<n>
-I see, best way to look at it I suppose. 
-<pfb:0>
-<n>
-And yeah it was unfair they laid you off so quickly.
-<pfb:1>
-<n>
-Not much I can do about it besides what I’m doing now. Just got to try and find something.
-<pfb:0>
-<n>
-Well, I did stumble across something that might help you, would you like to see it?
-<pfb:1>
-<n>
-Sure.
-<pfb:0>
-<n>
-Alright, give me a sec.
-<sp:0.2>
-...
+huh
+<pfb:2>
 <sp:0.035>
 <n>
-Alright, it’s sent! Have a look! http://notdodgy.com/usdhibovnaa+ROjrgsbc
+:3
+<pfb:2>
+<n>
+I'm here to teach you
+on basic laws and ethics
+through games and education!
+<n>
+Isn't that fun?
+<pfb:1>
+<n>
+So you're the virus...
+<pfb:2>
+<n>
+WOAAHHH there Selden!
+Let's not throw that term around!
+<pfb:2>
+<n>
+Someone could get hurt!
+<pfb:1>
+<n>
+Great, you know my name...
+And now you're threatening me?
+<pfb:1>
+<n>
+I'm talking to Barry...
+<pfb:2>
+<n>
+Oh no you're not!
+Not until you complete...
+<sp:0.1>
+<n>
+My...
+<n>
+First...
+<n>
+GAAAAMMMEE!
+<n>
+Click the new app to get started!!!

@@ -39,6 +39,7 @@ public class DeathScript : MonoBehaviour
 
     // Enables and lerps the colour of an image over the whole screen, then resets the scene
     public void KillPlayer() {
+        GetComponent<SoundScript>().PlaySound( 0, 1, 1);
         deathImage.gameObject.SetActive(true);
         lerpScript.StartVector3Lerp(startColour, endColour, deathTime);
         StartCoroutine(WaitForReset());
