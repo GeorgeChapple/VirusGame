@@ -668,15 +668,18 @@ MonoBehaviour:
   yesEvent:
     m_PersistentCalls:
       m_Calls: []
-  eventpass:
-  - passValThrough: 1
+  noEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  eventpassYes:
+  - passValThrough: 0
     methodName: PopUpYesButton1
     passSelfVal: 0
     self: {fileID: 0}
     passStringVal: 0
     stringVal: 
     passIntVal: 1
-    intVal: 5
+    intVal: 2
     passFloatVal: 0
     floatVal: 0
   - passValThrough: 0
@@ -689,7 +692,8 @@ MonoBehaviour:
     intVal: 0
     passFloatVal: 0
     floatVal: 0
-  cost: 0
+  eventpassNo: []
+  cost: 2
 --- !u!224 &5485061947953086684 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2966574546075292989, guid: 6ba82a6fecd20544c9caca1e6d940578, type: 3}

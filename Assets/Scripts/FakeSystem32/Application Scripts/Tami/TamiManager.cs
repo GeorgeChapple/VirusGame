@@ -1,6 +1,5 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +10,7 @@ using UnityEngine.UI;
 public class TamiManager : MonoBehaviour
 {
     [Header("Important Settings")]
+    [SerializeField] private string sceneName;
     [Tooltip("This is the time in seconds for how fast the timer runs out. Base = 120 | 2 Minutes.")]
     [SerializeField] private float rateOfHealthDepletion = 120;
     [SerializeField] private Image healthBarSprite;
@@ -43,6 +43,8 @@ public class TamiManager : MonoBehaviour
     [SerializeField] private float rateOfPopUpSpawn = 50000;
     [Tooltip("DO NOT CHANGE!")]
     [SerializeField] private float gameTimeSinceSpawn = 0;
+    [Tooltip("The game will end once this amount of seconds pass;")]
+    [SerializeField] private float gameLength = 300;
 
 
     [Header("Serialisations")]
@@ -81,6 +83,10 @@ public class TamiManager : MonoBehaviour
             gameTimeSinceSpawn += Time.deltaTime;
             popUpSpawnTime -= gameTimeSinceSpawn / rateOfPopUpSpawn;
             popUpSpawnTime = Mathf.Clamp(popUpSpawnTime, popUpSpawnMin, 100);
+            if (gameTimeSinceSpawn > gameLength)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void PopUpDestroyed()
@@ -130,12 +136,20 @@ public class TamiManager : MonoBehaviour
                 break;
         }
     }
-    public void PopUpYesButton3(int cost)
+    public void PopUpYesButton3()
     {
         goldPerFrame += 0.001f;
-        gold -= cost;
     }
-
+    public void PopUpYesButton4(int add)
+    {
+        gold += add;
+    }
+    public void PopUpNoButton1()
+    {
+        food -= 40;
+        thirst -= 40;
+        mood -= 40;
+    }
     private void UpdateBars()
     {
         if (food <= 0 && thirst <= 0 && mood <= 0)
@@ -213,5 +227,12 @@ public class TamiManager : MonoBehaviour
         healthDiv += 30;
         health = 100;
         reviveCounter++;
+    }
+    private void OnDestroy()
+    {
+        if (!string.IsNullOrEmpty(sceneName))
+        {
+            SceneManager.UnloadSceneAsync(sceneName);
+        }
     }
 }

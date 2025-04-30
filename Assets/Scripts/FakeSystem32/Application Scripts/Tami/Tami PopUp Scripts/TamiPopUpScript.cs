@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -11,13 +12,15 @@ public class TamiPopUpScript : MonoBehaviour
     [SerializeField] private TamiManager tamiManager;
     [SerializeField] private string sceneName;
     [SerializeField] private UnityEvent yesEvent;
-    [SerializeField] private List<EventPass> eventpass;
+    [SerializeField] private UnityEvent noEvent;
+    [SerializeField] private List<EventPass> eventpassYes;
+    [SerializeField] private List<EventPass> eventpassNo;
     [SerializeField] private float cost;
     private void Awake()
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         tamiManager = GetComponentInParent<TamiManager>();
-        foreach (EventPass pass in eventpass)
+        foreach (EventPass pass in eventpassYes)
         {
             if (pass.passIntVal)
             {
@@ -25,6 +28,15 @@ public class TamiPopUpScript : MonoBehaviour
                 continue;
             }
             yesEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, cost); });
+        }
+        foreach (EventPass pass in eventpassNo)
+        {
+            if (pass.passIntVal)
+            {
+                noEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, pass.intVal); });
+                continue;
+            }
+            noEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, cost); });
         }
     }
     public void GoodButton()
@@ -37,6 +49,7 @@ public class TamiPopUpScript : MonoBehaviour
     }
     public void BadButton()
     {
+        noEvent.Invoke();
         Destroy(gameObject);
     }
     private void OnDestroy()
