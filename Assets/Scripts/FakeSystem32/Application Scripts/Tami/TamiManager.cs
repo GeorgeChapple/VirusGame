@@ -96,6 +96,7 @@ public class TamiManager : MonoBehaviour
     {
         StartCoroutine(SpawnPopUp_E());
         tamiTab = null;
+        StartCoroutine(GameTimer());
     }
     public IEnumerator SpawnPopUp_E()
     {

@@ -83,6 +83,7 @@ public class VirusScannerScript : MonoBehaviour {
         }
         spriteHandler.spriteIndex = 1; spriteHandler.RefreshSprite();
         scanning = false;
+        success = false;
     }
     private IEnumerator SuccessScan() {
         int animationState = 0;
@@ -98,6 +99,7 @@ public class VirusScannerScript : MonoBehaviour {
         scanning = false;
         success = false;
         colouredBallImage.enabled = false;
+        fileToScan = null;
     }
 
     // REMOVE LATER, CREATE NEW SCRIPT

@@ -897,7 +897,7 @@ MonoBehaviour:
     passStringVal: 0
     stringVal: 
     passIntVal: 1
-    intVal: 2
+    intVal: 1
     passFloatVal: 0
     floatVal: 0
     passBoolVal: 0
@@ -920,6 +920,7 @@ MonoBehaviour:
   textToSpawnGood: Gold per frame + 0.0001
   textToSpawnCantAfford: Can't Afford
   textToSpawnBad: Awww
+  guilty: 0
 --- !u!224 &5485061947953086684 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2966574546075292989, guid: 6ba82a6fecd20544c9caca1e6d940578, type: 3}
