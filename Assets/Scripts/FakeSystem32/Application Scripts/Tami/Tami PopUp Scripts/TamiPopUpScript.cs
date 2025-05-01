@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
-    Purpose           : 
+    Purpose           : Spawns tami scenes and sets up buttons to interact with said scenes
 */
 public class TamiPopUpScript : MonoBehaviour
 {
@@ -23,7 +23,7 @@ public class TamiPopUpScript : MonoBehaviour
     [SerializeField] private string textToSpawnBad;
     private TamiCourtRandomiser tamiCourtRandomiser;
     [HideInInspector] public bool guilty;
-    private void Awake()
+    private void Awake() // Set up scene, set up buttons(uses eventpass rather than making a new seperate one)
     {        
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         tamiManager = GetComponentInParent<TamiManager>();
@@ -38,7 +38,6 @@ public class TamiPopUpScript : MonoBehaviour
             if (pass.passBoolVal)
             {
                 yesEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, pass.boolVal); });
-                Debug.Log(pass.boolVal + "for yes");
                 continue;
             }
             yesEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, cost); });
@@ -58,8 +57,8 @@ public class TamiPopUpScript : MonoBehaviour
             noEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, cost); });
         }
     }
-    private void Start() { tamiCourtRandomiser = FindAnyObjectByType<TamiCourtRandomiser>(); }
-    public void GoodButton()
+    private void Start() => tamiCourtRandomiser = FindAnyObjectByType<TamiCourtRandomiser>();
+    public void GoodButton() // Called by the left button on pop up
     {
         if (tamiManager.gold >= cost)
         {
@@ -74,14 +73,14 @@ public class TamiPopUpScript : MonoBehaviour
             textObj.GetComponent<FloatingText>().ChangeText(textToSpawnCantAfford);
         }
     }
-    public void BadButton()
+    public void BadButton() // Called by the right button on pop up
     {
         noEvent.Invoke();
         GameObject textObj = Instantiate(textPrefab, transform.parent);
         textObj.GetComponent<FloatingText>().ChangeText(textToSpawnBad);
         PopUpDestroy();
     }
-    public void CourtSetUp(bool _guilty)
+    public void CourtSetUp(bool _guilty) // Changes text on spawn
     {
         guilty = _guilty;
         if (guilty) 
@@ -95,7 +94,7 @@ public class TamiPopUpScript : MonoBehaviour
             textToSpawnBad = "She was Innocent, All stats halved";
         }
     }
-    public void PopUpDestroy()
+    public void PopUpDestroy() // Destroy Tab after unloading scene and turning timers back on
     {
         tamiManager.PopUpDestroyed();
         if (!string.IsNullOrEmpty(sceneName))
