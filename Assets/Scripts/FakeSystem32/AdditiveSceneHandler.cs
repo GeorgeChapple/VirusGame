@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge, George Chapple
+    Purpose           : Load scenes additively for use with fake applications
 */
 
 public class AdditiveSceneHandler : MonoBehaviour
@@ -14,6 +15,7 @@ public class AdditiveSceneHandler : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private Material cameraMaterial;
     [SerializeField] private WindowsButton windowsButton;
+    // Loads scene
     public void ButtonPress()
     {
         if (windowsButton.application != null)
@@ -22,6 +24,7 @@ public class AdditiveSceneHandler : MonoBehaviour
         }
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
+    // Sets scene name and camera mat
     public void SetVariables()
     {
         if (windowsButton.application != null)

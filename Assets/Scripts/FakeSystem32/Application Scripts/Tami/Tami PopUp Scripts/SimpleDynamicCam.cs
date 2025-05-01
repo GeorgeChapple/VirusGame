@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
+    Purpose           : Super simple dynamic
+                        cam for tami platformer
 */
 public class SimpleDynamicCam : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class SimpleDynamicCam : MonoBehaviour
 
     private void Update()
     {
+        // Lerp to the position + offset, and prevent camera from going off screen.
         float x = objToFollow.position.x + offset.x;
         float y = objToFollow.position.y + offset.y;
         float z = objToFollow.position.z + offset.z;

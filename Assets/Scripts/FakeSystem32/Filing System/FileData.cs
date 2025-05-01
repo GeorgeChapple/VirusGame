@@ -5,6 +5,9 @@ using UnityEngine;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge, George Chapple
+    Purpose           : Houses all data about a file, for use
+                        with the filing system to create icon
+                        buttons for applications and such.
 */
 
 [CreateAssetMenu(fileName = "File")]
@@ -41,7 +44,15 @@ public class FileData : ScriptableObject
     public Sprite colouredBallForVirusScanner;
 }
 
-[Serializable]
+// EventPass was the solution I came up with to the fact that
+// the clicks used events for their function. I tried using Unity
+// Events but unfortunately unity doesnt have support for changing a
+// variable on an event in code and can only be changed in editor.
+// Since that was the case I realised that there wasnt an easy way
+// and that I'd have to rebuild the unity event from scratch instead.
+
+// This just makes it easier, it used to be its own script with a CreateAssetMenu
+[Serializable] 
 public class EventPass
 {
     public bool passValThrough;

@@ -6,6 +6,10 @@ using UnityEngine;
 /*
     Script created by : George Chapple
     Edited by         : George Chapple, Jason Lodge
+    Purpose           : For use with the raycast script.
+                        It gives the raycast script the
+                        variables to properly drag an item
+                        and also window hierarchy stuff.
 */
 public class WindowScript : MonoBehaviour
 {
@@ -21,7 +25,7 @@ public class WindowScript : MonoBehaviour
         windowCollider = GetComponent<BoxCollider>();
         rectTransform = GetComponent<UnityEngine.RectTransform>();
         windowCollider.size = rectTransform.rect.size;
-        if (gameObject.layer == 3) //if its a window
+        if (gameObject.layer == 3) // If its a window - Jason
         {
             PutInFront();
         }
@@ -34,13 +38,13 @@ public class WindowScript : MonoBehaviour
 
         mouseDistance = Input.mousePosition - (Vector3)rectTransform.anchoredPosition;
     }
-    public void PutInFront()
+    public void PutInFront() // Put the window in front of everything - Jason
     {
         gameObject.transform.SetParent(manager.windowHierarchy.transform, true);
         gameObject.transform.SetAsFirstSibling();
         manager.OnHierarchyUpdated();
     }
-    public void DetachFromHierarchy()
+    public void DetachFromHierarchy() // For when dragging, I want it to detach from the hierarchy to be in front of the other windows - Jason
     {
         gameObject.transform.SetParent(canvas.transform, true);
     }

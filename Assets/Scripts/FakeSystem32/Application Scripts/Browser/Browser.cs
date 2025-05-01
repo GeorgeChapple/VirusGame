@@ -5,6 +5,7 @@ using UnityEngine;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
+    Purpose           : To be used to display website prefabs, in its own window
 */
 
 public class Browser : MonoBehaviour
@@ -13,10 +14,7 @@ public class Browser : MonoBehaviour
     public string URL;
 
     [SerializeField] private List<Website> websites = new List<Website>();
-
-    //[SerializeField] private List<string> websiteNames = new List<string>();
     [SerializeField] private List<string> websiteURLs = new List<string>();
-
     [SerializeField] private Website currentSite;
     public List<Website> previousSites = new List<Website>();
     public List<Website> futureSites = new List<Website>();
@@ -31,6 +29,7 @@ public class Browser : MonoBehaviour
     [SerializeField] private GameObject contentPanel;
     private void Start()
     {
+        // Get ready for use
         URLField.onValueChanged.AddListener(OnInputChanged);
         suggestionPanel.gameObject.SetActive(false);
         foreach (var website in websites)
@@ -38,31 +37,27 @@ public class Browser : MonoBehaviour
             websiteURLs.Add(website.siteUrl);
         }
     }
-    private void LateUpdate()
-    {
-        //this is horrible, ill change it soon
-        URLField.onSubmit.RemoveAllListeners();
-        URLField.onSubmit.AddListener(delegate { URLInput(currentSuggestion); });
-    }
+    // When the input field is changed, calculate the closest strings to the current string
     private void OnInputChanged(string input)
     {
         ClearSuggestions();
 
-        if (string.IsNullOrWhiteSpace(input))
+        if (string.IsNullOrWhiteSpace(input)) // If nothings in there
         {
             suggestionPanel.gameObject.SetActive(false);
             return;
         }
 
+        // Get closest strings (System.Linq is so cool letting me put all this on one line)
         var matches = websiteURLs.Select(option => new { option, distance = LevenshteinDistance(input.ToLower(), option.ToLower()) }).OrderBy(x => x.distance).Take(maxSuggestions).ToList();
 
-        if (matches.Count == 0)
+        if (matches.Count == 0) // If absolutely nothing is close(this only happens when the list is empty)
         {
             suggestionPanel.gameObject.SetActive(false);
             return;
         }
 
-        foreach (var match in matches)
+        foreach (var match in matches) // Make a new button for each suggestion
         {
             GameObject item = Instantiate(suggestionItemPrefab, suggestionPanel);
             item.GetComponentInChildren<TMP_Text>().text = match.option;
@@ -73,14 +68,12 @@ public class Browser : MonoBehaviour
         suggestionPanel.gameObject.SetActive(true);
 
         currentSuggestion = currentSuggestions[0].GetComponentInChildren<TMP_Text>().text;
-    }
-    private void OnSuggestionClicked(string suggestion)
-    {
-        URLField.text = suggestion;
-        ClearSuggestions();
-        suggestionPanel.gameObject.SetActive(false);
-    }
 
+        // Allow user to click on it to set the current suggestion as input
+        URLField.onSubmit.RemoveAllListeners();
+        URLField.onSubmit.AddListener(delegate { URLInput(currentSuggestion); });
+    }
+    // Clear all suggestions from list and destroy all GameObjects connected to them
     private void ClearSuggestions()
     {
         foreach (GameObject item in currentSuggestions)
@@ -90,6 +83,7 @@ public class Browser : MonoBehaviour
 
         currentSuggestions.Clear();
     }
+    // Search for the website with the exact URL as the suggestion then load it
     public void URLInput(string suggestion)
     {    
         foreach (var website in websites)
@@ -104,6 +98,7 @@ public class Browser : MonoBehaviour
         ClearSuggestions();
         suggestionPanel.gameObject.SetActive(false);
     }
+    // Spawns a website prefab, which is kept in Website
     private void LoadWebsite(Website website, bool newSite)
     {
 
@@ -119,22 +114,25 @@ public class Browser : MonoBehaviour
             if (newSite) { futureSites.Clear(); }
         }
         currentSite = website;
-        Destroy(contentPanel.transform.GetChild(0).gameObject);
 
+        // Ensure no website is still loaded when we spawn a new one
+        Destroy(contentPanel.transform.GetChild(0).gameObject);
         Instantiate(website.websitePrefab, contentPanel.transform);
 
     }
+    // For previous sites, not amazing and doesn't work completely
     public void GoBack()
     {
         futureSites.Insert(0, currentSite);
         LoadWebsite(previousSites[0], false);        
     }
+    // For sites user was on previously before moving back
     public void GoForward()
     {
         LoadWebsite(futureSites[0], false);
     }
 
-    //first thing that came up when i searched up how to get a closest string, pretty cool
+    // First thing that came up when i searched up how to get a closest string, pretty cool
     int LevenshteinDistance(string a, string b)
     {
         int[,] dp = new int[a.Length + 1, b.Length + 1];

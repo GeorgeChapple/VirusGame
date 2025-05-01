@@ -2,6 +2,7 @@ using UnityEngine;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
+    Purpose           : To house the data necessary for a website
 */
 
 [CreateAssetMenu(fileName = "Website")]

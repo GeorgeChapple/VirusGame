@@ -2,7 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+    Purpose           : To be used univerally as
+                        an event handler for
+                        absolutely any event.
+                        I used it for progress
+                        on the corkboard and flashlight.
+*/
 public class GenericEventHandler : MonoBehaviour
 {
     public UnityEvent OnAwakeEvent;

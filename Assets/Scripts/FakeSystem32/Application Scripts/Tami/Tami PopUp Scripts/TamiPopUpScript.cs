@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
+    Purpose           : 
 */
 public class TamiPopUpScript : MonoBehaviour
 {

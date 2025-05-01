@@ -34,7 +34,7 @@ public class SpriteHandlerScript : MonoBehaviour {
         }
         image.sprite = spriteSheet[spriteIndex];
     }
-    public void ReceiveSprites(FileData fileData)
+    public void ReceiveSprites(FileData fileData) // Get Sprites from filedata - Jason
     {
         spriteSheet = fileData.icon.ToArray();
     }

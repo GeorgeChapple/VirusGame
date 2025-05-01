@@ -2,6 +2,9 @@ using UnityEngine;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
+    Purpose           : For use with the websites, it would show secrets hidden in the website.
+                        There was talk for the use of this in other things i believe
+                        but we hadn't done any of that unfortunately as we had heavily overscoped.
 */
 
 public class Flashlight : MonoBehaviour
@@ -21,12 +24,14 @@ public class Flashlight : MonoBehaviour
         CheckAll(false);
     }
     private void Update()
-    {
+    { 
+        // Move flashlight graphic over mouse position
         mousePosition = Input.mousePosition + new Vector3(0, 0, -1000);
         flashlightTransform.localPosition = mousePosition - (new Vector3(Screen.width, Screen.height) / 2);
     }
+    // Check all objects that should show a different text
     private void CheckAll(bool open)
-    {
+    {        
         allTexts = GameObject.FindGameObjectsWithTag(tagToCheck);
         foreach (GameObject text in allTexts)
         {

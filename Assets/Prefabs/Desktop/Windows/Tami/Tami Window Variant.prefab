@@ -2014,18 +2014,17 @@ MonoBehaviour:
   - {fileID: 2668110347988534661, guid: 029510afd701aad4380fe6f9c295d0a6, type: 3}
   - {fileID: 2668110347988534661, guid: 769618017b24e6942bb1578ffdd5aa9e, type: 3}
   - {fileID: 2668110347988534661, guid: 65f93721be252ef488453dbdc3314991, type: 3}
-  tamiTabsSTR: []
   tamiTab: {fileID: 0}
   rateOfFoodDepletion: 60
   rateOfThirstDepletion: 60
   rateOfMoodDepletion: 60
-  foodAddAmount: 2
-  thirstAddAmount: 2
-  moodAddAmount: 2
+  foodAddAmount: 5
+  thirstAddAmount: 5
+  moodAddAmount: 5
   goldPerFrame: 0.0005
   popUpSpawnTime: 15
   popUpSpawnMin: 5
-  rateOfPopUpSpawn: 45000
+  rateOfPopUpSpawn: 40000
   gameTimeSinceSpawn: 0
   gameLength: 300
   contentPanel: {fileID: 7992869705259326661}

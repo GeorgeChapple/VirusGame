@@ -6,6 +6,10 @@ using UnityEngine.Events;
 /*
     Script created by : George Chapple
     Edited by         : George Chapple, Jason Lodge
+    Purpose           : To shoot a raycast from the camera
+                        and get a certain then move it
+                        to mouse position if
+                        conditions are met
 */
 
 public class RaycastScript : MonoBehaviour {
@@ -75,8 +79,9 @@ public class RaycastScript : MonoBehaviour {
             if (leftHolding) {
                 if (lastHitObject.CompareTag("Draggable")) {
                     Vector3 distance = lastHitObject.GetComponent<WindowScript>().mouseDistance;
-                    //lastHitObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x - (canvas.pixelRect.width / 2), Input.mousePosition.y - (canvas.pixelRect.height / 2), -0.1f) - distance;
-                    lastHitObject.GetComponent<UnityEngine.RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -0.1f) - distance;
+
+                    // Use mouse position for object tracking, this means it can be used on ui objects. - Jason
+                    lastHitObject.GetComponent<UnityEngine.RectTransform>().anchoredPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -0.1f) - distance; 
                 }
             } else {
                 if (lastHitObject.CompareTag("Draggable")) {

@@ -4,19 +4,20 @@ using UnityEngine.Audio;
 /*
     Script created by : George Chapple
     Edited by         : George Chapple, Jason Lodge
+    Purpose           : To play an audio clip, called by other scripts.
 */
 
 public class SoundScript : MonoBehaviour
 {
     public AudioClip[] sounds;
     private AudioSource audioSource;
-    public AudioMixerGroup audioMixerGroup;
+    public AudioMixerGroup audioMixerGroup; // Audio Mixer to make sure game is not too loud - Jason
 
     private void Awake() {
         AudioSource newAudioSource;
         if (TryGetComponent<AudioSource>(out newAudioSource)) {
             audioSource = newAudioSource;
-            audioSource.outputAudioMixerGroup = audioMixerGroup;
+            audioSource.outputAudioMixerGroup = audioMixerGroup; // Set AudioSource mixer to ours - Jason
         } else {
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.outputAudioMixerGroup = audioMixerGroup;

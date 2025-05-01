@@ -2,7 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+    Purpose           : To essentially be a 
+                        hint board for the player
+                        To give them an idea of
+                        where to go next
+*/
 public class CorkBoard : MonoBehaviour
 {
     [SerializeField] private GameObject contentPanel;
@@ -20,6 +27,7 @@ public class CorkBoard : MonoBehaviour
     {
         UpdateLines();
     }
+    // Update lines to follow pages
     private void UpdateLines()
     {
         foreach (KeyValuePair<CorkBoardPage, LineRenderer> keyValuePair in pageAndLine)
@@ -28,11 +36,12 @@ public class CorkBoard : MonoBehaviour
             keyValuePair.Value.SetPosition(1, rect.anchoredPosition3D + keyValuePair.Key.lineEnd.localPosition);
         }        
     }
+    // Set up each page and make a line for each one
     private void SetUp()
     {
         foreach (var page in pages)
         {
-            if (!page.active) { continue; }
+            if (!page.active) { continue; } // If hasnt been unlocked, for progression purposes
             GameObject newPage = Instantiate(pagePrefab, contentPanel.transform);
             RectTransform rect = newPage.GetComponent<RectTransform>();
             rect.anchoredPosition = RandomRadialWithMinVal(contentPanel.transform.position, 200, 300);
@@ -42,7 +51,7 @@ public class CorkBoard : MonoBehaviour
             pageAndLine.Add(newPage.GetComponent<CorkBoardPage>(), newLine);
         }
     }
-
+    // Spawn a new line for a page
     public LineRenderer NewLine(Vector3 origin, Vector3 destination)
     {
         GameObject newLine = new GameObject("Line", typeof(RectTransform), typeof(LineRenderer));
@@ -57,6 +66,7 @@ public class CorkBoard : MonoBehaviour
         lr.SetPositions(positions);
         return lr;
     }
+    // Calculates a random point with in a radius with a minimum radius, to make sure a page doesnt spawn in middle
     public Vector2 RandomRadialWithMinVal(Vector2 origin, float minRadius, float maxRadius)
     {
         var randomDirection = Random.insideUnitCircle.normalized;

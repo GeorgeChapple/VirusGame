@@ -8,6 +8,7 @@ using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
+    Purpose           : For the tami minigame
 */
 public class TamiManager : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class TamiManager : MonoBehaviour
     [SerializeField] private Sprite[] thirstBarSprites;
     [SerializeField] private Sprite[] moodBarSprites;
     [SerializeField] private GameObject[] tamiTabsGO;
-    [SerializeField] private string[] tamiTabsSTR;
     [SerializeField] private GameObject tamiTab;
 
 
@@ -64,22 +64,22 @@ public class TamiManager : MonoBehaviour
     public TamiCourtRandomiser tamiCourtRandomiser;
     public List<GameObject> courtTamis = new List<GameObject>();
 
-    private void Awake()
+    private void Awake() // Set Up
     {
         manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();
         healthDiv = rateOfHealthDepletion;
         StartCoroutine(GameTimer());
         StartCoroutine(SpawnPopUp_E());
     }
-    private void Update()
+    private void Update() // Update all bars and values
     {
         UpdateBars();
         foodBarSprite.sprite = PickElement(food, foodBarSprites);
         thristBarSprite.sprite = PickElement(thirst, thirstBarSprites);
         moodBarSprite.sprite = PickElement(mood, moodBarSprites);
     }
-    private IEnumerator GameTimer()
-    {
+    private IEnumerator GameTimer() // Game time in real time, affects how frequently pop ups spawn
+    {                               // it does stop once a tab exists tho so it'll be out of sync
         while (tamiTab == null)
         {
             yield return new WaitForEndOfFrame();
@@ -92,19 +92,19 @@ public class TamiManager : MonoBehaviour
             }
         }
     }
-    public void PopUpDestroyed()
+    public void PopUpDestroyed() // Starts timers back up
     {
         StartCoroutine(SpawnPopUp_E());
         tamiTab = null;
         StartCoroutine(GameTimer());
     }
-    public IEnumerator SpawnPopUp_E()
+    public IEnumerator SpawnPopUp_E() // Spawns popup after pre computed time
     {
         yield return new WaitForSeconds(popUpSpawnTime);
         int num = Random.Range(0, tamiTabsGO.Length);
         SpawnPopUp(num);
     }
-    public void SpawnPopUp(int num)
+    public void SpawnPopUp(int num) // Spawns a popup
     {
         if (tamiTab != null)
         {
@@ -122,19 +122,20 @@ public class TamiManager : MonoBehaviour
         }
         tamiTab = newPopUp;
     }
-    private IEnumerator GetCourtRandomiser()
-    {
+    private IEnumerator GetCourtRandomiser() // This is super janky, but its in another scene and it needed time to load.
+    {                                        // I technically could've done it in the scene but its too late now.
         yield return new WaitForSeconds(0.1f);
         tamiCourtRandomiser = FindAnyObjectByType<TamiCourtRandomiser>();
         yield return new WaitForSeconds(0.1f);
         courtTamis = tamiCourtRandomiser.allTamisSpawned;
         tamiTab.GetComponent<TamiPopUpScript>().CourtSetUp(tamiCourtRandomiser.guilty);
     }
-    public void PopUpYesButton1(int cost)
+    // All buttons effects
+    public void PopUpYesButton1(int cost) // Removes Gold
     {
         gold -= cost;
     }
-    public void PopUpYesButton2(int index)
+    public void PopUpYesButton2(int index) // Maximises one of tami's stats
     {
         switch (index)
         {
@@ -151,26 +152,27 @@ public class TamiManager : MonoBehaviour
                 break;
         }
     }
-    public void PopUpYesButton3()
+    public void PopUpYesButton3() // For model scene
     {
         goldPerFrame += 0.0001f;
     }
-    public void PopUpYesButton4(int add)
+    public void PopUpYesButton4(int add) // Adds Gold
     {
         gold += add;
     }
-    public void PopUpNoButton1()
+    public void PopUpNoButton1() // Halves all stats
     {
         food -= food / 2;
         thirst -= thirst / 2;
         mood -= mood / 2;
     }
-    public void CourtCheckGuilty(bool guilty)
+    public void CourtCheckGuilty(bool guilty) // Check if guilty
     {
-        foreach (GameObject go in courtTamis)
+        foreach (GameObject go in courtTamis) // Destroy all tamis spawned by court
         {
             Destroy(go);
         }
+        courtTamis.Clear();
         if (tamiCourtRandomiser.guilty)
         {
             if (!guilty) { PopUpNoButton1(); }
@@ -182,11 +184,10 @@ public class TamiManager : MonoBehaviour
             else { PopUpNoButton1(); }
         }
     }
-    private void UpdateBars()
+    private void UpdateBars() // Updates all stats and UI, also logic on stats
     {
-        if (food <= 0 && thirst <= 0 && mood <= 0)
+        if (food <= 0 && thirst <= 0 && mood <= 0) // All stat empty, 2x speed
         {
-            Debug.Log("All bars empty");
             // Health goes down faster when all bars are empty
             health -= Time.deltaTime / healthDiv * 200; // +100% Speed!
             healthBarSprite.fillAmount = health / 100;
@@ -196,9 +197,8 @@ public class TamiManager : MonoBehaviour
                 TamiReviveEvent();
             }
         }
-        else if (food <= 0 || thirst <= 0 || mood <= 0)
+        else if (food <= 0 || thirst <= 0 || mood <= 0) // One stat empty, diminish health
         {
-            Debug.Log("One bar empty");
             // Health bar should take 2 minutes to deplete
             // Since its 1 it needs to be divided by the amount of seconds
             // Because 1 Time.deltaTime unit is one second
@@ -223,7 +223,8 @@ public class TamiManager : MonoBehaviour
         gold += goldPerFrame;
         OnGoldValChanged();
     }
-    public Sprite PickElement(float value, Sprite[] sprites)
+    // Chooses a sprite to use based on a value using a percentage out of 100
+    public Sprite PickElement(float value, Sprite[] sprites) 
     {
         value = Mathf.Clamp(value, 0f, 100f); // Ensure 0-100
         int index = Mathf.FloorToInt((value / 100f) * sprites.Length);
@@ -235,11 +236,11 @@ public class TamiManager : MonoBehaviour
     }
     private void OnGoldValChanged()
     {
-        // No idea why unity doesnt have their Mathf.Round() use decimal place rounding too
+        // No idea why unity doesnt have a decimal place round too
         goldText.text = "Gold: " + System.Math.Round(gold, 2).ToString();
     }
-    // All buttons/tami event thingys
-    public void FeedTami(bool fromPopUp)
+    // All tami event thingys
+    public void FeedTami(bool fromPopUp) // Add to food by set amount and clamp val
     {
         food = Mathf.Clamp(food + foodAddAmount, 0, 100);
         if (fromPopUp) { food = 100; }
@@ -254,14 +255,18 @@ public class TamiManager : MonoBehaviour
         mood = Mathf.Clamp(mood + moodAddAmount, 0, 100);
         if (fromPopUp) { mood = 100; }
     }
-    private void TamiReviveEvent()
+    private void TamiReviveEvent() // Revives Tami with full health and half stats
     {
         Destroy(tamiTab);
+        tamiTab = null;
         healthDiv += 30;
         health = 100;
+        food = 50;
+        thirst = 50;
+        mood = 50;
         reviveCounter++;
     }
-    private void OnDestroy()
+    private void OnDestroy() // Remove Tami scene when tab destroyed
     {
         if (!string.IsNullOrEmpty(sceneName))
         {

@@ -4,6 +4,10 @@ using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge, George Chapple
+    Purpose           : For use with applications that
+                        load scenes additively, this should've
+                        been done with a script in the actual
+                        scene like tami, but i dont have much time
 */
 public class WindowContent : MonoBehaviour
 {
@@ -26,8 +30,7 @@ public class WindowContent : MonoBehaviour
             sceneName = manager.sceneName;
             cameraMaterial = manager.cameraMaterial;
             content.material = cameraMaterial;
-        }
-        
+        }        
     }
 
     public void SetManager(WindowSpawner windowSpawner)

@@ -1,6 +1,11 @@
 using TMPro;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+    Purpose           : Swaps between two versions of text, a non-coloured version and a coloured version that will add to the puzzle.
+                        only works if flashlight is out.
+*/
 public class FlashlightText : MonoBehaviour
 {
     [HideInInspector]
@@ -11,7 +16,7 @@ public class FlashlightText : MonoBehaviour
     private BoxCollider boxCollider;
     private RectTransform rectTransform;
 
-    void Awake()
+    void Awake() // Set variables and check if flashlight is open
     {
         selfText = GetComponent<TextMeshProUGUI>();
         boxCollider = GetComponent<BoxCollider>();
@@ -28,20 +33,17 @@ public class FlashlightText : MonoBehaviour
         }
         ChangeText();
     }
-    public void ChangeText()
+    public void ChangeText() // Swaps text out if flash light open
     {
-        
         selfText.enabled = flashlightOpen;
-        //boxCollider.size = new Vector3(rectTransform.rect.size.x, rectTransform.rect.size.y, 2);
         textToDisable.enabled = !flashlightOpen;
         
     }
     private void LateUpdate()
     {
-        if (boxCollider != null)
+        if (boxCollider != null) // Set size properly
         {
             boxCollider.size = new Vector3(rectTransform.rect.size.x, rectTransform.rect.size.y, 2);
         }
-        //hate that but it wasnt working in change text
     }
 }

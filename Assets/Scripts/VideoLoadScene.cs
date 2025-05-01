@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+    Purpose           : To load a scene after a video plays
+*/
 public class VideoLoadScene : MonoBehaviour
 {
     VideoPlayer player;
     [SerializeField] private string sceneName;
     private void Awake()
     {
-        //force resolution 1920x1080 to keep canvas spacing(i dont really want to but i dont know how to scale all of this properly, maybe this will be for later)
+        // Force resolution to stay at 1920 x 1080
         Screen.SetResolution(1920, 1080, true);
         player = GetComponent<VideoPlayer>();
         StartCoroutine(enumerator());

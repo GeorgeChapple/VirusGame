@@ -5,6 +5,8 @@ using UnityEngine.UI;
 /*
     Script created by : George Chapple
     Edited by         : George Chapple, Jason Lodge
+    Purpose           : To be used for the virus scanner script, shows
+                        the coloured ball image for the order of platformer puzzle collection.
 */
 
 public class VirusScannerScript : MonoBehaviour {
@@ -31,8 +33,8 @@ public class VirusScannerScript : MonoBehaviour {
     }
 
     public void ScanEvent() {
-        if (fileToScan == null) { Debug.Log("No file to scan"); }
-        else if (fileToScan.hasVirus) { success = true; }
+        if (fileToScan == null) { Debug.Log("No file to scan"); } 
+        else if (fileToScan.hasVirus) { success = true; } // Checks if file "has virus" and sets success to true for it - Jason
         if (scannerLine != null){
             if (!scanning) {
                 scanning = true;
@@ -65,6 +67,7 @@ public class VirusScannerScript : MonoBehaviour {
         if (!success){
             StartCoroutine(FailScan());
         } else {
+            // Starts success scan after some variables set - Jason
             colouredBallImage.enabled = true;
             colouredBallImage.sprite = fileToScan.colouredBallForVirusScanner;
             StartCoroutine(SuccessScan());
@@ -85,6 +88,7 @@ public class VirusScannerScript : MonoBehaviour {
         scanning = false;
         success = false;
     }
+    // Just like fail scan but with different sprite indexes - Jason
     private IEnumerator SuccessScan() {
         int animationState = 0;
         spriteHandler.spriteIndex = 4; spriteHandler.RefreshSprite();
@@ -99,7 +103,7 @@ public class VirusScannerScript : MonoBehaviour {
         scanning = false;
         success = false;
         colouredBallImage.enabled = false;
-        fileToScan = null;
+        fileToScan = null; 
     }
 
     // REMOVE LATER, CREATE NEW SCRIPT

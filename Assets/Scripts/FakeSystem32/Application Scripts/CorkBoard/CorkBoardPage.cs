@@ -1,6 +1,10 @@
 using TMPro;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+    Purpose           : To hold data for the cork board script to access
+*/
 public class CorkBoardPage : MonoBehaviour
 {
     public CorkBoard board;

@@ -3,6 +3,7 @@ using UnityEngine;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge
+    Purpose           : To "download" a word from a website if its revealed by the flashlight
 */
 public class UIWordChecker : MonoBehaviour
 {
@@ -17,11 +18,14 @@ public class UIWordChecker : MonoBehaviour
     {
         cam = Camera.main;
     }
+    // Checks what word was hit using mouse position, called by events
     public void CheckWhatWeHit()
     {
+        // Get the index of the word the mouse is over
         int wordIndex = TMP_TextUtilities.FindIntersectingWord(text, Input.mousePosition, cam);
         if (wordIndex != -1)
         {
+            // Get the word out from the index
             TMP_WordInfo wordInfo = text.textInfo.wordInfo[wordIndex];
             wordWeHit = wordInfo.GetWord();
 
@@ -29,7 +33,7 @@ public class UIWordChecker : MonoBehaviour
             int firstCharIndex = wordInfo.firstCharacterIndex;
             TMP_CharacterInfo charInfo = text.textInfo.characterInfo[firstCharIndex];
 
-            // get the color from one of the character's vertices (they should all match)
+            // Get the color from one of the character's vertices (they should all match)
             Color32 color = text.textInfo.meshInfo[charInfo.materialReferenceIndex].colors32[charInfo.vertexIndex];
             if (checkColor)
             {
@@ -38,10 +42,6 @@ public class UIWordChecker : MonoBehaviour
                     downloader.DownloadFile();
                 }
                 
-            }
-            else
-            {
-                //spawn browser and change website to link
             }
         }
     }

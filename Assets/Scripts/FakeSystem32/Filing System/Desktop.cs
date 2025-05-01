@@ -8,6 +8,7 @@ using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
     Edited by         : Jason Lodge, George Chapple
+    Purpose           : To set up the desktop area with Icons in the desktop file directory file
 */
 
 public class Desktop : MonoBehaviour
@@ -23,13 +24,14 @@ public class Desktop : MonoBehaviour
 
     private GameEventsManager manager;
 
-    private void Awake() {
+    private void Awake()
+    {
         manager = FindObjectOfType<GameEventsManager>();
     }
-
+    // Sets up a grid of empty spaces on the desktop, for dropping the icon on whichever space on the screen is closest
     public void SetUpDesktopGrid()
     {
-        //for if there are any objects in grid space already
+        // For if there are any objects in grid space already
         for (int i = 0; i < transform.childCount; i++)
         {
             Destroy(transform.GetChild(i).gameObject);
@@ -37,17 +39,17 @@ public class Desktop : MonoBehaviour
 
         int amountToSpawn = 0;
 
-        float oneSpaceX = grid.cellSize.x + grid.spacing.x; //one space filled by icon and spacing of grid
+        float oneSpaceX = grid.cellSize.x + grid.spacing.x; // One space filled by icon and spacing of grid
         float oneSpaceY = grid.cellSize.y + grid.spacing.y;
 
         int numX = 0;
         float xVal = grid.spacing.x;
         while (xVal < canvas.pixelRect.width)
         {
-            xVal += oneSpaceX; //add space to val then check if its too far
+            xVal += oneSpaceX; // Add space to val then check if its too far
             if (xVal >= canvas.pixelRect.width) { break; }
             numX++;
-        } //here i'm seeing how many icons fit width wise
+        } // Here i'm seeing how many icons fit width wise
 
         int numY = 0;
         float yVal = grid.spacing.x;
@@ -56,9 +58,9 @@ public class Desktop : MonoBehaviour
             yVal += oneSpaceY;
             if (yVal >= canvas.pixelRect.height) { break; }
             numY++;
-        } //same but height wise
+        } // Same but height wise
 
-        amountToSpawn = numX * numY; //spawn this many use for loop for it
+        amountToSpawn = numX * numY; // Spawn this many use for loop to do it
 
         for (int i = 0; i < amountToSpawn; i++)
         {
@@ -67,14 +69,14 @@ public class Desktop : MonoBehaviour
             desktopSpaces.Add(space);
         }
     }
+    // Sets up a new windows icon button on the desktop area
     public void SetUpIcon(FileData file, int spotToSpawnIn)
     {
-        GameObject obj = GameObject.Instantiate(windowsIconPrefab, desktopSpaces[spotToSpawnIn].transform);
+        GameObject obj = GameObject.Instantiate(windowsIconPrefab, desktopSpaces[spotToSpawnIn].transform);// Spawn button
+
+        // Then set some variables
         obj.name = file.name;
-
         WindowsButton wbComp = obj.GetComponent<WindowsButton>();
-
-
         wbComp.SetUpVariables(file, file.application, obj.GetComponent<SpriteHandlerScript>());
         wbComp.SetUpVariables(file, file.application, file.sceneName, file.cameraMaterial);
         wbComp.canBeTaskbarIcon = file.canBeTaskBarIcon;
@@ -85,19 +87,24 @@ public class Desktop : MonoBehaviour
         wbComp.file = file;
 
 
+        // Set up additional double-click events as defined in the file
         foreach (EventPass eventPass in file.OnDoubleClick)
         {
             UnityAction action;
-            string methodName = eventPass.methodName; //get event values out
+
+            // Get event values out
+            string methodName = eventPass.methodName;
             int intVal = eventPass.intVal;
             float floatVal = eventPass.floatVal;
             string stringVal = eventPass.stringVal;
             FileData selfVal = eventPass.self;
+
             if (eventPass.passValThrough)
             {
+                // Depending on the value type, pass it to the method
                 if (eventPass.passIntVal)
                 {
-                    action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); //create new event which calls the methodname on every monobehaviour obj
+                    action = new UnityAction(delegate { obj.SendMessage(methodName, intVal); }); // Create new event which calls the methodname on every monobehaviour obj
                 }
                 else if (eventPass.passFloatVal)
                 {
@@ -120,38 +127,54 @@ public class Desktop : MonoBehaviour
             {
                 action = new UnityAction(delegate { obj.SendMessage(methodName); });
             }
-            if (action != null)
+            if (action != null) // Add it to the double click events
             {
-                obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); //add it to the events
+                obj.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action);
             }
-            manager.desktopIcons.Add(obj);
+            manager.desktopIcons.Add(obj); // For if we need to access all of them
         }
     }
     public void SetUpDesktopSavedLayout()
     {
         int i = 0;
+
+        // Clear the list to reset the desktop (for sequencing and if there were already things in there for whatever reason)
         manager.desktopIcons.Clear();
-        foreach (GameObject obj in desktopSpaces) {
-            if (obj.transform.childCount > 0) {
+
+        // Destroy any existing icons from the desktop slots
+        foreach (GameObject obj in desktopSpaces)
+        {
+            if (obj.transform.childCount > 0)
+            {
                 Destroy(obj.transform.GetChild(0).gameObject);
             }
         }
+
+        // Spawn all icons the desktop has available
         foreach (FileData file in deskTopFileDirectory.children)
         {
+            // Skip null entries and move to the next index, this will leave an empty space
+            // thought i'd use it for saving files but i dont have time for that, maybe for GameX
             if (file == null)
             {
                 i++;
                 continue;
             }
-            using (StreamReader sr = new StreamReader(manager.icons_SaveFilePath)) {
+
+            using (StreamReader sr = new StreamReader(manager.icons_SaveFilePath))
+            {
                 string line;
-                while ((line = sr.ReadLine()) != null) {
-                    if (line.Contains(file.name) && line[0] == '1') {
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (line.Contains(file.name) && line[0] == '1')
+                    {
                         SetUpIcon(file, i);
                     }
                 }
                 i++;
             }
-        }        
+        }
     }
+
 }

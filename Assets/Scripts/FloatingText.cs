@@ -5,7 +5,13 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+    Purpose           : Make a game object with a tmp comp,
+                        float upwards and fade out, for 
+                        tami stuff but pretty reusable.
+*/
 public class FloatingText : MonoBehaviour
 {
     [SerializeField] private RectTransform rectTransform;

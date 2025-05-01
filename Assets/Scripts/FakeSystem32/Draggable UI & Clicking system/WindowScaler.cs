@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Unused
 public class WindowScaler : MonoBehaviour
 {
     //when click on frame call scalewindow

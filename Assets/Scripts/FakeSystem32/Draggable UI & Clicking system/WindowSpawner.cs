@@ -3,6 +3,8 @@ using UnityEngine;
 /*
     Script created by : George Chapple
     Edited by         : George Chapple, Jason Lodge
+    Purpose           : Spawns a window, and sets variables.
+                        Works in tandem with the additive scene handler.
 */
 
 public class WindowSpawner : MonoBehaviour
@@ -18,7 +20,7 @@ public class WindowSpawner : MonoBehaviour
     public GameObject SpawnWindow(GameObject windowPrefab)
     {
         UnityEngine.GameObject obj = Instantiate(windowPrefab, new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0), Quaternion.identity, hierarchy.transform);
-        if (sceneName != null && cameraMaterial != null)
+        if (sceneName != null && cameraMaterial != null) // Change var in window content to correctly display scene camera
         {
             obj.GetComponent<WindowContent>().SetManager(this);
             obj.GetComponent<WindowContent>().OnceSpawned();

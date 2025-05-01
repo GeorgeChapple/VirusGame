@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
-
+/*
+    Script created by : Jason Lodge
+    Edited by         : Jason Lodge
+    Purpose           : To spawn Pop-Ups at a set spawn rate
+*/
 public class PopUpManager : MonoBehaviour
 {
     [SerializeField] private GameObject popUpPrefab;
@@ -8,11 +12,11 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private float popUpSpawnInterval;
     [SerializeField] private bool spawnPopUps;
 
-    //delete this when jimbo finishes game events
     private void Start()
     {
         StartSpawningPopUps();
     }
+    // Spawns a new popup after set seconds
     private IEnumerator popUpSpawnLoop()
     {
         while (spawnPopUps)
