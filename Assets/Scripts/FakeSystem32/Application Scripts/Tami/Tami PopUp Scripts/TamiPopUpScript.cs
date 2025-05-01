@@ -16,15 +16,25 @@ public class TamiPopUpScript : MonoBehaviour
     [SerializeField] private List<EventPass> eventpassYes;
     [SerializeField] private List<EventPass> eventpassNo;
     [SerializeField] private float cost;
+    [SerializeField] private GameObject textPrefab;
+    [SerializeField] private string textToSpawn;
+    private TamiCourtRandomiser tamiCourtRandomiser;
     private void Awake()
-    {
+    {        
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         tamiManager = GetComponentInParent<TamiManager>();
+        tamiCourtRandomiser = FindAnyObjectByType<TamiCourtRandomiser>();
         foreach (EventPass pass in eventpassYes)
         {
             if (pass.passIntVal)
             {
                 yesEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, pass.intVal); });
+                continue;
+            }
+            if (pass.passBoolVal)
+            {
+                yesEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, pass.boolVal); });
+                Debug.Log(pass.boolVal + "for yes");
                 continue;
             }
             yesEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, cost); });
@@ -36,28 +46,40 @@ public class TamiPopUpScript : MonoBehaviour
                 noEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, pass.intVal); });
                 continue;
             }
+            if (pass.passBoolVal)
+            {
+                noEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, pass.boolVal); });
+                continue;
+            }
             noEvent.AddListener(delegate { tamiManager.SendMessage(pass.methodName, cost); });
         }
     }
+    private void Start() { tamiCourtRandomiser = FindAnyObjectByType<TamiCourtRandomiser>(); }
     public void GoodButton()
     {
         if (tamiManager.gold >= cost)
         {
             yesEvent.Invoke();
-            Destroy(gameObject);
+            PopUpDestroy();
+        }
+        else
+        {
+            GameObject textObj = Instantiate(textPrefab, transform);
+            textObj.GetComponent<FloatingText>().ChangeText(textToSpawn);
         }
     }
     public void BadButton()
     {
         noEvent.Invoke();
-        Destroy(gameObject);
+        PopUpDestroy();
     }
-    private void OnDestroy()
+    public void PopUpDestroy()
     {
         tamiManager.PopUpDestroyed();
         if (!string.IsNullOrEmpty(sceneName))
         {
             SceneManager.UnloadSceneAsync(sceneName);
         }
+        Destroy(gameObject);
     }
 }

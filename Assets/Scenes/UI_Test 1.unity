@@ -1270,6 +1270,7 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: 63860b36e7c993c4cba60c2fd22e93ec, type: 3}
   - {fileID: 8300000, guid: 1e716bb5035eb314c9f8a98e1d23e5f9, type: 3}
+  audioMixerGroup: {fileID: 24300002, guid: e9b458910d9d23649b9b6e06a995f709, type: 2}
 --- !u!1 &1178657128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,6 +3101,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8ceb3c5b9d13567478466f4e47f93113, type: 3}
   - {fileID: 8300000, guid: ded6a03cf7e3c2e4eacbcde8cc60586d, type: 3}
   - {fileID: 8300000, guid: 23466df7d43ef2944bd18e1f6ba63a7f, type: 3}
+  audioMixerGroup: {fileID: 24300002, guid: e9b458910d9d23649b9b6e06a995f709, type: 2}
 --- !u!1 &2004732453
 GameObject:
   m_ObjectHideFlags: 0

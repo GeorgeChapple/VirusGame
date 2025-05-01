@@ -58,4 +58,7 @@ public class EventPass
 
     public bool passFloatVal;
     public float floatVal;
+
+    public bool passBoolVal;
+    public bool boolVal;
 }

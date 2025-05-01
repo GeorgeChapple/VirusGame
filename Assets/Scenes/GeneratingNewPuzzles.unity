@@ -232,6 +232,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!65 &51572690
@@ -1073,6 +1075,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!65 &687545932
@@ -1468,13 +1472,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1190449428}
-  desktop: {fileID: 2004732458}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 1967212188711695967, guid: 057dd7ab2d8d6184bb49d637e092526e, type: 3}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 0
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 2004732458}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  previousParentChildPos: 0
+  canBeDragged: 0
 --- !u!114 &831917438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,6 +1569,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &831917439
@@ -1840,7 +1867,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1641267664}
   hierarchy: {fileID: 58455103}
-  windowPrefab: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
   colours:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 0.6106477, b: 0, a: 1}
@@ -1862,7 +1888,7 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0.42175674, a: 1}
   - {r: 1, g: 0, b: 0.20997238, a: 1}
   - {r: 1, g: 0, b: 0.08507776, a: 1}
-  sceneIndex: -1
+  sceneName: 
   cameraMaterial: {fileID: 0}
 --- !u!4 &1092199276
 Transform:
@@ -2146,13 +2172,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
-  desktop: {fileID: 2004732458}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 0
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 2004732458}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  previousParentChildPos: 0
+  canBeDragged: 0
 --- !u!114 &1365013216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2210,6 +2257,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &1365013217
@@ -2706,13 +2755,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
-  desktop: {fileID: 2004732458}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 0
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 2004732458}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  previousParentChildPos: 0
+  canBeDragged: 0
 --- !u!114 &1551287702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2770,6 +2840,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &1551287703
@@ -2945,8 +3017,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60be9b3e5d8c22479974c61268ea02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
   taskBarIconPrefab: {fileID: 1595356956824147739, guid: f004ec8746389e144a3b987e0a837c5e, type: 3}
   taskBarFileDirectory: {fileID: 11400000, guid: 1a9c9252a348bb44e833fec44cd6e97e, type: 2}
+  taskbarSpaces: []
 --- !u!1 &1571069284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,13 +3489,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  cam: {fileID: 0}
   hierarchy: {fileID: 0}
   layoutGroup: {fileID: 1795603469}
-  desktop: {fileID: 2004732458}
+  useLayoutGroup: 1
   additiveSceneHandler: {fileID: 0}
   spriteHandlerScript: {fileID: 0}
   applicationToOpen: {fileID: 0}
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  iconLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fileExplorerIconPrefab: {fileID: 0}
+  isFileExplorerIcon: 0
+  file: {fileID: 0}
+  fileThatDroppedOnUs: {fileID: 0}
+  DropOnIconEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  iconState: 0
+  canBeTaskbarIcon: 0
   application: {fileID: 0}
+  desktop: {fileID: 2004732458}
+  taskbar: {fileID: 0}
+  previousParent: {fileID: 0}
+  previousParentChildPos: 0
+  canBeDragged: 0
 --- !u!114 &1702415390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3479,6 +3574,8 @@ MonoBehaviour:
   letGoEvent:
     m_PersistentCalls:
       m_Calls: []
+  hovering: 0
+  hoveringObject: {fileID: 0}
   timeToDoubleHit: 0.5
   doubleAvailable: 0
 --- !u!114 &1702415391
@@ -3800,7 +3897,7 @@ AudioSource:
   m_GameObject: {fileID: 1961041220}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e9b458910d9d23649b9b6e06a995f709, type: 2}
   m_audioClip: {fileID: 8300000, guid: 67ecddabcf3c775468328503f359b072, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4033,6 +4130,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8ceb3c5b9d13567478466f4e47f93113, type: 3}
   - {fileID: 8300000, guid: ded6a03cf7e3c2e4eacbcde8cc60586d, type: 3}
   - {fileID: 8300000, guid: 23466df7d43ef2944bd18e1f6ba63a7f, type: 3}
+  audioMixerGroup: {fileID: 24300002, guid: e9b458910d9d23649b9b6e06a995f709, type: 2}
 --- !u!1 &2004732453
 GameObject:
   m_ObjectHideFlags: 0
@@ -4151,14 +4249,6 @@ MonoBehaviour:
   windowsIconPrefab: {fileID: 1595356956824147739, guid: fd6fb405e1c75f447abb6c92af35ff04, type: 3}
   grid: {fileID: 2004732455}
   desktopSpaces: []
-  desktopIcons:
-  - {fileID: 1595356956824147739, guid: 63e8da92f7557854093ae46c09af5d86, type: 3}
-  - {fileID: 1595356956824147739, guid: 525707240e41f5d4e81319ce4f7aa4fc, type: 3}
-  - {fileID: 1595356956824147739, guid: 6b84d686ca1c42247a0dac712ec0e71c, type: 3}
-  - {fileID: 1595356956824147739, guid: 3caf6e86fc5c7ec4e81f475eb5e20e12, type: 3}
-  - {fileID: 1595356956824147739, guid: dcfa3489dae2a194d80ebe5b68ab8b5d, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
   deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

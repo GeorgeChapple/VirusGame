@@ -11,6 +11,7 @@ public class TamiCourtRandomiser : MonoBehaviour
 
     [SerializeField] private List<Color> tamiColours = new List<Color>();
     [SerializeField] private List<GameObject> tamiSpawnPoints = new List<GameObject>();
+    public List<GameObject> allTamisSpawned = new List<GameObject>();
 
     public float eviiiilSpectrum = 100;
     public bool guilty;
@@ -54,6 +55,7 @@ public class TamiCourtRandomiser : MonoBehaviour
         go.transform.position = tami.transform.position;
         go.transform.eulerAngles = randRot;
         go.GetComponent<MeshRenderer>().material.color = tamiColours[Random.Range(0, tamiColours.Count)];
+        allTamisSpawned.Add(go);
     }
     private void SpawnSad(GameObject tami, Vector3 randRot)
     {
@@ -61,5 +63,6 @@ public class TamiCourtRandomiser : MonoBehaviour
         go.transform.position = tami.transform.position;
         go.transform.eulerAngles = randRot;
         go.GetComponent<MeshRenderer>().material.color = tamiColours[Random.Range(0, tamiColours.Count)];
+        allTamisSpawned.Add(go);
     }
 }

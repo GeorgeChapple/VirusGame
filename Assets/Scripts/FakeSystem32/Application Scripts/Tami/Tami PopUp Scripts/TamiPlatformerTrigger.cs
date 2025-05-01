@@ -21,7 +21,7 @@ public class TamiPlatformerTrigger : MonoBehaviour
         }
         else
         {
-            Destroy(tamiPopUpScript.gameObject);
+            tamiPopUpScript.PopUpDestroy();
         }
     }
 }

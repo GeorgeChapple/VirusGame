@@ -49,7 +49,11 @@ public class TamiMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        //return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        bool grounded = false;
+        Collider[] cols = Physics.OverlapSphere(groundCheck.position, 0.5f, groundLayer);
+        if (cols.Length > 0 ) { grounded = true; }
+        return grounded;
     }
     public void Kill()
     {

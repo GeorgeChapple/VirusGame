@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -49,7 +51,6 @@ public class TamiManager : MonoBehaviour
 
     [Header("Serialisations")]
     [SerializeField] private GameObject contentPanel;
-    [SerializeField] private AdditiveSceneHandler additiveSceneHandler;
     [SerializeField] private WindowSpawner manager;
 
     [HideInInspector] public float gold = 0;
@@ -60,6 +61,8 @@ public class TamiManager : MonoBehaviour
     private float mood = 100;
 
     private float reviveCounter = 0;
+    public TamiCourtRandomiser tamiCourtRandomiser;
+    public List<GameObject> courtTamis = new List<GameObject>();
 
     private void Awake()
     {
@@ -92,11 +95,11 @@ public class TamiManager : MonoBehaviour
     public void PopUpDestroyed()
     {
         StartCoroutine(SpawnPopUp_E());
+        tamiTab = null;
     }
     public IEnumerator SpawnPopUp_E()
     {
         yield return new WaitForSeconds(popUpSpawnTime);
-
         int num = Random.Range(0, tamiTabsGO.Length);
         SpawnPopUp(num);
     }
@@ -112,8 +115,17 @@ public class TamiManager : MonoBehaviour
         GameObject newPopUp = Instantiate(tamiTabsGO[num], contentPanel.transform);
         newPopUp.transform.SetAsLastSibling();
 
-        newPopUp.GetComponent<WindowContent>().SetManager(manager);
-        newPopUp.GetComponent<WindowContent>().OnceSpawned();
+        if (num == 4)
+        {
+            StartCoroutine(GetCourtRandomiser());
+        }
+    }
+    private IEnumerator GetCourtRandomiser()
+    {
+        yield return new WaitForSeconds(0.1f);
+        tamiCourtRandomiser = FindAnyObjectByType<TamiCourtRandomiser>();
+        yield return new WaitForSeconds(0.1f);
+        courtTamis = tamiCourtRandomiser.allTamisSpawned;
     }
     public void PopUpYesButton1(int cost)
     {
@@ -138,7 +150,7 @@ public class TamiManager : MonoBehaviour
     }
     public void PopUpYesButton3()
     {
-        goldPerFrame += 0.001f;
+        goldPerFrame += 0.0001f;
     }
     public void PopUpYesButton4(int add)
     {
@@ -150,6 +162,23 @@ public class TamiManager : MonoBehaviour
         thirst -= 40;
         mood -= 40;
     }
+    public void CourtCheckGuilty(bool guilty)
+    {
+        foreach (GameObject go in courtTamis)
+        {
+            Destroy(go);
+        }
+        if (tamiCourtRandomiser.guilty)
+        {
+            if (!guilty) { PopUpNoButton1(); }
+            else { PopUpYesButton4(2); }
+        }
+        else
+        {
+            if (!guilty) { PopUpYesButton4(2); }
+            else { PopUpNoButton1(); }
+        }
+    }
     private void UpdateBars()
     {
         if (food <= 0 && thirst <= 0 && mood <= 0)
@@ -157,7 +186,7 @@ public class TamiManager : MonoBehaviour
             Debug.Log("All bars empty");
             // Health goes down faster when all bars are empty
             health -= Time.deltaTime / healthDiv * 200; // +100% Speed!
-            healthBarSprite.fillAmount = health;
+            healthBarSprite.fillAmount = health / 100;
 
             if (health <= 0)
             {
@@ -171,7 +200,7 @@ public class TamiManager : MonoBehaviour
             // Since its 1 it needs to be divided by the amount of seconds
             // Because 1 Time.deltaTime unit is one second
             health -= Time.deltaTime / healthDiv * 100;
-            healthBarSprite.fillAmount = health;
+            healthBarSprite.fillAmount = health / 100;
 
             food -= Time.deltaTime / (rateOfFoodDepletion * 1.5f / 100);
             thirst -= Time.deltaTime / (rateOfThirstDepletion * 1.5f / 100);
@@ -203,7 +232,8 @@ public class TamiManager : MonoBehaviour
     }
     private void OnGoldValChanged()
     {
-        goldText.text = "Gold: " + gold.ToString();
+        // No idea why unity doesnt have their Mathf.Round() use decimal place rounding too
+        goldText.text = "Gold: " + System.Math.Round(gold, 2).ToString();
     }
     // All buttons/tami event thingys
     public void FeedTami(bool fromPopUp)
