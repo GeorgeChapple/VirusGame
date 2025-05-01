@@ -12,42 +12,33 @@ public class TamiCourtRandomiser : MonoBehaviour
     [SerializeField] private List<Color> tamiColours = new List<Color>();
     [SerializeField] private List<GameObject> tamiSpawnPoints = new List<GameObject>();
     public List<GameObject> allTamisSpawned = new List<GameObject>();
+    public List<GameObject> guiltyTamis = new List<GameObject>();
+    public List<GameObject> innocentTamis = new List<GameObject>();
+
 
     public float eviiiilSpectrum = 100;
     public bool guilty;
     private void Awake()
     {
-        eviiiilSpectrum = Random.Range(0, 100);
-        guilty = eviiiilSpectrum > 50 ? true : false;
+        //eviiiilSpectrum = Random.Range(0, 100);
+        //bool _guilty = eviiiilSpectrum > 50 ? true : false;
 
         foreach (GameObject tami in tamiSpawnPoints)
         {
+            eviiiilSpectrum = Random.Range(0, 101);
             float randNum = Random.Range(1, 3); //rand between 1 or 2
             Debug.Log(randNum);
-            Vector3 randRot = new Vector3(Random.Range(-80, -100), 0, Random.Range(-80, -120)) * randNum;
-            if (guilty)
+            if (eviiiilSpectrum > 50)
             {
-                if (randNum == 1)
-                {
-                    SpawnSad(tami, randRot);
-                }
-                else
-                {
-                    SpawnHappy(tami, randRot);
-                }
+                SpawnSad(tami, new Vector3(Random.Range(-80, -100), 0, Random.Range(-80, -120)) * randNum);
             }
             else
             {
-                if (randNum == 1)
-                {
-                    SpawnHappy(tami, randRot);
-                }
-                else
-                {
-                    SpawnSad(tami, randRot);
-                }
+                SpawnHappy(tami, new Vector3(Random.Range(-80, -100), 0, Random.Range(-80, -120)) * randNum);
             }
         }
+        
+        guilty = guiltyTamis.Count > innocentTamis.Count ? true : false;
     }
     private void SpawnHappy(GameObject tami, Vector3 randRot)
     {
@@ -56,6 +47,7 @@ public class TamiCourtRandomiser : MonoBehaviour
         go.transform.eulerAngles = randRot;
         go.GetComponent<MeshRenderer>().material.color = tamiColours[Random.Range(0, tamiColours.Count)];
         allTamisSpawned.Add(go);
+        innocentTamis.Add(go);
     }
     private void SpawnSad(GameObject tami, Vector3 randRot)
     {
@@ -64,5 +56,6 @@ public class TamiCourtRandomiser : MonoBehaviour
         go.transform.eulerAngles = randRot;
         go.GetComponent<MeshRenderer>().material.color = tamiColours[Random.Range(0, tamiColours.Count)];
         allTamisSpawned.Add(go);
+        guiltyTamis.Add(go);
     }
 }

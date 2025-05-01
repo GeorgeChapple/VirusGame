@@ -10411,6 +10411,7 @@ Transform:
   - {fileID: 125666356}
   - {fileID: 1252363279}
   - {fileID: 1438077582}
+  - {fileID: 1845473673}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &760746677
@@ -24133,7 +24134,10 @@ MonoBehaviour:
   - {fileID: 125666355}
   - {fileID: 1252363278}
   - {fileID: 1438077581}
+  - {fileID: 1845473672}
   allTamisSpawned: []
+  guiltyTamis: []
+  innocentTamis: []
   eviiiilSpectrum: 100
   guilty: 0
 --- !u!1001 &1307120558
@@ -43886,6 +43890,37 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1845473672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1845473673}
+  m_Layer: 0
+  m_Name: tami spawn 19
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1845473673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845473672}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.359, y: -1.186, z: 3.387}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 597492212}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1871339289
 Mesh:
   m_ObjectHideFlags: 0
