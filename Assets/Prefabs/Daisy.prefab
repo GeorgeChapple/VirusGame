@@ -244,8 +244,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatBoxActive: 0
+  daisyActive: 0
   idleTimeMin: 30
   idleTimeMax: 60
+  spookyTimeMin: 120
+  spookyTimeMax: 300
+  searchPrompts:
+  - What's my location
+  - Food places near me
+  - delete system32
+  - how to access encrypted files
+  - Daisy
+  - Daisies
+  - Flowers
+  - Pinkeye symptoms
+  - How to request artist to give me arms
+  - Why do I only blink sometimes
+  - Is there a speaker in my mouth?
+  - swallowed speaker dangers
+  - how to remove swallowed speaker
+  - is a speaker tasty?
+  - 2010 swag
+  - mlg
+  - dortos & mountain few
+  - 2008 house price crash
+  - unlock phone without password
+  - is yolo a drug
+  - top 10 virus moments
+  - cool anime
+  - ai generated flowers
+  - what clothes fit a keyhole shape
+  - can andrioids dream?
+  - Do sheep dream of electric robots?
+  - Why do i only have 5 animations?
+  - fortnight
+  - flower pots
+  - pot
+  - System.Diognostics
+  - nhs
+  - basketballer
+  - periodic table
+  - unity documentation
+  - virus scanner
+  - how do worm malware replicate
+  - what is a trojan
+  - are my friends real
+  - am I real
+  - dead internet theory
+  - are humans being replaced by ai yet?
+  - C#
+  - corruption
+  - CHICKEN
+  - xor
+  - nand
+  - 7447 driver
+  - op amp
+  - schmitt inverter
+  - half adder logic gates
+  - boolean algebra
+  - assembler instruction sheet
+  - multimeter
+  - virtual machine software
+  - escape
+  - hacks
+  - hacked computer
+  - hack a computer
+  - water
+  - do virtual plants need sunlight
+  - do tv screens count as light fixtures?
+  - are alternate realities real?
+  - schrodinger's cat
+  - turing test
+  - why do I have one tooth
+  - colossus Mark 1
+  - colossus Mark 2
+  - bletchley park
+  - Ada Lovelace
+  - Alan Turing
+  - George Boole
   animations:
   - name: IDLE
     duration: 1.82

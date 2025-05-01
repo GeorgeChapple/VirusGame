@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 /*
     Script created by : George Chapple
@@ -21,10 +23,20 @@ public class Commands {
         }
     }
 
+    // Shows the user's IP address and such
     public static void ShowIP() {
         ProcessStartInfo process = new ProcessStartInfo();
         process.FileName = "cmd.exe";
-        process.Arguments = "/c ipconfig /c TIMEOUT T/ 999";
+        process.Arguments = "/k ipconfig";
+        process.WindowStyle = ProcessWindowStyle.Normal;
+        Process.Start(process);
+    }
+
+    // Looks like hacking
+    public static void ShowDir() {
+        ProcessStartInfo process = new ProcessStartInfo();
+        process.FileName = "cmd.exe";
+        process.Arguments = "/k dir/s";
         process.WindowStyle = ProcessWindowStyle.Normal;
         Process.Start(process);
     }

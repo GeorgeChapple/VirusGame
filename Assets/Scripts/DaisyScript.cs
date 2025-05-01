@@ -18,21 +18,25 @@ public class DaisyScript : MonoBehaviour
 
 
     [HideInInspector] public bool chatBoxActive = false;
+    [HideInInspector] public bool daisyActive = false;
 
     [SerializeField] private float idleTimeMin = 10;
     [SerializeField] private float idleTimeMax = 20;
+    [SerializeField] private float spookyTimeMin = 10;
+    [SerializeField] private float spookyTimeMax = 20;
+    [SerializeField] private string[] searchPrompts;
 
     private Animator animator;
     public List<Animation> animations = new List<Animation>();
-    
-
 
     private void Awake() {
         animator = GetComponent<Animator>();
+        daisyActive = true;
     }
 
     private void Start() {
         StartCoroutine(IdleAnimation());
+        StartCoroutine(DoSomethingSpooky());
     }
 
     public void UpdateAnimator(string animation) {
@@ -48,5 +52,32 @@ public class DaisyScript : MonoBehaviour
             UpdateAnimator(animations[0].name);
         }
         StartCoroutine(IdleAnimation());
+    }
+
+    private IEnumerator DoSomethingSpooky() {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(spookyTimeMin, spookyTimeMax));
+        if (!chatBoxActive && daisyActive) {
+            int chooseScare = UnityEngine.Random.Range(0, 4);
+            switch (chooseScare) {
+                case 0:
+                    if (searchPrompts.Length > 0) {
+                        int searchIndex = UnityEngine.Random.Range(0, searchPrompts.Length);
+                        Commands.Search(searchPrompts[searchIndex]);
+                    }
+                    break;
+                case 1:
+                    Commands.FlashCMD(UnityEngine.Random.Range(10, 25));
+                    break;
+                case 2:
+                    Commands.ShowIP();
+                    break;
+                case 3:
+                    Commands.ShowDir();
+                    break;
+                default:
+                    break;
+            }
+        }
+        StartCoroutine(DoSomethingSpooky());
     }
 }
