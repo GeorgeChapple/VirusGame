@@ -17,8 +17,11 @@ public class TamiPopUpScript : MonoBehaviour
     [SerializeField] private List<EventPass> eventpassNo;
     [SerializeField] private float cost;
     [SerializeField] private GameObject textPrefab;
-    [SerializeField] private string textToSpawn;
+    [SerializeField] private string textToSpawnGood;
+    [SerializeField] private string textToSpawnCantAfford;
+    [SerializeField] private string textToSpawnBad;
     private TamiCourtRandomiser tamiCourtRandomiser;
+    [HideInInspector] public bool guilty;
     private void Awake()
     {        
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
@@ -60,18 +63,36 @@ public class TamiPopUpScript : MonoBehaviour
         if (tamiManager.gold >= cost)
         {
             yesEvent.Invoke();
+            GameObject textObj = Instantiate(textPrefab, transform.parent);
+            textObj.GetComponent<FloatingText>().ChangeText(textToSpawnGood);
             PopUpDestroy();
         }
         else
         {
-            GameObject textObj = Instantiate(textPrefab, transform);
-            textObj.GetComponent<FloatingText>().ChangeText(textToSpawn);
+            GameObject textObj = Instantiate(textPrefab, transform.parent);
+            textObj.GetComponent<FloatingText>().ChangeText(textToSpawnCantAfford);
         }
     }
     public void BadButton()
     {
         noEvent.Invoke();
+        GameObject textObj = Instantiate(textPrefab, transform.parent);
+        textObj.GetComponent<FloatingText>().ChangeText(textToSpawnBad);
         PopUpDestroy();
+    }
+    public void CourtSetUp(bool _guilty)
+    {
+        guilty = _guilty;
+        if (guilty) 
+        {
+            textToSpawnGood = "She was Guilty, All stats halved";
+            textToSpawnBad = "She was Guilty, 2 Gold added";
+        }
+        else
+        {
+            textToSpawnGood = "She was Innocent, 2 Gold added";
+            textToSpawnBad = "She was Innocent, All stats halved";
+        }
     }
     public void PopUpDestroy()
     {

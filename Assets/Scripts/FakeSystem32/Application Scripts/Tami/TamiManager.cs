@@ -119,6 +119,7 @@ public class TamiManager : MonoBehaviour
         {
             StartCoroutine(GetCourtRandomiser());
         }
+        tamiTab = newPopUp;
     }
     private IEnumerator GetCourtRandomiser()
     {
@@ -126,6 +127,7 @@ public class TamiManager : MonoBehaviour
         tamiCourtRandomiser = FindAnyObjectByType<TamiCourtRandomiser>();
         yield return new WaitForSeconds(0.1f);
         courtTamis = tamiCourtRandomiser.allTamisSpawned;
+        tamiTab.GetComponent<TamiPopUpScript>().CourtSetUp(tamiCourtRandomiser.guilty);
     }
     public void PopUpYesButton1(int cost)
     {
@@ -158,9 +160,9 @@ public class TamiManager : MonoBehaviour
     }
     public void PopUpNoButton1()
     {
-        food -= 40;
-        thirst -= 40;
-        mood -= 40;
+        food -= food / 2;
+        thirst -= thirst / 2;
+        mood -= mood / 2;
     }
     public void CourtCheckGuilty(bool guilty)
     {

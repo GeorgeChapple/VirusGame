@@ -15,7 +15,7 @@ public class TamiCourtRandomiser : MonoBehaviour
 
     public float eviiiilSpectrum = 100;
     public bool guilty;
-    private void Start()
+    private void Awake()
     {
         eviiiilSpectrum = Random.Range(0, 100);
         guilty = eviiiilSpectrum > 50 ? true : false;

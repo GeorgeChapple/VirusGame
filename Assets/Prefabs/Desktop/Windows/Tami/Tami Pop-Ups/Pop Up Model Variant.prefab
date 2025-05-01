@@ -917,7 +917,9 @@ MonoBehaviour:
   eventpassNo: []
   cost: 1
   textPrefab: {fileID: 2788105451966706559, guid: 3c7749e79929c594ca6ed51d00c49417, type: 3}
-  textToSpawn: Can't Afford
+  textToSpawnGood: Gold per frame + 0.0001
+  textToSpawnCantAfford: Can't Afford
+  textToSpawnBad: Awww
 --- !u!224 &5485061947953086684 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2966574546075292989, guid: 6ba82a6fecd20544c9caca1e6d940578, type: 3}
