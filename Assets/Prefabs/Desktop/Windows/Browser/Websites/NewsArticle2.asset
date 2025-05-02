@@ -15,3 +15,4 @@ MonoBehaviour:
   siteName: PoliceArticle2
   siteUrl: https:police.com/article/32fx945
   websitePrefab: {fileID: 8479257061099650463, guid: 9a97fd98e3fcbe145bbf7fa42a2a91ce, type: 3}
+  active: 1

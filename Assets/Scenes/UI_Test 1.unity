@@ -1247,13 +1247,19 @@ MonoBehaviour:
   default_SaveFilePath: default_
   icons_SaveFilePath: icons.txt
   dialogue_SaveFilePath: dialogue.txt
+  reset_SaveFilePath: ResetGame.txt
   events_SaveFilePath: events.txt
   desktopIcons: []
   totalDialogue: 12
   dialoguePrefabIndex: 0
   soundScript: {fileID: 0}
-  useDefaults: 1
+  textReadOnce: 0
+  articles:
+  - {fileID: 11400000, guid: 1cefc7ab0aab12242b979869f658363b, type: 2}
+  - {fileID: 11400000, guid: e3c74f863a03cf04cac752bc7108381f, type: 2}
+  useDefaults: 0
   dialogueIndex: 0
+  checkingPlatformer: 0
   deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
 --- !u!114 &1092199279
 MonoBehaviour:
@@ -1447,207 +1453,6 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!1 &1365013212
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1365013213}
-  - component: {fileID: 1365013218}
-  - component: {fileID: 1365013217}
-  - component: {fileID: 1365013216}
-  - component: {fileID: 1365013215}
-  - component: {fileID: 1365013214}
-  m_Layer: 5
-  m_Name: Quit Button (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1365013213
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365013212}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1795603465}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -605}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &1365013214
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365013212}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 50, y: 50, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1365013215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365013212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ffcd9e9c431f14eb36416364e04d67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  cam: {fileID: 0}
-  hierarchy: {fileID: 0}
-  layoutGroup: {fileID: 1795603469}
-  useLayoutGroup: 1
-  additiveSceneHandler: {fileID: 0}
-  spriteHandlerScript: {fileID: 0}
-  applicationToOpen: {fileID: 0}
-  dropLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  iconLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  fileExplorerIconPrefab: {fileID: 0}
-  isFileExplorerIcon: 0
-  file: {fileID: 0}
-  fileThatDroppedOnUs: {fileID: 0}
-  DropOnIconEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  iconState: 0
-  canBeTaskbarIcon: 0
-  application: {fileID: 0}
-  desktop: {fileID: 2004732458}
-  taskbar: {fileID: 0}
-  previousParent: {fileID: 0}
-  previousParentChildPos: 0
-  canBeDragged: 0
---- !u!114 &1365013216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365013212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb76dc2655ad2b42b4cdab27f32523f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1365013216}
-        m_TargetAssemblyTypeName: HitEventScript, Assembly-CSharp
-        m_MethodName: CheckIfDouble
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1365013216}
-        m_TargetAssemblyTypeName: HitEventScript, Assembly-CSharp
-        m_MethodName: StartDoubleTimer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  doubleHitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 335553526}
-        m_TargetAssemblyTypeName: WindowsMenu, Assembly-CSharp
-        m_MethodName: CloseGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  letGoEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  hovering: 0
-  hoveringObject: {fileID: 0}
-  timeToDoubleHit: 0.5
-  doubleAvailable: 0
---- !u!114 &1365013217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365013212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1365013218
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365013212}
-  m_CullTransparentMesh: 1
 --- !u!1 &1404248926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +1827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 524fdd7790a546b48beb249cd85c26ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 335ce4e469be1a54cb182f324a5d9c2d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2413,207 +2218,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1702415386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1702415387}
-  - component: {fileID: 1702415392}
-  - component: {fileID: 1702415391}
-  - component: {fileID: 1702415390}
-  - component: {fileID: 1702415389}
-  - component: {fileID: 1702415388}
-  m_Layer: 5
-  m_Name: Quit Button (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1702415387
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702415386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1795603465}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -545}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &1702415388
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702415386}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 50, y: 50, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1702415389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702415386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ffcd9e9c431f14eb36416364e04d67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  cam: {fileID: 0}
-  hierarchy: {fileID: 0}
-  layoutGroup: {fileID: 1795603469}
-  useLayoutGroup: 1
-  additiveSceneHandler: {fileID: 0}
-  spriteHandlerScript: {fileID: 0}
-  applicationToOpen: {fileID: 0}
-  dropLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  iconLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  fileExplorerIconPrefab: {fileID: 0}
-  isFileExplorerIcon: 0
-  file: {fileID: 0}
-  fileThatDroppedOnUs: {fileID: 0}
-  DropOnIconEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  iconState: 0
-  canBeTaskbarIcon: 0
-  application: {fileID: 0}
-  desktop: {fileID: 2004732458}
-  taskbar: {fileID: 0}
-  previousParent: {fileID: 0}
-  previousParentChildPos: 0
-  canBeDragged: 0
---- !u!114 &1702415390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702415386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb76dc2655ad2b42b4cdab27f32523f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702415390}
-        m_TargetAssemblyTypeName: HitEventScript, Assembly-CSharp
-        m_MethodName: CheckIfDouble
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1702415390}
-        m_TargetAssemblyTypeName: HitEventScript, Assembly-CSharp
-        m_MethodName: StartDoubleTimer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  doubleHitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 335553526}
-        m_TargetAssemblyTypeName: WindowsMenu, Assembly-CSharp
-        m_MethodName: CloseGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  letGoEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  hovering: 0
-  hoveringObject: {fileID: 0}
-  timeToDoubleHit: 0.5
-  doubleAvailable: 0
---- !u!114 &1702415391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702415386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1702415392
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702415386}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1730675020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2684,11 +2288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3120695495814369593, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 491
+      value: -1313
       objectReference: {fileID: 0}
     - target: {fileID: 3120695495814369593, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -68
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3120695495814369593, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2822,8 +2426,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1551287700}
-  - {fileID: 1365013213}
-  - {fileID: 1702415387}
   m_Father: {fileID: 335553523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

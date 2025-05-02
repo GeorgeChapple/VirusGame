@@ -1,22 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestartScene : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+/*
+    Script created by : Arthur Wakeman
+    Edited by         : Arthur Wakeman
+*/
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void restartScene()
-    {
+public class RestartScene : MonoBehaviour {
+    public void restartScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

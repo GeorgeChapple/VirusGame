@@ -248,7 +248,7 @@ MonoBehaviour:
   idleTimeMin: 30
   idleTimeMax: 60
   spookyTimeMin: 120
-  spookyTimeMax: 300
+  spookyTimeMax: 200
   searchPrompts:
   - What's my location
   - Food places near me

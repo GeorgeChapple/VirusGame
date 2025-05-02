@@ -31,10 +31,13 @@ public class DaisyScript : MonoBehaviour
 
     private void Awake() {
         animator = GetComponent<Animator>();
-        daisyActive = true;
     }
 
     private void Start() {
+        if (FindFirstObjectByType<GameEventsManager>().dialogueIndex >= 2) {
+            daisyActive = true;
+            transform.position = Vector3.zero;
+        }
         StartCoroutine(IdleAnimation());
         StartCoroutine(DoSomethingSpooky());
     }

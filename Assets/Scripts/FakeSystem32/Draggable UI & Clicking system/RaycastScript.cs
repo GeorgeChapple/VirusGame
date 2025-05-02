@@ -39,11 +39,9 @@ public class RaycastScript : MonoBehaviour {
         if (!leftHolding) {
             try {
                 lastHitObject = lastHit.transform.gameObject;
-                Debug.Log("Hit " + lastHitObject.name);
             }
             catch {
                 lastHitObject = null;
-                Debug.Log("Nothing here...");
             }
         }
     }

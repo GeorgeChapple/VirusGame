@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 /*
     Script created by : Jason Lodge
-    Edited by         : Jason Lodge
+    Edited by         : Jason Lodge, George Chapple
     Purpose           : To be used to display website prefabs, in its own window
 */
 

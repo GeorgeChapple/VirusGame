@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
+/*
+    Script created by : Arthur Wakeman
+    Edited by         : Arthur Wakeman
+*/
+
+public class PlayerMovement : MonoBehaviour {
     public float horizontal;
     public float speed = 8f;
     public float jumpingPower = 16f;
@@ -13,45 +15,31 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
+        if (Input.GetButtonDown("Jump") && IsGrounded()) {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f) {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
         Flip();
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
-    private bool IsGrounded()
-    {
+    private bool IsGrounded() {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void Flip()
-    {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-        {
+    private void Flip() {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x = 1f;

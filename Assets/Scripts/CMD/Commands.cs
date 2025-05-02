@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
+using System.IO;
 
 /*
     Script created by : George Chapple
@@ -55,5 +56,13 @@ public class Commands {
         process.Arguments = @"/c md " + desktopFilePath + @"\" + name;
         process.WindowStyle = ProcessWindowStyle.Hidden;
         Process.Start(process);
+    }
+
+    public static bool CheckForFileOnDesktop(string name) {
+        if (Directory.Exists(desktopFilePath + @"\" + name)) {
+            return true;
+        } else { 
+            return false; 
+        }
     }
 }

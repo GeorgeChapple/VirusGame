@@ -13,6 +13,6 @@ public class Website : ScriptableObject {
     public bool active = false;
 
     public void Unlock() {
-        FindFirstObjectByType<GameEventsManager>().NextDialogue(0);
+        FindFirstObjectByType<GameEventsManager>().NextDialogue(0, true, false);
     }
 }

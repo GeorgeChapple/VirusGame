@@ -34,6 +34,9 @@ public class GameEventsManager_Editor : Editor {
                     sw.WriteLine("0 (pfb) - " + i + " (txt)");
                 }
             }
+            using (StreamWriter sw = new StreamWriter(manager.reset_SaveFilePath)) {
+                sw.WriteLine("0 - Change this to 1 if you want to reset your save data.");
+            }
             string[] eventsText = File.ReadAllLines(manager.default_SaveFilePath + manager.events_SaveFilePath);
             for (int i = 0; i < eventsText.Length; i++) {
                 eventsText[i] = "0 - " + eventsText[i].Substring(4, eventsText[i].Length - 4);

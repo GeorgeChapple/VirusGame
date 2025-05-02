@@ -1,19 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Order : MonoBehaviour
-{
-    public int mainOrder = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+/*
+    Script created by : Arthur Wakeman
+    Edited by         : Arthur Wakeman
+*/
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class Order : MonoBehaviour {
+    public int mainOrder = 0;
 }

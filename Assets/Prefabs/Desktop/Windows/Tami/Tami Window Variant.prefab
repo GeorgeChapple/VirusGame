@@ -2026,7 +2026,7 @@ MonoBehaviour:
   popUpSpawnMin: 5
   rateOfPopUpSpawn: 40000
   gameTimeSinceSpawn: 0
-  gameLength: 300
+  gameLength: 10
   contentPanel: {fileID: 7992869705259326661}
   manager: {fileID: 0}
   gold: 0

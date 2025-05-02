@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 /*
     Script created by : Jason Lodge
-    Edited by         : Jason Lodge
+    Edited by         : Jason Lodge, George Chapple
     Purpose           : For the tami minigame
 */
 public class TamiManager : MonoBehaviour
@@ -61,11 +60,13 @@ public class TamiManager : MonoBehaviour
     private float mood = 100;
 
     private float reviveCounter = 0;
+    private GameEventsManager gameEventsManager;
     public TamiCourtRandomiser tamiCourtRandomiser;
     public List<GameObject> courtTamis = new List<GameObject>();
 
     private void Awake() // Set Up
     {
+        gameEventsManager = GameObject.Find("ManagerOBJ").GetComponent<GameEventsManager>();
         manager = GameObject.Find("ManagerOBJ").GetComponent<WindowSpawner>();
         healthDiv = rateOfHealthDepletion;
         StartCoroutine(GameTimer());
@@ -88,6 +89,9 @@ public class TamiManager : MonoBehaviour
             popUpSpawnTime = Mathf.Clamp(popUpSpawnTime, popUpSpawnMin, 100);
             if (gameTimeSinceSpawn > gameLength)
             {
+                if (gameEventsManager != null) {
+                    gameEventsManager.NextDialogue(6, true, false);
+                }
                 Destroy(gameObject);
             }
         }

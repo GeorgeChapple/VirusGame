@@ -59,8 +59,8 @@ public class ChatBoxManager : MonoBehaviour
             desktopIcon.GetComponent<SpriteHandlerScript>().RefreshSprite();
         }
         if (gameEventsManager != null) {
-            gameEventsManager.TriggerEvent();
             gameEventsManager.soundScript.PlaySound(1, 1, 1);
+            gameEventsManager.textReadOnce = false;
         }
         if (daisy != null) {
             daisy.chatBoxActive = false;
@@ -111,7 +111,7 @@ public class ChatBoxManager : MonoBehaviour
         bubble.transform.SetParent(contentRect);
         bubble.GetComponent<RectTransform>().localScale = Vector3.one;
         GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
-        if (speechManager.speechPrafabsIndex == 2) {
+        if (speechManager.speechPrafabsIndex == 2 && daisy.daisyActive) {
             daisySpriteIndex++;
             daisy.UpdateAnimator(daisyAnims[daisySpriteIndex]);
             daisy.GetComponent<WindowScript>().DetachFromHierarchy();
@@ -125,7 +125,11 @@ public class ChatBoxManager : MonoBehaviour
             currentPrefabIndex = speechManager.speechPrafabsIndex;
             yield return null;
         }
+        if (!gameEventsManager.textReadOnce) {
+            gameEventsManager.TriggerEvent();
+        }
         finished = true;
+        gameEventsManager.textReadOnce = true;
         daisySpriteIndex = 0;
         closeBlocker.SetActive(false);
     }
