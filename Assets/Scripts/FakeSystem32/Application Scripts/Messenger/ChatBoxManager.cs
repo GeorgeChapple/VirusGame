@@ -59,7 +59,7 @@ public class ChatBoxManager : MonoBehaviour
             desktopIcon.GetComponent<SpriteHandlerScript>().RefreshSprite();
         }
         if (gameEventsManager != null) {
-            gameEventsManager.NextDialogue();
+            gameEventsManager.TriggerEvent();
             gameEventsManager.soundScript.PlaySound(1, 1, 1);
         }
         if (daisy != null) {

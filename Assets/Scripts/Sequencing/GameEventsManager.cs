@@ -18,6 +18,8 @@ public class GameEventsManager : MonoBehaviour {
     [HideInInspector] public int dialoguePrefabIndex;
     [HideInInspector] public SoundScript soundScript;
 
+    [SerializeField] private List<Website> articles = new List<Website>();
+
     public bool useDefaults;
     public int dialogueIndex;
 
@@ -47,13 +49,20 @@ public class GameEventsManager : MonoBehaviour {
         StartCoroutine(wait());
     }
 
-    public void NextDialogue() {
-        dialogueIndex++;
-        string[] text = File.ReadAllLines(dialogue_SaveFilePath);
-        text[0] = dialogueIndex.ToString();
-        File.WriteAllLines(dialogue_SaveFilePath, text);
-        dialoguePrefabIndex = Mathf.Clamp(int.Parse(text[dialogueIndex + 1][0].ToString()),0,totalDialogue - 1);
-        EmailNotif();
+    public void TriggerEvent() {
+        if (dialogueIndex > 0) {
+            Events_OpenArticle();
+        }
+    }
+
+    public void NextDialogue(int eventIndex) {
+        if (dialogueIndex == eventIndex) {
+            dialogueIndex++;
+            string[] text = File.ReadAllLines(dialogue_SaveFilePath);
+            text[0] = dialogueIndex.ToString();
+            File.WriteAllLines(dialogue_SaveFilePath, text);
+            dialoguePrefabIndex = Mathf.Clamp(int.Parse(text[dialogueIndex + 1][0].ToString()), 0, totalDialogue - 1);
+        }
     }
 
     private void DefaultOverwriteFiles(string filePath) {
@@ -79,6 +88,12 @@ public class GameEventsManager : MonoBehaviour {
                 obj.GetComponent<SpriteHandlerScript>().RefreshSprite();
                 soundScript.PlaySound(0, 1, 1);
             }
+        }
+    }
+
+    private void Events_OpenArticle() {
+        foreach (Website wb in articles) {
+            wb.active = true;
         }
     }
 }
