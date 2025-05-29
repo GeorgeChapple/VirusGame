@@ -1156,6 +1156,7 @@ GameObject:
   - component: {fileID: 1092199277}
   - component: {fileID: 1092199278}
   - component: {fileID: 1092199279}
+  - component: {fileID: 1092199280}
   m_Layer: 0
   m_Name: ManagerOBJ
   m_TagString: Untagged
@@ -1257,9 +1258,9 @@ MonoBehaviour:
   articles:
   - {fileID: 11400000, guid: 1cefc7ab0aab12242b979869f658363b, type: 2}
   - {fileID: 11400000, guid: e3c74f863a03cf04cac752bc7108381f, type: 2}
+  daisyFileName: DAISY_Master
   useDefaults: 0
   dialogueIndex: 0
-  checkingPlatformer: 0
   deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
 --- !u!114 &1092199279
 MonoBehaviour:
@@ -1277,6 +1278,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 63860b36e7c993c4cba60c2fd22e93ec, type: 3}
   - {fileID: 8300000, guid: 1e716bb5035eb314c9f8a98e1d23e5f9, type: 3}
   audioMixerGroup: {fileID: 24300002, guid: e9b458910d9d23649b9b6e06a995f709, type: 2}
+--- !u!114 &1092199280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092199274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae95e56bdfd85b4da00f07f073ce548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpPrefab: {fileID: 1967212188711695967, guid: 7de13394311a97046a13514069ddc051, type: 3}
+  hierarchy: {fileID: 58455103}
+  popUpSpawnInterval: 5
+  spawnPopUps: 0
 --- !u!1 &1178657128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,7 +2860,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1920, y: 1080, z: 1}
+  m_Size: {x: 3440, y: 1440, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

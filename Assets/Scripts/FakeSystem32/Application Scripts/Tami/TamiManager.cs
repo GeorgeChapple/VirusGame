@@ -46,6 +46,7 @@ public class TamiManager : MonoBehaviour
     [SerializeField] private float gameTimeSinceSpawn = 0;
     [Tooltip("The game will end once this amount of seconds pass;")]
     [SerializeField] private float gameLength = 300;
+    [SerializeField] private TextMeshProUGUI timerText;
 
 
     [Header("Serialisations")]
@@ -87,6 +88,7 @@ public class TamiManager : MonoBehaviour
             gameTimeSinceSpawn += Time.deltaTime;
             popUpSpawnTime -= gameTimeSinceSpawn / rateOfPopUpSpawn;
             popUpSpawnTime = Mathf.Clamp(popUpSpawnTime, popUpSpawnMin, 100);
+            timerText.text = Mathf.RoundToInt(gameLength - gameTimeSinceSpawn) + " Seconds Remaining!";
             if (gameTimeSinceSpawn > gameLength)
             {
                 if (gameEventsManager != null) {

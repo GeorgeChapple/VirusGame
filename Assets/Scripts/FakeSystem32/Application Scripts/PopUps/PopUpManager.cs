@@ -10,7 +10,7 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private GameObject popUpPrefab;
     [SerializeField] private GameObject hierarchy;
     [SerializeField] private float popUpSpawnInterval;
-    [SerializeField] private bool spawnPopUps;
+    public bool spawnPopUps;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class PopUpManager : MonoBehaviour
         while (spawnPopUps)
         {            
             yield return new WaitForSeconds(popUpSpawnInterval); 
-            Instantiate(popUpPrefab, hierarchy.transform);
+            Instantiate(popUpPrefab, new Vector3(Random.Range(-5, 5), Random.Range(-5, 5)), Quaternion.identity, hierarchy.transform);
         }
     }
     public void StartSpawningPopUps() 
