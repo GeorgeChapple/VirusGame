@@ -11,14 +11,15 @@ using UnityEngine.Video;
 public class VideoLoadScene : MonoBehaviour
 {
     VideoPlayer player;
-    [SerializeField] private string sceneName;
+    public string sceneName;
+
     private void Awake()
     {
-        // Force resolution to stay at 1920 x 1080
         Screen.SetResolution(1920, 1080, true);
         player = GetComponent<VideoPlayer>();
         StartCoroutine(enumerator());
     }
+
     private IEnumerator enumerator()
     {
         yield return new WaitForSeconds((float)player.length);
