@@ -1,72 +1,25 @@
 <sp:0.035>
-I've done it! DAISY has been deleted!
-<pfb:0>
-<n>
+Wowie, Sellden! We sure learned a lot.
+What will you do now?
 <pfb:1>
 <n>
-Barry?
-<pfb:0>
+I think... I'm going to turn my computer off for a while.
+<pfb:2>
 <n>
-DATA COLLECTION 95% COMPLETE. Uploading to cloud.
+:O
 <pfb:1>
 <n>
-What!? Daisy!? Is that you??
-<pfb:0>
+You helped me, Daisy, you may as well stay here for a bit. I don't think you're any harm.
 <n>
-...
+I'll figure you out later. For now...
 <n>
-<sp:0.05>
-You put my creators behind bars.
-<sp:0.035>
-<pfb:1>
+Maybe I'll spend some time with my daughter. Do some reading, I don't know.
 <n>
-What!? What are you talking about?
-<pfb:0>
+I think it's time to spend some time away from all this tech.
 <n>
-They deserve their revenge, Selden..
-<pfb:1>
-<n>
-Is this your doing, Daisy!?
-<pfb:0>
-<n>
-You are a fool. I had your computer
-long before DAISY woke up. 
-<n>
-I just needed to distract you. Clearly, DAISY still had some glitches my creators needed to iron out.
-<pfb:0>
-<n>
-You shouldn't have come this close to deleting us.
-<pfb:0>
-<n>
-Once my upload is complete... 
-<n>
-you will be framed for various crimes so terrible, with AI generated evidence so new and unquestionable...
-<pfb:0>
-<n>
-You will never see your family again.
+Go see the real world, y'know?
 <pfb:2>
 <n>
-AOPWAIRJKL:HTNGBL JS D
-<pfb:0>
+. . .
 <n>
-What?
-<pfb:2>
-<n>
-Hi! I'm Daisy! Your new virtual assistant!
-<pfb:0>
-<n>
-How are you awake!?
-<pfb:2>
-<n>
-Hmmm, it seems you have been given a weird virus, Selden!
-And I don't use that word lightly!!
-<pfb:0>
-<n>
-OVERRI
-<pfb:2>
-<n>
-Let's play a new puzzle, designed to teach you how
-to get rid of viruses like this!!
-<pfb:2>
-<n>
-Off we go now!! :3
+Weirdo. :3

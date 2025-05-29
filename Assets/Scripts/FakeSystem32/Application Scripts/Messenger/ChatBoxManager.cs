@@ -113,7 +113,11 @@ public class ChatBoxManager : MonoBehaviour
         GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
         if (speechManager.speechPrafabsIndex == 2 && daisy.daisyActive) {
             daisySpriteIndex++;
-            daisy.UpdateAnimator(daisyAnims[daisySpriteIndex]);
+            try {
+                daisy.UpdateAnimator(daisyAnims[daisySpriteIndex]);
+            } catch {
+                Debug.LogError("Daisy animation update failed!");
+            }
             daisy.GetComponent<WindowScript>().DetachFromHierarchy();
             daisy.GetComponent<WindowScript>().PutInFront();
             daisy.transform.position = new Vector3(daisyTeleportPoint.position.x, daisyTeleportPoint.position.y, transform.root.position.z + 10);

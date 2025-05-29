@@ -2,7 +2,7 @@
 1 - Email
 1 - Internet
 1 - Virus Scanner
-1 - Platformer
+0 - Platformer
 1 - Flash Light
 1 - Cork Board
-1 - Tami
+0 - Tami

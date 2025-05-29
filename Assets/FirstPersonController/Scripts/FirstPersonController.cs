@@ -57,8 +57,8 @@ namespace StarterAssets
 		// player
 		private float _speed;
 		private float _rotationVelocity;
-		private float _verticalVelocity;
-		private float _terminalVelocity = 53.0f;
+		public float _verticalVelocity;
+		private float _terminalVelocity = -200.0f;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -112,6 +112,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			Debug.Log(_verticalVelocity);
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
@@ -240,9 +241,11 @@ namespace StarterAssets
 			}
 
 			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-			if (_verticalVelocity < _terminalVelocity)
+			if (_verticalVelocity > _terminalVelocity)
 			{
 				_verticalVelocity += Gravity * Time.deltaTime;
+			} else if (_verticalVelocity <= _terminalVelocity) {
+				_verticalVelocity = _terminalVelocity;
 			}
 		}
 

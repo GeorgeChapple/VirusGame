@@ -15,7 +15,6 @@ public class GameEventsManager : MonoBehaviour {
     [HideInInspector] public string icons_SaveFilePath = "icons.txt";
     [HideInInspector] public string dialogue_SaveFilePath = "dialogue.txt";
     [HideInInspector] public string reset_SaveFilePath = "ResetGame.txt";
-    [HideInInspector] public string events_SaveFilePath = "events.txt";
     [HideInInspector] public List<GameObject> desktopIcons = new List<GameObject>();
     [HideInInspector] public int totalDialogue = 12;
     [HideInInspector] public int dialoguePrefabIndex;
@@ -48,7 +47,6 @@ public class GameEventsManager : MonoBehaviour {
         if (useDefaults) {
             DefaultOverwriteFiles(icons_SaveFilePath);
             DefaultOverwriteFiles(dialogue_SaveFilePath);
-            DefaultOverwriteFiles(events_SaveFilePath);
             using (StreamWriter sw = new StreamWriter(reset_SaveFilePath)) {
                 sw.WriteLine("0 - Change this to 1 if you want to reset your save data.");
             }
@@ -98,8 +96,8 @@ public class GameEventsManager : MonoBehaviour {
             }
         }
         if (dialogueIndex >= 5) {
-            NextDialogue(5, false, false);
             if (dialogueIndex == 5) {
+                NextDialogue(5, false, false);
                 StartCoroutine(WaitForEmail(5, true));
             }
         }
@@ -109,8 +107,8 @@ public class GameEventsManager : MonoBehaviour {
             }
         }
         if (dialogueIndex >= 2) {
-            NextDialogue(2, false, false);
             if (dialogueIndex == 2) {
+                NextDialogue(2, false, false);
                 StartCoroutine(WaitForEmail(10, true));
             }
         }
