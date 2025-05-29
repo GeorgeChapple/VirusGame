@@ -33,6 +33,11 @@ public class Commands_Editor_Window : EditorWindow
             Commands.ShowIP();
         }
         GUILayout.Space(spacing);
+        if (GUILayout.Button(new GUIContent("Show DIR", "Runs dir.")))
+        {
+            Commands.ShowDir();
+        }
+        GUILayout.Space(spacing);
         searchPrompt = EditorGUILayout.TextField(new GUIContent("Search Prompt", "Text string to search on internet."), searchPrompt);
         if (GUILayout.Button(new GUIContent("Search Internet", "Searches the internet using the given text string."))) {
             Commands.Search(searchPrompt);

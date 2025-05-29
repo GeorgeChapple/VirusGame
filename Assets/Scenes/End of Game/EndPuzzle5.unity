@@ -3255,6 +3255,7 @@ GameObject:
   - component: {fileID: 522652439}
   - component: {fileID: 522652438}
   - component: {fileID: 522652437}
+  - component: {fileID: 522652440}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3312,6 +3313,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522652440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522652436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1045d902f0e7baf43991041ef4df5bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  default_SaveFilePath: default_
+  icons_SaveFilePath: icons.txt
+  dialogue_SaveFilePath: dialogue.txt
+  reset_SaveFilePath: ResetGame.txt
+  events_SaveFilePath: events.txt
+  desktopIcons: []
+  totalDialogue: 12
+  dialoguePrefabIndex: 0
+  soundScript: {fileID: 0}
+  textReadOnce: 0
+  articles: []
+  daisyFileName: DAISY_Master
+  useDefaults: 0
+  dialogueIndex: 0
+  daisy: {fileID: 0}
+  deskTopFileDirectory: {fileID: 0}
 --- !u!1 &523888437
 GameObject:
   m_ObjectHideFlags: 0

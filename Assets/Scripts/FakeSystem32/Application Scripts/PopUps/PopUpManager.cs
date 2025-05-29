@@ -14,8 +14,13 @@ public class PopUpManager : MonoBehaviour
 
     private void Start()
     {
-        StartSpawningPopUps();
+        GameEventsManager gem = GetComponent<GameEventsManager>();
+        if (gem != null && gem.daisy.daisyActive)
+        {
+            StartSpawningPopUps();
+        }
     }
+
     // Spawns a new popup after set seconds
     private IEnumerator popUpSpawnLoop()
     {

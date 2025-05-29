@@ -28,7 +28,8 @@ public class GameEventsManager : MonoBehaviour {
     public bool useDefaults;
     public int dialogueIndex;
 
-    private DaisyScript daisy;
+    public DaisyScript daisy;
+
     private bool checkingPlatformer = false;
     private bool checkingDelete = false;
 
@@ -77,7 +78,6 @@ public class GameEventsManager : MonoBehaviour {
             StartCoroutine(WaitForEmail(10, true));
         }
         if (dialogueIndex >= 9) {
-            NextDialogue(9, false, false);
             if (dialogueIndex == 9) {
                 StartCoroutine(ChangeTheScene("EndPuzzle1"));
             }
@@ -111,12 +111,12 @@ public class GameEventsManager : MonoBehaviour {
         if (dialogueIndex >= 2) {
             NextDialogue(2, false, false);
             if (dialogueIndex == 2) {
-                StartCoroutine(WaitForEmail(20, true));
+                StartCoroutine(WaitForEmail(10, true));
             }
         }
         if (dialogueIndex >= 1) {
             if (daisy != null) {
-                if (!daisy.daisyActive) {
+                if (!daisy.daisyActive && dialogueIndex < 7) {
                     Events_Download();
                 }
             }
@@ -207,6 +207,7 @@ public class GameEventsManager : MonoBehaviour {
     }
 
     private IEnumerator ChangeTheScene(string sceneName) {
+        Debug.Log(sceneName + " loaded...");
         while (daisy.chatBoxActive) {
             yield return null;
         }

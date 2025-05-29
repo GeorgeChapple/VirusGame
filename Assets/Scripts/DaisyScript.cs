@@ -18,7 +18,7 @@ public class DaisyScript : MonoBehaviour
 
 
     [HideInInspector] public bool chatBoxActive = false;
-    [HideInInspector] public bool daisyActive = false;
+     public bool daisyActive = false;
 
     [SerializeField] private float idleTimeMin = 10;
     [SerializeField] private float idleTimeMax = 20;
@@ -34,12 +34,19 @@ public class DaisyScript : MonoBehaviour
     }
 
     private void Start() {
-        if (FindFirstObjectByType<GameEventsManager>().dialogueIndex >= 2) {
+        GameEventsManager gem = FindFirstObjectByType<GameEventsManager>();
+        if ((gem.dialogueIndex >= 2 && gem.dialogueIndex < 7) || gem.dialogueIndex >= 9) {
             daisyActive = true;
-            transform.position = Vector3.zero;
+            if (gem.dialogueIndex >= 9){
+                transform.position = Vector3.zero + new Vector3(9999999, 0, 0);
+            } else {
+                transform.position = Vector3.zero;
+            }
         }
         StartCoroutine(IdleAnimation());
-        StartCoroutine(DoSomethingSpooky());
+        if (gem.dialogueIndex < 7) {
+            StartCoroutine(DoSomethingSpooky());
+        }
     }
 
     public void UpdateAnimator(string animation) {
