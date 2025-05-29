@@ -1,25 +1,40 @@
 <sp:0.035>
-Wowie, Sellden! We sure learned a lot.
-What will you do now?
+well?
 <pfb:1>
 <n>
-I think... I'm going to turn my computer off for a while.
-<pfb:2>
+Dude, I think you've sent me
+<p>
+a virus...
+<pfb:0>
 <n>
-:O
+:(
 <pfb:1>
 <n>
-You helped me, Daisy, you may as well stay here for a bit. I don't think you're any harm.
+I'm serious!
+<pfb:0>
 <n>
-I'll figure you out later. For now...
+What? Oh don't be paranoid.
+I've clicked on this link and
+I'm fine!
+<pfb:1>
 <n>
-Maybe I'll spend some time with my daughter. Do some reading, I don't know.
+Barry!! I can't believe you.
+You've sent me this clearly
+virus-filled website...
+<pfb:1>
 <n>
-I think it's time to spend some time away from all this tech.
+And now you don't believe me!
+<pfb:0>
 <n>
-Go see the real world, y'know?
-<pfb:2>
+What happened anyway?
+<pfb:1>
 <n>
-. . .
+Well, after clicking on the
+link YOU sent me, this weird
+looking character turned up on
+my screen!
+<pfb:0>
 <n>
-Weirdo. :3
+Ok, well has anything changed?
+Are any of your files missing?
+Go look!
