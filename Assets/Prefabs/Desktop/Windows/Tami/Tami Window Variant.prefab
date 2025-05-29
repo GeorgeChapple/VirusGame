@@ -2163,7 +2163,7 @@ MonoBehaviour:
   popUpSpawnMin: 5
   rateOfPopUpSpawn: 40000
   gameTimeSinceSpawn: 0
-  gameLength: 5
+  gameLength: 120
   timerText: {fileID: 892135488288140666}
   contentPanel: {fileID: 7992869705259326661}
   manager: {fileID: 0}
