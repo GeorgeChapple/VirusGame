@@ -1972,7 +1972,6 @@ GameObject:
   - component: {fileID: 9063277053119996682}
   - component: {fileID: 1957121254002479825}
   - component: {fileID: 7727479654137866196}
-  - component: {fileID: 4767976640354013296}
   m_Layer: 5
   m_Name: Waller
   m_TagString: Untagged
@@ -2038,51 +2037,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4767976640354013296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8479257061099650463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065898c86d0373049a40eba0821dabb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnAwakeEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: bf2a66c49a9b6a447b4af0c2b22b38f2, type: 2}
-        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
-        m_MethodName: Unlock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: e3c74f863a03cf04cac752bc7108381f, type: 2}
-        m_TargetAssemblyTypeName: CorkBoardPageData, Assembly-CSharp
-        m_MethodName: Unlock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDestroyEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  ByScriptEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &9132353853167181884
 GameObject:
   m_ObjectHideFlags: 0
