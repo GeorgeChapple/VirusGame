@@ -55,9 +55,10 @@ public class GameEventsManager : MonoBehaviour {
             string line; 
             line = sr.ReadLine();
             dialogueIndex = int.Parse(line); 
-            for (int i = 0; i <= dialogueIndex + 1; i++) {
+            for (int i = 0; i <= dialogueIndex; i++) {
                 line = sr.ReadLine();
             }
+            Debug.Log("Dialogue Prefab Index " + line[0].ToString());
             dialoguePrefabIndex = int.Parse(line[0].ToString());
         }
     }
