@@ -65,6 +65,7 @@ public class GameEventsManager : MonoBehaviour {
 
     private void Start() {
         StartCoroutine(WaitForEmail(5, false));
+        StartCoroutine(WaitForStartPopUp(5));
     }
 
     public void TriggerEvent() {
@@ -108,10 +109,6 @@ public class GameEventsManager : MonoBehaviour {
             }
         }
         if (dialogueIndex >= 2) {
-            PopUpManager popUpManager = GetComponent<PopUpManager>();
-            if (popUpManager != null && daisy.daisyActive) {
-                popUpManager.StartSpawningPopUps();
-            }
             if (dialogueIndex == 2) {
                 NextDialogue(2, false, false);
                 StartCoroutine(WaitForEmail(10, true));
@@ -206,6 +203,14 @@ public class GameEventsManager : MonoBehaviour {
         yield return new WaitForSeconds(time);
         if (FindObjectsByType<ChatBoxManager>(FindObjectsSortMode.None).Length <= 0 || forceNotify) {
             EmailNotif();
+        }
+    }
+
+    private IEnumerator WaitForStartPopUp(float time) {
+        yield return new WaitForSeconds(time);
+        PopUpManager popUpManager = GetComponent<PopUpManager>();
+        if (popUpManager != null && daisy.daisyActive) {
+            popUpManager.StartSpawningPopUps();
         }
     }
 

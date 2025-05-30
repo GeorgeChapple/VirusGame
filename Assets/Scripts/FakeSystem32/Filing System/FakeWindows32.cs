@@ -23,7 +23,7 @@ public class FakeWindows32 : MonoBehaviour
     private void Awake()
     {
         //force resolution 1920x1080 to keep canvas spacing(i dont really want to but i dont know how to scale all of this properly, maybe this will be for later)
-        Screen.SetResolution(1920, 1080, true);
+        Screen.SetResolution(1900, 1000, false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
