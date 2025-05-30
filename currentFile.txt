@@ -1,58 +1,40 @@
 <sp:0.035>
-Hey man!
-How's everything going?
+well?
 <pfb:1>
 <n>
-Oh hey, good thanks.
-Just trying to find stuff to report on.
-How are you?
+Dude, I think you've sent me
+<p>
+a virus...
 <pfb:0>
 <n>
-Good thanks. You still trying to work on that police report?
+:(
 <pfb:1>
 <n>
-You know I can’t talk much about it, but yeah.
-<pfb:1>
-<n>
-My NDA doesn’t let me speak to anyone about what they’re working on
-<pfb:1>
-<n>
-but if I can find just one small piece of evidence exposing them, I can tell the story through that.
+I'm serious!
 <pfb:0>
 <n>
-…How long has it been since you were a detective?
+What? Oh don't be paranoid.
+I've clicked on this link and
+I'm fine!
 <pfb:1>
 <n>
-About a year since I was made redundant.
-<pfb:0>
-<n>
-How do you feel about that?
+Barry!! I can't believe you.
+You've sent me this clearly
+virus-filled website...
 <pfb:1>
 <n>
-I guess it was meant to be... 
+And now you don't believe me!
+<pfb:0>
+<n>
+What happened anyway?
 <pfb:1>
 <n>
-but I'm still fuming haha!
+Well, after clicking on the
+link YOU sent me, this weird
+looking character turned up on
+my screen!
 <pfb:0>
 <n>
-I see, best way to look at it I suppose. 
-<pfb:0>
-<n>
-And yeah it was unfair they laid you off so quickly.
-<pfb:1>
-<n>
-Not much I can do about it besides what I’m doing now. Just got to try and find something.
-<pfb:0>
-<n>
-Well, I did stumble across something that might help you, would you like to see it?
-<pfb:1>
-<n>
-Sure.
-<pfb:0>
-<n>
-Alright, give me a sec.
-<sp:0.2>
-...
-<sp:0.035>
-<n>
-Alright, it’s sent! Have a look! http://notdodgy.com/article
+Ok, well has anything changed?
+Are any of your files missing?
+Go look!

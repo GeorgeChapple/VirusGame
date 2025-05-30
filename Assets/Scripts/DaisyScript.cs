@@ -26,10 +26,12 @@ public class DaisyScript : MonoBehaviour
     [SerializeField] private float spookyTimeMax = 20;
     [SerializeField] private string[] searchPrompts;
 
+    private SoundScript sounds;
     private Animator animator;
     public List<Animation> animations = new List<Animation>();
 
     private void Awake() {
+        sounds = GetComponent<SoundScript>();
         animator = GetComponent<Animator>();
     }
 
@@ -51,6 +53,11 @@ public class DaisyScript : MonoBehaviour
 
     public void UpdateAnimator(string animation) {
         animator.SetTrigger(animation);
+        if (animation == "HAPPY") {
+            sounds.PlaySound(0, 0.95f, 1.05f);
+        } else if (animation == "ANGRY") {
+            sounds.PlaySound(1, 0.95f, 1.05f);
+        }
     }
 
     private IEnumerator IdleAnimation() {
@@ -74,15 +81,19 @@ public class DaisyScript : MonoBehaviour
                         int searchIndex = UnityEngine.Random.Range(0, searchPrompts.Length);
                         Commands.Search(searchPrompts[searchIndex]);
                     }
+                    sounds.PlaySound(2, 0.95f, 1.05f);
                     break;
                 case 1:
                     Commands.FlashCMD(UnityEngine.Random.Range(10, 25));
+                    sounds.PlaySound(3, 0.95f, 1.05f);
                     break;
                 case 2:
                     Commands.ShowIP();
+                    sounds.PlaySound(4, 0.95f, 1.05f);
                     break;
                 case 3:
                     Commands.ShowDir();
+                    sounds.PlaySound(5, 0.95f, 1.05f);
                     break;
                 default:
                     break;

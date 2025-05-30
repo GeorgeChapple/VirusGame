@@ -1249,7 +1249,6 @@ MonoBehaviour:
   icons_SaveFilePath: icons.txt
   dialogue_SaveFilePath: dialogue.txt
   reset_SaveFilePath: ResetGame.txt
-  events_SaveFilePath: events.txt
   desktopIcons: []
   totalDialogue: 12
   dialoguePrefabIndex: 0
@@ -2323,6 +2322,26 @@ PrefabInstance:
     - target: {fileID: 3120695495814369593, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161605661317554687, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
+      propertyPath: spookyTimeMax
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161605661317554687, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
+      propertyPath: spookyTimeMin
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161605661317554687, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
+      propertyPath: searchPrompts.Array.size
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161605661317554687, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
+      propertyPath: searchPrompts.Array.data[72]
+      value: Class 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161605661317554687, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
+      propertyPath: searchPrompts.Array.data[73]
+      value: GameX
       objectReference: {fileID: 0}
     - target: {fileID: 7664541312653723215, guid: 556fdd11c52f1eb42bd6e995662c3147, type: 3}
       propertyPath: m_Name

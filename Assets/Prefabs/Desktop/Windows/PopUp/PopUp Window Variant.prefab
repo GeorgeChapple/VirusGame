@@ -320,6 +320,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5262111473265473388}
+    - targetCorrespondingSourceObject: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5737032731336118376}
+    - targetCorrespondingSourceObject: {fileID: 3991302335102464780, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7734388341421101464}
   m_SourcePrefab: {fileID: 100100000, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}
 --- !u!1 &1967212188711695967 stripped
 GameObject:
@@ -346,6 +352,59 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8948b49a3fb507549beae0afc55f5656, type: 3}
   - {fileID: 21300000, guid: 30135b1d25dd15a49bd4c398deeec819, type: 3}
   popUpImage: {fileID: 7149583264209161784}
+--- !u!114 &-5737032731336118376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967212188711695967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065898c86d0373049a40eba0821dabb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAwakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7734388341421101464}
+        m_TargetAssemblyTypeName: SoundScript, Assembly-CSharp
+        m_MethodName: PlayRandomSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ByScriptEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-7734388341421101464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967212188711695967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c967c365a4072a943a365e9440c72a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: f3903def2602dd2468b23b2fa677f100, type: 3}
+  - {fileID: 8300000, guid: 4a8d78da1767f834db412bea3a1e13c5, type: 3}
+  - {fileID: 8300000, guid: 90e2942db048e584b88f688871f9a8b2, type: 3}
+  audioMixerGroup: {fileID: 0}
 --- !u!224 &2125625574217040648 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3553542902400665179, guid: b2b1463dfe98a924bb12d9ab8760b9a5, type: 3}

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7336235705486283185}
   - component: {fileID: 4720975245249000432}
   - component: {fileID: 4161605661317554687}
+  - component: {fileID: 8630316884828925866}
   m_Layer: 5
   m_Name: Daisy
   m_TagString: Draggable
@@ -333,3 +334,23 @@ MonoBehaviour:
     duration: 1.85
   - name: HAPPY
     duration: 2.615
+--- !u!114 &8630316884828925866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664541312653723215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c967c365a4072a943a365e9440c72a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 9d7584e88cbaa9441a1a99ad867ddca1, type: 3}
+  - {fileID: 8300000, guid: 635a22b49a85af74799fb3e85fefcac6, type: 3}
+  - {fileID: 8300000, guid: 6060d864692735444b15a4f2539788b4, type: 3}
+  - {fileID: 8300000, guid: 4a8d78da1767f834db412bea3a1e13c5, type: 3}
+  - {fileID: 8300000, guid: ca0919e0ab322ee4c9ea17efac5c1996, type: 3}
+  - {fileID: 8300000, guid: 1b53784c2ee55964a8c83bd152c96e20, type: 3}
+  audioMixerGroup: {fileID: 0}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FaceScript
   m_EditorClassIdentifier: 
   siteName: FaceScript
-  siteUrl: http://facescript.com
+  siteUrl: https://facescript.com
   websitePrefab: {fileID: 8479257061099650463, guid: f488cf019ddfdbb4483a34a98cb6181e, type: 3}
   active: 1

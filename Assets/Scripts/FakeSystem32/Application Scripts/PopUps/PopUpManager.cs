@@ -12,15 +12,6 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private float popUpSpawnInterval;
     public bool spawnPopUps;
 
-    private void Start()
-    {
-        GameEventsManager gem = GetComponent<GameEventsManager>();
-        if (gem != null && gem.daisy.daisyActive)
-        {
-            StartSpawningPopUps();
-        }
-    }
-
     // Spawns a new popup after set seconds
     private IEnumerator popUpSpawnLoop()
     {

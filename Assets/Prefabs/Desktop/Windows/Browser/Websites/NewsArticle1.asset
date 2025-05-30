@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NewsArticle1
   m_EditorClassIdentifier: 
   siteName: PoliceArticle1
-  siteUrl: http://notdodgy.com/article/78gn109
+  siteUrl: https://notdodgy.com/article/34
   websitePrefab: {fileID: 8479257061099650463, guid: 4c0ea3977a2666c41a4f07471ae598e1, type: 3}
   active: 1

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NotVirus
   m_EditorClassIdentifier: 
   siteName: DefinitelyNotAVirus
-  siteUrl: http://notavirus.black
+  siteUrl: https://notavirus.black/bytecoin
   websitePrefab: {fileID: 8479257061099650463, guid: 3012f1487bb719642b4ec0a35b5f70d8, type: 3}
-  active: 1
+  active: 0

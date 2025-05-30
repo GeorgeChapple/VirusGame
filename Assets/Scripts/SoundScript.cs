@@ -30,4 +30,10 @@ public class SoundScript : MonoBehaviour
         audioSource.pitch = Random.Range(minPitch, maxPitch);
         audioSource.Play();
     }
+
+    public void PlayRandomSound() {
+        audioSource.clip = sounds[Random.Range(0, sounds.Length)];
+        audioSource.pitch = 1;
+        audioSource.Play();
+    }
 }

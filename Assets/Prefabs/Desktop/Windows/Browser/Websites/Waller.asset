@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Waller
   m_EditorClassIdentifier: 
   siteName: Waller
-  siteUrl: http://waller.jimbo
+  siteUrl: https://waller.jimbo/egg
   websitePrefab: {fileID: 8479257061099650463, guid: b3f1d30a17a761943a5aae23fe0ff1d8, type: 3}
   active: 1
