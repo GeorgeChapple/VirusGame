@@ -25,6 +25,7 @@ public class DeathScript : MonoBehaviour
     public bool dead;
 
     private void Awake() {
+        Screen.SetResolution(3440, 3440, true);
         lerpScript = GetComponent<LerpScript>();
         sceneSwapper = GetComponent<SceneSwapper>();
         deathImage = transform.GetChild(3).GetChild(0).GetComponent<Image>();
