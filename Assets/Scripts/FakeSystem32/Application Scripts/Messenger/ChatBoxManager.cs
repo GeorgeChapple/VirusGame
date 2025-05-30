@@ -28,6 +28,7 @@ public class ChatBoxManager : MonoBehaviour
     private DaisyScript daisy;
     private SoundScript soundScript;
     private int daisySpriteIndex = 0;
+    private int soundIndex = 0;
     private const string daisyAnims_FilePath= "currentAnim.txt";
     private string[] daisyAnims;
 
@@ -49,8 +50,14 @@ public class ChatBoxManager : MonoBehaviour
     }
 
     private void Start() {
-        soundScript.PlaySound(0, 1, 1);
         StartText(gameEventsManager.dialogueIndex, gameEventsManager.dialoguePrefabIndex);
+        if (GameObject.Find("MusicManager") != null) {
+            if (gameEventsManager.dialogueIndex == 3) {
+                GameObject.Find("MusicManager").GetComponent<SoundScript>().PlaySound(0, 1f, 1f);
+            } else if (gameEventsManager.dialogueIndex == 11) {
+                GameObject.Find("MusicManager").GetComponent<SoundScript>().PlaySound(1, 1f, 1f);
+            }
+        }
     }
 
     private void OnDestroy() {
@@ -106,6 +113,8 @@ public class ChatBoxManager : MonoBehaviour
 
     // Listens for when speech manager spawns a new speech bubble, sets the default values and parent of the new bubble
     private void AddSpeechBubble() {
+        soundScript.PlaySound(soundIndex, 1f, 1f);
+        soundIndex = 1;
         GameObject bubble = speechManager.speechBubbles[speechManager.speechBubbles.Count - 1];
         contentRect.sizeDelta += new Vector2(0, contentRectGridBox.cellSize.y + contentRectGridBox.spacing.y);
         bubble.transform.SetParent(contentRect);

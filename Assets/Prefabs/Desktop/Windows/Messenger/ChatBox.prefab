@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - {fileID: 8300000, guid: 78965106f41279d48a5e07aec9ddf9b5, type: 3}
+  - {fileID: 8300000, guid: 2c85bb3680adcfb4bb114e2d1a7e84e5, type: 3}
   audioMixerGroup: {fileID: 24300002, guid: e9b458910d9d23649b9b6e06a995f709, type: 2}
 --- !u!1 &241691187497683648
 GameObject:
@@ -517,7 +518,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3844029374254580716}
   m_HandleRect: {fileID: 631459496596235960}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1056,7 +1057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 332.99933}
+  m_AnchoredPosition: {x: 0, y: 333.00003}
   m_SizeDelta: {x: 0, y: 70}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &6774888157251259581
