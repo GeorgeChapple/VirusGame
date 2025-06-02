@@ -26,7 +26,7 @@ public class Flashlight : MonoBehaviour
     private void Update()
     { 
         // Move flashlight graphic over mouse position
-        mousePosition = Input.mousePosition + new Vector3(0, 0, -1000);
+        mousePosition = Input.mousePosition + new Vector3(0, 0, -500);
         flashlightTransform.localPosition = mousePosition - (new Vector3(Screen.width, Screen.height) / 2);
     }
     // Check all objects that should show a different text

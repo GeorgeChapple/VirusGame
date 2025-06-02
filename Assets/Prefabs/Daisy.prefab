@@ -31,7 +31,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7664541312653723215}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 120, y: 120, z: 1}
   m_ConstrainProportionsScale: 0
@@ -323,6 +323,7 @@ MonoBehaviour:
   - Ada Lovelace
   - Alan Turing
   - George Boole
+  col: {fileID: 4921897167301233360}
   animations:
   - name: IDLE
     duration: 1.82

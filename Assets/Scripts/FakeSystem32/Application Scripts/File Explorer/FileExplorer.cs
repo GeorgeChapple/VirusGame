@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -23,8 +24,11 @@ public class FileExplorer : MonoBehaviour
     public FileData currentFolder;
     public string currentPath;
 
+    private GameEventsManager manager;
+
     private void Awake()
     {
+        manager = FindObjectOfType<GameEventsManager>();
         SetUpUI(); // Set up buttons for user
     }
     // Sets the current folder and updates the UI, used externally
@@ -43,7 +47,7 @@ public class FileExplorer : MonoBehaviour
     public void SetUpButton(FileData file, int numOfFolder)
     {
         GameObject button = Instantiate(buttonPrefab, contentArea.transform); // Spawn button
-        
+
         // Then set some variables
         WindowsButton wbComp = button.GetComponent<WindowsButton>();
         wbComp.layoutGroup = contentArea.GetComponent<GridLayoutGroup>();
@@ -89,7 +93,7 @@ public class FileExplorer : MonoBehaviour
             UnityAction action;
 
             // Get event values out
-            string methodName = eventPass.methodName; 
+            string methodName = eventPass.methodName;
             int intVal = eventPass.intVal;
             float floatVal = eventPass.floatVal;
             string stringVal = eventPass.stringVal;
@@ -125,7 +129,7 @@ public class FileExplorer : MonoBehaviour
             }
             if (action != null) // Add it to the double click events
             {
-                button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action); 
+                button.GetComponent<HitEventScript>().doubleHitEvent.AddListener(action);
             }
         }
     }
@@ -142,12 +146,31 @@ public class FileExplorer : MonoBehaviour
         // Spawn new buttons
         foreach (var (file, i) in currentFolder.children.Select((value, i) => (value, i)))
         {
+
             if (file == null || !file.isAvailable)
             {
                 continue;
             }
+            if (currentFolder.name == "Desktop")
+            {
+                using (StreamReader sr = new StreamReader(manager.icons_SaveFilePath))
+                {
+                    string line;
 
-            SetUpButton(file, i);            
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        if (line.Contains(file.name) && line[0] == '1')
+                        {
+                            SetUpButton(file, i);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                SetUpButton(file, i);
+            }
+            
         }
 
         // Write out the path to root backwards then reverse it and make it a string again
@@ -163,7 +186,7 @@ public class FileExplorer : MonoBehaviour
         // Then show it to the user, so they know where they're at
         pathBar.GetComponentInChildren<TextMeshProUGUI>().text = currentPath;
     }
-    
+
     // Reverses a string
     public static string Reverse(string s)
     {

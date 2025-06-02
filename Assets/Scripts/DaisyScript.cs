@@ -25,6 +25,7 @@ public class DaisyScript : MonoBehaviour
     [SerializeField] private float spookyTimeMin = 10;
     [SerializeField] private float spookyTimeMax = 20;
     [SerializeField] private string[] searchPrompts;
+    [SerializeField] private BoxCollider col;
 
     private SoundScript sounds;
     private Animator animator;
@@ -53,6 +54,7 @@ public class DaisyScript : MonoBehaviour
 
     public void UpdateAnimator(string animation) {
         animator.SetTrigger(animation);
+        col.size = new Vector3(2, 2, 1);
         if (animation == "HAPPY") {
             sounds.PlaySound(0, 0.95f, 1.05f);
         } else if (animation == "ANGRY") {

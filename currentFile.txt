@@ -1,25 +1,58 @@
 <sp:0.035>
-Wowie, Sellden! We sure learned a lot.
-What will you do now?
+Hey man!
+How's everything going?
 <pfb:1>
 <n>
-I think... I'm going to turn my computer off for a while.
-<pfb:2>
+Oh hey, good thanks.
+Just trying to find stuff to report on.
+How are you?
+<pfb:0>
 <n>
-:O
+Good thanks. You still trying to work on that police report?
 <pfb:1>
 <n>
-You helped me, Daisy, you may as well stay here for a bit. I don't think you're any harm.
+You know I can’t talk much about it, but yeah.
+<pfb:1>
 <n>
-I'll figure you out later. For now...
+My NDA doesn’t let me speak to anyone about what they’re working on
+<pfb:1>
 <n>
-Maybe I'll spend some time with my daughter. Do some reading, I don't know.
+but if I can find just one small piece of evidence exposing them, I can tell the story through that.
+<pfb:0>
 <n>
-I think it's time to spend some time away from all this tech.
+…How long has it been since you were a detective?
+<pfb:1>
 <n>
-Go see the real world, y'know?
-<pfb:2>
+About a year since I was made redundant.
+<pfb:0>
 <n>
-. . .
+How do you feel about that?
+<pfb:1>
 <n>
-Weirdo. :3
+I guess it was meant to be... 
+<pfb:1>
+<n>
+but I'm still fuming haha!
+<pfb:0>
+<n>
+I see, best way to look at it I suppose. 
+<pfb:0>
+<n>
+And yeah it was unfair they laid you off so quickly.
+<pfb:1>
+<n>
+Not much I can do about it besides what I’m doing now. Just got to try and find something.
+<pfb:0>
+<n>
+Well, I did stumble across something that might help you, would you like to see it?
+<pfb:1>
+<n>
+Sure.
+<pfb:0>
+<n>
+Alright, give me a sec.
+<sp:0.2>
+...
+<sp:0.035>
+<n>
+Alright, it’s sent! Have a look! http://notdodgy.com/article

@@ -1371,12 +1371,17 @@ MonoBehaviour:
   default_SaveFilePath: default_
   icons_SaveFilePath: icons.txt
   dialogue_SaveFilePath: dialogue.txt
-  events_SaveFilePath: events.txt
+  reset_SaveFilePath: ResetGame.txt
   desktopIcons: []
   totalDialogue: 12
   dialoguePrefabIndex: 0
+  soundScript: {fileID: 0}
+  textReadOnce: 0
+  articles: []
+  daisyFileName: DAISY_Master
   useDefaults: 1
   dialogueIndex: 0
+  daisy: {fileID: 0}
   deskTopFileDirectory: {fileID: 11400000, guid: 1aae2bf0fdea18644903e0bb20ce4166, type: 2}
 --- !u!1 &1178657128
 GameObject:
@@ -3112,6 +3117,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8ceb3c5b9d13567478466f4e47f93113, type: 3}
   - {fileID: 8300000, guid: ded6a03cf7e3c2e4eacbcde8cc60586d, type: 3}
   - {fileID: 8300000, guid: 23466df7d43ef2944bd18e1f6ba63a7f, type: 3}
+  audioMixerGroup: {fileID: 0}
 --- !u!1 &2004732453
 GameObject:
   m_ObjectHideFlags: 0

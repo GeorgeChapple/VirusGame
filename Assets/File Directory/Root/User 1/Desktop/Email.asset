@@ -28,7 +28,7 @@ MonoBehaviour:
   application: {fileID: 1967212188711695967, guid: 2b1ce57b961da864f8762db6cdea3b44, type: 3}
   OnDoubleClick:
   - passValThrough: 0
-    methodName: OpenApplication
+    methodName: CheckApplicationIsOpen
     passSelfVal: 0
     self: {fileID: 0}
     passStringVal: 0
@@ -37,8 +37,11 @@ MonoBehaviour:
     intVal: 0
     passFloatVal: 0
     floatVal: 0
+    passBoolVal: 0
+    boolVal: 0
   sceneName: 
   cameraMaterial: {fileID: 0}
   canBeTaskBarIcon: 1
   canBeDragged: 1
   isAvailable: 1
+  colouredBallForVirusScanner: {fileID: 0}
